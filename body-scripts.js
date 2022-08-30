@@ -1,0 +1,581 @@
+if (
+  new Date(new Date().setDate(new Date().getDate() + 1))
+    .toString()
+    .includes("Sat")
+) {
+  firstDate = new Date(new Date().setDate(new Date().getDate() + 3));
+} else if (
+  new Date(new Date().setDate(new Date().getDate() + 1))
+    .toString()
+    .includes("Sun")
+) {
+  firstDate = new Date(new Date().setDate(new Date().getDate() + 2));
+} else {
+  firstDate = new Date(new Date().setDate(new Date().getDate() + 1));
+}
+document.getElementById("firstDate").textContent = firstDate
+  .toString()
+  .substring(0, 15);
+
+if (
+  firstDate.toString().includes("Tue") ||
+  firstDate.toString().includes("Thu")
+) {
+  document.getElementById("firstDateTimeSlot1").innerHTML = timeSlot3;
+  document.getElementById("firstDateTimeSlot2").innerHTML = timeSlot4;
+  document.getElementById("firstDateTimeSlot3").innerHTML = timeSlot7;
+  document.getElementById("firstDateTimeSlot4").innerHTML = timeSlot8;
+} else {
+  document.getElementById("firstDateTimeSlot1").textContent = timeSlot1;
+  document.getElementById("firstDateTimeSlot2").innerHTML = timeSlot2;
+  document.getElementById("firstDateTimeSlot3").innerHTML = timeSlot5;
+  document.getElementById("firstDateTimeSlot4").innerHTML = timeSlot6;
+}
+firstDateTimeSlotString1 =
+  firstDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("firstDateTimeSlot1").innerHTML;
+firstDateTimeSlotString2 =
+  firstDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("firstDateTimeSlot2").innerHTML;
+firstDateTimeSlotString3 =
+  firstDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("firstDateTimeSlot3").innerHTML;
+firstDateTimeSlotString4 =
+  firstDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("firstDateTimeSlot4").innerHTML;
+
+var secondDateCheck = new Date(firstDate.setDate(firstDate.getDate() + 1));
+if (secondDateCheck.toString().includes("Sat")) {
+  secondDate = new Date(secondDateCheck.setDate(secondDateCheck.getDate() + 2));
+} else if (secondDateCheck.toString().includes("Sun")) {
+  secondDate = new Date(secondDateCheck.setDate(secondDateCheck.getDate() + 1));
+} else {
+  secondDate = new Date(secondDateCheck.setDate(secondDateCheck.getDate()));
+}
+document.getElementById("secondDate").innerHTML = secondDate
+  .toString()
+  .substring(0, 15);
+
+if (
+  secondDate.toString().includes("Tue") ||
+  secondDate.toString().includes("Thu")
+) {
+  document.getElementById("secondDateTimeSlot1").innerHTML = timeSlot3;
+  document.getElementById("secondDateTimeSlot2").innerHTML = timeSlot4;
+  document.getElementById("secondDateTimeSlot3").innerHTML = timeSlot7;
+  document.getElementById("secondDateTimeSlot4").innerHTML = timeSlot8;
+} else {
+  document.getElementById("secondDateTimeSlot1").innerHTML = timeSlot1;
+  document.getElementById("secondDateTimeSlot2").innerHTML = timeSlot2;
+  document.getElementById("secondDateTimeSlot3").innerHTML = timeSlot5;
+  document.getElementById("secondDateTimeSlot4").innerHTML = timeSlot6;
+}
+secondDateTimeSlotString1 =
+  secondDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("secondDateTimeSlot1").innerHTML;
+secondDateTimeSlotString2 =
+  secondDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("secondDateTimeSlot2").innerHTML;
+secondDateTimeSlotString3 =
+  secondDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("secondDateTimeSlot3").innerHTML;
+secondDateTimeSlotString4 =
+  secondDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("secondDateTimeSlot4").innerHTML;
+
+var thirdDateCheck = new Date(secondDate.setDate(secondDate.getDate() + 1));
+if (thirdDateCheck.toString().includes("Sat")) {
+  thirdDate = new Date(thirdDateCheck.setDate(thirdDateCheck.getDate() + 2));
+} else if (thirdDateCheck.toString().includes("Sun")) {
+  thirdDate = new Date(thirdDateCheck.setDate(thirdDateCheck.getDate() + 1));
+} else {
+  thirdDate = new Date(thirdDateCheck.setDate(thirdDateCheck.getDate()));
+}
+document.getElementById("thirdDate").innerHTML = thirdDate
+  .toString()
+  .substring(0, 15);
+
+if (
+  thirdDate.toString().includes("Tue") ||
+  thirdDate.toString().includes("Thu")
+) {
+  document.getElementById("thirdDateTimeSlot1").innerHTML = timeSlot3;
+  document.getElementById("thirdDateTimeSlot2").innerHTML = timeSlot4;
+  document.getElementById("thirdDateTimeSlot3").innerHTML = timeSlot7;
+  document.getElementById("thirdDateTimeSlot4").innerHTML = timeSlot8;
+} else {
+  document.getElementById("thirdDateTimeSlot1").innerHTML = timeSlot1;
+  document.getElementById("thirdDateTimeSlot2").innerHTML = timeSlot2;
+  document.getElementById("thirdDateTimeSlot3").innerHTML = timeSlot5;
+  document.getElementById("thirdDateTimeSlot4").innerHTML = timeSlot6;
+}
+thirdDateTimeSlotString1 =
+  thirdDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("thirdDateTimeSlot1").innerHTML;
+thirdDateTimeSlotString2 =
+  thirdDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("thirdDateTimeSlot2").innerHTML;
+thirdDateTimeSlotString3 =
+  thirdDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("thirdDateTimeSlot3").innerHTML;
+thirdDateTimeSlotString4 =
+  thirdDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("thirdDateTimeSlot4").innerHTML;
+
+var fourthDateCheck = new Date(thirdDate.setDate(thirdDate.getDate() + 1));
+if (fourthDateCheck.toString().includes("Sat")) {
+  fourthDate = new Date(fourthDateCheck.setDate(fourthDateCheck.getDate() + 2));
+} else if (fourthDateCheck.toString().includes("Sun")) {
+  fourthDate = new Date(fourthDateCheck.setDate(fourthDateCheck.getDate() + 1));
+} else {
+  fourthDate = new Date(fourthDateCheck.setDate(fourthDateCheck.getDate()));
+}
+document.getElementById("fourthDate").innerHTML = fourthDate
+  .toString()
+  .substring(0, 15);
+
+if (
+  fourthDate.toString().includes("Tue") ||
+  fourthDate.toString().includes("Thu")
+) {
+  document.getElementById("fourthDateTimeSlot1").innerHTML = timeSlot3;
+  document.getElementById("fourthDateTimeSlot2").innerHTML = timeSlot4;
+  document.getElementById("fourthDateTimeSlot3").innerHTML = timeSlot7;
+  document.getElementById("fourthDateTimeSlot4").innerHTML = timeSlot8;
+} else {
+  document.getElementById("fourthDateTimeSlot1").innerHTML = timeSlot1;
+  document.getElementById("fourthDateTimeSlot2").innerHTML = timeSlot2;
+  document.getElementById("fourthDateTimeSlot3").innerHTML = timeSlot5;
+  document.getElementById("fourthDateTimeSlot4").innerHTML = timeSlot6;
+}
+fourthDateTimeSlotString1 =
+  fourthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("fourthDateTimeSlot1").innerHTML;
+fourthDateTimeSlotString2 =
+  fourthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("fourthDateTimeSlot2").innerHTML;
+fourthDateTimeSlotString3 =
+  fourthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("fourthDateTimeSlot3").innerHTML;
+fourthDateTimeSlotString4 =
+  fourthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("fourthDateTimeSlot4").innerHTML;
+
+var fifthDateCheck = new Date(fourthDate.setDate(fourthDate.getDate() + 1));
+if (fifthDateCheck.toString().includes("Sat")) {
+  fifthDate = new Date(fifthDateCheck.setDate(fifthDateCheck.getDate() + 2));
+} else if (fifthDateCheck.toString().includes("Sun")) {
+  fifthDate = new Date(fifthDateCheck.setDate(fifthDateCheck.getDate() + 1));
+} else {
+  fifthDate = new Date(fifthDateCheck.setDate(fifthDateCheck.getDate()));
+}
+document.getElementById("fifthDate").innerHTML = fifthDate
+  .toString()
+  .substring(0, 15);
+
+if (
+  fifthDate.toString().includes("Tue") ||
+  fifthDate.toString().includes("Thu")
+) {
+  document.getElementById("fifthDateTimeSlot1").innerHTML = timeSlot3;
+  document.getElementById("fifthDateTimeSlot2").innerHTML = timeSlot4;
+  document.getElementById("fifthDateTimeSlot3").innerHTML = timeSlot7;
+  document.getElementById("fifthDateTimeSlot4").innerHTML = timeSlot8;
+} else {
+  document.getElementById("fifthDateTimeSlot1").innerHTML = timeSlot1;
+  document.getElementById("fifthDateTimeSlot2").innerHTML = timeSlot2;
+  document.getElementById("fifthDateTimeSlot3").innerHTML = timeSlot5;
+  document.getElementById("fifthDateTimeSlot4").innerHTML = timeSlot6;
+}
+fifthDateTimeSlotString1 =
+  fifthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("fifthDateTimeSlot1").innerHTML;
+fifthDateTimeSlotString2 =
+  fifthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("fifthDateTimeSlot2").innerHTML;
+fifthDateTimeSlotString3 =
+  fifthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("fifthDateTimeSlot3").innerHTML;
+fifthDateTimeSlotString4 =
+  fifthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("fifthDateTimeSlot4").innerHTML;
+
+var sixthDateCheck = new Date(fifthDate.setDate(fifthDate.getDate() + 1));
+if (sixthDateCheck.toString().includes("Sat")) {
+  sixthDate = new Date(sixthDateCheck.setDate(sixthDateCheck.getDate() + 2));
+} else if (sixthDateCheck.toString().includes("Sun")) {
+  sixthDate = new Date(sixthDateCheck.setDate(sixthDateCheck.getDate() + 1));
+} else {
+  sixthDate = new Date(sixthDateCheck.setDate(sixthDateCheck.getDate()));
+}
+document.getElementById("sixthDate").innerHTML = sixthDate
+  .toString()
+  .substring(0, 15);
+
+if (
+  sixthDate.toString().includes("Tue") ||
+  sixthDate.toString().includes("Thu")
+) {
+  document.getElementById("sixthDateTimeSlot1").innerHTML = timeSlot3;
+  document.getElementById("sixthDateTimeSlot2").innerHTML = timeSlot4;
+  document.getElementById("sixthDateTimeSlot3").innerHTML = timeSlot7;
+  document.getElementById("sixthDateTimeSlot4").innerHTML = timeSlot8;
+} else {
+  document.getElementById("sixthDateTimeSlot1").innerHTML = timeSlot1;
+  document.getElementById("sixthDateTimeSlot2").innerHTML = timeSlot2;
+  document.getElementById("sixthDateTimeSlot3").innerHTML = timeSlot5;
+  document.getElementById("sixthDateTimeSlot4").innerHTML = timeSlot6;
+}
+sixthDateTimeSlotString1 =
+  sixthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("sixthDateTimeSlot1").innerHTML;
+sixthDateTimeSlotString2 =
+  sixthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("sixthDateTimeSlot2").innerHTML;
+sixthDateTimeSlotString3 =
+  sixthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("sixthDateTimeSlot3").innerHTML;
+sixthDateTimeSlotString4 =
+  sixthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("sixthDateTimeSlot4").innerHTML;
+
+var seventhDateCheck = new Date(sixthDate.setDate(sixthDate.getDate() + 1));
+if (seventhDateCheck.toString().includes("Sat")) {
+  seventhDate = new Date(
+    seventhDateCheck.setDate(seventhDateCheck.getDate() + 2)
+  );
+} else if (seventhDateCheck.toString().includes("Sun")) {
+  seventhDate = new Date(
+    seventhDateCheck.setDate(seventhDateCheck.getDate() + 1)
+  );
+} else {
+  seventhDate = new Date(seventhDateCheck.setDate(seventhDateCheck.getDate()));
+}
+document.getElementById("seventhDate").innerHTML = seventhDate
+  .toString()
+  .substring(0, 15);
+
+if (
+  seventhDate.toString().includes("Tue") ||
+  seventhDate.toString().includes("Thu")
+) {
+  document.getElementById("seventhDateTimeSlot1").innerHTML = timeSlot3;
+  document.getElementById("seventhDateTimeSlot2").innerHTML = timeSlot4;
+  document.getElementById("seventhDateTimeSlot3").innerHTML = timeSlot7;
+  document.getElementById("seventhDateTimeSlot4").innerHTML = timeSlot8;
+} else {
+  document.getElementById("seventhDateTimeSlot1").innerHTML = timeSlot1;
+  document.getElementById("seventhDateTimeSlot2").innerHTML = timeSlot2;
+  document.getElementById("seventhDateTimeSlot3").innerHTML = timeSlot5;
+  document.getElementById("seventhDateTimeSlot4").innerHTML = timeSlot6;
+}
+seventhDateTimeSlotString1 =
+  seventhDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("seventhDateTimeSlot1").innerHTML;
+seventhDateTimeSlotString2 =
+  seventhDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("seventhDateTimeSlot2").innerHTML;
+seventhDateTimeSlotString3 =
+  seventhDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("seventhDateTimeSlot3").innerHTML;
+seventhDateTimeSlotString4 =
+  seventhDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("seventhDateTimeSlot4").innerHTML;
+
+var eighthDateCheck = new Date(seventhDate.setDate(seventhDate.getDate() + 1));
+if (eighthDateCheck.toString().includes("Sat")) {
+  eighthDate = new Date(eighthDateCheck.setDate(eighthDateCheck.getDate() + 2));
+} else if (eighthDateCheck.toString().includes("Sun")) {
+  eighthDate = new Date(eighthDateCheck.setDate(eighthDateCheck.getDate() + 1));
+} else {
+  eighthDate = new Date(eighthDateCheck.setDate(eighthDateCheck.getDate()));
+}
+document.getElementById("eighthDate").innerHTML = eighthDate
+  .toString()
+  .substring(0, 15);
+
+if (
+  eighthDate.toString().includes("Tue") ||
+  eighthDate.toString().includes("Thu")
+) {
+  document.getElementById("eighthDateTimeSlot1").innerHTML = timeSlot3;
+  document.getElementById("eighthDateTimeSlot2").innerHTML = timeSlot4;
+  document.getElementById("eighthDateTimeSlot3").innerHTML = timeSlot7;
+  document.getElementById("eighthDateTimeSlot4").innerHTML = timeSlot8;
+} else {
+  document.getElementById("eighthDateTimeSlot1").innerHTML = timeSlot1;
+  document.getElementById("eighthDateTimeSlot2").innerHTML = timeSlot2;
+  document.getElementById("eighthDateTimeSlot3").innerHTML = timeSlot5;
+  document.getElementById("eighthDateTimeSlot4").innerHTML = timeSlot6;
+}
+eighthDateTimeSlotString1 =
+  eighthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("eighthDateTimeSlot1").innerHTML;
+eighthDateTimeSlotString2 =
+  eighthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("eighthDateTimeSlot2").innerHTML;
+eighthDateTimeSlotString3 =
+  eighthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("eighthDateTimeSlot3").innerHTML;
+eighthDateTimeSlotString4 =
+  eighthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("eighthDateTimeSlot4").innerHTML;
+
+var ninthDateCheck = new Date(eighthDate.setDate(eighthDate.getDate() + 1));
+if (ninthDateCheck.toString().includes("Sat")) {
+  ninthDate = new Date(ninthDateCheck.setDate(ninthDateCheck.getDate() + 2));
+} else if (ninthDateCheck.toString().includes("Sun")) {
+  ninthDate = new Date(ninthDateCheck.setDate(ninthDateCheck.getDate() + 1));
+} else {
+  ninthDate = new Date(ninthDateCheck.setDate(ninthDateCheck.getDate()));
+}
+document.getElementById("ninthDate").innerHTML = ninthDate
+  .toString()
+  .substring(0, 15);
+
+if (
+  ninthDate.toString().includes("Tue") ||
+  ninthDate.toString().includes("Thu")
+) {
+  document.getElementById("ninthDateTimeSlot1").innerHTML = timeSlot3;
+  document.getElementById("ninthDateTimeSlot2").innerHTML = timeSlot4;
+  document.getElementById("ninthDateTimeSlot3").innerHTML = timeSlot7;
+  document.getElementById("ninthDateTimeSlot4").innerHTML = timeSlot8;
+} else {
+  document.getElementById("ninthDateTimeSlot1").innerHTML = timeSlot1;
+  document.getElementById("ninthDateTimeSlot2").innerHTML = timeSlot2;
+  document.getElementById("ninthDateTimeSlot3").innerHTML = timeSlot5;
+  document.getElementById("ninthDateTimeSlot4").innerHTML = timeSlot6;
+}
+ninthDateTimeSlotString1 =
+  ninthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("ninthDateTimeSlot1").innerHTML;
+ninthDateTimeSlotString2 =
+  ninthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("ninthDateTimeSlot2").innerHTML;
+ninthDateTimeSlotString3 =
+  ninthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("ninthDateTimeSlot3").innerHTML;
+ninthDateTimeSlotString4 =
+  ninthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("ninthDateTimeSlot4").innerHTML;
+
+var tenthDateCheck = new Date(ninthDate.setDate(ninthDate.getDate() + 1));
+if (tenthDateCheck.toString().includes("Sat")) {
+  tenthDate = new Date(tenthDateCheck.setDate(tenthDateCheck.getDate() + 2));
+} else if (tenthDateCheck.toString().includes("Sun")) {
+  tenthDate = new Date(tenthDateCheck.setDate(tenthDateCheck.getDate() + 1));
+} else {
+  tenthDate = new Date(tenthDateCheck.setDate(tenthDateCheck.getDate()));
+}
+document.getElementById("tenthDate").innerHTML = tenthDate
+  .toString()
+  .substring(0, 15);
+
+if (
+  tenthDate.toString().includes("Tue") ||
+  tenthDate.toString().includes("Thu")
+) {
+  document.getElementById("tenthDateTimeSlot1").innerHTML = timeSlot3;
+  document.getElementById("tenthDateTimeSlot2").innerHTML = timeSlot4;
+  document.getElementById("tenthDateTimeSlot3").innerHTML = timeSlot7;
+  document.getElementById("tenthDateTimeSlot4").innerHTML = timeSlot8;
+} else {
+  document.getElementById("tenthDateTimeSlot1").innerHTML = timeSlot1;
+  document.getElementById("tenthDateTimeSlot2").innerHTML = timeSlot2;
+  document.getElementById("tenthDateTimeSlot3").innerHTML = timeSlot5;
+  document.getElementById("tenthDateTimeSlot4").innerHTML = timeSlot6;
+}
+tenthDateTimeSlotString1 =
+  tenthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("tenthDateTimeSlot1").innerHTML;
+tenthDateTimeSlotString2 =
+  tenthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("tenthDateTimeSlot2").innerHTML;
+tenthDateTimeSlotString3 =
+  tenthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("tenthDateTimeSlot3").innerHTML;
+tenthDateTimeSlotString4 =
+  tenthDate.toString().substring(0, 15) +
+  " " +
+  document.getElementById("tenthDateTimeSlot4").innerHTML;
+
+(function () {
+  var qs,
+    js,
+    q,
+    s,
+    d = document,
+    gi = d.getElementById,
+    ce = d.createElement,
+    gt = d.getElementsByTagName,
+    id = "typef_orm_share",
+    b = "https://embed.typeform.com/";
+  if (!gi.call(d, id)) {
+    js = ce.call(d, "script");
+    js.id = id;
+    js.src = b + "embed.js";
+    q = gt.call(d, "script")[0];
+    q.parentNode.insertBefore(js, q);
+  }
+})();
+
+function openTypeForm1() {
+  typeformPopup(typeformURL, firstDateTimeSlotString1, "webinar", supplier);
+}
+function openTypeForm2() {
+  typeformPopup(typeformURL, firstDateTimeSlotString2, "webinar", supplier);
+}
+function openTypeForm3() {
+  typeformPopup(typeformURL, firstDateTimeSlotString3, "webinar", supplier);
+}
+function openTypeForm4() {
+  typeformPopup(typeformURL, firstDateTimeSlotString4, "webinar", supplier);
+}
+function openTypeForm5() {
+  typeformPopup(typeformURL, secondDateTimeSlotString1, "webinar", supplier);
+}
+function openTypeForm6() {
+  typeformPopup(typeformURL, secondDateTimeSlotString2, "webinar", supplier);
+}
+function openTypeForm7() {
+  typeformPopup(typeformURL, secondDateTimeSlotString3, "webinar", supplier);
+}
+function openTypeForm8() {
+  typeformPopup(typeformURL, secondDateTimeSlotString4, "webinar", supplier);
+}
+function openTypeForm9() {
+  typeformPopup(typeformURL, thirdDateTimeSlotString1, "webinar", supplier);
+}
+function openTypeForm10() {
+  typeformPopup(typeformURL, thirdDateTimeSlotString2, "webinar", supplier);
+}
+function openTypeForm11() {
+  typeformPopup(typeformURL, thirdDateTimeSlotString3, "webinar", supplier);
+}
+function openTypeForm12() {
+  typeformPopup(typeformURL, thirdDateTimeSlotString4, "webinar", supplier);
+}
+function openTypeForm13() {
+  typeformPopup(typeformURL, fourthDateTimeSlotString1, "webinar", supplier);
+}
+function openTypeForm14() {
+  typeformPopup(typeformURL, fourthDateTimeSlotString2, "webinar", supplier);
+}
+function openTypeForm15() {
+  typeformPopup(typeformURL, fourthDateTimeSlotString3, "webinar", supplier);
+}
+function openTypeForm16() {
+  typeformPopup(typeformURL, fourthDateTimeSlotString4, "webinar", supplier);
+}
+function openTypeForm17() {
+  typeformPopup(typeformURL, fifthDateTimeSlotString1, "webinar", supplier);
+}
+function openTypeForm18() {
+  typeformPopup(typeformURL, fifthDateTimeSlotString2, "webinar", supplier);
+}
+function openTypeForm19() {
+  typeformPopup(typeformURL, fifthDateTimeSlotString3, "webinar", supplier);
+}
+function openTypeForm20() {
+  typeformPopup(typeformURL, fifthDateTimeSlotString4, "webinar", supplier);
+}
+function openTypeForm21() {
+  typeformPopup(typeformURL, sixthDateTimeSlotString1, "webinar", supplier);
+}
+function openTypeForm22() {
+  typeformPopup(typeformURL, sixthDateTimeSlotString2, "webinar", supplier);
+}
+function openTypeForm23() {
+  typeformPopup(typeformURL, sixthDateTimeSlotString3, "webinar", supplier);
+}
+function openTypeForm24() {
+  typeformPopup(typeformURL, sixthDateTimeSlotString4, "webinar", supplier);
+}
+function openTypeForm25() {
+  typeformPopup(typeformURL, seventhDateTimeSlotString1, "webinar", supplier);
+}
+function openTypeForm26() {
+  typeformPopup(typeformURL, seventhDateTimeSlotString2, "webinar", supplier);
+}
+function openTypeForm27() {
+  typeformPopup(typeformURL, seventhDateTimeSlotString3, "webinar", supplier);
+}
+function openTypeForm28() {
+  typeformPopup(typeformURL, seventhDateTimeSlotString4, "webinar", supplier);
+}
+function openTypeForm29() {
+  typeformPopup(typeformURL, eighthDateTimeSlotString1, "webinar", supplier);
+}
+function openTypeForm30() {
+  typeformPopup(typeformURL, eighthDateTimeSlotString2, "webinar", supplier);
+}
+function openTypeForm31() {
+  typeformPopup(typeformURL, eighthDateTimeSlotString3, "webinar", supplier);
+}
+function openTypeForm32() {
+  typeformPopup(typeformURL, eighthDateTimeSlotString4, "webinar", supplier);
+}
+function openTypeForm33() {
+  typeformPopup(typeformURL, ninthDateTimeSlotString1, "webinar", supplier);
+}
+function openTypeForm34() {
+  typeformPopup(typeformURL, ninthDateTimeSlotString2, "webinar", supplier);
+}
+function openTypeForm35() {
+  typeformPopup(typeformURL, ninthDateTimeSlotString3, "webinar", supplier);
+}
+function openTypeForm36() {
+  typeformPopup(typeformURL, ninthDateTimeSlotString4, "webinar", supplier);
+}
+function openTypeForm37() {
+  typeformPopup(typeformURL, tenthDateTimeSlotString1, "webinar", supplier);
+}
+function openTypeForm38() {
+  typeformPopup(typeformURL, tenthDateTimeSlotString2, "webinar", supplier);
+}
+function openTypeForm39() {
+  typeformPopup(typeformURL, tenthDateTimeSlotString3, "webinar", supplier);
+}
+function openTypeForm40() {
+  typeformPopup(typeformURL, tenthDateTimeSlotString4, "webinar", supplier);
+}
