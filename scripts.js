@@ -623,3 +623,5 @@ function trainingTabInfo() {
   function openTypeForm40() {
     typeformPopup(typeformURL, tenthDateTimeSlotString4, "webinar", supplier);
   }
+
+  document.getElementById("signUpLink").innerHTML = `<a href="https://dme.parachutehealth.com/organic_sign_up?supplier_id=${supplier_id}" style="color:#520079;font-weight:400;">signing up here</a>!`
