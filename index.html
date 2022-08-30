@@ -1,258 +1,260 @@
-<div class="mobile_menu">
-  <select id="mobileMenu" onchange="mobileSelect()">
-    <option value="overview">Overview</option>
-    <!--<option value="signup">Sign Up</option>!-->
-    <option value="training">Training</option>
-    <option value="faqs">FAQs</option>
-    <!--<option value="requestmoreinfo">Request More Info</option>!-->
-  </select>
-</div>
-<div class="tabs">
-  <input name="tabs" type="radio" id="overview" checked="checked" class="input" />
-  <label for="overview" class="tab-label">Overview</label>
-  <div class="panel">
-    <!--<h3>Overview</h3>!-->
-    <p>
-      Parachute Health is the fastest, most reliable way to order medical equipment & supplies for patients
-      online. The online ordering platform gives you visibility into order status and real-time messaging in
-      the platform to get your product questions answered directly from <span name="supplier-name"></span>.
-    </p>
-    <ol>
-      <li><strong>Clean Documentation</strong> - No more faxing! Online orders are qualified upfront - end the
-        back and forth via fax - break the fax confusion cycle! Parachute Health auto-generates the
-        documentation to CMS guidelines.</li>
-      <li><strong>Real-Time Communication</strong> - Chat digitally with
-        <span name="supplier-name"></span> instead of calling, emailing,
-        or faxing.
-      </li>
-      <li><strong>Visibility</strong> - Track your order throughout process, from
-        <span name="supplier-name"></span>’s warehouse directly into your
-        patients’ hands.
-      </li>
-      <li><strong>Easy to Get Signatures</strong> - MDs, NPs, and PAs sign scripts on-screen, via SMS or via
-        email that are auto-generated from the Parachute Health platform.</li>
-    </ol>
-    <p>
-      Get started right away by
-      <script>
-        document.write(`<a href="https://dme.parachutehealth.com/organic_sign_up?supplier_id=${supplier_id}" style="color:#520079;font-weight:400;">signing up here</a>!`);
-      </script>
-    </p>
-    <p>
-      If you'd like more information, please reach out to your supplier sales representative or contact <a
-        href="https://www.parachutehealth.com/contact-us" style="color:#520079;font-weight:400;">Parachute
-        Health here</a>.
-    </p>
-    <p>
-      Want to see Parachute Health in action? Sign up for one of our webinars on the <span onclick="trainingChecked()"
-        style="color:#5c257e;font-weight:500;cursor:pointer;">Training</span>
-      tab.
-    </p>
-
-    <div style="height:30px;"></div>
-    <div class="form-button-div">
-
-      <div style="margin:auto;"></div>
-
-      <div style="margin:auto;"></div>
-
-    </div>
+<div id="sicContent" onload="trainingTabInfo()">
+  <div class="mobile_menu">
+    <select id="mobileMenu" onchange="mobileSelect()">
+      <option value="overview">Overview</option>
+      <!--<option value="signup">Sign Up</option>!-->
+      <option value="training">Training</option>
+      <option value="faqs">FAQs</option>
+      <!--<option value="requestmoreinfo">Request More Info</option>!-->
+    </select>
   </div>
+  <div class="tabs">
+    <input name="tabs" type="radio" id="overview" checked="checked" class="input" />
+    <label for="overview" class="tab-label">Overview</label>
+    <div class="panel">
+      <!--<h3>Overview</h3>!-->
+      <p>
+        Parachute Health is the fastest, most reliable way to order medical equipment & supplies for patients
+        online. The online ordering platform gives you visibility into order status and real-time messaging in
+        the platform to get your product questions answered directly from <span name="supplier-name"></span>.
+      </p>
+      <ol>
+        <li><strong>Clean Documentation</strong> - No more faxing! Online orders are qualified upfront - end the
+          back and forth via fax - break the fax confusion cycle! Parachute Health auto-generates the
+          documentation to CMS guidelines.</li>
+        <li><strong>Real-Time Communication</strong> - Chat digitally with
+          <span name="supplier-name"></span> instead of calling, emailing,
+          or faxing.
+        </li>
+        <li><strong>Visibility</strong> - Track your order throughout process, from
+          <span name="supplier-name"></span>’s warehouse directly into your
+          patients’ hands.
+        </li>
+        <li><strong>Easy to Get Signatures</strong> - MDs, NPs, and PAs sign scripts on-screen, via SMS or via
+          email that are auto-generated from the Parachute Health platform.</li>
+      </ol>
+      <p>
+        Get started right away by
+        <script>
+          document.write(`<a href="https://dme.parachutehealth.com/organic_sign_up?supplier_id=${supplier_id}" style="color:#520079;font-weight:400;">signing up here</a>!`);
+        </script>
+      </p>
+      <p>
+        If you'd like more information, please reach out to your supplier sales representative or contact <a
+          href="https://www.parachutehealth.com/contact-us" style="color:#520079;font-weight:400;">Parachute
+          Health here</a>.
+      </p>
+      <p>
+        Want to see Parachute Health in action? Sign up for one of our webinars on the <span onclick="trainingChecked()"
+          style="color:#5c257e;font-weight:500;cursor:pointer;">Training</span>
+        tab.
+      </p>
 
-  <!-- THIS IS WHERE THE SIGNUP SECTION WAS !-->
+      <div style="height:30px;"></div>
+      <div class="form-button-div">
 
-  <input name="tabs" type="radio" id="training" class="input" />
-  <label for="training" class="tab-label">Training</label>
-  <div class="panel">
-    <p>
-      Parachute Health offers weekly webinars to assist with setup and training on the platform. Select a time
-      slot below, and they will reach out with more information!
-    </p>
-    <p>
-      <strong>Click on any of the dates below</strong> to register for an online training session. Contact
-      your sales representative if you have any questions!
-    </p>
+        <div style="margin:auto;"></div>
 
-    <p>
-    <h3><strong>All available times are Eastern Standard Time (EST).</strong></h3> Training sessions are all 30
-    minutes long.
-    </p>
+        <div style="margin:auto;"></div>
 
-    <div class="webinar-div-container" style="display:unset !important;">
-      <div class="webinar-div-2">
-
-        <h4 id="firstDate"></h4>
-        <span id="firstDateTimeSlot1" class="webinar_links" onclick="openTypeForm1()"></span>
-        <span id="firstDateTimeSlot2" class="webinar_links" onclick="openTypeForm2()"></span>
-        <span id="firstDateTimeSlot3" class="webinar_links" onclick="openTypeForm3()"></span>
-        <span id="firstDateTimeSlot4" class="webinar_links" onclick="openTypeForm4()"></span>
-
-        <h4 id="secondDate"></h4>
-
-        <span id="secondDateTimeSlot1" class="webinar_links" onclick="openTypeForm5()"></span>
-        <span id="secondDateTimeSlot2" class="webinar_links" onclick="openTypeForm6()"></span>
-        <span id="secondDateTimeSlot3" class="webinar_links" onclick="openTypeForm7()"></span>
-        <span id="secondDateTimeSlot4" class="webinar_links" onclick="openTypeForm8()"></span>
-
-        <h4 id="thirdDate"></h4>
-        
-        <span id="thirdDateTimeSlot1" class="webinar_links" onclick="openTypeForm9()"></span>
-        <span id="thirdDateTimeSlot2" class="webinar_links" onclick="openTypeForm10()"></span>
-        <span id="thirdDateTimeSlot3" class="webinar_links" onclick="openTypeForm11()"></span>
-        <span id="thirdDateTimeSlot4" class="webinar_links" onclick="openTypeForm12()"></span>
-
-        <h4 id="fourthDate"></h4>
-
-        <span id="fourthDateTimeSlot1" class="webinar_links" onclick="openTypeForm13()"></span>
-        <span id="fourthDateTimeSlot2" class="webinar_links" onclick="openTypeForm14()"></span>
-        <span id="fourthDateTimeSlot3" class="webinar_links" onclick="openTypeForm15()"></span>
-        <span id="fourthDateTimeSlot4" class="webinar_links" onclick="openTypeForm16()"></span>
-
-        <h4 id="fifthDate"></h4>
-
-        <span id="fifthDateTimeSlot1" class="webinar_links" onclick="openTypeForm17()"></span>
-        <span id="fifthDateTimeSlot2" class="webinar_links" onclick="openTypeForm18()"></span>
-        <span id="fifthDateTimeSlot3" class="webinar_links" onclick="openTypeForm19()"></span>
-        <span id="fifthDateTimeSlot4" class="webinar_links" onclick="openTypeForm20()"></span>
-
-        <h4 id="sixthDate"></h4>
-
-        <span id="sixthDateTimeSlot1" class="webinar_links" onclick="openTypeForm21()"></span>
-        <span id="sixthDateTimeSlot2" class="webinar_links" onclick="openTypeForm22()"></span>
-        <span id="sixthDateTimeSlot3" class="webinar_links" onclick="openTypeForm23()"></span>
-        <span id="sixthDateTimeSlot4" class="webinar_links" onclick="openTypeForm24()"></span>
-
-        <h4 id="seventhDate"></h4>
-
-        <span id="seventhDateTimeSlot1" class="webinar_links" onclick="openTypeForm25()"></span>
-        <span id="seventhDateTimeSlot2" class="webinar_links" onclick="openTypeForm26()"></span>
-        <span id="seventhDateTimeSlot3" class="webinar_links" onclick="openTypeForm27()"></span>
-        <span id="seventhDateTimeSlot4" class="webinar_links" onclick="openTypeForm28()"></span>
-
-        <h4 id="eighthDate"></h4>
-
-        <span id="eighthDateTimeSlot1" class="webinar_links" onclick="openTypeForm29()"></span>
-        <span id="eighthDateTimeSlot2" class="webinar_links" onclick="openTypeForm30()"></span>
-        <span id="eighthDateTimeSlot3" class="webinar_links" onclick="openTypeForm31()"></span>
-        <span id="eighthDateTimeSlot4" class="webinar_links" onclick="openTypeForm32()"></span>
-
-        <h4 id="ninthDate"></h4>
-
-        <span id="ninthDateTimeSlot1" class="webinar_links" onclick="openTypeForm33()"></span>
-        <span id="ninthDateTimeSlot2" class="webinar_links" onclick="openTypeForm34()"></span>
-        <span id="ninthDateTimeSlot3" class="webinar_links" onclick="openTypeForm35()"></span>
-        <span id="ninthDateTimeSlot4" class="webinar_links" onclick="openTypeForm36()"></span>
-
-        <h4 id="tenthDate"></h4>
-
-        <span id="tenthDateTimeSlot1" class="webinar_links" onclick="openTypeForm37()"></span>
-        <span id="tenthDateTimeSlot2" class="webinar_links" onclick="openTypeForm38()"></span>
-        <span id="tenthDateTimeSlot3" class="webinar_links" onclick="openTypeForm39()"></span>
-        <span id="tenthDateTimeSlot4" class="webinar_links" onclick="openTypeForm40()"></span>
-        
       </div>
     </div>
+
+    <!-- THIS IS WHERE THE SIGNUP SECTION WAS !-->
+
+    <input name="tabs" type="radio" id="training" class="input" />
+    <label for="training" class="tab-label">Training</label>
+    <div class="panel">
+      <p>
+        Parachute Health offers weekly webinars to assist with setup and training on the platform. Select a time
+        slot below, and they will reach out with more information!
+      </p>
+      <p>
+        <strong>Click on any of the dates below</strong> to register for an online training session. Contact
+        your sales representative if you have any questions!
+      </p>
+
+      <p>
+      <h3><strong>All available times are Eastern Standard Time (EST).</strong></h3> Training sessions are all 30
+      minutes long.
+      </p>
+
+      <div class="webinar-div-container" style="display:unset !important;">
+        <div class="webinar-div-2">
+
+          <h4 id="firstDate"></h4>
+          <span id="firstDateTimeSlot1" class="webinar_links" onclick="openTypeForm1()"></span>
+          <span id="firstDateTimeSlot2" class="webinar_links" onclick="openTypeForm2()"></span>
+          <span id="firstDateTimeSlot3" class="webinar_links" onclick="openTypeForm3()"></span>
+          <span id="firstDateTimeSlot4" class="webinar_links" onclick="openTypeForm4()"></span>
+
+          <h4 id="secondDate"></h4>
+
+          <span id="secondDateTimeSlot1" class="webinar_links" onclick="openTypeForm5()"></span>
+          <span id="secondDateTimeSlot2" class="webinar_links" onclick="openTypeForm6()"></span>
+          <span id="secondDateTimeSlot3" class="webinar_links" onclick="openTypeForm7()"></span>
+          <span id="secondDateTimeSlot4" class="webinar_links" onclick="openTypeForm8()"></span>
+
+          <h4 id="thirdDate"></h4>
+
+          <span id="thirdDateTimeSlot1" class="webinar_links" onclick="openTypeForm9()"></span>
+          <span id="thirdDateTimeSlot2" class="webinar_links" onclick="openTypeForm10()"></span>
+          <span id="thirdDateTimeSlot3" class="webinar_links" onclick="openTypeForm11()"></span>
+          <span id="thirdDateTimeSlot4" class="webinar_links" onclick="openTypeForm12()"></span>
+
+          <h4 id="fourthDate"></h4>
+
+          <span id="fourthDateTimeSlot1" class="webinar_links" onclick="openTypeForm13()"></span>
+          <span id="fourthDateTimeSlot2" class="webinar_links" onclick="openTypeForm14()"></span>
+          <span id="fourthDateTimeSlot3" class="webinar_links" onclick="openTypeForm15()"></span>
+          <span id="fourthDateTimeSlot4" class="webinar_links" onclick="openTypeForm16()"></span>
+
+          <h4 id="fifthDate"></h4>
+
+          <span id="fifthDateTimeSlot1" class="webinar_links" onclick="openTypeForm17()"></span>
+          <span id="fifthDateTimeSlot2" class="webinar_links" onclick="openTypeForm18()"></span>
+          <span id="fifthDateTimeSlot3" class="webinar_links" onclick="openTypeForm19()"></span>
+          <span id="fifthDateTimeSlot4" class="webinar_links" onclick="openTypeForm20()"></span>
+
+          <h4 id="sixthDate"></h4>
+
+          <span id="sixthDateTimeSlot1" class="webinar_links" onclick="openTypeForm21()"></span>
+          <span id="sixthDateTimeSlot2" class="webinar_links" onclick="openTypeForm22()"></span>
+          <span id="sixthDateTimeSlot3" class="webinar_links" onclick="openTypeForm23()"></span>
+          <span id="sixthDateTimeSlot4" class="webinar_links" onclick="openTypeForm24()"></span>
+
+          <h4 id="seventhDate"></h4>
+
+          <span id="seventhDateTimeSlot1" class="webinar_links" onclick="openTypeForm25()"></span>
+          <span id="seventhDateTimeSlot2" class="webinar_links" onclick="openTypeForm26()"></span>
+          <span id="seventhDateTimeSlot3" class="webinar_links" onclick="openTypeForm27()"></span>
+          <span id="seventhDateTimeSlot4" class="webinar_links" onclick="openTypeForm28()"></span>
+
+          <h4 id="eighthDate"></h4>
+
+          <span id="eighthDateTimeSlot1" class="webinar_links" onclick="openTypeForm29()"></span>
+          <span id="eighthDateTimeSlot2" class="webinar_links" onclick="openTypeForm30()"></span>
+          <span id="eighthDateTimeSlot3" class="webinar_links" onclick="openTypeForm31()"></span>
+          <span id="eighthDateTimeSlot4" class="webinar_links" onclick="openTypeForm32()"></span>
+
+          <h4 id="ninthDate"></h4>
+
+          <span id="ninthDateTimeSlot1" class="webinar_links" onclick="openTypeForm33()"></span>
+          <span id="ninthDateTimeSlot2" class="webinar_links" onclick="openTypeForm34()"></span>
+          <span id="ninthDateTimeSlot3" class="webinar_links" onclick="openTypeForm35()"></span>
+          <span id="ninthDateTimeSlot4" class="webinar_links" onclick="openTypeForm36()"></span>
+
+          <h4 id="tenthDate"></h4>
+
+          <span id="tenthDateTimeSlot1" class="webinar_links" onclick="openTypeForm37()"></span>
+          <span id="tenthDateTimeSlot2" class="webinar_links" onclick="openTypeForm38()"></span>
+          <span id="tenthDateTimeSlot3" class="webinar_links" onclick="openTypeForm39()"></span>
+          <span id="tenthDateTimeSlot4" class="webinar_links" onclick="openTypeForm40()"></span>
+
+        </div>
+      </div>
 
       <a class="typeform-share link" href="https://parachutehealthdme.typeform.com/to/p6pOtz?request_type=demo video"
         data-mode="popup" style="color:#5c257e;text-decoration:none;font-size:16x;font-weight:500;"
         data-hide-headers="true" data-hide-footer="true" data-submit-close-delay="2" target="_blank">Click here</a>
       <script> (function () { var qs, js, q, s, d = document, gi = d.getElementById, ce = d.createElement, gt = d.getElementsByTagName, id = "typef_orm_share", b = "https://embed.typeform.com/"; if (!gi.call(d, id)) { js = ce.call(d, "script"); js.id = id; js.src = b + "embed.js"; q = gt.call(d, "script")[0]; q.parentNode.insertBefore(js, q) } })() </script>
       to request a demo video of how Parachute Health works.
-    </p>
-    <p>
-      We look forward to seeing you!
-    </p>
+      </p>
+      <p>
+        We look forward to seeing you!
+      </p>
+    </div>
+
+    <input name="tabs" type="radio" id="faqs" class="input" />
+    <label for="faqs" class="tab-label">FAQs</label>
+    <div class="panel">
+      <h3>
+        How much does using Parachute cost me?
+      </h3>
+      <p>
+        Parachute is free for facilities to use.
+      </p>
+      <h3>
+        Do I still need scripts and therapy notes?
+      </h3>
+      <p>
+        Nope! When placing an order with Parachute, users answer a few insurance qualifying questions directly
+        on the platform that replace the need for all physical documentation.
+      </p>
+      <p>
+        Specifically, by selecting the product you want and answering a few basic questions about why your
+        patient needs that product, Parachute will generate the WOPD (sometimes called the script), the
+        face-to-face, and in the case of Medicare/Medicaid patients, the CMN that the MD/PA/NP will ultimately
+        sign off on.
+      </p>
+      <h3>
+        Is this HIPAA compliant?
+      </h3>
+      <p>
+        Yes - Parachute Health is compliant with HIPAA guidelines, and completes a HIPAA compliance audit each
+        year to ensure the safety of your patient data.
+      </p>
+      <h3>
+        Can multiple people in my facility use Parachute?
+      </h3>
+      <p>
+        Yes. A facility can have as many users as they’d like. There are two types of users: “Admin” users and
+        “Standard” users. Admin users can place DME orders as well as add/remove other users, while Standard
+        users only have the ability to place orders. An Admin user must be director level or above (i.e.
+        Director of Social Services)
+      </p>
+      <h3>
+        Can orders be signed digitally?
+      </h3>
+      <p>
+        Yes. Clinicians have the ability to sign orders via text message and via email, neither of which
+        requires them to create a Parachute account.
+      </p>
+      <p>
+        When signing by text message or email for the first time, the MD/NP/PA will receive a link that will ask
+        them to confirm that their identity and NPI number. Thereafter, each time the clinician receives an
+        order, he/she will be sent a link taking them directly to Parachute’s HIPAA compliant website, where
+        they can then approve orders with a single click. Signing digitally ensures the entire DME ordering
+        process is paperless.
+      </p>
+      <h3>
+        What if my MD/NP/PA refuses to sign up for e-signing?
+      </h3>
+      <p>
+        Parachute gives you the option to print out an order, have the prescriber sign the order, and then
+        upload that signed order back into Parachute Health.Just click on “Print and Upload” in the “Signature”
+        tab and follow the prompts.
+      </p>
+      <p>
+        Parachute also gives you the option to fax the script to your provider, but on average we have found
+        that it takes doctors 4.92 days to sign faxed orders, whereas orders sent by other methods are typically
+        signed within the same day.
+      </p>
+      <h3>
+        Can I submit one order for multiple pieces of DME?
+      </h3>
+      <p>
+        Yes - you are free to include as many items as you want in the same order for the same patient.
+      </p>
+      <h3>
+        Can my facility use one login for all of our users?
+      </h3>
+      <p>
+        For HIPAA compliance reasons, just like every faxed order has a name attached to it, we must know which
+        individual placed the order, and thus facilities cannot use a generic email address to place orders.
+      </p>
+      <h3>
+        Does Parachute cover all insurances?
+      </h3>
+      <p>
+        Parachute is an ordering platform: not a supplier; we make it easier for you to connect with your
+        supplier(s). When ordering with Parachute, you can use whatever insurance(s) are accepted by the
+        supplier from whom you are ordering.
+      </p>
+
+    </div>
+
+    <!-- THIS IS WHERE THE REQUEST MORE INFO SECTION WAS !-->
+
   </div>
-
-  <input name="tabs" type="radio" id="faqs" class="input" />
-  <label for="faqs" class="tab-label">FAQs</label>
-  <div class="panel">
-    <h3>
-      How much does using Parachute cost me?
-    </h3>
-    <p>
-      Parachute is free for facilities to use.
-    </p>
-    <h3>
-      Do I still need scripts and therapy notes?
-    </h3>
-    <p>
-      Nope! When placing an order with Parachute, users answer a few insurance qualifying questions directly
-      on the platform that replace the need for all physical documentation.
-    </p>
-    <p>
-      Specifically, by selecting the product you want and answering a few basic questions about why your
-      patient needs that product, Parachute will generate the WOPD (sometimes called the script), the
-      face-to-face, and in the case of Medicare/Medicaid patients, the CMN that the MD/PA/NP will ultimately
-      sign off on.
-    </p>
-    <h3>
-      Is this HIPAA compliant?
-    </h3>
-    <p>
-      Yes - Parachute Health is compliant with HIPAA guidelines, and completes a HIPAA compliance audit each
-      year to ensure the safety of your patient data.
-    </p>
-    <h3>
-      Can multiple people in my facility use Parachute?
-    </h3>
-    <p>
-      Yes. A facility can have as many users as they’d like. There are two types of users: “Admin” users and
-      “Standard” users. Admin users can place DME orders as well as add/remove other users, while Standard
-      users only have the ability to place orders. An Admin user must be director level or above (i.e.
-      Director of Social Services)
-    </p>
-    <h3>
-      Can orders be signed digitally?
-    </h3>
-    <p>
-      Yes. Clinicians have the ability to sign orders via text message and via email, neither of which
-      requires them to create a Parachute account.
-    </p>
-    <p>
-      When signing by text message or email for the first time, the MD/NP/PA will receive a link that will ask
-      them to confirm that their identity and NPI number. Thereafter, each time the clinician receives an
-      order, he/she will be sent a link taking them directly to Parachute’s HIPAA compliant website, where
-      they can then approve orders with a single click. Signing digitally ensures the entire DME ordering
-      process is paperless.
-    </p>
-    <h3>
-      What if my MD/NP/PA refuses to sign up for e-signing?
-    </h3>
-    <p>
-      Parachute gives you the option to print out an order, have the prescriber sign the order, and then
-      upload that signed order back into Parachute Health.Just click on “Print and Upload” in the “Signature”
-      tab and follow the prompts.
-    </p>
-    <p>
-      Parachute also gives you the option to fax the script to your provider, but on average we have found
-      that it takes doctors 4.92 days to sign faxed orders, whereas orders sent by other methods are typically
-      signed within the same day.
-    </p>
-    <h3>
-      Can I submit one order for multiple pieces of DME?
-    </h3>
-    <p>
-      Yes - you are free to include as many items as you want in the same order for the same patient.
-    </p>
-    <h3>
-      Can my facility use one login for all of our users?
-    </h3>
-    <p>
-      For HIPAA compliance reasons, just like every faxed order has a name attached to it, we must know which
-      individual placed the order, and thus facilities cannot use a generic email address to place orders.
-    </p>
-    <h3>
-      Does Parachute cover all insurances?
-    </h3>
-    <p>
-      Parachute is an ordering platform: not a supplier; we make it easier for you to connect with your
-      supplier(s). When ordering with Parachute, you can use whatever insurance(s) are accepted by the
-      supplier from whom you are ordering.
-    </p>
-
-  </div>
-
-  <!-- THIS IS WHERE THE REQUEST MORE INFO SECTION WAS !-->
-
 </div>
