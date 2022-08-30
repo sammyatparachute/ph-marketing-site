@@ -23,7 +23,3 @@ timeSlot5 = "2:00pm";
 timeSlot6 = "2:30pm";
 timeSlot7 = "3:00pm";
 timeSlot8 = "3:30pm";
-
-function setSupplierName() {
-  document.getElementById("supplier-name").textContent = supplier_name;
-}

@@ -15,18 +15,18 @@
     <p>
       Parachute Health is the fastest, most reliable way to order medical equipment & supplies for patients
       online. The online ordering platform gives you visibility into order status and real-time messaging in
-      the platform to get your product questions answered directly from <span id="supplier-name"></span>.
+      the platform to get your product questions answered directly from <span name="supplier-name"></span>.
     </p>
     <ol>
       <li><strong>Clean Documentation</strong> - No more faxing! Online orders are qualified upfront - end the
         back and forth via fax - break the fax confusion cycle! Parachute Health auto-generates the
         documentation to CMS guidelines.</li>
       <li><strong>Real-Time Communication</strong> - Chat digitally with
-        <script type="text/javascript">document.write(supplier_name)</script> instead of calling, emailing,
+        <span name="supplier-name"></span> instead of calling, emailing,
         or faxing.
       </li>
       <li><strong>Visibility</strong> - Track your order throughout process, from
-        <script type="text/javascript">document.write(supplier_name)</script>’s warehouse directly into your
+        <span name="supplier-name"></span>’s warehouse directly into your
         patients’ hands.
       </li>
       <li><strong>Easy to Get Signatures</strong> - MDs, NPs, and PAs sign scripts on-screen, via SMS or via
@@ -92,7 +92,7 @@
           else {
             firstDate = new Date(new Date().setDate(new Date().getDate() + 1));
           }
-          document.getElementById("firstDate").innerHTML = firstDate.toString().substring(0, 15);
+          document.getElementById("firstDate").textContent = firstDate.toString().substring(0, 15);
         </script>
         <span id="firstDateTimeSlot1" class="webinar_links" onclick="openTypeForm1()"></span>
         <span id="firstDateTimeSlot2" class="webinar_links" onclick="openTypeForm2()"></span>
@@ -106,7 +106,7 @@
             document.getElementById("firstDateTimeSlot4").innerHTML = timeSlot8;
           }
           else {
-            document.getElementById("firstDateTimeSlot1").innerHTML = timeSlot1;
+            document.getElementById("firstDateTimeSlot1").textContent = timeSlot1;
             document.getElementById("firstDateTimeSlot2").innerHTML = timeSlot2;
             document.getElementById("firstDateTimeSlot3").innerHTML = timeSlot5;
             document.getElementById("firstDateTimeSlot4").innerHTML = timeSlot6;
