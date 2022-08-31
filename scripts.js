@@ -20,6 +20,7 @@ function requestmoreinfoChecked() {
   document.getElementById("requestmoreinfo").checked = true;
 }
 
+// Generate Typeform link
 function typeformPopup(typeformURL, webinarSlot, request_type, supplier) {
   var reference = typeformEmbed.makePopup(
     typeformURL +
@@ -46,6 +47,8 @@ timeSlot6 = "2:30pm";
 timeSlot7 = "3:00pm";
 timeSlot8 = "3:30pm";
 
+
+// Populate Calendar Options for Training Tab
 function trainingTabInfo() {
   if (
     new Date(new Date().setDate(new Date().getDate() + 1))
@@ -525,6 +528,7 @@ function trainingTabInfo() {
   })();
 }
 
+// Popup Typeform with Populated URL Parameters
 function openTypeForm1() {
   typeformPopup(typeformURL, firstDateTimeSlotString1, "webinar", supplier);
 }
