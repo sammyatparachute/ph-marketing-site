@@ -1,3 +1,4 @@
+// MOBILE NAVIGATION
 function mobileSelect() {
   var x = document.getElementById("mobileMenu").value;
   document.getElementById(x).checked = true;
