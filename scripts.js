@@ -563,122 +563,122 @@ setTimeout(() => {
 
 // Popup Typeform with Populated URL Parameters
 function openTypeForm1() {
-  typeformPopup(typeformURL, firstDateTimeSlotString1, "webinar", supplier);
+  typeformPopup(typeformURL, firstDateTimeSlotString1, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm2() {
-  typeformPopup(typeformURL, firstDateTimeSlotString2, "webinar", supplier);
+  typeformPopup(typeformURL, firstDateTimeSlotString2, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm3() {
-  typeformPopup(typeformURL, firstDateTimeSlotString3, "webinar", supplier);
+  typeformPopup(typeformURL, firstDateTimeSlotString3, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm4() {
-  typeformPopup(typeformURL, firstDateTimeSlotString4, "webinar", supplier);
+  typeformPopup(typeformURL, firstDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm5() {
-  typeformPopup(typeformURL, secondDateTimeSlotString1, "webinar", supplier);
+  typeformPopup(typeformURL, secondDateTimeSlotString1, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm6() {
-  typeformPopup(typeformURL, secondDateTimeSlotString2, "webinar", supplier);
+  typeformPopup(typeformURL, secondDateTimeSlotString2, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm7() {
-  typeformPopup(typeformURL, secondDateTimeSlotString3, "webinar", supplier);
+  typeformPopup(typeformURL, secondDateTimeSlotString3, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm8() {
-  typeformPopup(typeformURL, secondDateTimeSlotString4, "webinar", supplier);
+  typeformPopup(typeformURL, secondDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm9() {
-  typeformPopup(typeformURL, thirdDateTimeSlotString1, "webinar", supplier);
+  typeformPopup(typeformURL, thirdDateTimeSlotString1, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm10() {
-  typeformPopup(typeformURL, thirdDateTimeSlotString2, "webinar", supplier);
+  typeformPopup(typeformURL, thirdDateTimeSlotString2, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm11() {
-  typeformPopup(typeformURL, thirdDateTimeSlotString3, "webinar", supplier);
+  typeformPopup(typeformURL, thirdDateTimeSlotString3, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm12() {
-  typeformPopup(typeformURL, thirdDateTimeSlotString4, "webinar", supplier);
+  typeformPopup(typeformURL, thirdDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm13() {
-  typeformPopup(typeformURL, fourthDateTimeSlotString1, "webinar", supplier);
+  typeformPopup(typeformURL, fourthDateTimeSlotString1, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm14() {
-  typeformPopup(typeformURL, fourthDateTimeSlotString2, "webinar", supplier);
+  typeformPopup(typeformURL, fourthDateTimeSlotString2, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm15() {
-  typeformPopup(typeformURL, fourthDateTimeSlotString3, "webinar", supplier);
+  typeformPopup(typeformURL, fourthDateTimeSlotString3, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm16() {
-  typeformPopup(typeformURL, fourthDateTimeSlotString4, "webinar", supplier);
+  typeformPopup(typeformURL, fourthDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm17() {
-  typeformPopup(typeformURL, fifthDateTimeSlotString1, "webinar", supplier);
+  typeformPopup(typeformURL, fifthDateTimeSlotString1, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm18() {
-  typeformPopup(typeformURL, fifthDateTimeSlotString2, "webinar", supplier);
+  typeformPopup(typeformURL, fifthDateTimeSlotString2, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm19() {
-  typeformPopup(typeformURL, fifthDateTimeSlotString3, "webinar", supplier);
+  typeformPopup(typeformURL, fifthDateTimeSlotString3, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm20() {
-  typeformPopup(typeformURL, fifthDateTimeSlotString4, "webinar", supplier);
+  typeformPopup(typeformURL, fifthDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm21() {
-  typeformPopup(typeformURL, sixthDateTimeSlotString1, "webinar", supplier);
+  typeformPopup(typeformURL, sixthDateTimeSlotString1, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm22() {
-  typeformPopup(typeformURL, sixthDateTimeSlotString2, "webinar", supplier);
+  typeformPopup(typeformURL, sixthDateTimeSlotString2, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm23() {
-  typeformPopup(typeformURL, sixthDateTimeSlotString3, "webinar", supplier);
+  typeformPopup(typeformURL, sixthDateTimeSlotString3, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm24() {
-  typeformPopup(typeformURL, sixthDateTimeSlotString4, "webinar", supplier);
+  typeformPopup(typeformURL, sixthDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm25() {
-  typeformPopup(typeformURL, seventhDateTimeSlotString1, "webinar", supplier);
+  typeformPopup(typeformURL, seventhDateTimeSlotString1, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm26() {
-  typeformPopup(typeformURL, seventhDateTimeSlotString2, "webinar", supplier);
+  typeformPopup(typeformURL, seventhDateTimeSlotString2, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm27() {
-  typeformPopup(typeformURL, seventhDateTimeSlotString3, "webinar", supplier);
+  typeformPopup(typeformURL, seventhDateTimeSlotString3, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm28() {
-  typeformPopup(typeformURL, seventhDateTimeSlotString4, "webinar", supplier);
+  typeformPopup(typeformURL, seventhDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm29() {
-  typeformPopup(typeformURL, eighthDateTimeSlotString1, "webinar", supplier);
+  typeformPopup(typeformURL, eighthDateTimeSlotString1, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm30() {
-  typeformPopup(typeformURL, eighthDateTimeSlotString2, "webinar", supplier);
+  typeformPopup(typeformURL, eighthDateTimeSlotString2, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm31() {
-  typeformPopup(typeformURL, eighthDateTimeSlotString3, "webinar", supplier);
+  typeformPopup(typeformURL, eighthDateTimeSlotString3, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm32() {
-  typeformPopup(typeformURL, eighthDateTimeSlotString4, "webinar", supplier);
+  typeformPopup(typeformURL, eighthDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm33() {
-  typeformPopup(typeformURL, ninthDateTimeSlotString1, "webinar", supplier);
+  typeformPopup(typeformURL, ninthDateTimeSlotString1, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm34() {
-  typeformPopup(typeformURL, ninthDateTimeSlotString2, "webinar", supplier);
+  typeformPopup(typeformURL, ninthDateTimeSlotString2, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm35() {
-  typeformPopup(typeformURL, ninthDateTimeSlotString3, "webinar", supplier);
+  typeformPopup(typeformURL, ninthDateTimeSlotString3, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm36() {
-  typeformPopup(typeformURL, ninthDateTimeSlotString4, "webinar", supplier);
+  typeformPopup(typeformURL, ninthDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm37() {
-  typeformPopup(typeformURL, tenthDateTimeSlotString1, "webinar", supplier);
+  typeformPopup(typeformURL, tenthDateTimeSlotString1, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm38() {
-  typeformPopup(typeformURL, tenthDateTimeSlotString2, "webinar", supplier);
+  typeformPopup(typeformURL, tenthDateTimeSlotString2, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm39() {
-  typeformPopup(typeformURL, tenthDateTimeSlotString3, "webinar", supplier);
+  typeformPopup(typeformURL, tenthDateTimeSlotString3, "webinar", supplier_id, supplier_name);
 }
 function openTypeForm40() {
-  typeformPopup(typeformURL, tenthDateTimeSlotString4, "webinar", supplier);
+  typeformPopup(typeformURL, tenthDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
