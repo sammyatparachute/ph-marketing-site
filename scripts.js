@@ -26,10 +26,6 @@ fetch("https://sammyatparachute.github.io/ph-marketing-site/")
     console.warn("Something went wrong.", err);
   });
 
-setTimeout(() => {
-  trainingTabInfo();
-}, "3000");
-
 // MOBILE NAVIGATION
 function mobileSelect() {
   var x = document.getElementById("mobileMenu").value;
@@ -558,6 +554,10 @@ function trainingTabInfo() {
     }
   })();
 }
+
+setTimeout(() => {
+  trainingTabInfo();
+}, "3000");
 
 // Popup Typeform with Populated URL Parameters
 function openTypeForm1() {
