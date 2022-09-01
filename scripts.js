@@ -49,7 +49,7 @@ function requestmoreinfoChecked() {
 }
 
 // Generate Typeform link
-function typeformPopup(typeformURL, webinarSlot, request_type, supplier_id, supplier_name) {
+function typeformPopup(typeformURL, webinarSlot, request_type, supplier) {
   var reference = typeformEmbed.makePopup(
     typeformURL +
       "?" +
@@ -57,10 +57,8 @@ function typeformPopup(typeformURL, webinarSlot, request_type, supplier_id, supp
       webinarSlot +
       "&request_type=" +
       request_type +
-      "&supplier_id=" +
-      supplier_id,
-      "&supplier__name=" +
-      supplier_name,
+      "&supplier=" +
+      supplier,
     { mode: "popup", autoClose: 5, hideHeaders: true, hideFooters: true }
   );
   reference.open();
