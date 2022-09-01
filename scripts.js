@@ -1,3 +1,35 @@
+// Populate the info center tabs from remote html
+fetch("https://sammyatparachute.github.io/ph-marketing-site/")
+  .then(function (response) {
+    // The API call was successful!
+    return response.text();
+  })
+  .then(function (html) {
+    // This is the HTML from our response as a text string
+    document.getElementById("info-center-tabs").innerHTML = html;
+  })
+  .then(function () {
+    document
+      .getElementsByName("supplier-name")
+      .forEach((e) => (e.textContent = supplier_name));
+  })
+  .then(function () {
+    document
+      .getElementsByName("sign-up-link")
+      .forEach(
+        (e) =>
+          (e.outerHTML = `<a href="https://dme.parachutehealth.com/organic_sign_up?supplier_id=${supplier_id}" style="color:#520079;font-weight:400;">signing up here</a>!`)
+      );
+  })
+  .catch(function (err) {
+    // There was an error
+    console.warn("Something went wrong.", err);
+  });
+
+setTimeout(() => {
+  trainingTabInfo();
+}, "3000");
+
 // MOBILE NAVIGATION
 function mobileSelect() {
   var x = document.getElementById("mobileMenu").value;
@@ -46,7 +78,6 @@ timeSlot5 = "2:00pm";
 timeSlot6 = "2:30pm";
 timeSlot7 = "3:00pm";
 timeSlot8 = "3:30pm";
-
 
 // Populate Calendar Options for Training Tab
 function trainingTabInfo() {
