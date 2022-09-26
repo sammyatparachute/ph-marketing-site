@@ -742,8 +742,8 @@ function popSuppliers() {
   sortedSuppliers.forEach((supplier) => {
     let supplierLink = document.createElement("a");
     supplierList.append(supplierLink);
-    supplierLink.outerHTML = `<a href="${supplier.info_center_url}">
-    <div class="supplier-info-center-card">
+    supplierLink.outerHTML = `<a href="${supplier.info_center_url}" class="supplier-info-center-card">
+    <div>
         <img src="${supplier.logo}">
       <div class="supplier-name">
         <h3>
