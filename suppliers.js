@@ -1,5 +1,11 @@
 const suppliers = [
   {
+    name: "Complete Care Medical",
+    info_center_url: "/completecaremedical",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664226218088-XJJ1NEB3MICJ2RQTHW0Y/Complete+Care+Medical+-+Color.png?format=2500w",
+    service_area: [ "TX" ],
+  },
+  {
     name: "Hudson Medical Supplies",
     info_center_url: "/hudson",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664224714986-R1NK0509FM69DK0LGIKH/Hudson+Medical+Supplies+-+Color.png",
