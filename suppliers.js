@@ -1,5 +1,11 @@
 const suppliers = [
   {
+    name: "Hudson Medical Supplies",
+    info_center_url: "/hudson",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664224714986-R1NK0509FM69DK0LGIKH/Hudson+Medical+Supplies+-+Color.png",
+    service_area: [ "NY" ],
+  },
+  {
     name: "Petit Jean Medical Supply",
     info_center_url: "/pjms",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664220344279-LU6JTA9JZBTPEJ5VI3QJ/PJMS+-+Color.png",
