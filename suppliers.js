@@ -2,7 +2,7 @@ const suppliers = [
   {
     name: "Day N Night Medical Supply",
     info_center_url: "/completecaremedical",
-    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664226218088-XJJ1NEB3MICJ2RQTHW0Y/Complete+Care+Medical+-+Color.png?format=2500w",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664227542152-0TT1HMXT1HMLHRUUU84Z/Day+N+Night+Medical+Supply+-+Color.png?format=2500w",
     service_area: [ "TX" ],
     external_id: "SBE-HF-2PZ-32-76",
   },
