@@ -1,5 +1,12 @@
 const suppliers = [
   {
+    name: "Allstar Medical",
+    info_center_url: "/allstarmedical",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664228315205-J6361PQN8VOZZ0CORC3T/Allstar+Medical+-+Color.png?format=2500w",
+    service_area: [ "FL" ],
+    external_id: "RS-C3L9A-2MBI-N1",
+  },
+  {
     name: "Day N Night Medical Supply",
     info_center_url: "/daynnightmedicalsupply",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664227542152-0TT1HMXT1HMLHRUUU84Z/Day+N+Night+Medical+Supply+-+Color.png?format=2500w",
