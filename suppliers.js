@@ -774,7 +774,7 @@ function selectState(state) {
         supplierList.append(supplierLink);
         supplierLink.outerHTML = `<a href="${supplier.info_center_url}" class="supplier-info-center-card">
       <div>
-          <img src="${supplier.logo}">
+      ${supplier.logo ? `<img src="${supplier.logo}">`: ""}
         <div class="supplier-name">
           <h3>
             ${supplier.name}
