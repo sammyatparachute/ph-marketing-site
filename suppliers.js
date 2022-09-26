@@ -1,5 +1,11 @@
 const suppliers = [
   {
+    name: "Petit Jean Medical Supply",
+    info_center_url: "/pjms",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664220344279-LU6JTA9JZBTPEJ5VI3QJ/PJMS+-+Color.png",
+    service_area: [ "AR" ],
+  },
+  {
     name: "Acentus",
     info_center_url: "/acentus",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1637088983263-QNSYHKN5FHTKN09IM5FF/acentus-logo.png",
