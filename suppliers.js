@@ -794,15 +794,13 @@ function popSuppliers() {
 }
 
 function selectState(state) {
+  let supplierCards = document.querySelectorAll(".supplier-info-center-card");
+  supplierCards.forEach((div) => {
+    div.remove();
+  });
   if (state == "All") {
-    popSuppliers()
+    popSuppliers();
   } else {
-    supplierList.style.display = "none";
-    supplierList.style.display = "none";
-    let supplierCards = document.querySelectorAll(".supplier-info-center-card");
-    supplierCards.forEach((div) => {
-      div.style.display = "none";
-    });
     sortedSuppliers.forEach((supplier) => {
       if (supplier.service_area.includes(state)) {
         supplierLink = document.createElement("a");
@@ -820,7 +818,6 @@ function selectState(state) {
         </div>
       </div>
     </a>`;
-        supplierList.style.display = "flex";
       }
     });
   }
