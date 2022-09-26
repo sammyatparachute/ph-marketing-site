@@ -737,23 +737,7 @@ const sortedSuppliers = suppliers.sort((a, b) => {
   }
 });
 
-// Declare blank arrays to be appended by categorization function
-//const nationalSuppliers = []
-//const regionalSuppliers = []
-//const allSuppliers = []
-//const selectedStateSuppliers = []
-//
-//// Map suppliers to proper categorization
-//sortedSuppliers.forEach((supplier) => {
-//    allSuppliers.push(supplier)
-//    if (supplier.service_area.length > 45) {
-//        nationalSuppliers.push(supplier)
-//    }
-//    else {
-//        regionalSuppliers.push(supplier)
-//    }
-//})
-
+// Create cards for all suppliers
 function popSuppliers() {
   sortedSuppliers.forEach((supplier) => {
     let supplierLink = document.createElement("a");
@@ -772,27 +756,10 @@ function popSuppliers() {
     </div>
   </a>`;
   });
-//  regionalSuppliers.forEach((supplier) => {
-//    let supplierLink = document.createElement("a");
-//    regionalSupplierList.append(supplierLink);
-//    supplierLink.outerHTML = `<a href="${supplier.info_center_url}">
-//      <div class="supplier-info-center-card">
-//        <div name="logo" style="width:auto; text-align:center; margin-bottom:30px;">
-//          <img src="${supplier.logo}">
-//        </div>
-//        <div name="supplier_name" style="width:auto; text-align:center; padding:10px;position:relative;">
-//          <div style="width:100%; overflow-wrap:anywhere; overflow:scroll; height:60px;">
-//            ${supplier.service_area}
-//          </div>
-//        </div>
-//        <div name="learn more" class="sic-learn-more">
-//          Learn More
-//        </div>
-//      </div>
-//      </a>`;
-//  });
 }
 
+
+// Remove all supplier cards and then recreate cards for suppliers in selected state
 function selectState(state) {
   let supplierCards = document.querySelectorAll(".supplier-info-center-card");
   supplierCards.forEach((div) => {
