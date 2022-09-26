@@ -1,5 +1,12 @@
 const suppliers = [
   {
+    name: "US Medical Equipment",
+    info_center_url: "/usmedicalequipment",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664229101704-33VQ24N8M1YIM496PLCE/US+Medical+Equipment+-+Color.png?format=2500w",
+    service_area: [ "MI" ],
+    external_id: "MGP-K2R4-PT6-4N6",
+  },
+  {
     name: "Allstar Medical",
     info_center_url: "/allstarmedical",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664228315205-J6361PQN8VOZZ0CORC3T/Allstar+Medical+-+Color.png?format=2500w",
