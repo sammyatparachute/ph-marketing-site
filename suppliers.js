@@ -1,5 +1,11 @@
 const suppliers = [
   {
+    name: "Aptiva Medical",
+    info_center_url: "/aptiva",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664301491917-48OWKITOWQFHP2EB2Y1U/AptivaMedical+-+Color.png?format=2500w",
+    service_area: [ "AL", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "WA", "WV", "WI", "WY", ],
+  },
+  {
     name: "US Medical Equipment",
     info_center_url: "/usmedicalequipment",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664229101704-33VQ24N8M1YIM496PLCE/US+Medical+Equipment+-+Color.png?format=2500w",
