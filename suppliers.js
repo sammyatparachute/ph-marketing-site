@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    name: "Fifty50 Medical",
+    external_id: "BS-X323-7L32A-YV",
+    url: "/fifty50",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1666025863326-OG8X7W3ZORCE448YQVQ5/Fifty50+Medical+-+Color.png?format=2500w",
+    description: "Diabetes is personal to us, which is why, at Fifty50, we do everything we can to ensure our customers get life-saving pump supplies and continuous glucose monitors quickly and conveniently. Our expertise in navigating insurance and Medicaid helps save your clinic time and your patients stay compliant.",
+    headline: "Family-run, helping to manage diabetes",
+    service_area: [
+        "TX"
+    ],
+    go_live_date: null,
+    active: true
+},
+  {
     name: "MRS Homecare",
     external_id: "86K8-8IYJ-G0-SNA",
     url: "/mrshomecare",
