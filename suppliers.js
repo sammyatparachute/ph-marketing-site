@@ -1,13 +1,12 @@
 const suppliers = [
   {
-    "id": 134,
-    "name": "Advanced Homecare",
-    "external_id": "5ZBQS-SU-DCD-MP3",
-    "url": "/advancedhomecareonline",
-    "logo": "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1666026094653-7C6V8VMYN6HNKJMLI3TZ/Advanced+Homecare+-+Color.png?format=2500w",
-    "description": "Advanced Homecare is here to service you with your PAP therapy and Diabetic Testing Equipment needs!",
-    "headline": "",
-    "service_area": [
+    name: "Advanced Homecare",
+    external_id: "5ZBQS-SU-DCD-MP3",
+    url: "/advancedhomecareonline",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1666026094653-7C6V8VMYN6HNKJMLI3TZ/Advanced+Homecare+-+Color.png?format=2500w",
+    description: "Advanced Homecare is here to service you with your PAP therapy and Diabetic Testing Equipment needs!",
+    headline: "",
+    service_area: [
         "AL",
         "AZ",
         "CA",
@@ -3322,9 +3321,7 @@ function selectState(state) {
       if (supplier.service_area.includes(state)) {
         supplierLink = document.createElement("a");
         supplierList.append(supplierLink);
-        supplierLink.outerHTML = `<a href="${
-          supplier.info_center_url
-        }" class="supplier-info-center-card">
+        supplierLink.outerHTML = `<a href="${supplier.info_center_url}" class="supplier-info-center-card">
       <div>
       ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
         <div class="supplier-name">
