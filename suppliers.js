@@ -3321,7 +3321,7 @@ function selectState(state) {
       if (supplier.service_area.includes(state)) {
         supplierLink = document.createElement("a");
         supplierList.append(supplierLink);
-        supplierLink.outerHTML = `<a href="${supplier.info_center_url}" class="supplier-info-center-card">
+        supplierLink.outerHTML = `<a href="${supplier.url}" class="supplier-info-center-card">
       <div>
       ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
         <div class="supplier-name">
