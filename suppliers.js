@@ -3512,6 +3512,15 @@ const sortedSuppliers = suppliers.sort((a, b) => {
   }
 });
 
+// Set supplier_name and supplier_id based url
+var supplier = suppliers.filter((obj) => {
+  return obj.url == otherUrlP;
+});
+var supplier_name = supplier[0].name;
+sessionStorage.setItem("supplier_name", supplier_name);
+var supplier_id = supplier[0].external_id;
+sessionStorage.setItem("supplier_id", supplier_id);
+
 // Create cards for all suppliers
 function popSuppliers() {
   sortedSuppliers.forEach((supplier) => {
