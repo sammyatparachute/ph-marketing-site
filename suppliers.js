@@ -3514,7 +3514,7 @@ const sortedSuppliers = suppliers.sort((a, b) => {
 
 // Set supplier_name and supplier_id based url
 var supplierURL = encodeURIComponent(
-  url.substring(url.indexOf("?") + 1, url.length)
+  window.location.href.substring(window.location.href.indexOf("?") + 1, url.length)
 );
 var supplier = suppliers.filter((obj) => {
   return obj.url == supplierURL;
