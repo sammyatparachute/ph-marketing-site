@@ -3513,8 +3513,11 @@ const sortedSuppliers = suppliers.sort((a, b) => {
 });
 
 // Set supplier_name and supplier_id based url
+var supplierURL = encodeURIComponent(
+  url.substring(url.indexOf("?") + 1, url.length)
+);
 var supplier = suppliers.filter((obj) => {
-  return obj.url == otherUrlP;
+  return obj.url == supplierURL;
 });
 var supplier_name = supplier[0].name;
 sessionStorage.setItem("supplier_name", supplier_name);
