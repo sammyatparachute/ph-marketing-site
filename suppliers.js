@@ -3513,7 +3513,8 @@ const sortedSuppliers = suppliers.sort((a, b) => {
 });
 
 // Set supplier_name and supplier_id based url
-var supplierURL = encodeURIComponent(
+window.onload() = function() {
+  var supplierURL = encodeURIComponent(
   window.location.href.substring(window.location.href.indexOf("?") + 1, url.length)
 );
 var supplier = suppliers.filter((obj) => {
@@ -3523,6 +3524,8 @@ var supplier_name = supplier[0].name;
 sessionStorage.setItem("supplier_name", supplier_name);
 var supplier_id = supplier[0].external_id;
 sessionStorage.setItem("supplier_id", supplier_id);
+}
+
 
 // Create cards for all suppliers
 function popSuppliers() {
