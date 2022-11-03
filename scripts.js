@@ -1,5 +1,5 @@
 // Populate the info center tabs from remote html
-fetch("https://sammyatparachute.github.io/ph-marketing-site/")
+fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html")
   .then(function (response) {
     // The API call was successful!
     return response.text();
