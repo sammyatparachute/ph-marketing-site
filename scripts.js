@@ -26,8 +26,8 @@ fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.htm
     console.warn("Something went wrong.", err);
   });
 
-  fetch("./suppliers.js").then(console.log(suppliers));
-  
+  fetch("https://sammyatparachute.github.io/ph-marketing-site/suppliers.js").then(console.log(suppliers)).catch(console.log(err));
+
 // MOBILE NAVIGATION
 function mobileSelect() {
   var x = document.getElementById("mobileMenu").value;
