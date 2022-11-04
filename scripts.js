@@ -1,11 +1,9 @@
 // Populate the info center tabs from remote html
 fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html")
   .then(function (response) {
-    // The API call was successful!
     return response.text();
   })
   .then(function (html) {
-    // This is the HTML from our response as a text string
     document.getElementById("info-center-tabs").innerHTML = html;
   })
   .then(function () {
@@ -22,9 +20,76 @@ fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.htm
       );
   })
   .catch(function (err) {
-    // There was an error
     console.warn("Something went wrong.", err);
   });
+
+  // Sort suppliers alphabetically
+const sortedSuppliers = suppliers.sort((a, b) => {
+  if (a.name.toLowerCase() < b.name.toLowerCase()) {
+    return -1;
+  }
+});
+
+// Create cards for all suppliers
+function popSuppliers() {
+  sortedSuppliers.forEach((supplier) => {
+    let supplierLink = document.createElement("a");
+    supplierList.append(supplierLink);
+    supplierLink.outerHTML = `<a href="${
+      supplier.url
+    }" class="supplier-info-center-card">
+    <div>
+        ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
+      <div class="supplier-name">
+        <h3>
+          ${supplier.name}
+        </h3>
+      </div>
+      <div class="supplier-info-center-card-learn-more">
+        <p>Learn More</p>
+      </div>
+    </div>
+  </a>`;
+  });
+}
+
+// Remove all supplier cards and then recreate cards for suppliers in selected state
+function selectState(state) {
+  let supplierCards = document.querySelectorAll(".supplier-info-center-card");
+  supplierCards.forEach((div) => {
+    div.remove();
+  });
+  if (state == "All") {
+    popSuppliers();
+  } else {
+    sortedSuppliers.forEach((supplier) => {
+      if (supplier.service_area.includes(state)) {
+        supplierLink = document.createElement("a");
+        supplierList.append(supplierLink);
+        supplierLink.outerHTML = `<a href="/${
+          supplier.url
+        }" class="supplier-info-center-card">
+      <div>
+      ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
+        <div class="supplier-name">
+          <h3>
+            ${supplier.name}
+          </h3>
+        </div>
+        <div class="supplier-info-center-card-learn-more">
+          <p>Learn More</p>
+        </div>
+      </div>
+    </a>`;
+      }
+    });
+  }
+}
+
+// Create cards for all suppliers
+function popSupplierHeadline() {
+  supplierHeadline.innerText = supplier.description;
+}
 
 // MOBILE NAVIGATION
 function mobileSelect() {
