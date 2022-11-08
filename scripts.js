@@ -14,8 +14,8 @@
 //  return obj.url === supplierUrl;
 //})
 
-const defaultHeadline = "A better way to order medical equipment";
-const defaultDescription = `${selectedSupplier[0].name} has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice.`;
+//const defaultHeadline = "A better way to order medical equipment";
+//const defaultDescription = `${selectedSupplier[0].name} has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice.`;
 
 // Populate the info center tabs from remote html
 fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html")
