@@ -45,6 +45,7 @@ fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.htm
     console.warn("Something went wrong.", err);
   });
 
+  /*
 // Sort suppliers alphabetically
 const sortedSuppliers = suppliers.sort((a, b) => {
   if (a.name.toLowerCase() < b.name.toLowerCase()) {
@@ -112,6 +113,7 @@ function selectState(state) {
 //function popSupplierHeadline() {
 //  supplierHeadline.innerText =  supplier.headline;
 //}
+*/
 
 // MOBILE NAVIGATION
 function mobileSelect() {
