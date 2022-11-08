@@ -1,18 +1,18 @@
 //Get supplierUrl from URL parameter
-var url = window.location.href;
+//var url = window.location.href;
 
-function getSupUrl() {
-  if (url.indexOf("?") < 1) {
-    return null;
-  } else {
-    return encodeURIComponent(url.substring(url.indexOf("?") + 1, url.length));
-}};
+//function getSupUrl() {
+//  if (url.indexOf("?") < 1) {
+//    return null;
+//  } else {
+//    return encodeURIComponent(url.substring(url.indexOf("?") + 1, url.length));
+//}};
 
-var supplierUrl = getSupUrl();
+//var supplierUrl = getSupUrl();
 
-var selectedSupplier = suppliers.filter(obj => {
-  return obj.url === supplierUrl;
-})
+//var selectedSupplier = suppliers.filter(obj => {
+//  return obj.url === supplierUrl;
+//})
 
 const defaultHeadline = "A better way to order medical equipment";
 const defaultDescription = `${selectedSupplier[0].name} has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice.`;
