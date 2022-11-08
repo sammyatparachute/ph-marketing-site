@@ -19,7 +19,7 @@ const suppliers = [
     url: "mrshomecare",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1666025287850-4YBKP1V5RGOB0W98U3YN/MRS_HOMECARE+-+Color.png?format=2500w",
     description:
-      "MRS Homecare, Georgia’s first choice for home medical equipment since 1980. MRS is proud to have grown to a regional company with distinct divisions that can help you no matter your home medical needs. Oxygen & Respiratory therapy, Custom & Complex mobility solutions, & treatment & supplies for Sleep related disorders. MRS has trained professionals with decades of experience in every field.",
+      "MRS Homecare, Georgia's first choice for home medical equipment since 1980. MRS is proud to have grown to a regional company with distinct divisions that can help you no matter your home medical needs. Oxygen & Respiratory therapy, Custom & Complex mobility solutions, & treatment & supplies for Sleep related disorders. MRS has trained professionals with decades of experience in every field.",
     headline: "",
     service_area: ["GA"],
     go_live_date: null,
@@ -32,7 +32,7 @@ const suppliers = [
     url: "aptiva",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1664301491917-48OWKITOWQFHP2EB2Y1U/AptivaMedical+-+Color.png?format=2500w",
     description:
-      "Aptiva Medical is a specialized home delivery provider of continuous glucose monitoring supplies. Our Physician Relationship Management team, consisting of on staff pharmacists, nurses, and CGM specialists, offers healthcare providers and their patients with superior service and hands on clinical support. In addition, Aptiva’s in-house specialty pharmacy AptivaRx, provides home delivery of immunosuppressant medications for organ transplant patients and respiratory medications administered through a nebulizer for patients suffering from respiratory conditions.",
+      "Aptiva Medical is a specialized home delivery provider of continuous glucose monitoring supplies. Our Physician Relationship Management team, consisting of on staff pharmacists, nurses, and CGM specialists, offers healthcare providers and their patients with superior service and hands on clinical support. In addition, Aptiva's in-house specialty pharmacy AptivaRx, provides home delivery of immunosuppressant medications for organ transplant patients and respiratory medications administered through a nebulizer for patients suffering from respiratory conditions.",
     headline: "Your time is valuable, spend more of it with your patients",
     service_area: [
       "AL",
@@ -265,7 +265,7 @@ const suppliers = [
     url: "blackstonemedicalservices",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1626715084465-WCOE0XS2JVCV8QJBRYGL/blackstone_logo_5in_transparent+%281%29.png",
     description:
-      "Blackstone Medical Services is the nation’s largest provider of Home Sleep Testing Services. Our innovative approach to healthcare is focused on driving patient outcomes by improving ACCESS, QUALITY and COST. Our list of contracted insurance payors is second to none and we take great pride in having the nation’s highest conversion ratio of Orders to Completed Tests. It is a privilege for us to assist in the care of your patients and we highly value the trust you place in us.",
+      "Blackstone Medical Services is the nation's largest provider of Home Sleep Testing Services. Our innovative approach to healthcare is focused on driving patient outcomes by improving ACCESS, QUALITY and COST. Our list of contracted insurance payors is second to none and we take great pride in having the nation's highest conversion ratio of Orders to Completed Tests. It is a privilege for us to assist in the care of your patients and we highly value the trust you place in us.",
     headline: "Home Sleep Testing and Mobile Cardiac Telemetry",
     service_area: [
       "AL",
@@ -945,7 +945,7 @@ const suppliers = [
     url: "ccsmedical",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1635970550214-7GVMXGBGOSPSMOK9NT5L/CCSMedBlueLogo-01+%281%29.png?format=2500w",
     description:
-      "In-market support from CCS Medical ensures your patients have the best solution for their needs, including brand-name CGM systems and insulin pumps. For patients new to CGM therapy, the CCS Retention Team engages directly to ensure adoption. With 25 years’ experience, CCS is the largest Medicare provider of insulin pumps. Contracted with >1,800 managed care plans, CCS accepts most Medicare and Medicaid plans.",
+      "In-market support from CCS Medical ensures your patients have the best solution for their needs, including brand-name CGM systems and insulin pumps. For patients new to CGM therapy, the CCS Retention Team engages directly to ensure adoption. With 25 years' experience, CCS is the largest Medicare provider of insulin pumps. Contracted with >1,800 managed care plans, CCS accepts most Medicare and Medicaid plans.",
     headline: "Optimized diabetes management solutions",
     service_area: [
       "AL",
@@ -1006,7 +1006,7 @@ const suppliers = [
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1652825667518-9IK0V6T8FBP3S6FU2ENB/CVS_Pharmacy_logo.png",
     description:
       "CVS Pharmacy is now accepting orders online through Parachute Health to provide a simple way to order medical devices and supplies for your patients. Look to CVS Pharmacy for services, expertise, products and more to help your patients better manage their health.",
-    headline: "We’re here to support your patients on their healthcare journey",
+    headline: "We're here to support your patients on their healthcare journey",
     service_area: [
       "AL",
       "AZ",
@@ -1065,7 +1065,7 @@ const suppliers = [
     url: "delivermymeds",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1659367081542-YD4I7PO07FU9K9657UXR/Delivermymeds+logo.png",
     description:
-      "Deliver My Meds is a Nationally Accredited and licensed durable medical equipment supplier that specializes in continuous glucose monitor (CGM) and off the shelf orthosis. We have a team of prior authorization specialists that have a high approval ratio for Dexcom and Freestyle Libre CGM. Deliver My Meds has partnered with Parachute Health so that you can easily order and track your patient’s product.",
+      "Deliver My Meds is a Nationally Accredited and licensed durable medical equipment supplier that specializes in continuous glucose monitor (CGM) and off the shelf orthosis. We have a team of prior authorization specialists that have a high approval ratio for Dexcom and Freestyle Libre CGM. Deliver My Meds has partnered with Parachute Health so that you can easily order and track your patient's product.",
     headline: "",
     service_area: [
       "AL",
@@ -1185,7 +1185,7 @@ const suppliers = [
     url: "edgepark",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1635970948929-DGYJ6A362EZK3SLQA9UH/Edgepark-Logo-FullColor-200x66-002-.png?format=2500w",
     description:
-      "Healthcare can be complicated, but getting supplies doesn’t have to be. We deliver prescribed products right to your patient’s doorstep — allowing you to focus more on care and stress less on the details. Edgepark now offers online ordering capabilities through Parachute to support the care you provide your patients.",
+      "Healthcare can be complicated, but getting supplies doesn't have to be. We deliver prescribed products right to your patient's doorstep — allowing you to focus more on care and stress less on the details. Edgepark now offers online ordering capabilities through Parachute to support the care you provide your patients.",
     headline: "Your time is valuable, spend more of it with your patients",
     service_area: [
       "AL",
@@ -1305,7 +1305,7 @@ const suppliers = [
     url: "elitemedicalsupply",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1656518983414-0HW3KGPYZEIW6CID2K7G/Elite+Medical+Supply.png",
     description:
-      "Elite Medical Supply provides high-quality durable medical equipment for patients being treated for cervical, spine, knee, and extremity pain. We dispense industry-leading orthopedic braces, TENS devices, and Interferential stimulators to aid in recovery and pain management. We are in-network with more than 225 private insurance plans, Medicare, Medicaid, Workers’ Comp, and No-Fault insurance.",
+      "Elite Medical Supply provides high-quality durable medical equipment for patients being treated for cervical, spine, knee, and extremity pain. We dispense industry-leading orthopedic braces, TENS devices, and Interferential stimulators to aid in recovery and pain management. We are in-network with more than 225 private insurance plans, Medicare, Medicaid, Workers' Comp, and No-Fault insurance.",
     headline: "",
     service_area: [
       "AL",
@@ -1436,7 +1436,7 @@ const suppliers = [
     url: "homecaredelivered",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1642543194438-7ZHB2PQK26HAEV8O7CKS/home+care+delivered+logo.png?format=2500w",
     description:
-      "Your patients can’t afford to be without their diabetes supplies. That’s why they can’t afford to be without Home Care Delivered. For more than 25 years we’ve been operating as an extension of your patient’s care team, partnering with health care professionals to ensure every patient has the supplies they need to live their healthiest lives.",
+      "Your patients can't afford to be without their diabetes supplies. That's why they can't afford to be without Home Care Delivered. For more than 25 years we've been operating as an extension of your patient's care team, partnering with health care professionals to ensure every patient has the supplies they need to live their healthiest lives.",
     headline: "Your Trusted Partner for CGM Supplies",
     service_area: [
       "AL",
@@ -1854,7 +1854,7 @@ const suppliers = [
     url: "questhealthsolutions",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1639074516032-Y753FA3R2X13C8UOAK4V/Quest+Health+Solutions+color+logo.png",
     description:
-      "Quest Health Solutions is committed to changing the way patient care is delivered by serving as a one stop shop for all Continuous Glucose Monitoring (CGM) needs. As one of the country’s leading suppliers of CGMs, we take pride in providing the tools, supplies, services, and knowledge to help patients and healthcare professionals better manage diabetes.",
+      "Quest Health Solutions is committed to changing the way patient care is delivered by serving as a one stop shop for all Continuous Glucose Monitoring (CGM) needs. As one of the country's leading suppliers of CGMs, we take pride in providing the tools, supplies, services, and knowledge to help patients and healthcare professionals better manage diabetes.",
     headline: "",
     service_area: [
       "AL",
@@ -2211,7 +2211,7 @@ const suppliers = [
     url: "tmscares",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1624371587683-RH8Y9NU7IQRUUPESAPT5/ke17ZwdGBToddI8pDm48kMVyVX8XUxayNJbVOdJaZIlZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIgbki6MNGRgzx0xW1hTt9XWDMgAMUpLCmfgDLkBWejgk/TotalMedicalSupply_Logo_2016-Transparent-2.1+%282%29+%281%29.png",
     description:
-      "Total Medical Supply is your premier medical supply provider. We specialize in incontinence supplies, diabetic testing supplies including CGM’s, thickeners, nutritional supplements, and breast pumps. We have the ability to service patients with various insurance providers throughout the United States!",
+      "Total Medical Supply is your premier medical supply provider. We specialize in incontinence supplies, diabetic testing supplies including CGM's, thickeners, nutritional supplements, and breast pumps. We have the ability to service patients with various insurance providers throughout the United States!",
     headline: "",
     service_area: [
       "AL",
@@ -2522,7 +2522,7 @@ const suppliers = [
     url: "broadwaymedical",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1639517881330-CZ6TWAZ7S3DC9PZOUMMH/Broadway+Medical.png?format=2500w",
     description:
-      "The mission of Broadway Medical is to provide quality products and superior service to meet the special needs of our customers. We strive to make each customer an enthusiastic supporter of our company. Our focus is to compassionately provide the most appropriate product that meets the customers’ needs.",
+      "The mission of Broadway Medical is to provide quality products and superior service to meet the special needs of our customers. We strive to make each customer an enthusiastic supporter of our company. Our focus is to compassionately provide the most appropriate product that meets the customers' needs.",
     headline: "",
     service_area: ["CA"],
     go_live_date: null,
@@ -2560,7 +2560,7 @@ const suppliers = [
     url: "carelinc",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1656516514808-3NCFD8ZCY9KKW40LSLV9/13383a4470f0-CareLinc.png",
     description:
-      "CareLinc believes in being part of the solution, not part of the problem. Our goal is to provide quality medical equipment, superior service, and support to our customers and their communities. We strive to give you the very best value for your healthcare dollars and maintain that our customer’s needs come first.",
+      "CareLinc believes in being part of the solution, not part of the problem. Our goal is to provide quality medical equipment, superior service, and support to our customers and their communities. We strive to give you the very best value for your healthcare dollars and maintain that our customer's needs come first.",
     headline: "",
     service_area: ["MI"],
     go_live_date: null,
@@ -2847,7 +2847,7 @@ const suppliers = [
     url: "hmp",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1622042411055-Q8XGBRGHG1VNJTB0C074/ke17ZwdGBToddI8pDm48kMfXUjBzARoOu-KX2fwDU48UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKc2RYut5bO1iSrGaBNN5k-pVhDqO7VJBbIJq9VaJxNq9lHUOAqUoIuQNsnEw5dwEVv/%21+HMP_Logo_black+font+%28transparent%29+%281%29.png?format=2500w",
     description:
-      "HMP’s vision is to be a company that advances the quality of patient care in a way that improves patient outcomes, while also insisting on solutions that reduce overall healthcare costs and that remove barriers to providing quality care.",
+      "HMP's vision is to be a company that advances the quality of patient care in a way that improves patient outcomes, while also insisting on solutions that reduce overall healthcare costs and that remove barriers to providing quality care.",
     headline: "",
     service_area: ["TN"],
     go_live_date: null,
@@ -3333,7 +3333,7 @@ const suppliers = [
     url: "southeastdiabetes",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1637077439958-F6H5FZISC5AEL3PXQ73V/southeast+diabetes.png",
     description:
-      "The mission of Southeast Diabetes is to help people better manage their diabetes by making the latest technology available to them. Southeast Diabetes is an Alabama based company located in the city of Birmingham. We provide supplies for the leading insulin pump brands such as Medtronic (MiniMed), Insulet (OmniPod), and Tandem, as well as Continuous Glucose Monitor supplies for the Dexcom, Freestyle Libre, Medtronic, and Eversense CGM’s. Our goal is to assist the lives of those who suffer with diabetes by providing the supplies prescribed by their clinician to help treat their diabetes.",
+      "The mission of Southeast Diabetes is to help people better manage their diabetes by making the latest technology available to them. Southeast Diabetes is an Alabama based company located in the city of Birmingham. We provide supplies for the leading insulin pump brands such as Medtronic (MiniMed), Insulet (OmniPod), and Tandem, as well as Continuous Glucose Monitor supplies for the Dexcom, Freestyle Libre, Medtronic, and Eversense CGM's. Our goal is to assist the lives of those who suffer with diabetes by providing the supplies prescribed by their clinician to help treat their diabetes.",
     headline: "",
     service_area: ["AL", "FL", "GA", "MS", "TX", "VA", "IL", "IN", "LA"],
     go_live_date: null,
@@ -3497,9 +3497,69 @@ const suppliers = [
     url: "xmed",
     logo: "https://static1.squarespace.com/static/5df13db27cfbe70b38ae20dd/5e3dbd4e7ffea47838c4bc35/5e3dc4cb24ab2d12b9b86598/1582054511726/logo-default-223x59%25402x.jpg",
     description:
-      "If you’re looking for respiratory equipment, mobility equipment, bathroom safety equipment, or any other types of home medical supplies, X marks the spot at XMED. With showrooms in Euless, Denton, Longview, Austin and Missouri City, Texas, XMED is able to serve the needs of more Texas residents. We would love the opportunity to serve you and your family.",
+      "If you're looking for respiratory equipment, mobility equipment, bathroom safety equipment, or any other types of home medical supplies, X marks the spot at XMED. With showrooms in Euless, Denton, Longview, Austin and Missouri City, Texas, XMED is able to serve the needs of more Texas residents. We would love the opportunity to serve you and your family.",
     headline: "",
     service_area: ["TX"],
+    go_live_date: null,
+    active: true,
+  },
+  {
+    id: 136,
+    name: "CWB Medical Solutions",
+    external_id: "BNS8-4UB-CXL-YDI",
+    url: "cwb",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1667867059501-GT4A0UOC4B1WNGGR8JV0/CWB+Medical+Solutions+-+color.png?format=2500w",
+    description:
+      "CWB is a full service, national DME provider. We offer thousands of products and seamless transactions through our expansive network of over 100 manufacturers to ensure excellent service and prompt delivery.",
+    headline: null,
+    service_area: [
+      "AL",
+      "AZ",
+      "CA",
+      "CO",
+      "CT",
+      "DE",
+      "FL",
+      "GA",
+      "ID",
+      "IL",
+      "IN",
+      "IA",
+      "KS",
+      "KY",
+      "LA",
+      "ME",
+      "MD",
+      "MA",
+      "MI",
+      "MN",
+      "MS",
+      "MO",
+      "MT",
+      "NE",
+      "NV",
+      "NH",
+      "NJ",
+      "NM",
+      "NY",
+      "NC",
+      "ND",
+      "OH",
+      "OK",
+      "OR",
+      "PA",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "UT",
+      "VT",
+      "WA",
+      "WV",
+      "WI",
+      "WY",
+    ],
     go_live_date: null,
     active: true,
   },
@@ -3568,7 +3628,7 @@ function selectState(state) {
   }
 }
 
-// Create cards for all suppliers
-function popSupplierHeadline() {
-  supplierHeadline.innerText =  supplier.description;
-}
+// Populate Suppliers's Headline
+//function popSupplierHeadline() {
+//  supplierHeadline.innerText =  supplier.headline;
+//}

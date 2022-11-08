@@ -3,11 +3,45 @@
 
 <head>
     <script src="./suppliers.js"></script>
+    <script src="./scripts.js" async></script>
     <link rel="stylesheet" href="./suppliers.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
-    <div style="width: 100%; display:flex;">
+<body style="padding:0;margin:0;">
+    <div id="hero-container" style="width: 100vw; height: 66vh; background-color:#520079; display:flex; align-items: center;">
+        <div id="default-hero-banner" style="display:flex;flex-wrap: wrap; justify-content: center;">
+            <h1 style="color: #FFF; font-weight:700;">Supplier Information Centers</h1>
+            <p style="color:#FFF;">Explore our supplier information centers for the most up-to-date training, forms, EDI processes, FAQs, and contact information.</p>
+        </div>
+        <div id="supplier-hero-banner">
+            <div name="left-side">
+                <h1 id="supplier-headline" style="margin:unset; color:#FFF;"></h1>
+                <p id="supplier-description" style="margin:unset; color:#FFF;"></p>
+            </div>
+            <div name="right-side"></div>
+            <script>
+                const defaultHeroBanner = document.getElementById("default-hero-banner");
+                const supplierHeadline = document.getElementById("supplier-headline");
+                const supplierDescription = document.getElementById("supplier-description");
+                    if (selectedSupplier[0].headline.length == 0) {
+                        supplierHeadline.innerText = defaultHeadline;;
+                    } else {
+                        supplierHeadline.innerText = selectedSupplier[0].headline;
+                    }
+                    if (selectedSupplier[0].description.length == 0) {
+                        supplierDescription.innerText = defaultDescription;
+                    } else {
+                        supplierDescription.innerText = selectedSupplier[0].description;
+                    };
+                if (selectedSupplier.length > 0) {
+                    defaultHeroBanner.style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <div style="display:flex;">
         <select class="state-select" onchange="selectState(this.options[this.selectedIndex].id)" style="padding: .5rem; margin: auto; margin-bottom: 2rem;">
             <option id="All">Select your state</option>
             <option id="AL">Alabama</option>

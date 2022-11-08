@@ -1,3 +1,22 @@
+//Get supplierUrl from URL parameter
+var url = window.location.href;
+
+function getSupUrl() {
+  if (url.indexOf("?") < 1) {
+    return null;
+  } else {
+    return encodeURIComponent(url.substring(url.indexOf("?") + 1, url.length));
+}};
+
+var supplierUrl = getSupUrl();
+
+var selectedSupplier = suppliers.filter(obj => {
+  return obj.url === supplierUrl;
+})
+
+const defaultHeadline = "A better way to order medical equipment";
+const defaultDescription = `${selectedSupplier[0].name} has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice.`;
+
 // Populate the info center tabs from remote html
 fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html")
   .then(function (response) {
@@ -25,6 +44,74 @@ fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.htm
     // There was an error
     console.warn("Something went wrong.", err);
   });
+
+// Sort suppliers alphabetically
+const sortedSuppliers = suppliers.sort((a, b) => {
+  if (a.name.toLowerCase() < b.name.toLowerCase()) {
+    return -1;
+  }
+});
+
+// Create cards for all suppliers
+function popSuppliers() {
+  sortedSuppliers.forEach((supplier) => {
+    let supplierLink = document.createElement("a");
+    supplierList.append(supplierLink);
+    supplierLink.outerHTML = `<a href="${
+      supplier.url
+    }" class="supplier-info-center-card">
+    <div>
+        ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
+      <div class="supplier-name">
+        <h3>
+          ${supplier.name}
+        </h3>
+      </div>
+      <div class="supplier-info-center-card-learn-more">
+        <p>Learn More</p>
+      </div>
+    </div>
+  </a>`;
+  });
+}
+
+// Remove all supplier cards and then recreate cards for suppliers in selected state
+function selectState(state) {
+  let supplierCards = document.querySelectorAll(".supplier-info-center-card");
+  supplierCards.forEach((div) => {
+    div.remove();
+  });
+  if (state == "All") {
+    popSuppliers();
+  } else {
+    sortedSuppliers.forEach((supplier) => {
+      if (supplier.service_area.includes(state)) {
+        supplierLink = document.createElement("a");
+        supplierList.append(supplierLink);
+        supplierLink.outerHTML = `<a href="/${
+          supplier.url
+        }" class="supplier-info-center-card">
+      <div>
+      ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
+        <div class="supplier-name">
+          <h3>
+            ${supplier.name}
+          </h3>
+        </div>
+        <div class="supplier-info-center-card-learn-more">
+          <p>Learn More</p>
+        </div>
+      </div>
+    </a>`;
+      }
+    });
+  }
+}
+
+// Populate Suppliers's Headline
+//function popSupplierHeadline() {
+//  supplierHeadline.innerText =  supplier.headline;
+//}
 
 // MOBILE NAVIGATION
 function mobileSelect() {
