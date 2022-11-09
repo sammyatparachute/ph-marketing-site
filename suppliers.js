@@ -3519,7 +3519,7 @@ const suppliers = [
   {
     id: 136,
     name: "CWB Medical Solutions",
-    external_id: "BNS8-4UB-CXL-YDI",
+    external_id: "FVG-56P6D-7KN-I5",
     url: "cwb",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1667867059501-GT4A0UOC4B1WNGGR8JV0/CWB+Medical+Solutions+-+color.png?format=2500w",
     description:
