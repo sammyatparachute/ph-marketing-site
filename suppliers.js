@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 137,
+    name: "Pulmonary and Sleep Diagnostics",
+    external_id: "X9FI-2U8KB-MND1M",
+    url: "psd",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1668007724104-HYB7OSPO8CEBSIENCX81/Pulmonary+and+Sleep+Diagnostics+-+color.jpg?format=2500w",
+    description:
+      "Pulmonary and Sleep Diagnostics specializes in non-invasive ventilation. We pride ourselves on providing excellent patient care and education.",
+    headline: null,
+    service_area: ["AR", "MO"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 2,
     name: "US Medical Equipment",
     external_id: "MGP-K2R4-PT6-4N6",
