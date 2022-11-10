@@ -2571,7 +2571,7 @@ const suppliers = [
     name: "CareLinc",
     external_id: "5FA84-CM-3LVR-N8",
     url: "carelinc",
-    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1656516514808-3NCFD8ZCY9KKW40LSLV9/13383a4470f0-CareLinc.png",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1668097942708-89455SC39N55UUOVQHJJ/CareLinc+Medical+-+color.png?format=2500w",
     description:
       "CareLinc believes in being part of the solution, not part of the problem. Our goal is to provide quality medical equipment, superior service, and support to our customers and their communities. We strive to give you the very best value for your healthcare dollars and maintain that our customer's needs come first.",
     headline: "",
