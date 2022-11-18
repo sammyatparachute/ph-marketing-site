@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 142,
+    name: "Fitzsimmons Home Medical",
+    external_id: "7JF04-A1-RLM-T5E",
+    url: "fitzsimmons",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1668807722337-9SIJE58NFYDFF2V46DFB/Fitzsimmons+-+color.png?format=2500w",
+    description:
+      "Fitzsimmons Home Medical Equipment, a division of Fitzsimmons Surgical Supply, is a healthcare equipment provider focused on providing patients and the healthcare community with the absolute best service, products and solutions. Fitzsimmons Home Medical’s standard of care encompass timely delivery of life-sustaining equipment, detailed patient education at setup, expert in-person clinical services",
+    headline: null,
+    service_area: ["IN", "IL"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 141,
     name: "Affordable Medical Supplies",
     external_id: "BZ-FPA2-JDB-D2MN",
