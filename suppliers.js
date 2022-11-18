@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 141,
+    name: "Affordable Medical Supplies",
+    external_id: "BZ-FPA2-JDB-D2MN",
+    url: "affordablemedicalsupplies",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1668806058132-PJG467GQX8K1TOGP27TL/Affordable+Medical+Supplies+-+color.png?format=2500w",
+    description:
+      "Looking for wheelchairs, walkers, hospital beds, or any other types of home medical equipment? Affordable Medical Supplies is the place for you! With one main store location in Plano, Texas, Affordable Medical Supplies makes your needs a priority. We don't just deliver products, we deliver confidence.",
+    headline: null,
+    service_area: ["TX"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 137,
     name: "Pulmonary and Sleep Diagnostics",
     external_id: "X9FI-2U8KB-MND1M",
