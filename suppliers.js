@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 145,
+    name: "Borbas Pharmacy",
+    external_id: "TF-8DF-Q9PXM-2DE",
+    url: "borbas",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1669058211057-KH6SMWI74HYRB5TDMYU6/Borbas+Pharmacy+-+color.png?format=2500w",
+    description: null,
+    headline: null,
+    service_area: ["NY"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 144,
     name: "Capitol Medical Supply",
     external_id: "UZ7T-43-E4HT-MBL",
