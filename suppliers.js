@@ -7,7 +7,7 @@ const suppliers = [
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1669052025160-BN4YYCGKT3VM0YEJNJ9S/Direct+Diabetes+Supply+-+color.png?format=2500w",
     description: null,
     headline: null,
-    service_area: null,
+    service_area: ["AZ"],
     go_live_date: null,
     active: true,
   },

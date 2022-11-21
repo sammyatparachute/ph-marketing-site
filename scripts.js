@@ -138,6 +138,8 @@ function requestmoreinfoChecked() {
 }
 
 // Generate Typeform link
+
+
 function typeformPopup(typeformURL, webinarSlot, request_type, supplier_id, supplier_name) {
   var reference = typeformEmbed.makePopup(
     typeformURL +
