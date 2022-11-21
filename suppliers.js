@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 143,
+    name: "Direct Diabetes Supply",
+    external_id: "XZ7-CIE-KAXE-X38",
+    url: "directdiabetes",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1669052025160-BN4YYCGKT3VM0YEJNJ9S/Direct+Diabetes+Supply+-+color.png?format=2500w",
+    description: null,
+    headline: null,
+    service_area: null,
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 142,
     name: "Fitzsimmons Home Medical",
     external_id: "7JF04-A1-RLM-T5E",
