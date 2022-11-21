@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 144,
+    name: "Capitol Medical Supply",
+    external_id: "UZ7T-43-E4HT-MBL",
+    url: "capitolmedsupply",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1669055347435-6YSVIWSCWQYHJD901MDV/Capitol+Medical+Supply+-+color.png?format=2500w",
+    description:
+      "It takes a team effort to provide effective, compassionate care to those who need it, & our team is dedicated to serving those needs. From the personal attention you deserve to delivering the service and products that fit your lifestyle, we strive to ensure that your daily life is made easier.",
+    headline: null,
+    service_area: ["DC", "MD", "VA"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 143,
     name: "Direct Diabetes Supply",
     external_id: "XZ7-CIE-KAXE-X38",
