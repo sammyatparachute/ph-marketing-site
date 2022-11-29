@@ -1132,7 +1132,7 @@ const suppliers = [
       "WY",
     ],
     go_live_date: null,
-    active: true,
+    active: false,
   },
   {
     id: 22,
@@ -3655,7 +3655,7 @@ function popSuppliers() {
     supplierList.append(supplierLink);
     supplierLink.outerHTML = `<a href="${
       supplier.url
-    }" class="supplier-info-center-card">
+    }" class="supplier-info-center-card" ${(supplier.active == true ? "" : "style=display:none;")}>
     <div>
         ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
       <div class="supplier-name">
@@ -3686,7 +3686,7 @@ function selectState(state) {
         supplierList.append(supplierLink);
         supplierLink.outerHTML = `<a href="/${
           supplier.url
-        }" class="supplier-info-center-card">
+        }" class="supplier-info-center-card" ${(supplier.active == true ? "" : "style=display:none;")}>
       <div>
       ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
         <div class="supplier-name">
