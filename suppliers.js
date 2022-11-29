@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 146,
+    name: "24 Hour Dependable Medical Supplies",
+    external_id: "DP0-G1TM-87-9SDY",
+    url: "24hour",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1669746271582-5UZLIANU7L1JD5LRFPFO/24+Hour+Dependable+Medical+Supplies+-+color.png?format=2500w",
+    description:
+      "Twenty Four Hour Dependable Medical Supplies provides home medical equipment and supplies to meet the unique needs of customers Nationwide. From lift chairs and wheelchairs to incontinence, urology, and wound care supplies, our main goal is to help our customers stay safe, independent, and comfortable in the confines of their home. We process orders within 24-48 hours of receiving the referrals.",
+    headline: null,
+    service_area: ["MD", "GA", "TX"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 145,
     name: "Borbas Pharmacy",
     external_id: "TF-8DF-Q9PXM-2DE",
@@ -3655,7 +3668,9 @@ function popSuppliers() {
     supplierList.append(supplierLink);
     supplierLink.outerHTML = `<a href="${
       supplier.url
-    }" class="supplier-info-center-card" ${(supplier.active == true ? "" : "style=display:none;")}>
+    }" class="supplier-info-center-card" ${
+      supplier.active == true ? "" : "style=display:none;"
+    }>
     <div>
         ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
       <div class="supplier-name">
@@ -3686,7 +3701,9 @@ function selectState(state) {
         supplierList.append(supplierLink);
         supplierLink.outerHTML = `<a href="/${
           supplier.url
-        }" class="supplier-info-center-card" ${(supplier.active == true ? "" : "style=display:none;")}>
+        }" class="supplier-info-center-card" ${
+          supplier.active == true ? "" : "style=display:none;"
+        }>
       <div>
       ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
         <div class="supplier-name">
