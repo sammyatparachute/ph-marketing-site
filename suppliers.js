@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 148,
+    name: "Kadence Healthcare",
+    external_id: "MJ19T-K5CD-9A-PF",
+    url: "kadencehealthcare",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1674598162718-7ALK2ENHPOMSIR9OGPDM/Kadence+Healthcare+-+color.png?format=2500w",
+    description:
+      "Kadence Healthcare is your local provider and leader in providing respiratory & sleep products, diagnostics, and general DME . To provide world-class service we think differently - Remove the paperwork burden and focus on patient-centric service. Partnering with Parachute helps the physician, the patient, and Kadence Healthcare achieve service at a new level.",
+    headline: "Healthcare without the paperwork",
+    service_area: ["CA"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 147,
     name: "Liberty Medical Supplies",
     external_id: "HV5M-QL-98R9A-D0",
