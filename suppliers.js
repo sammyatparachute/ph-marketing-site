@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 147,
+    name: "Liberty Medical Supplies",
+    external_id: "HV5M-QL-98R9A-D0",
+    url: "libertymedicalsupplies",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1674597094071-6F3CA5QUG5E6K47GW0SY/Liberty+Medical+Supplies+-+color.png?format=2500w",
+    description: null,
+    headline: null,
+    service_area: ["NY"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 146,
     name: "24 Hour Dependable Medical Supplies",
     external_id: "DP0-G1TM-87-9SDY",
