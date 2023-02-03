@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 149,
+    name: "Diagnostic Medical Testing",
+    external_id: "PL9-7GSV6-AN-9SA",
+    url: "diagnosticmedicaltesting",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1675446510765-H7MW379DCEPLAEPG2MSR/Diagnostic+Medical+Testing+-+color.png?format=2500w",
+    description:
+      "Physicians and Durable Medical Equipment Companies can trust us to monitor and qualify their Cardiac, Oxygen and Pap Therapy patients quickly and accurately. With a number of services and experienced in-home care providers on staff, we can tailor a program specifically for the needs of your medical practice or DME company.",
+    headline: "A better way to order Diagnostic Tests",
+    service_area: ["FL", "KY", "TX", "VA", "GA"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 148,
     name: "Kadence Healthcare",
     external_id: "MJ19T-K5CD-9A-PF",
