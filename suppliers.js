@@ -880,7 +880,7 @@ const suppliers = [
     name: "Better Living Now",
     external_id: "9PNL-EI-6LTR-VS9",
     url: "betterlivingnow",
-    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1660061201448-KYWHFL5EARPNLRICNVU0/Better+Living+Now+-+color.png?format=2500w",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1675870034284-WU7DUKQGZVQ0ZJTFISDU/Official+BLN+Rotech+Logo+2022.png?format=2500w",
     description:
       "Founded in 1992 and is located in Hauppauge, Long Island, New York. We are dedicated to providing high quality healthcare products at discounted prices and high quality customer service that works hard to assist you with managing and improving your health. We deliver the products you need efficiently and discreetly, directly to your home. We accept most insurances.",
     headline: "",
