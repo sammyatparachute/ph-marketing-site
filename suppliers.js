@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 150,
+    name: "Medical Comfort Systems",
+    external_id: "EK0-YH6-RAG3M-80",
+    url: "medicalcomfortsystems",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1675892906356-3DKQ6PLYCLY8FG32ZMR4/Medical+Comfort+Systems+-+color.png?format=2500w",
+    description:
+      "Medical Comfort Systems /At Home Hospital Equipment prides ourselves in maintaining a high level of respect and care to our patients. From Respiratory Equipment to Sleep Therapy Services, we strive to provide an unparalleled level of patient care.",
+    headline: null,
+    service_area: ["NC", "SC", "GA"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 149,
     name: "Diagnostic Medical Testing",
     external_id: "PL9-7GSV6-AN-9SA",
