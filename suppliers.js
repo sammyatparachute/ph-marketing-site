@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 153,
+    name: "Caremax",
+    external_id: "L28-QE2-V8X-ILMJ",
+    url: "caremax",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1676309087340-OWVK6QZIMP66B2K6TSN5/Caremax+-+color.png?format=2500w",
+    description: null,
+    headline: null,
+    service_area: ["CA"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 152,
     name: "Medical Home Care",
     external_id: "Y9X0D-IL6V-JC7VT",
