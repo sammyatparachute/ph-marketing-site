@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 158,
+    name: "Adam Medical Equipment",
+    external_id: "5X-N5IK-MD8J-T60",
+    url: "adam",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1676315457558-WEY9T6L8F13F07QAD12U/Adam+Medical+Equipment+-+color.png?format=2500w",
+    description:
+      "Welcome to Adam Medical Equipment! We provide a wide range of medical equipment and supplies to help you care for your patients. Our selection is designed to meet the needs of both medical professionals and patients alike. With quality customer service, we strive to provide the best experience possible. Contact us today to learn more!",
+    headline: "Exceptional Care. Without Exception.",
+    service_area: ["DC", "DE", "MD", "NJ", "PA"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 157,
     name: "Medtronic",
     external_id: "RQ0-NER-CH-IF0YC",
