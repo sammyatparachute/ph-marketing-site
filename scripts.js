@@ -40,82 +40,8 @@ fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.htm
           (e.outerHTML = `<a href="https://dme.parachutehealth.com/organic_sign_up?supplier_id=${supplier_id}" style="color:#520079;font-weight:400;">signing up here</a>!`)
       );
   })
-  .catch(function (err) {
-    // There was an error
-    console.warn("Something went wrong.", err);
-  });
-
-  /*
-// Sort suppliers alphabetically
-const sortedSuppliers = suppliers.sort((a, b) => {
-  if (a.name.toLowerCase() < b.name.toLowerCase()) {
-    return -1;
-  }
-});
-
-// Create cards for all suppliers
-function popSuppliers() {
-  sortedSuppliers.forEach((supplier) => {
-    let supplierLink = document.createElement("a");
-    supplierList.append(supplierLink);
-    supplierLink.outerHTML = `<a href="${
-      supplier.url
-    }" class="supplier-info-center-card">
-    <div>
-        ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
-      <div class="supplier-name">
-        <h3>
-          ${supplier.name}
-        </h3>
-      </div>
-      <div class="supplier-info-center-card-learn-more">
-        <p>Learn More</p>
-      </div>
-    </div>
-  </a>`;
-  });
-}
-
-// Remove all supplier cards and then recreate cards for suppliers in selected state
-function selectState(state) {
-  let supplierCards = document.querySelectorAll(".supplier-info-center-card");
-  supplierCards.forEach((div) => {
-    div.remove();
-  });
-  if (state == "All") {
-    popSuppliers();
-  } else {
-    sortedSuppliers.forEach((supplier) => {
-      if (supplier.service_area.includes(state)) {
-        supplierLink = document.createElement("a");
-        supplierList.append(supplierLink);
-        supplierLink.outerHTML = `<a href="/${
-          supplier.url
-        }" class="supplier-info-center-card">
-      <div>
-      ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
-        <div class="supplier-name">
-          <h3>
-            ${supplier.name}
-          </h3>
-        </div>
-        <div class="supplier-info-center-card-learn-more">
-          <p>Learn More</p>
-        </div>
-      </div>
-    </a>`;
-      }
-    });
-  }
-}
-
-// Populate Suppliers's Headline
-//function popSupplierHeadline() {
-//  supplierHeadline.innerText =  supplier.headline;
-//}
-*/
-
-// MOBILE NAVIGATION
+  .then(function() {
+    // MOBILE NAVIGATION
 function mobileSelect() {
   var x = document.getElementById("mobileMenu").value;
   document.getElementById(x).checked = true;
@@ -138,8 +64,6 @@ function requestmoreinfoChecked() {
 }
 
 // Generate Typeform link
-
-
 function typeformPopup(typeformURL, webinarSlot, request_type, supplier_id, supplier_name) {
   var reference = typeformEmbed.makePopup(
     typeformURL +
@@ -773,3 +697,78 @@ function openTypeForm39() {
 function openTypeForm40() {
   typeformPopup(typeformURL, tenthDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
+  })
+  .catch(function (err) {
+    // There was an error
+    console.warn("Something went wrong.", err);
+  });
+
+  /*
+// Sort suppliers alphabetically
+const sortedSuppliers = suppliers.sort((a, b) => {
+  if (a.name.toLowerCase() < b.name.toLowerCase()) {
+    return -1;
+  }
+});
+
+// Create cards for all suppliers
+function popSuppliers() {
+  sortedSuppliers.forEach((supplier) => {
+    let supplierLink = document.createElement("a");
+    supplierList.append(supplierLink);
+    supplierLink.outerHTML = `<a href="${
+      supplier.url
+    }" class="supplier-info-center-card">
+    <div>
+        ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
+      <div class="supplier-name">
+        <h3>
+          ${supplier.name}
+        </h3>
+      </div>
+      <div class="supplier-info-center-card-learn-more">
+        <p>Learn More</p>
+      </div>
+    </div>
+  </a>`;
+  });
+}
+
+// Remove all supplier cards and then recreate cards for suppliers in selected state
+function selectState(state) {
+  let supplierCards = document.querySelectorAll(".supplier-info-center-card");
+  supplierCards.forEach((div) => {
+    div.remove();
+  });
+  if (state == "All") {
+    popSuppliers();
+  } else {
+    sortedSuppliers.forEach((supplier) => {
+      if (supplier.service_area.includes(state)) {
+        supplierLink = document.createElement("a");
+        supplierList.append(supplierLink);
+        supplierLink.outerHTML = `<a href="/${
+          supplier.url
+        }" class="supplier-info-center-card">
+      <div>
+      ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
+        <div class="supplier-name">
+          <h3>
+            ${supplier.name}
+          </h3>
+        </div>
+        <div class="supplier-info-center-card-learn-more">
+          <p>Learn More</p>
+        </div>
+      </div>
+    </a>`;
+      }
+    });
+  }
+}
+
+// Populate Suppliers's Headline
+//function popSupplierHeadline() {
+//  supplierHeadline.innerText =  supplier.headline;
+//}
+*/
