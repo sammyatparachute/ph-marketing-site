@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 162,
+    name: "DuraMed, Inc",
+    external_id: "0MU-9CZ0-S4M-L7Y",
+    url: "duramed",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1676392822091-ZIDT561JH9KTGS77H3OP/DuraMed+-+color.png?format=2500w",
+    description:
+      "Since 1995, DuraMed has been committed to caring for patients in need of home medical equipment and supplies. Our company’s success has been built on reliability, clinical excellence, and our dedication to quality patient care. We are proud to be locally owned and operated. Our qualified service technicians and professional staff are committed to provide the highest quality home medical equipment.",
+    headline: null,
+    service_area: ["LA"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 161,
     name: "CPAP Services",
     external_id: "8EKUN-D4BKN-HJSY",
