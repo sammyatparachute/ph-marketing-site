@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 161,
+    name: "CPAP Services",
+    external_id: "8EKUN-D4BKN-HJSY",
+    url: "cpapservices",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1676390980549-CACANXKW1DVWHENNQ9Y7/CPAP+Services+-+color.png?format=2500w",
+    description:
+      "CPAP Services is committed to providing top quality equipment and services that meet or exceed the standards of the industry, providing excellent customer service, full instruction and education on all equipment and accessories. We are devoted to the personal health of patient comfort and success with their sleep therapy.",
+    headline: null,
+    service_area: ["CA", "TX"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 160,
     name: "Sage Medical Supply",
     external_id: "RTJ8-RGUKE-QSTGX",
