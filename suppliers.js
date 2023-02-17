@@ -624,8 +624,7 @@ const suppliers = [
     logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/1581106397243-1D3EHWO30YARCS5LY3FI/AdaptHealth-Logo-Retina%402x.png",
     description:
       "AdaptHealth is a full-service home medical equipment company that uses tailored products and services to empower patients to live their fullest lives – out of the hospital and in their homes.",
-    headline:
-      "AdaptHealth is a full-service home medical equipment company that uses tailored products and services to empower patients to live their fullest lives – out of the hospital and in their homes.",
+    headline: "",
     service_area: [
       "AL",
       "AZ",
