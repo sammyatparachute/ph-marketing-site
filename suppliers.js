@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 164,
+    name: "NuCare Pharmacy & Surgical",
+    external_id: "1KE-928-U2-846UP",
+    url: "mynucare",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1677000733991-XCKCGAMHL9B4D05Z5AJJ/NuCare+-+color.png?format=2500w",
+    description:
+      "NuCare Pharmacy & Surgical, servicing the greater New York area for your every home medical / surgical supply need.",
+    headline: null,
+    service_area: ["NY"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 163,
     name: "Norco Inc",
     external_id: "UR5PR-P5SV-C9-5P",
