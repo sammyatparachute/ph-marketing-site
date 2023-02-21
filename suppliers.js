@@ -68,7 +68,7 @@ const suppliers = [
     name: "Northeast Med-Equip / Stephens Pharmacy",
     external_id: "1AU3-7Z-9GHPC-6Q",
     url: "stephenspharmacy",
-    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1676316825584-QROI8AIGVQ1Y19XS9C1F/Northeast+Med-Equip+_+Stephens+Pharmacy+-+color.png?format=2500w",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1677001429255-GETTI7OQC074G29YCWGM/Northeast+Med-Equip+_+Stephens+Pharmacy+-+color.png?format=2500w",
     description: null,
     headline: null,
     service_area: ["PA"],
