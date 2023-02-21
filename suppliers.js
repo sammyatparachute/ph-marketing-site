@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 163,
+    name: "Norco Inc",
+    external_id: "UR5PR-P5SV-C9-5P",
+    url: "norco",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1676992907869-0D6SKYMYG1UOEFL68ZWJ/NorcoMedical+-+color.png?format=2500w",
+    description:
+      "At Norco, we specialize in Oxygen, Sleep & Respiratory Therapies; offering the latest technology in oxygen delivery systems, nebulizer therapy, CPAP/BiPAP sleep therapy & home ventilation. Our compassionate, knowledgeable, and honest licensed clinicians along with our additional team members will work with you to determine the best equipment for your patient.",
+    headline: null,
+    service_area: ["ID", "MT", "NV", "OR", "UT", "WA", "WY"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 162,
     name: "DuraMed, Inc",
     external_id: "0MU-9CZ0-S4M-L7Y",
