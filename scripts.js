@@ -64,7 +64,7 @@ function requestmoreinfoChecked() {
 }
 
 
-var typeformURL = "https://parachutehealthdme.typeform.com/to/hUhvu4QC";
+const typeformURL = "https://parachutehealthdme.typeform.com/to/hUhvu4QC";
 
 timeSlot1 = "11:00am";
 timeSlot2 = "11:30am";
