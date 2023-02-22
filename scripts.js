@@ -63,23 +63,6 @@ function requestmoreinfoChecked() {
   document.getElementById("requestmoreinfo").checked = true;
 }
 
-// Generate Typeform link
-function typeformPopup(typeformURL, webinarSlot, request_type, supplier_id, supplier_name) {
-  var reference = typeformEmbed.makePopup(
-    typeformURL +
-      "?" +
-      "webinarslot=" +
-      webinarSlot +
-      "&request_type=" +
-      request_type +
-      "&supplier_id=" +
-      supplier_id +
-      "&supplier_name=" +
-      supplier_name,
-    { mode: "popup", autoClose: 5, hideHeaders: true, hideFooters: true }
-  );
-  reference.open();
-}
 
 var typeformURL = "https://parachutehealthdme.typeform.com/to/hUhvu4QC";
 
@@ -580,6 +563,24 @@ setTimeout(() => {
     // There was an error
     console.warn("Something went wrong.", err);
   });
+
+  // Generate Typeform link
+function typeformPopup(typeformURL, webinarSlot, request_type, supplier_id, supplier_name) {
+  var reference = typeformEmbed.makePopup(
+    typeformURL +
+      "?" +
+      "webinarslot=" +
+      webinarSlot +
+      "&request_type=" +
+      request_type +
+      "&supplier_id=" +
+      supplier_id +
+      "&supplier_name=" +
+      supplier_name,
+    { mode: "popup", autoClose: 5, hideHeaders: true, hideFooters: true }
+  );
+  reference.open();
+}
 
 
   // Popup Typeform with Populated URL Parameters
