@@ -575,8 +575,14 @@ function trainingTabInfo() {
 setTimeout(() => {
   trainingTabInfo();
 }, "3000");
+  })
+  .catch(function (err) {
+    // There was an error
+    console.warn("Something went wrong.", err);
+  });
 
-// Popup Typeform with Populated URL Parameters
+
+  // Popup Typeform with Populated URL Parameters
 function openTypeForm1() {
   typeformPopup(typeformURL, firstDateTimeSlotString1, "webinar", supplier_id, supplier_name);
 }
@@ -697,12 +703,6 @@ function openTypeForm39() {
 function openTypeForm40() {
   typeformPopup(typeformURL, tenthDateTimeSlotString4, "webinar", supplier_id, supplier_name);
 }
-  })
-  .catch(function (err) {
-    // There was an error
-    console.warn("Something went wrong.", err);
-  });
-
   /*
 // Sort suppliers alphabetically
 const sortedSuppliers = suppliers.sort((a, b) => {
