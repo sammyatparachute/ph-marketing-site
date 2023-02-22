@@ -3233,7 +3233,7 @@ const suppliers = [
     headline: null,
     service_area: ["MI"],
     go_live_date: null,
-    active: true,
+    active: false,
   },
   {
     id: 77,
