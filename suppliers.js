@@ -7,7 +7,7 @@ const suppliers = [
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1678987526837-8GRDUFNIVFODC9OO70I9/St+Joseph+-+color.png?format=2500w",
     description:
       "St. Joseph Medical strives to provide great personalized service to our patients with the utmost integrity and honor. Our mission is to find and deliver the most effective diabetes management tools via the most efficient and simplified ordering platform. After all, DIABETES SHOULD NOT MANAGE THE PATIENT’S LIFE, THE PATIENT SHOULD MANAGE THEIR DIABETES!",
-    headline: "You're Health Is Our Mission",
+    headline: "Your Health Is Our Mission",
     service_area: [
       "AL",
       "AZ",
