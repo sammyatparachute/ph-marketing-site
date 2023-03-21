@@ -3467,7 +3467,7 @@ const suppliers = [
     name: "Home Medical Products",
     external_id: "8GM-UD-GBQ2-DZUB",
     url: "hmp",
-    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1622042411055-Q8XGBRGHG1VNJTB0C074/ke17ZwdGBToddI8pDm48kMfXUjBzARoOu-KX2fwDU48UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKc2RYut5bO1iSrGaBNN5k-pVhDqO7VJBbIJq9VaJxNq9lHUOAqUoIuQNsnEw5dwEVv/%21+HMP_Logo_black+font+%28transparent%29+%281%29.png?format=2500w",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1679411008302-99A7O2IO1JDLRVNSUFO6/Home+Medical+Products.png?format=2500w",
     description:
       "HMP's vision is to be a company that advances the quality of patient care in a way that improves patient outcomes, while also insisting on solutions that reduce overall healthcare costs and that remove barriers to providing quality care.",
     headline: null,
