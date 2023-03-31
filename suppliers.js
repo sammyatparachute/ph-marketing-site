@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 170,
+    name: "Quipt Home Medical – Decatur, IL",
+    external_id: "YI6B-956Y3-QK-PR",
+    url: "quipthomemedicaldecatur",
+    logo: null,
+    description: null,
+    headline: null,
+    service_area: ["IL"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 169,
     name: "Twin City Pharmacy",
     external_id: "JUD-IE-KJ-R92-ZX",
