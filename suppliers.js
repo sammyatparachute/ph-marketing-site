@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 171,
+    name: "Goodnight Medical",
+    external_id: "38-1JG4P-EJR-VPN",
+    url: "goodnightmedical",
+    logo: null,
+    description: null,
+    headline: null,
+    service_area: ["TX"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 170,
     name: "Quipt Home Medical – Decatur, IL",
     external_id: "YI6B-956Y3-QK-PR",
