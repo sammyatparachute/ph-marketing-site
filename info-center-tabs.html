@@ -1,3 +1,26 @@
+<script>
+  // MOBILE NAVIGATION
+  function mobileSelect() {
+      var x = document.getElementById("mobileMenu").value;
+      document.getElementById(x).checked = true;
+    }
+    function overviewChecked() {
+      document.getElementById("overview").checked = true;
+    }
+
+    function trainingChecked() {
+      document.getElementById("training").checked = true;
+    }
+    function signupChecked() {
+      document.getElementById("signup").checked = true;
+    }
+    function faqsChecked() {
+      document.getElementById("faqs").checked = true;
+    }
+    function requestmoreinfoChecked() {
+      document.getElementById("requestmoreinfo").checked = true;
+    }
+</script>
 <div id="sic-content">
   <div class="mobile_menu">
     <select id="mobileMenu" onchange="mobileSelect()">

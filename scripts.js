@@ -43,28 +43,6 @@ fetch(
       );
   })
   .then(function () {
-    // MOBILE NAVIGATION
-    function mobileSelect() {
-      var x = document.getElementById("mobileMenu").value;
-      document.getElementById(x).checked = true;
-    }
-    function overviewChecked() {
-      document.getElementById("overview").checked = true;
-    }
-
-    function trainingChecked() {
-      document.getElementById("training").checked = true;
-    }
-    function signupChecked() {
-      document.getElementById("signup").checked = true;
-    }
-    function faqsChecked() {
-      document.getElementById("faqs").checked = true;
-    }
-    function requestmoreinfoChecked() {
-      document.getElementById("requestmoreinfo").checked = true;
-    }
-
     timeSlot1 = "11:00am";
     timeSlot2 = "11:30am";
     timeSlot3 = "12:00pm";
