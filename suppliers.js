@@ -4,7 +4,7 @@ const suppliers = [
     name: "Capital Medical and Surgical",
     external_id: "AKQMJ-Y6C-180-C0",
     url: "cmsimed",
-    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1680889924494-7CSMW6RDK98ZB53KU08T/Capital+Medical+and+Surgical+-+color.png?format=2500w",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1680890404686-6E212I6WN0VG0GQHZWMP/Capital+Medical+and+Surgical+-+color.png?format=2500w",
     description: null,
     headline: null,
     service_area: ["FL"],
