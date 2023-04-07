@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 176,
+    name: "Capital Medical and Surgical",
+    external_id: "AKQMJ-Y6C-180-C0",
+    url: "cmsimed",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1680889924494-7CSMW6RDK98ZB53KU08T/Capital+Medical+and+Surgical+-+color.png?format=2500w",
+    description: null,
+    headline: null,
+    service_area: ["FL"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 175,
     name: "JC Home Medical",
     external_id: "8RSEB-81BI0-7246",
