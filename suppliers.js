@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 177,
+    name: "Mallard Medical Supply",
+    external_id: "XR8I-BKRJ6-GF-GR",
+    url: "mallard",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1681922067951-6PKGN9INXWU6RECZWTD0/Mallard+Medical+Supply+-+color.png?format=2500w",
+    description:
+      "The mission of Mallard Medical Supply, LLC is to set the standard of excellence in our community by delivering responsive, professional, and caring service to each and every patient as part of a successful plan of care; instilling a sense of confidence in the patient, their families, and their physicians that we are dedicated, committed, and capable.",
+    headline: null,
+    service_area: ["AR", "OK", "MO"],
+    go_live_date: null,
+    active: true,
+  },
+  {
     id: 176,
     name: "Capital Medical and Surgical",
     external_id: "AKQMJ-Y6C-180-C0",
