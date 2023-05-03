@@ -4,7 +4,7 @@ const suppliers = [
     name: "Assist Home Care, Inc.",
     external_id: "1TGJ4-UKC9-5A5PX",
     url: "assisthomecare",
-    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1683124411818-DY63TGPMCH2GOZX9L36E/Assist+Home+Care+-+color.png?format=2500w",
+    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1683125211477-A1BT19NNLYV2W8ZEYGLE/Assist+Home+Care+-+color.png?format=2500w",
     description:
       "Assist Home Care provides quality sleep apnea, respiratory & medical equipment to your patients at a click’s notice via Parachute Health’s easy online ordering platform.",
     headline: null,
