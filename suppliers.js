@@ -156,7 +156,7 @@ const suppliers = [
       "WY",
     ],
     go_live_date: null,
-    active: true,
+    active: false,
   },
   {
     id: 180,
