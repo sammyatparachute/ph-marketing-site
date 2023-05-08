@@ -105,7 +105,7 @@ const suppliers = [
     url: "betabionics",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1683123647926-GH8XFS55VGHJWBOTHCXO/Beta+Bionics+-+color.png?format=2500w",
     description:
-      "Beta Bionics is the creator of the iLet bionic pancreas insulin pump. Beta Bionics supplies iLets and corresponding supplies such as infusion sets and cartridges for the iLet bionic pancreas insulin pump.",
+      "Beta Bionics is the creator and manufacturer of the iLet Bionic Pancreas insulin delivery system and associated supplies.  Beta Bionics HUB Services accepts referrals from providers to deliver white glove patient centric service to coordinate each individual patient with the pharmacy or DME distributor which accepts their insurance.",
     headline: null,
     service_area: [
       "AL",
