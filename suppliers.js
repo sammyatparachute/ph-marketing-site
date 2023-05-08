@@ -177,7 +177,7 @@ const suppliers = [
     url: "hartmedical",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1683123407330-VWXLDMSAFTLIIZE8JYOU/Hart+Medical+Equipment+-+color.png?format=2500w",
     description:
-      "Hart Medical Equipment is a leading supplier and distributor of home medical supplies and equipment.Today, more people are discovering that recovering at home can be much easier with the right medical equipment, supplies and support. Hart Medical Equipment seeks to make a patient’s transition back to their own home easier.",
+      "Hart Medical Equipment is a leading supplier and distributor of home medical supplies and equipment. Today, more people are discovering that recovering at home can be much easier with the right medical equipment, supplies and support. Hart Medical Equipment seeks to make a patient’s transition back to their own home easier.",
     headline: null,
     service_area: ["OH", "MI"],
     go_live_date: null,
