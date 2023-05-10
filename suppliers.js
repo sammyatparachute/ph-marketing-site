@@ -4136,7 +4136,7 @@ const suppliers = [
     url: "performancehomemedical",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1633551271586-5TZQZLC7CONWHJDQ9QWV/Performance+Home+Medical+logo.png?format=2500w",
     description:
-      "Performance Home Medical is a locally owned and operated home medical equipment provider serving the Puget Sound and Spokane regions of Washington state! We specialize in sleep therapy and home oxygen equipment and are here to help you breathe easier and sleep better. We are accredited through the Healthcare Quality Association on Accreditation (HQAA) because we meet and exceed the rigorous standards of quality that are expected of us.",
+      "Performance Home Medical is based out of the Pacific Northwest and our mission is provide exceptional service to every patient we serve.  From the initial order to continuous follow-up, we are committed to ensure patient satisfaction, comfort, and compliance.  We accomplish this by providing state-of-the-art sleep, diabetic, and respiratory equipment.  Our staff is committed to help provide our patients with a better quality of life.  Moreover, Performance Home Medical is dedicated to an easier ordering process for our referring partners, and we embrace ePrescribe solutions such as Parachute.",
     headline: null,
     service_area: ["WA"],
     go_live_date: null,
