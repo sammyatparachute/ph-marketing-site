@@ -4566,13 +4566,17 @@ function popSuppliers() {
   sortedSuppliers.forEach((supplier) => {
     const currentDate = new Date();
 
-    const postgresDate = new Date(go_live_date);
+    const postgresDate = new Date(supplier.go_live_date);
     let supplierLink = document.createElement("a");
     supplierList.append(supplierLink);
     supplierLink.outerHTML = `<a href="${
       supplier.url
     }" class="supplier-info-center-card" ${
-      supplier.active == true ? "" : "style=display:none;"
+      (supplier.active == true &&
+        currentDate.getTime() <= postgresDate.getTime()) ||
+      (supplier.active == true && supplier.go_live_date == null)
+        ? ""
+        : "style=display:none;"
     }>
     <div>
         ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
@@ -4601,7 +4605,7 @@ function selectState(state) {
     sortedSuppliers.forEach((supplier) => {
       const currentDate = new Date();
 
-      const postgresDate = new Date(go_live_date);
+      const postgresDate = new Date(supplier.go_live_date);
 
       if (supplier.service_area.includes(state)) {
         supplierLink = document.createElement("a");
@@ -4609,7 +4613,11 @@ function selectState(state) {
         supplierLink.outerHTML = `<a href="/${
           supplier.url
         }" class="supplier-info-center-card" ${
-          supplier.active == true ? "" : "style=display:none;"
+          (supplier.active == true &&
+            currentDate.getTime() <= postgresDate.getTime()) ||
+          (supplier.active == true && supplier.go_live_date == null)
+            ? ""
+            : "style=display:none;"
         }>
       <div>
       ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
