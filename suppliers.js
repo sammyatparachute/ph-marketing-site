@@ -4565,7 +4565,6 @@ const sortedSuppliers = suppliers.sort((a, b) => {
 function popSuppliers() {
   sortedSuppliers.forEach((supplier) => {
     const currentDate = new Date();
-
     const postgresDate = new Date(supplier.go_live_date);
     let supplierLink = document.createElement("a");
     supplierList.append(supplierLink);
@@ -4604,9 +4603,7 @@ function selectState(state) {
   } else {
     sortedSuppliers.forEach((supplier) => {
       const currentDate = new Date();
-
       const postgresDate = new Date(supplier.go_live_date);
-
       if (supplier.service_area.includes(state)) {
         supplierLink = document.createElement("a");
         supplierList.append(supplierLink);
