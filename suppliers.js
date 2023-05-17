@@ -4596,13 +4596,20 @@ function selectState(state) {
     popSuppliers();
   } else {
     sortedSuppliers.forEach((supplier) => {
+      const currentDate = new Date();
+
+      const postgresDate = new Date(go_live_date);
+
       if (supplier.service_area.includes(state)) {
         supplierLink = document.createElement("a");
         supplierList.append(supplierLink);
         supplierLink.outerHTML = `<a href="/${
           supplier.url
         }" class="supplier-info-center-card" ${
-          supplier.active == true ? "" : "style=display:none;"
+          supplier.active == true &&
+          currentDate.getTime() >= postgresDate.getTime()
+            ? ""
+            : "style=display:none;"
         }>
       <div>
       ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
