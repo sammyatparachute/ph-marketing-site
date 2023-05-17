@@ -4564,15 +4564,15 @@ const sortedSuppliers = suppliers.sort((a, b) => {
 // Create cards for all suppliers
 function popSuppliers() {
   sortedSuppliers.forEach((supplier) => {
-    const currentDate = new Date();
-    const postgresDate = new Date(supplier.go_live_date);
+    let currentDate = new Date();
+    let postgresDate = new Date(supplier.go_live_date);
     let supplierLink = document.createElement("a");
     supplierList.append(supplierLink);
     supplierLink.outerHTML = `<a href="${
       supplier.url
     }" class="supplier-info-center-card" ${
       (supplier.active == true &&
-        currentDate.getTime() <= postgresDate.getTime()) ||
+        currentDate <= postgresDate) ||
       (supplier.active == true && supplier.go_live_date == null)
         ? ""
         : "style=display:none;"
@@ -4602,8 +4602,8 @@ function selectState(state) {
     popSuppliers();
   } else {
     sortedSuppliers.forEach((supplier) => {
-      const currentDate = new Date();
-      const postgresDate = new Date(supplier.go_live_date);
+      let currentDate = new Date();
+      let postgresDate = new Date(supplier.go_live_date);
       if (supplier.service_area.includes(state)) {
         supplierLink = document.createElement("a");
         supplierList.append(supplierLink);
@@ -4611,7 +4611,7 @@ function selectState(state) {
           supplier.url
         }" class="supplier-info-center-card" ${
           (supplier.active == true &&
-            currentDate.getTime() <= postgresDate.getTime()) ||
+            currentDate <= postgresDate) ||
           (supplier.active == true && supplier.go_live_date == null)
             ? ""
             : "style=display:none;"
