@@ -4572,11 +4572,7 @@ function popSuppliers() {
     supplierLink.outerHTML = `<a href="${
       supplier.url
     }" class="supplier-info-center-card" ${
-      (supplier.active == true &&
-        currentDate.getTime() <= postgresDate.getTime()) ||
-      (supplier.active == true && supplier.go_live_date == null)
-        ? ""
-        : "style=display:none;"
+      supplier.active == true ? "" : "style=display:none;"
     }>
     <div>
         ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
@@ -4613,11 +4609,7 @@ function selectState(state) {
         supplierLink.outerHTML = `<a href="/${
           supplier.url
         }" class="supplier-info-center-card" ${
-          (supplier.active == true &&
-            currentDate.getTime() <= postgresDate.getTime()) ||
-          (supplier.active == true && supplier.go_live_date == null)
-            ? ""
-            : "style=display:none;"
+          supplier.active == true ? "" : "style=display:none;"
         }>
       <div>
       ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
