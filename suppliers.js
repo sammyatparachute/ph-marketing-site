@@ -9,7 +9,7 @@ const suppliers = [
       "Assist Home Care provides quality sleep apnea, respiratory & medical equipment to your patients at a click’s notice via Parachute Health’s easy online ordering platform.",
     headline: null,
     service_area: ["PA"],
-    go_live_date: null,
+    go_live_date: "2023-05-18T04:00:00.000Z",
     active: true,
   },
   {
