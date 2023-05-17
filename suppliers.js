@@ -4572,7 +4572,7 @@ function popSuppliers() {
       supplier.url
     }" class="supplier-info-center-card" ${
       (supplier.active == true &&
-        currentDate <= postgresDate) ||
+        currentDate >= postgresDate) ||
       (supplier.active == true && supplier.go_live_date == null)
         ? ""
         : "style=display:none;"
@@ -4611,7 +4611,7 @@ function selectState(state) {
           supplier.url
         }" class="supplier-info-center-card" ${
           (supplier.active == true &&
-            currentDate <= postgresDate) ||
+            currentDate >= postgresDate) ||
           (supplier.active == true && supplier.go_live_date == null)
             ? ""
             : "style=display:none;"
