@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 186,
+    name: "Delta Medical Supply",
+    external_id: "LBUA-S0-LRS5-6B8",
+    url: "delta",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/23160ea1-5942-42c0-a752-2439d0bae772/Delta+Medical+Supply+-+color.png?content-type=image%2Fpng",
+    description:
+      "Delta Medical was established in 2006 with a goal in mind to service patients in the rural communities with their medical needs. Our goal is to provide exceptional care to our patients and to treat them like family. But, We are a phone call away from any questions or help that our patients need. For our patients with emergency oxygen needs, we are on call to service their needs 24/7.",
+    headline: "Making life a little bit easier",
+    service_area: ["AR"],
+    go_live_date: "2023-05-19T04:00:00.000Z",
+    active: true,
+  },
+  {
     id: 185,
     name: "Assist Home Care, Inc.",
     external_id: "1TGJ4-UKC9-5A5PX",
@@ -4571,8 +4584,7 @@ function popSuppliers() {
     supplierLink.outerHTML = `<a href="${
       supplier.url
     }" class="supplier-info-center-card" ${
-      (supplier.active == true &&
-        currentDate >= postgresDate) ||
+      (supplier.active == true && currentDate >= postgresDate) ||
       (supplier.active == true && supplier.go_live_date == null)
         ? ""
         : "style=display:none;"
@@ -4610,8 +4622,7 @@ function selectState(state) {
         supplierLink.outerHTML = `<a href="/${
           supplier.url
         }" class="supplier-info-center-card" ${
-          (supplier.active == true &&
-            currentDate >= postgresDate) ||
+          (supplier.active == true && currentDate >= postgresDate) ||
           (supplier.active == true && supplier.go_live_date == null)
             ? ""
             : "style=display:none;"
