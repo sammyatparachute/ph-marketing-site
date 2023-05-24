@@ -4,7 +4,7 @@ const suppliers = [
     name: "The Breast Pump Depot",
     external_id: "69-U3N6F-XZDR-JL",
     url: "breastpumpdepot",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/2f5dd29f-b228-4ac7-97c2-1e88af775e45/Breast+Pump+Depot+-+color.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/2698d613-a98d-4ead-93cb-d42d4426aefa/Breast+Pump+Depot+-+color.png?content-type=image%2Fpng",
     description:
       "Thanks for partnering with The Breast Pump Depot - the fastest way to get breast pumps and maternity items to your patients.",
     headline: null,
