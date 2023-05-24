@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 188,
+    name: "Matthews Medical Equipment",
+    external_id: "3U4-8B6AI-BAP-HA",
+    url: "matthewsmedicalequipment",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/bff73783-052e-45d9-80c0-084ddaf746b5/Matthews+Medical+Equipment+-+color.png?content-type=image%2Fpng",
+    description: null,
+    headline: null,
+    service_area: ["PA"],
+    go_live_date: "2023-05-26T04:00:00.000Z",
+    active: true,
+  },
+  {
     id: 187,
     name: "The Breast Pump Depot",
     external_id: "69-U3N6F-XZDR-JL",
@@ -4656,9 +4668,3 @@ function selectState(state) {
     });
   }
 }
-
-// Populate Suppliers's Headline
-//function popSupplierHeadline() {
-//  supplierHeadline.innerText =  supplier.headline;
-//}
-//
