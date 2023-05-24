@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 189,
+    name: "Great American Medical Supply",
+    external_id: "R0-LSJ4-Z32-NVB8",
+    url: "greatamerican",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/38dd5be9-eee7-4f05-9eb1-e5e7ccebd251/Great+American+Medical+Supply+-+color.png?content-type=image%2Fpng",
+    description: null,
+    headline: null,
+    service_area: ["TX", "LA"],
+    go_live_date: "2023-05-31T04:00:00.000Z",
+    active: true,
+  },
+  {
     id: 188,
     name: "Matthews Medical Equipment",
     external_id: "3U4-8B6AI-BAP-HA",
