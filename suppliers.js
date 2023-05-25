@@ -287,7 +287,7 @@ const suppliers = [
     id: 174,
     name: "Collins Medical Equipment",
     external_id: "6L0-6I3-7IXV-PQD",
-    url: "collinsmedicalequipment",
+    url: "collins",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1680887656557-OP4O94F5GHJA6IE4MOFP/Collins+Medical+Equipment+-+color.png?format=2500w",
     description:
       "Founded as Collins Pharmacy in 1931, Collins Medical Equipment continues the legacy of serving the home health needs of families. We strive to provide high-quality equipment and exceptional customer service. Our retail location is located at 500 Kings Highway East in Fairfield.",
