@@ -140,7 +140,7 @@ const suppliers = [
     name: "Diabetic Supplies, Inc",
     external_id: "G1FJ-KI-09FZ-45Q",
     url: "diabeticsupplies",
-    logo: null,
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/22720be2-8bbe-41bb-a810-53dd9a5d58c2/Diabetic+Supplies+logo+-+color.png?content-type=image%2Fpng",
     description:
       "Diabetic Supplies, Inc. has partnered with Parachute Health to provide easy online ordering for your patients Continuous Glucose Monitors (GCMs) - Dexcom and Libre, Insulin Pumps and Insulin Pump Supplies - Tandem, Medtronic and OmniPod.",
     headline: null,
