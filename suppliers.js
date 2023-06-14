@@ -4682,9 +4682,9 @@ function popSuppliers() {
     <div>
         ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
       <div class="supplier-name">
-        <h3>
+        <span>
           ${supplier.name}
-        </h3>
+        </span>
       </div>
       <div class="supplier-info-center-card-learn-more">
         <p>Learn More</p>
@@ -4720,9 +4720,9 @@ function selectState(state) {
       <div>
       ${supplier.logo ? `<img src="${supplier.logo}">` : ""}
         <div class="supplier-name">
-          <h3>
+          <span>
             ${supplier.name}
-          </h3>
+          </span>
         </div>
         <div class="supplier-info-center-card-learn-more">
           <p>Learn More</p>
