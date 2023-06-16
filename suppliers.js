@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 216,
+    name: "Mediplus Home Health",
+    external_id: "E3Z52-8P-5HM-JQK",
+    url: "mediplus",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/f869404c-d5e8-4818-b03e-7adbbfd0a1c9/Mediplus+logo+-+color.png?content-type=image%2Fpng",
+    description: "Custom Wheelchairs and most HME Equipment",
+    headline: null,
+    service_area: ["NY", "NJ"],
+    go_live_date: "2023-06-16T04:00:00.000Z",
+    active: true,
+  },
+  {
     id: 212,
     name: "CPAPnow",
     external_id: "MN-CQLJ-3XE69-9M",
