@@ -7,7 +7,7 @@ const suppliers = [
     logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/b898b283-3ec8-4972-aa3e-cb230d0f94c8/CPAPnow+logo+-+color.png?content-type=image%2Fpng",
     description:
       "CPAPnow offers sleep solutions for those who suffer from sleep apnea, also known as obstructive sleep apnea (OSA), which affects millions of Americans. It is our mission to improve the lives of individuals using CPAP/BiLevel therapy for obstructive sleep apnea, with our desire to maintain industry knowledge of equipment used for therapy.",
-    headline: "",
+    headline: null,
     service_area: ["ID"],
     go_live_date: "2023-06-16T04:00:00.000Z",
     active: true,
