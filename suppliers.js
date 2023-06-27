@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 238,
+    name: "National Medical Supply",
+    external_id: "DY2C1-VG3C-4L-LX",
+    url: "national-medical-supply",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/863d20fd-60da-4912-bf9c-16de0b303da8/National+Medical+Supply.png?content-type=image%2Fpng",
+    description:
+      "National Medical Supply was founded in 2000. We quickly became a leading provider of medical supplies and equipment. From the very beginning, we made a commitment to offer excellent customer service, quick response times, and continued communication with our clients. This has been the foundation and cornerstone principles of our organization.",
+    headline: "A Leading Provider of Medical Supplies",
+    service_area: ["CO"],
+    go_live_date: "2023-06-27T04:00:00.000Z",
+    active: true,
+  },
+  {
     id: 216,
     name: "Mediplus Home Health",
     external_id: "E3Z52-8P-5HM-JQK",
