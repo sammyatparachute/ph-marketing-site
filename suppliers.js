@@ -1,5 +1,18 @@
 const suppliers = [
   {
+    id: 239,
+    name: "IU Health Home Care CGM Program",
+    external_id: "UG-PEI-TRA-VS-51",
+    url: "iuhealth",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/63529eed-8329-4fcc-8dd2-58b775b5931a/Indiana+University+Health.png?content-type=image%2Fpng",
+    description:
+      "IU Health Home Care is committed to making continuous glucose monitors more accessible through efficient insurance processing and convenient device delivery. We ensure a seamless experience for patients and their care team by providing timely communications, access to certified diabetes educators and leading-edge devices.",
+    headline: "Your trusted partner in diabetes care management.",
+    service_area: ["IN"],
+    go_live_date: "2023-06-27T04:00:00.000Z",
+    active: true,
+  },
+  {
     id: 238,
     name: "National Medical Supply",
     external_id: "DY2C1-VG3C-4L-LX",
