@@ -872,7 +872,7 @@ const suppliers = [
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1675966176867-21QCJMVTICYMC01ON8KQ/Ascensia+Diabetes+Care+-+color.png?format=2500w",
     description:
       "Ascensia Diabetes Care is a global company focused on helping people with diabetes and the exclusive global distribution partner for the Eversense E3 Continuous Glucose Monitoring System. Ordering, managing, and tracking Eversense E3 supplies for your patients is simple through Parachute Health.",
-    headline: null,
+    headline: "A Better CGM Experience",
     service_area: [
       "AL",
       "AZ",
