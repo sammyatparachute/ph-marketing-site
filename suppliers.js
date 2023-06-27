@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 245,
+    name: "Byers Pharmacy",
+    external_id: "T0-0H-23KJ-ESGK6",
+    url: "byers",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/c0af390a-236c-419b-ba53-86b7d40e13c2/Byers+Pharmacy.png?content-type=image%2Fpng",
+    description: "",
+    headline: "A better way to order medical equipment",
+    service_area: ["CO"],
+    go_live_date: "2023-06-30T04:00:00.000Z",
+    active: true,
+  },
+  {
     id: 240,
     name: "Community Medical Supply",
     external_id: "6L-PGN8-CXG8-9AT",
