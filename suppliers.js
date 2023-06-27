@@ -1,5 +1,17 @@
 const suppliers = [
   {
+    id: 240,
+    name: "Community Medical Supply",
+    external_id: "6L-PGN8-CXG8-9AT",
+    url: "communitymed",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/55bc9347-6d6f-42c0-83b7-215b355c5160/Community+Medical+Supply.png?content-type=image%2Fpng",
+    description: "",
+    headline: "A better way to order medical equipment",
+    service_area: ["NV", "LA", "TX"],
+    go_live_date: "2023-06-28T04:00:00.000Z",
+    active: true,
+  },
+  {
     id: 239,
     name: "IU Health Home Care CGM Program",
     external_id: "UG-PEI-TRA-VS-51",
