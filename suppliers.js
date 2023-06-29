@@ -1675,6 +1675,7 @@ const suppliers = [
       "TN",
       "TX",
       "UT",
+      "VA",
       "VT",
       "WA",
       "WV",
