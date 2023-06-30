@@ -2475,7 +2475,7 @@ const suppliers = [
   },
   {
     id: 27,
-    name: "Hillrom - Respiratory Health",
+    name: "Baxter (Hillrom - Respiratory Health)",
     external_id: "ND-BJ-PMZ-PV5-JK",
     url: "hillrom",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1617302907786-1TB9W2YSUX1ASHKVRVDK/ke17ZwdGBToddI8pDm48kHwA_8TbtFOtDflQfOFA90IUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcT9d2YSbkvofiyQHn6rwFTJSqmAZ2qRa_mA90LY72gofOF8aXoFjWjjw97vtre2sU/Hillrom_Logo_2.jpg",
