@@ -3829,7 +3829,7 @@ const suppliers = [
     url: "dasco",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1659544175203-T2J1P16HR7C07TUBEY8H/dasco.png?format=2500w",
     description:
-      "DASCO is a family owned company, helping families in need of home medical equipment since 1987. Our home office is located in Westerville, Ohio with several branches throughout Ohio, West Virginia, Kentucky, Indiana and Michigan to serve you. DASCO was established in 1987 by Don Seeley and is now owned by his children, Jason and Rachel. 'At DASCO we believe in providing a level of service that exceeds expectations!'",
+      "DASCO is a family owned company, helping families in need of home medical equipment since 1987. Our home office is located in Westerville, Ohio with several branches throughout Ohio, West Virginia, Kentucky, Indiana, Texas, and Michigan to serve you. DASCO was established in 1987 by Don Seeley and is now owned by his children, Jason and Rachel. 'At DASCO we believe in providing a level of service that exceeds expectations!'",
     headline: null,
     service_area: ["IN", "KY", "MI", "OH", "WV", "TX"],
     go_live_date: null,
