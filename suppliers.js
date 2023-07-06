@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 270,
+    name: "Health System Services (HSS)",
+    external_id: "0G-CL8Z-GPT-XIRA",
+    url: "hss",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8202a2e6-0fdb-437b-9e06-5b48162f74f3/Health+System+Services+%28HSS%29.png?content-type=image%2Fpng",
+    description:
+      "HSS specializes in providing post-acute medical equipment chronic care management programs to patients with respiratory and sleep disorders such as COPD, CHF, sleep apnea, & neurological disease. HSS is dedicated to improving quality of life for the patients, caregivers, and care professionals we serve.",
+    headline: "A better way to order medical equipment",
+    service_area: ["NY"],
+    go_live_date: "2023-07-07T04:00:00.000Z",
+    active: true,
+    created_at: "2023-07-06T14:29:48.045Z",
+    updated_at: null,
+  },
+  {
     id: 245,
     name: "Byers Pharmacy",
     external_id: "T0-0H-23KJ-ESGK6",
