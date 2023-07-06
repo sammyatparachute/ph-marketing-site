@@ -3831,7 +3831,7 @@ const suppliers = [
     description:
       "DASCO is a family owned company, helping families in need of home medical equipment since 1987. Our home office is located in Westerville, Ohio with several branches throughout Ohio, West Virginia, Kentucky, Indiana and Michigan to serve you. DASCO was established in 1987 by Don Seeley and is now owned by his children, Jason and Rachel. 'At DASCO we believe in providing a level of service that exceeds expectations!'",
     headline: null,
-    service_area: ["IN", "KY", "MI", "OH", "WV"],
+    service_area: ["IN", "KY", "MI", "OH", "WV", "TX"],
     go_live_date: null,
     active: true,
   },
