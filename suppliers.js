@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 316,
+    name: "Nationwide Prime Medical Supplies",
+    external_id: "6QM-GZ-A60KX-DET",
+    url: "npmedical",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/c618e998-0911-47ba-9236-7c0fb021c263/Nationwide+Prime+Medical+Supplies.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["CA"],
+    go_live_date: "2023-08-01T04:00:00.000Z",
+    active: true,
+    created_at: "2023-07-25T22:59:41.996Z",
+    updated_at: null,
+  },
+  {
     id: 270,
     name: "Health System Services (HSS)",
     external_id: "0G-CL8Z-GPT-XIRA",
