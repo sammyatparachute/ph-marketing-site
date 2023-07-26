@@ -4,7 +4,7 @@ const suppliers = [
     name: "Nationwide Prime Medical Supplies",
     external_id: "6QM-GZ-A60KX-DET",
     url: "npmedical",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/c618e998-0911-47ba-9236-7c0fb021c263/Nationwide+Prime+Medical+Supplies.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/5946fb2f-b72e-4b08-940f-c19819972e18/Nationwide+Prime+Medical+Supplies.png?content-type=image%2Fpng",
     description: null,
     headline: "A better way to order medical equipment",
     service_area: ["CA"],
