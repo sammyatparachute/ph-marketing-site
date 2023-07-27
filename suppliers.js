@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 317,
+    name: "Physician's Choice Home Medical Supply",
+    external_id: "XP1E4-YDS-L8Q-1M",
+    url: "physicianschoice",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/47d0b92c-6261-4157-b3e6-edc7eec675ac/Physician%27s+Choice+Home+Medical+Supply.png?content-type=image%2Fpng",
+    description:
+      "Physician's Choice Home Medical Supply strives to deliver top quality medical equipment but exceptional customer service! It is our mission to improve the health of those we serve with a commitment to excellence in all that we do.",
+    headline: "A better way to order medical equipment",
+    service_area: ["OK", "TX", "LA"],
+    go_live_date: "2023-07-31T04:00:00.000Z",
+    active: true,
+    created_at: "2023-07-27T20:22:20.279Z",
+    updated_at: "2023-07-27T20:40:17.056Z",
+  },
+  {
     id: 316,
     name: "Nationwide Prime Medical Supplies",
     external_id: "6QM-GZ-A60KX-DET",
