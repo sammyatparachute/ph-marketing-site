@@ -1,12 +1,27 @@
 const suppliers = [
   {
+    id: 319,
+    name: "Quality DME",
+    external_id: "9AS-H0VP-1IH-MK6",
+    url: "qualitydme",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/e3b499ad-ed13-4204-b6cb-3b82e23ebdf3/Quailty+DME.png?content-type=image%2Fpng",
+    description:
+      "Quality DME is your local partner for providing the highest quality CPAP/BIPAP products through stellar customer service. We serve all of Virginia, Maryland, and DC with local offices in Lorton, Richmond, and Virginia Beach.",
+    headline: "Quality, local service with Quality DME",
+    service_area: ["VA", "MD", "DC"],
+    go_live_date: "2023-08-25T04:00:00.000Z",
+    active: true,
+    created_at: "2023-08-25T18:46:26.489Z",
+    updated_at: "2023-08-25T18:50:22.869Z",
+  },
+  {
     id: 318,
     name: "ABC Home Medical Supply",
     external_id: "CVI-NJBA-BC-2RY5",
     url: "abcmedical",
     logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/4eec5805-733b-45c2-b4cc-acd423a808ab/ABC+Home+Medical+Supply+-+color.png?content-type=image%2Fpng",
     description:
-      "ABC Medical is one of the nation’s leading medical supply companies, and serves as a one-stop shop with a comprehensive line of medical supplies and service that includes urological, ostomy, incontinence and wound care supplies. We are an organization that is focused entirely on the customer and their communities served.",
+      "ABC Medical is one of the nation's leading medical supply companies, and serves as a one-stop shop with a comprehensive line of medical supplies and service that includes urological, ostomy, incontinence and wound care supplies. We are an organization that is focused entirely on the customer and their communities served.",
     headline: "Adapt. Believe. Compete.",
     service_area: [
       "AL",
