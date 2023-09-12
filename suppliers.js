@@ -4,7 +4,7 @@ const suppliers = [
     name: "Hiro Health",
     external_id: "XAIPB-AEIN3-1MQ6",
     url: "hirohealth",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/49330058-fd68-4484-9d79-8f90fa95be20/Hiro+Health.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/95c63922-a5e7-4344-80a3-9fdb9aa0d90d/Hiro+Health.png?content-type=image%2Fpng",
     description: null,
     headline: "A better way to order medical equipment",
     service_area: ["TX"],
