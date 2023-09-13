@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 321,
+    name: "sleeptech",
+    external_id: "R0-LBZB9-IR-Z6TE",
+    url: "sleeptech",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/e9ac8a02-6f7f-45bc-917a-f608798fec9d/sleeptech.png?content-type=image%2Fpng",
+    description:
+      "Better nights. Brighter days.\nWelcome to Unmatched CPAP Therapy.\n\nPersonalized care. Virtual convenience. Expert clinics. Easy resupply. Simplified insurance.\n\nGet started with sleeptech today.",
+    headline: "A better way to order medical equipment",
+    service_area: ["AR", "OR", "WA"],
+    go_live_date: "2023-09-25T04:00:00.000Z",
+    active: true,
+    created_at: "2023-09-13T17:39:52.113Z",
+    updated_at: null,
+  },
+  {
     id: 320,
     name: "Hiro Health",
     external_id: "XAIPB-AEIN3-1MQ6",
