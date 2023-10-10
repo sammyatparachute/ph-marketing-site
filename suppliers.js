@@ -36,7 +36,7 @@ const suppliers = [
     logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/96e93b6a-a173-455c-ba75-cc6ed8d91991/Quality+DME.png?content-type=image%2Fpng",
     description:
       "We partner with healthcare providers across Virginia, Maryland, and DC to provide patients with premium CPAP/BiPAP and Continuous Glucose Monitor equipment and supplies. Physicians trust us to deliver quality personalized care solutions with exceptional customer service. Our focus on sleep and diabetes health improves patient outcomes and quality of life.",
-    headline: "Quality, local service with Quality DME",
+    headline: "Your local CGM and Sleep Therapy DME",
     service_area: ["VA", "MD", "DC"],
     go_live_date: "2023-08-25T04:00:00.000Z",
     active: true,
