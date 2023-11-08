@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 324,
+    name: "Bedard Pharmacy & Medical Supply",
+    external_id: "DG-ZJ-1R8-DS5-UA",
+    url: "bedard",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/3939080d-542f-4046-a377-5b6ec0baf299/Bedard+Pharmacy+%26+Medical+Supply.png?content-type=image%2Fpng",
+    description:
+      "Bedard is a family owned and operated pharmacy, medical equipment and supply retailer. Bedard focuses on helping customers recuperate from an injury, adjust to a physical change or navigate whatever medical journey they are facing. Bedard takes personal interest in familiarizing customers and their loved ones with the medical devices, equipment and supplies that will improve quality of life.",
+    headline: "Taking Care of Your Whole Health",
+    service_area: ["VT", "RI", "NY", "ME", "MA", "CT"],
+    go_live_date: "2023-10-03T04:00:00.000Z",
+    active: true,
+    created_at: "2023-11-08T22:42:31.532Z",
+    updated_at: "2023-11-08T22:44:10.209Z",
+  },
+  {
     id: 323,
     name: "Dallas Life Support Systems",
     external_id: "RK7Y-KRE-8QDS-C6",
