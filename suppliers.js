@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 323,
+    name: "Dallas Life Support Systems",
+    external_id: "RK7Y-KRE-8QDS-C6",
+    url: "dallaslifesupport",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/45c59fb2-6107-405c-9f75-156f3abbe2aa/Dallas+Life+Support+Systems.png?content-type=image%2Fpng",
+    description: "",
+    headline: "A better way to order medical equipment",
+    service_area: ["TX"],
+    go_live_date: "2023-10-09T04:00:00.000Z",
+    active: true,
+    created_at: "2023-11-08T22:15:29.764Z",
+    updated_at: "2023-11-08T22:25:27.310Z",
+  },
+  {
     id: 322,
     name: "Prism Medical Products",
     external_id: "TM7H-DXB-4DLX-6V",
