@@ -5,7 +5,7 @@ const suppliers = [
     external_id: "RK7Y-KRE-8QDS-C6",
     url: "dallaslifesupport",
     logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/45c59fb2-6107-405c-9f75-156f3abbe2aa/Dallas+Life+Support+Systems.png?content-type=image%2Fpng",
-    description: "",
+    description: null,
     headline: "A better way to order medical equipment",
     service_area: ["TX"],
     go_live_date: "2023-10-09T04:00:00.000Z",
