@@ -4125,12 +4125,12 @@ const suppliers = [
   },
   {
     id: 67,
-    name: "Delcrest Medical Products and Services",
+    name: "Mobility Zone",
     external_id: "4MP-Z5P5-R7-RQPS",
-    url: "delcrest",
-    logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1652825759949-F9GSTMMDP6N1GWVA2SWO/Delcrest+Medical+Supplies.png",
+    url: "mobilityzone",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/a7714990-4520-43a8-bd20-8af1dbf4f80b/Mobility+Zone.png?content-type=image%2Fpng",
     description:
-      "We make it easy for you to get your medical supplies and equipment so you can experience life, hassle-free. How can Delcrest make my life easier?",
+      "We make it easy for you to get your power wheelchairs, orthotics, and equipment so you can experience life, hassle-free. How can Mobility Zone make my life easier?",
     headline: "Medical Equipment. Simplified.",
     service_area: ["NJ"],
     go_live_date: null,
