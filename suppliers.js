@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 326,
+    name: "Sleep Metrics",
+    external_id: "3XUHE-SVZ-5Z-S8G",
+    url: "sleepmetrics",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/1df5e6d0-fed6-41f8-8dc3-0bcf6d1a7db4/Sleep+Metrics.png?content-type=image%2Fpng",
+    description: "",
+    headline: "A better way to order medical equipment",
+    service_area: ["WA", "OR"],
+    go_live_date: "2023-10-30T04:00:00.000Z",
+    active: true,
+    created_at: "2023-11-08T23:04:18.253Z",
+    updated_at: "2023-11-08T23:11:29.547Z",
+  },
+  {
     id: 325,
     name: "Ballad Health Medical Equipment",
     external_id: "NTPT-CR-E6H4I-7R",
