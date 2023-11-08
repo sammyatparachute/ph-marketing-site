@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 327,
+    name: "American Homecare Equipment Florida",
+    external_id: "BNKHL-L1-9Z89-TA",
+    url: "ahcequip",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/377d058b-d353-4299-a77b-f97bb1fde67a/American+Homecare+Equipment+Florida.png?content-type=image%2Fpng",
+    description:
+      "We proudly provide a wide variety of homecare medical equipment specializing in Sleep Apnea treatment (cpap and bipap), Oxygen (concentrators and ventilators) and ambulatory (beds, commodes, walkers, wheelchairs, lifts), Pediatrics. We are the company with the best reach and position in South Florida, and we are in network with many insurance companies.",
+    headline: "A better way to order medical equipment",
+    service_area: ["FL"],
+    go_live_date: "2023-10-30T04:00:00.000Z",
+    active: true,
+    created_at: "2023-11-08T23:18:51.865Z",
+    updated_at: "2023-11-08T23:20:35.768Z",
+  },
+  {
     id: 326,
     name: "Sleep Metrics",
     external_id: "3XUHE-SVZ-5Z-S8G",
