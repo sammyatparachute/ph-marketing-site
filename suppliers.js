@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 329,
+    name: "Med Resources, Inc.",
+    external_id: "8F1I3-7JDJB-MBLH",
+    url: "medresources",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/1e3c1f21-9d76-448d-bab4-ded1963ec6bf/Med+Resources%2C+Inc_.png?content-type=image%2Fpng",
+    description:
+      "MedResources is proud to serve as an outstanding full-line home medical equipment provider that's focused on meeting the needs of all patients. MedResources is the Premier full-line provider. Our goal is simple \"Create better lives and outcomes for our clients through a standard of excellence in all we do and a culture based on Love, Care, and Understanding.",
+    headline: "A better way to order medical equipment",
+    service_area: ["IL", "KS", "MO", "GA"],
+    go_live_date: "2023-11-06T05:00:00.000Z",
+    active: true,
+    created_at: "2023-11-09T00:18:25.591Z",
+    updated_at: "2023-11-09T00:27:30.662Z",
+  },
+  {
     id: 328,
     name: "Sego's Home Medical Equipment",
     external_id: "6B-GUV-9CY8M-H5U",
