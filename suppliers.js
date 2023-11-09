@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 328,
+    name: "Sego's Home Medical Equipment",
+    external_id: "6B-GUV-9CY8M-H5U",
+    url: "segohme",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/c6ced054-4a01-41ee-a579-5ddae24f4719/Sego%27s+HME.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["FL", "GA"],
+    go_live_date: "2023-11-27T05:00:00.000Z",
+    active: true,
+    created_at: "2023-11-09T00:08:11.998Z",
+    updated_at: "2023-11-09T00:09:48.826Z",
+  },
+  {
     id: 327,
     name: "American Homecare Equipment Florida",
     external_id: "BNKHL-L1-9Z89-TA",
