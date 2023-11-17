@@ -4,7 +4,7 @@ const suppliers = [
     name: "GNS Medical",
     external_id: "07-SM2VU-FYK-PA5",
     url: "gnsmedical",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/6168fcae-6e40-4a35-a23e-7e7b8713bd34/9bfe290c5a64-gns.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/b23170b2-ea14-41cd-8537-58594f25cf57/GNS+Medical.png?content-type=image%2Fpng",
     description:
       "At GNS Medical, we ensure your patients receive the right products on time, every time, including brand-name CGM systems. We deliver their prescribed products to their doorstep, enabling you to concentrate on providing care rather than dealing with logistics and paperwork.",
     headline: "A better way to order medical equipment",
