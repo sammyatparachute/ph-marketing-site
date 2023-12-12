@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 337,
+    name: "New Hampshire Medical Supply",
+    external_id: "F8N-LST-J7LB-JBT",
+    url: "newhampshiremedicalsupply",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/5db440aa-7563-4693-acd4-b6f86df4e62e/New+Hampshire+Medical+Supply.png?content-type=image%2Fpng",
+    description:
+      "New Hampshire Medical Supply is a full-service home medical equipment supplier servicing all of DC,MD and VA.Whether they choose to come into the store or have their products delivered, your patients will be greeted with friendly & familiar staff.",
+    headline: "Restore your lifestyle",
+    service_area: ["MD", "VA", "DC"],
+    go_live_date: "2023-12-19T05:00:00.000Z",
+    active: true,
+    created_at: "2023-12-12T22:48:31.413Z",
+    updated_at: null,
+  },
+  {
     id: 336,
     name: "Border DME",
     external_id: "MHSN-H4H-Q6J-23S",
