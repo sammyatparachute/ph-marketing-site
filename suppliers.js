@@ -2257,8 +2257,8 @@ const suppliers = [
     external_id: "GP3Z-G8-VS-0M6SL",
     url: "ads",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1619652600904-0X6Q6ZK5CDPQFVV03QCL/ke17ZwdGBToddI8pDm48kEMsvuPhoiE6u8IrdWi0Rb1Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIBqVSUppYsHZ7udTLAkSet-F3a_ZvcQjfK7vfmqAvRSU/Print-Logo-CMYK-02+%281%29.png",
-    description: null,
-    headline: null,
+    description: "As the #1 CGM supplier in the nation, delivering comprehensive, highly accredited diabetes solutions for you and your patients is our main focus. We provide insurance benefits checks, brand-name supply options, tailored patient support, expert guidance and training, and complimentary home-delivery. We are contracted with health plans, including Medicare Advantage and Commercial plans, that manage 83% of all insured lives. Your patients are 32% more likely to adhere to CGM therapy with ADS versus a pharmacy. The ADS Advantage sets your patients up for success.",
+    headline: "The ADS Advantage. Diabetes care you can trust.",
     service_area: [
       "AL",
       "AZ",
