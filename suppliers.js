@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 335,
+    name: "Quinlan's Medical",
+    external_id: "QGM87-E3-HU7R-DE",
+    url: "quinlansmedical",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/d2ccbcb8-4314-447e-b7c1-05bd0bef9de4/Quinlans+Medical.png?content-type=image%2Fpng",
+    description:
+      "At Quinlan's Medical we use only quality equipment and provide professional service simply because you trust us with your patients.",
+    headline: "A better way to order medical equipment",
+    service_area: ["NY"],
+    go_live_date: "2023-12-12T05:00:00.000Z",
+    active: true,
+    created_at: "2023-12-12T21:19:56.260Z",
+    updated_at: null,
+  },
+  {
     id: 334,
     name: "Pro Medical East",
     external_id: "T9UVS-FH-BAS-F4U",
