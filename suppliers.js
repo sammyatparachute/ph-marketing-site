@@ -24,7 +24,7 @@ const suppliers = [
       "We are dedicated to providing high-quality medical equipment and supplies to our customers in South Texas. We believe in providing ongoing support to our customers, from product selection to answering any questions they may have. Our goal is to help our customers live healthier and more comfortable lives by providing them with the medical equipment and supplies they need.",
     headline: "A better way to order medical equipment",
     service_area: ["TX"],
-    go_live_date: "2023-12-19T05:00:00.000Z",
+    go_live_date: "2023-12-12T05:00:00.000Z",
     active: true,
     created_at: "2023-12-12T22:06:57.750Z",
     updated_at: null,
