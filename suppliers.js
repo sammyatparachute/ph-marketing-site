@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 331,
+    name: "Harmony Healthcare Supply",
+    external_id: "5E-KTJ-FKEKL-S8Z",
+    url: "harmonyhealthcaresupply",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/3d331a55-13cf-4515-8994-27b9e11eb421/Harmony+Healthcare.png?content-type=image%2Fpng",
+    description: null,
+    headline: "The pathway to better sleep!",
+    service_area: ["CA"],
+    go_live_date: "2023-11-20T05:00:00.000Z",
+    active: true,
+    created_at: "2023-12-11T19:57:55.110Z",
+    updated_at: null,
+  },
+  {
     id: 330,
     name: "GNS Medical",
     external_id: "07-SM2VU-FYK-PA5",
