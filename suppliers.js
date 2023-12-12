@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 332,
+    name: "Whitesell Home Medical Supply",
+    external_id: "B0-TBD4-TU3-UR2P",
+    url: "whitesells",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/927b6884-d281-4531-808f-df7c6a878c0f/Whitesell+Home+Medical+Equipment.png?content-type=image%2Fpng",
+    description:
+      "Whitesell Home Medical Supply is the local choice for your Medical Equipment and Supply needs. We are family-owned and operated still to this day and have proudly been serving Frederick County since 1954.",
+    headline: "A better way to order medical equipment",
+    service_area: ["MD"],
+    go_live_date: "2023-12-04T05:00:00.000Z",
+    active: true,
+    created_at: "2023-12-12T18:39:22.677Z",
+    updated_at: null,
+  },
+  {
     id: 331,
     name: "Harmony Healthcare Supply",
     external_id: "5E-KTJ-FKEKL-S8Z",
