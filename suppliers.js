@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 333,
+    name: "Medical Technologies, Inc.",
+    external_id: "956R8-PY-98-TKBJ",
+    url: "medicaltechnologiesinc",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/fda4bf54-c82f-4ccb-b1a3-48aec2df11ea/Medical+Technologies.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["MO", "LA", "IL"],
+    go_live_date: "2023-11-27T05:00:00.000Z",
+    active: true,
+    created_at: "2023-12-12T20:38:20.769Z",
+    updated_at: null,
+  },
+  {
     id: 332,
     name: "Whitesell Home Medical Supply",
     external_id: "B0-TBD4-TU3-UR2P",
