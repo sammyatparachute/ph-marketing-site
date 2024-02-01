@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 338,
+    name: "Life Therapeutic",
+    external_id: "IH9-L2P3-20U6-9D",
+    url: "lifetherapeutic",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/9384b36c-2a0d-40c4-a8e5-6b9fb3244045/Life+Therapeutic.png?content-type=image%2Fpng",
+    description:
+      "Life Therapeutic is a full-service home medical equipment company that uses tailored products and services to improve the quality of Life in our community. We provide Respiratory Therapy and Sleep Therapy. We also provide Diabetic footwear and CGM's as well as Orthotics.",
+    headline: "A better way to order medical equipment",
+    service_area: ["OK", "AR"],
+    go_live_date: "2024-02-05T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-01T18:43:35.848Z",
+    updated_at: null,
+  },
+  {
     id: 337,
     name: "New Hampshire Medical Supply",
     external_id: "F8N-LST-J7LB-JBT",
