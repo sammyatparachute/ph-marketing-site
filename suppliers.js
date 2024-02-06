@@ -1,5 +1,21 @@
 const suppliers = [
   {
+    id: 344,
+    name: "State Medical Equipment",
+    external_id: "NH3-AFRP-6GD-90P",
+    url: "statemedicalequipment",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/c5ba796b-9d82-4d31-b671-c4f234a6f20d/State+Medical+Equipment.png?content-type=image%2Fpng",
+    description:
+      "We are a family and locally owned Durable Medical supply company committed to providing our customers with the best quality medical supplies and exceptional customer service. We have over a decade of experience, serving patients and healthcare facilities with sales and rental solutions across the Las Vegas Valley.",
+    headline:
+      "Your one stop shop for your Home Medical Equipment supply. Durable Medical Equipment providing Oxygen, CPAP, Mobility and most Home Medical Equipment.",
+    service_area: ["NV"],
+    go_live_date: "2024-02-05T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-06T20:24:05.742Z",
+    updated_at: null,
+  },
+  {
     id: 343,
     name: "Rise Up Medical Supplies Inc.",
     external_id: "BXT8J-2G-RHE7-C5",
