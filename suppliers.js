@@ -4,7 +4,7 @@ const suppliers = [
     name: "Breath of Life",
     external_id: "MDE-LXYI-4I4N-DN",
     url: "breathoflife",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/12b50774-cc22-45a5-a464-d3fcd4f511f7/Breath+of+Life.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/6f1bae7b-c93d-4f88-8491-11cda6c8d167/Breath+of+Life.png?content-type=image%2Fpng",
     description:
       "Breath of Life takes a patient-centered approach that reflects your needs and goals. We are committed to helping you manage your sleep apnea, COPD, or other complex respiratory and neuromuscular chronic disease even when you are at home using the latest technology on the market.",
     headline: "A DME Leader in Respiratory Care",
