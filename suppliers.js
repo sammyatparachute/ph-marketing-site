@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 341,
+    name: "Breath of Life",
+    external_id: "MDE-LXYI-4I4N-DN",
+    url: "breathoflife",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/12b50774-cc22-45a5-a464-d3fcd4f511f7/Breath+of+Life.png?content-type=image%2Fpng",
+    description:
+      "Breath of Life takes a patient-centered approach that reflects your needs and goals. We are committed to helping you manage your sleep apnea, COPD, or other complex respiratory and neuromuscular chronic disease even when you are at home using the latest technology on the market.",
+    headline: "A DME Leader in Respiratory Care",
+    service_area: ["TX", "OK"],
+    go_live_date: "2024-01-09T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-06T17:11:37.725Z",
+    updated_at: null,
+  },
+  {
     id: 340,
     name: "Ethos Therapy Solutions",
     external_id: "XCQIP-PH-P9-A1E0",
