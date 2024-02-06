@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 342,
+    name: "Medical Pharmacy",
+    external_id: "XVCZ9-2K7-SPN-DH",
+    url: "medicalpharmacy",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/2d085def-bfcd-422f-a501-b4b7f9827868/Medical+Pharmacy.png?content-type=image%2Fpng",
+    description:
+      "Medical Pharmacy is a full service pharmacy with a Respiratory and Durable Medical Equipment Department. We service Windham, Tolland, New London, and Hartford Counties. Family owned since 1958, we pride ourselves on patient care. We offer free delivery as well as both in store appointments and home visits when needed.",
+    headline: "A better way to order medical equipment",
+    service_area: ["CT"],
+    go_live_date: "2024-01-23T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-06T18:49:57.553Z",
+    updated_at: null,
+  },
+  {
     id: 341,
     name: "Breath of Life",
     external_id: "MDE-LXYI-4I4N-DN",
