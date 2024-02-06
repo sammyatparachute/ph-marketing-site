@@ -6,9 +6,8 @@ const suppliers = [
     url: "statemedicalequipment",
     logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/c5ba796b-9d82-4d31-b671-c4f234a6f20d/State+Medical+Equipment.png?content-type=image%2Fpng",
     description:
-      "We are a family and locally owned Durable Medical supply company committed to providing our customers with the best quality medical supplies and exceptional customer service. We have over a decade of experience, serving patients and healthcare facilities with sales and rental solutions across the Las Vegas Valley.",
-    headline:
-      "Your one stop shop for your Home Medical Equipment supply. Durable Medical Equipment providing Oxygen, CPAP, Mobility and most Home Medical Equipment.",
+      "Durable Medical Equipment providing Oxygen, CPAP, Mobility and most Home Medical Equipment.\n\nWe are a family and locally owned Durable Medical supply company committed to providing our customers with the best quality medical supplies and exceptional customer service. We have over a decade of experience, serving patients and healthcare facilities with sales and rental solutions across the Las Vegas Valley.",
+    headline: "Your one stop shop for your Home Medical Equipment supply.",
     service_area: ["NV"],
     go_live_date: "2024-02-05T05:00:00.000Z",
     active: true,
