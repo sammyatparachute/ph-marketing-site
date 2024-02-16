@@ -39,7 +39,7 @@ fetch(
       .getElementsByName("sign-up-link")
       .forEach(
         (e) =>
-          (e.outerHTML = `<a href="https://dme.parachutehealth.com/organic_sign_up?supplier_id=${supplier_id}" style="color:#520079;font-weight:400;">signing up here</a>!`)
+          (e.outerHTML = `<a href="https://dme.parachutehealth.com/organic_sign_up?supplier_id=${supplier_id}#/create-account" style="color:#520079;font-weight:400;">signing up here</a>!`)
       );
   })
   .then(function () {
