@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 345,
+    name: "O'Brian Healthcare, Inc",
+    external_id: "8FAL-PK0-YML-TZK",
+    url: "obrianhealthcare",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/6d3557ac-969e-4598-a7e8-7f8e109dfcea/O%27Brian+Healthcare%2C+Inc.png?content-type=image%2Fpng",
+    description:
+      "O'Brian Healthcare Inc. is a family owned company established in 1999 specializing in all types of medical equipment; oxygen, wheelchairs, hospital beds, etc.We have a certified pedorthists on staff to ensure you or your loved ones receive the proper diabetic footwear.Our brace & orthotic fitting specialist has 30 years plus experience in providing proper bracing for contractures, OA, & injuries.",
+    headline: "When experience counts, count on us",
+    service_area: ["AR"],
+    go_live_date: "2024-02-19T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-21T19:58:15.396Z",
+    updated_at: null,
+  },
+  {
     id: 344,
     name: "State Medical Equipment",
     external_id: "NH3-AFRP-6GD-90P",
