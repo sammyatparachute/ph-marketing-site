@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 346,
+    name: "Doubek Medical Supply",
+    external_id: "YEA37-CAR09-EGY5",
+    url: "doubekmedical",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/9eee3b25-a546-41ed-bb86-56d409a225ab/Doubek+Medical+Supply.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["IL"],
+    go_live_date: "2024-02-09T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-22T19:30:59.122Z",
+    updated_at: null,
+  },
+  {
     id: 345,
     name: "O'Brian Healthcare, Inc",
     external_id: "8FAL-PK0-YML-TZK",
