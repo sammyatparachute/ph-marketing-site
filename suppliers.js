@@ -4,7 +4,7 @@ const suppliers = [
     name: "Doubek Medical Supply",
     external_id: "YEA37-CAR09-EGY5",
     url: "doubekmedical",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/9eee3b25-a546-41ed-bb86-56d409a225ab/Doubek+Medical+Supply.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/119b3e0f-0242-4c1b-835a-9d4e94920e64/Doubek+Medical+Supply.png?content-type=image%2Fpng",
     description: null,
     headline: "A better way to order medical equipment",
     service_area: ["IL"],
