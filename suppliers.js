@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 356,
+    name: "Caldwell Home Medical",
+    external_id: "17RS-TVD7-L9-JHL",
+    url: "caldwellhomemedical",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/0d2b5185-22ac-450d-90f0-2655cac155f4/Caldwell+Home+Medical.png?content-type=image%2Fpng",
+    description:
+      "Caldwell Home Medical has partnered with Parachute Health to provide you with easy online ordering, at no cost, that gets your patients the products they need at a click's notice. We offer 24/7 on-call emergency oxygen needs.",
+    headline: "A better way to order medical equipment",
+    service_area: ["AR"],
+    go_live_date: "2024-02-26T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-23T19:44:45.533Z",
+    updated_at: null,
+  },
+  {
     id: 355,
     name: "Hometown Healthcare - New York",
     external_id: "MQL-8R-I3BHN-7UA",
