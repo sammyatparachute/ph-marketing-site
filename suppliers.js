@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 359,
+    name: "Jones County Medical Supplies, Inc",
+    external_id: "LH7-XIEI-NZA-RX3",
+    url: "jonescountymedicalsupply",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/98044675-e382-4b79-bebb-0f3ba49dc731/Jones+County+Medical+Supplies%2C+Inc.png?content-type=image%2Fpng",
+    description:
+      "Jones County Medical Supplies, Inc is a locally owned and operated provider of home medical equipment and supplies that have been proudly serving customers throughout Mississippi since 1978. Our goal is to provide each of our customers as well as their family members and caregivers with the highest level of respect and care available.",
+    headline: "A better way to order medical equipment",
+    service_area: ["MS"],
+    go_live_date: "2024-02-26T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-23T21:01:33.327Z",
+    updated_at: null,
+  },
+  {
     id: 358,
     name: "Marquis Health Solutions, Inc.",
     external_id: "0EFRF-5XR-DU-ASR",
