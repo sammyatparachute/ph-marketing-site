@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 353,
+    name: "Handi Medical",
+    external_id: "13IF-QSM-BCB6-K4",
+    url: "handimedical",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/6d57a7d0-0377-4c11-af5b-fbd59d64419a/Handi+Medical+Supply.png?content-type=image%2Fpng",
+    description:
+      "Handi Medical's mission is to enrich lives. Our team achieves this by working closely with our customers and their care team to find the very best solution available. Handi Medical has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice.",
+    headline: "Your Trusted Source",
+    service_area: ["MN"],
+    go_live_date: "2024-02-25T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-23T17:40:06.247Z",
+    updated_at: null,
+  },
+  {
     id: 352,
     name: "Medigy",
     external_id: "FKD-FURP-DQ-TBT5",
