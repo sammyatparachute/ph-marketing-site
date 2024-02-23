@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 357,
+    name: "Advance Medical Supply",
+    external_id: "XK-RQYSY-3J3F-AI",
+    url: "advancemedicalsupply",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/206895a2-07d1-4ad7-859a-668f8d0f9d04/Advance+Medical+Supply.png?content-type=image%2Fpng",
+    description:
+      "Advance Medical Supply is your local provider and a leader in supplying high quality healthcare products and customer service. We specialize in hospital beds, wheelchairs, patient lifts, therapeutic support surfaces, walkers, commodes and general DME products.",
+    headline: "A better way to order medical equipment",
+    service_area: ["NJ"],
+    go_live_date: "2024-02-26T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-23T19:54:50.587Z",
+    updated_at: null,
+  },
+  {
     id: 356,
     name: "Caldwell Home Medical",
     external_id: "17RS-TVD7-L9-JHL",
