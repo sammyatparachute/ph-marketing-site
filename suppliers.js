@@ -4,7 +4,7 @@ const suppliers = [
     name: "Aero Mobility",
     external_id: "3G-ZRIBY-R9S-T2J",
     url: "aeromobility",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/cfa26656-4e21-48e9-942e-6ff833959bf1/Aero+Mobility.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/34d1e3f4-671e-4ca0-bad8-dcaa9e6c0991/Aero+Mobility.png?content-type=image%2Fpng",
     description: null,
     headline: "A better way to order medical equipment",
     service_area: ["CA"],
