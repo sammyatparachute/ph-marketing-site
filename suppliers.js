@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 354,
+    name: "Quality Home Care Providers",
+    external_id: "MP1TI-7S9L3-Z6LC",
+    url: "qualityhomecareproviders",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/b2bd2cb8-89d9-4fc3-959b-96859f044683/Quality+Home+Care+Providers.png?content-type=image%2Fpng",
+    description: null,
+    headline: "Bring Quality Home Care to Your Home",
+    service_area: ["NY", "NJ"],
+    go_live_date: "2024-02-21T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-23T19:24:45.153Z",
+    updated_at: null,
+  },
+  {
     id: 353,
     name: "Handi Medical",
     external_id: "13IF-QSM-BCB6-K4",
