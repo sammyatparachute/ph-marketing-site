@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 351,
+    name: "Desert Medical Equipment",
+    external_id: "6M7S-UCXK-YV-HA9",
+    url: "desertmedical",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/b90ba3f1-8c22-4255-a9a6-b7ae60872486/Desert+Medical+Equipment.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["CA"],
+    go_live_date: "2024-02-21T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-23T17:08:36.023Z",
+    updated_at: null,
+  },
+  {
     id: 350,
     name: "Aero Mobility",
     external_id: "3G-ZRIBY-R9S-T2J",
