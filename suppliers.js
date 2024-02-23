@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 352,
+    name: "Medigy",
+    external_id: "FKD-FURP-DQ-TBT5",
+    url: "medigy",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/6a11e4b6-1620-4012-b375-bc3d8ec6a718/Medigy.png?content-type=image%2Fpng",
+    description:
+      "Medigy's mission is to provide the highest quality CPAP therapy services with integrity, transparency, and a commitment to achieving the best possible results for our patients. We strive to deliver the highest level of care and professionalism in the industry, and we are dedicated to continuously improving our services and technology to ensure our patients receive the best care and outcomes.",
+    headline: "Sleep Therapy Made Simple",
+    service_area: ["TX"],
+    go_live_date: "2024-02-21T05:00:00.000Z",
+    active: true,
+    created_at: "2024-02-23T17:20:33.858Z",
+    updated_at: null,
+  },
+  {
     id: 351,
     name: "Desert Medical Equipment",
     external_id: "6M7S-UCXK-YV-HA9",
