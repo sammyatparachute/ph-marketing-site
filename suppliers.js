@@ -5665,10 +5665,10 @@ const suppliers = [
   },
   {
     id: 126,
-    name: "Visiting Nurse Service of New York",
+    name: "VNS Health",
     external_id: "GB-N2I-6RCQF-2ZQ",
-    url: "vnsny",
-    logo: "https://static1.squarespace.com/static/5df13db27cfbe70b38ae20dd/5e3dbd4e7ffea47838c4bc35/5e3dc4dc0bc32d59a8567764/1581106397636/Visiting_Nurse_Service_of_New_York_Logo%402x.png?format=1500w",
+    url: "vnshealth",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/4844e555-bc52-429d-9af8-014e522b21d2/VNS+Health+color.png?content-type=image%2Fpnggi",
     description: null,
     headline: "Online Ordering for Home Health is here!",
     service_area: ["NY"],
