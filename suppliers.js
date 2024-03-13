@@ -12,6 +12,7 @@ const suppliers = [
       "AL",
       "AZ",
       "AR",
+      "AR",
       "CA",
       "CO",
       "CT",
@@ -416,6 +417,7 @@ const suppliers = [
       "AL",
       "AZ",
       "AR",
+      "AR",
       "CA",
       "CO",
       "CT",
@@ -479,6 +481,7 @@ const suppliers = [
     service_area: [
       "AL",
       "AZ",
+      "AR",
       "AR",
       "CA",
       "CO",
@@ -605,6 +608,7 @@ const suppliers = [
       "AL",
       "AZ",
       "AR",
+      "AR",
       "CA",
       "CO",
       "CT",
@@ -712,6 +716,7 @@ const suppliers = [
     service_area: [
       "AL",
       "AZ",
+      "AR",
       "AR",
       "CA",
       "CO",
@@ -879,6 +884,7 @@ const suppliers = [
     service_area: [
       "AL",
       "AZ",
+      "AR",
       "AR",
       "CA",
       "CO",
