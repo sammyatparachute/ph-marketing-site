@@ -1866,7 +1866,7 @@ const suppliers = [
     name: "Medtronic",
     external_id: "RQ0-NER-CH-IF0YC",
     url: "medtronic",
-    logo: null,
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/3831da01-9d6f-4414-b735-fdad95f6d5fa/Medtronic+-+color.png?content-type=image%2Fpng",
     description:
       "Medtronic has been committed to transforming diabetes care for over 35 years. At Medtronic, our focus is to help people with diabetes achieve better glucose control and spend less time managing highs and lows. Our products range from sensor-augmented insulin pumps that provide automated insulin delivery, to smart pens offering individualized dosing options, and real-time continuous glucose monitoring with predictive alerts for advanced detection of lows.\n\nWe’ve partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice nationwide.  ",
     headline: "Diabetes takes no breaks, neither do we. ",
