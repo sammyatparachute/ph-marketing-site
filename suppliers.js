@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 362,
+    name: "Dove Medical Supply",
+    external_id: "VFHLK-LHEFE-9U3F",
+    url: "dovemedicalsupply",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/707a4b14-2e3b-451e-89cd-8f5a16d084d6/Dove+Medical+Supply.png?content-type=image%2Fpng",
+    description:
+      "Dove Medical Supply Retail is committed to providing quality durable medical equipment and supplies to meet the diverse needs of healthcare professionals, patients, and caregivers. With six retail locations in NC, we have an extensive inventory of lift chairs, wheelchairs, walking aids, hospital beds, bath safety products, compression, wound care, orthotics, and more.",
+    headline: "A better way to order medical equipment",
+    service_area: ["NC"],
+    go_live_date: "2024-03-19T04:00:00.000Z",
+    active: true,
+    created_at: "2024-04-18T14:06:34.553Z",
+    updated_at: null,
+  },
+  {
     id: 361,
     name: "Tactile Medical",
     external_id: "K2U1-Z82M-GE-YFZ",
