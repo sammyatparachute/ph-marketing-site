@@ -4,7 +4,7 @@ const suppliers = [
     name: "Respicare DME, Inc",
     external_id: "TP-DKBU-35PKM-B2",
     url: "respicare",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8f84efde-3d42-4709-b3de-bf70ad7a619f/Respicare.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/792193ba-7a2d-4b92-936a-675d07489a2b/Respicare.png?content-type=image%2Fpng",
     description:
       "At our core, Respicare is committed to delivering exceptional service to our patients and trusted partners. We care about every patient's well-being and are thrilled to be able to provide you with the equipment and supplies you need for the most effective sleep therapy possible.",
     headline: "We care about our patients and service!",
