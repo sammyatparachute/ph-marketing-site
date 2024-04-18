@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 365,
+    name: "Wyatt's DME",
+    external_id: "YZ6A-2MDF-BL-UA6",
+    url: "wyattsdme",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/96bece4c-0e97-4ff5-878a-23cc69a937f6/Wyatt%27s+DME.png?content-type=image%2Fpng",
+    description:
+      "Since 1963, our Georgia-based home medical equipment company has been dedicated to delivering exceptional customer service, guaranteeing timely access to vital equipment for your patients. With extensive expertise in navigating insurance intricacies, we provide reliable products and expert assistance, ensuring smooth DME deliveries and setup tailored to your patients' requirements.",
+    headline: "A better way to order medical equipment",
+    service_area: ["AL", "WV", "TN", "GA"],
+    go_live_date: "2024-03-25T04:00:00.000Z",
+    active: true,
+    created_at: "2024-04-18T17:50:41.458Z",
+    updated_at: null,
+  },
+  {
     id: 364,
     name: "Respicare DME, Inc",
     external_id: "TP-DKBU-35PKM-B2",
