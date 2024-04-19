@@ -270,9 +270,9 @@ const suppliers = [
   },
   {
     id: 358,
-    name: "Marquis Health Solutions, Inc.",
+    name: "Marquis Medical Supplies",
     external_id: "0EFRF-5XR-DU-ASR",
-    url: "marquishealthsolutions",
+    url: "marquismedicalsupplies",
     logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/f75583dd-5ff0-4e92-a1ea-228e22957915/Marquis+Medical+Supplies.png?content-type=image%2Fpng",
     description: null,
     headline: "A better way to order medical equipment",
@@ -280,7 +280,7 @@ const suppliers = [
     go_live_date: "2024-02-26T05:00:00.000Z",
     active: true,
     created_at: "2024-02-23T20:09:07.208Z",
-    updated_at: null,
+    updated_at: "2024-04-19T18:24:06.562Z",
   },
   {
     id: 357,
