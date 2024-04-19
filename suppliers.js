@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 367,
+    name: "5 Star Cure LLC",
+    external_id: "B4J-SP-IHE6H-9HX",
+    url: "5starcure",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/f97eb05e-69f8-4dde-bbf0-1633c5e4b305/Five+Star+Cure.png?content-type=image%2Fpng",
+    description: null,
+    headline: "Elevating Care with Quality Gear",
+    service_area: ["CT", "NJ", "NY"],
+    go_live_date: "2024-04-12T04:00:00.000Z",
+    active: true,
+    created_at: "2024-04-19T18:19:17.877Z",
+    updated_at: null,
+  },
+  {
     id: 366,
     name: "Advanced Care Solutions/Complete Medical Supplies",
     external_id: "RF2Q-Z7L-ETN-EMH",
