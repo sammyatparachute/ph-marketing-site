@@ -4555,7 +4555,7 @@ const suppliers = [
   {
     id: 39,
     name: "Rotech Healthcare",
-    external_id: "LUQ-83B-AHU-L42H",
+    external_id: "ZLB-UF3-D8F2-4P9",
     url: "rotech",
     logo: "https://static1.squarespace.com/static/5df13db27cfbe70b38ae20dd/5e3dbd4e7ffea47838c4bc35/5faed6949d560157708063fa/1605293831254",
     description: null,
