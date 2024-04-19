@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 368,
+    name: "CityDME",
+    external_id: "XABY-TN-C62E-P71",
+    url: "citydme",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/5bfb7337-8a0d-431d-b144-0dd44170b249/City+DME+-+color.png?content-type=image%2Fpng",
+    description:
+      "CityDME facilitates the ordering and delivery of necessary medical supplies from providers and health plans to establish an accessible patient quality of care directly from their home.",
+    headline: "A better way to order medical equipment",
+    service_area: ["NY"],
+    go_live_date: "2024-04-11T04:00:00.000Z",
+    active: true,
+    created_at: "2024-04-19T20:35:09.196Z",
+    updated_at: null,
+  },
+  {
     id: 367,
     name: "5 Star Cure LLC",
     external_id: "B4J-SP-IHE6H-9HX",
