@@ -4,7 +4,7 @@ const suppliers = [
     name: "Copper Star Home Medical Supplies",
     external_id: "Y5YSZ-2Z20N-HQIL",
     url: "copperstar",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/4339d768-e860-4c51-8cf6-9747c5645254/Copper+Star+Home+Medical+Supplies.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/bc5b6916-1fbb-420f-9cbd-01d4ffd2841f/Copper+Star+Home+Medical+Supplies.png?content-type=image%2Fpng",
     description: null,
     headline: "A better way to order medical equipment",
     service_area: ["AZ"],
