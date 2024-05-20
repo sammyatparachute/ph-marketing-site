@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 373,
+    name: "Aultman Home Medical Supply",
+    external_id: "1S-7L48K-G6NV-3L",
+    url: "aultman",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/59e7eedf-bf0a-4cda-b716-a4d908f0781e/Aultman+Home+Medical+Supply.png?content-type=image%2Fpng",
+    description: "",
+    headline: "A better way to order medical equipment",
+    service_area: ["OH"],
+    go_live_date: "2024-05-06T04:00:00.000Z",
+    active: true,
+    created_at: "2024-05-20T16:41:27.043Z",
+    updated_at: null,
+  },
+  {
     id: 372,
     name: "Alpine Home Medical",
     external_id: "FVZ-ICYR-UV6C-QM",
