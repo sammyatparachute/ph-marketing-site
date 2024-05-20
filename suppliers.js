@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 369,
+    name: "National Medical Equipment Inc",
+    external_id: "9GN-18Z-RV-ML-Q0",
+    url: "nationalmedicalequipmentinc",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/090cf58f-7e70-46b1-8c25-7fb1e3093a73/National+Medical+Equipment.png?content-type=image%2Fpng",
+    description:
+      "Why wait, when you can get it today?\nOur team is devoted to offering Same-Day Service (until 3PM Mon-Fri) of the highest quality medical equipment & surgical supplies as well as to delivering unparalleled customer service.",
+    headline: "Your 1-Stop-shop since 1977",
+    service_area: ["FL"],
+    go_live_date: "2024-04-15T04:00:00.000Z",
+    active: true,
+    created_at: "2024-05-20T16:08:01.749Z",
+    updated_at: null,
+  },
+  {
     id: 368,
     name: "CityDME",
     external_id: "XABY-TN-C62E-P71",
