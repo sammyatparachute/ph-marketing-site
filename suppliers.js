@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 371,
+    name: "Copper Star Home Medical Supplies",
+    external_id: "Y5YSZ-2Z20N-HQIL",
+    url: "copperstar",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/4339d768-e860-4c51-8cf6-9747c5645254/Copper+Star+Home+Medical+Supplies.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["AZ"],
+    go_live_date: "2024-05-10T04:00:00.000Z",
+    active: true,
+    created_at: "2024-05-20T16:25:30.325Z",
+    updated_at: null,
+  },
+  {
     id: 370,
     name: "You Can Home Medical",
     external_id: "58P-02I6E-Z9-VZP",
