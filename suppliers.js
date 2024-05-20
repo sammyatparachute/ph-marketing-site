@@ -18,7 +18,7 @@ const suppliers = [
     name: "You Can Home Medical",
     external_id: "58P-02I6E-Z9-VZP",
     url: "youcanhme",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/5685ffdf-2a73-46d4-a4a9-d84886053535/Alpine+Home+Medical.png?content-type=image%2Fpng",
+    logo: null,
     description: null,
     headline: "A better way to order medical equipment",
     service_area: ["CO"],
