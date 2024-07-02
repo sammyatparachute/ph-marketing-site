@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 381,
+    name: "Lehan's Medical Equipment",
+    external_id: "DFT-ZBV-4LY-FMUN",
+    url: "lehanmedicalequipment",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/f91d7bee-1d47-4460-a8fd-1f9caa79f7a6/Lehan%27s+Medical+Equipment.png?content-type=image%2Fpng",
+    description:
+      "Founded in 1946, Lehan’s is a fourth-generation family-owned business serving Northern Illinois residents and physicians for over 75 years. Our caring guides help patients and providers navigate healthcare and insurance complexities. As compliance champions, we ensure patients understand their therapy and its benefits through education and follow-up.",
+    headline: "A better way to order medical equipment",
+    service_area: ["WI", "IL"],
+    go_live_date: "2024-07-19T04:00:00.000Z",
+    active: true,
+    created_at: "2024-07-02T21:29:46.612Z",
+    updated_at: null,
+  },
+  {
     id: 380,
     name: "Heron Medical Supplies",
     external_id: "2MUZ-JUF-0A1-4SH",
