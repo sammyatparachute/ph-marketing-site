@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 379,
+    name: "Milner Rushing Home Care",
+    external_id: "D606-3TR-L3G9-US",
+    url: "milnerrushing",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/d43f10d6-9656-4955-8c7a-6b416fe9e4f8/Milner+Rushing+Home+Care.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["AL"],
+    go_live_date: "2024-06-17T04:00:00.000Z",
+    active: true,
+    created_at: "2024-07-02T20:16:00.653Z",
+    updated_at: null,
+  },
+  {
     id: 378,
     name: "A1 MED",
     external_id: "UHT3M-L4R-M4-6X2",
