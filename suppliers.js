@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 382,
+    name: "Ken Glover Drug - Medical Equipment",
+    external_id: "3MILB-4FJHY-TLPH",
+    url: "kenglover",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/bf806465-b2b5-487d-ba39-08baa1934c83/Ken+Glover+Drug+-+Medical+Equipment.png?content-type=image%2Fpng",
+    description:
+      "Ken Glover Drug is your trusted resource for all things Durable Medical Equipment related. Uniquely positioned as both a retail pharmacy and full-line durable medical equipment company, we are standing ready to exceed expectations in both service and efficiency.",
+    headline: "A better way to order medical equipment",
+    service_area: ["AL"],
+    go_live_date: "2024-07-15T04:00:00.000Z",
+    active: true,
+    created_at: "2024-07-02T21:38:15.745Z",
+    updated_at: null,
+  },
+  {
     id: 381,
     name: "Lehan's Medical Equipment",
     external_id: "DFT-ZBV-4LY-FMUN",
