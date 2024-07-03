@@ -4,7 +4,7 @@ const suppliers = [
     name: "WeCare Medical Equipment",
     external_id: "NS-4PU-D7KY-3TSX",
     url: "wecaremedicalequipment",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/5123a9f3-820e-4ba7-a1c9-3331dc36d35b/WeCare+Medical+Equipment.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/d487f92e-2403-42a3-bae3-e70436127082/WeCare+Medical+Equipment.png?content-type=image%2Fpng",
     description:
       "WeCare Medical Equipment has been dedicated to providing patients with prompt and reliable healthcare services, including prescription drugs, medical equipment, and medical supplies. We assume the role of the patient’s advocate by coordinating patient benefits, submitting all bills to the insurance company on the patient’s behalf, and using our expertise to personalize patient care.",
     headline: "A better way to order medical equipment",
