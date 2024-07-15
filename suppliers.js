@@ -4,7 +4,7 @@ const suppliers = [
     name: "Health and Homecare",
     external_id: "0VEQ-ZI-EHT-0ENL",
     url: "healthandhomecare",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/61369626-d1fb-4e0e-ba0f-d4be5037d752/Health+and+Homecare.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/3355c03b-2103-444c-9239-9146cf298cbb/Health+and+Homecare.png?content-type=image%2Fpng",
     description: null,
     headline: "A better way to order medical equipment",
     service_area: ["TN"],
