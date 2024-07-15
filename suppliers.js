@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 385,
+    name: "Health and Homecare",
+    external_id: "0VEQ-ZI-EHT-0ENL",
+    url: "healthandhomecare",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/61369626-d1fb-4e0e-ba0f-d4be5037d752/Health+and+Homecare.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["TN"],
+    go_live_date: "2024-07-15T04:00:00.000Z",
+    active: true,
+    created_at: "2024-07-15T21:35:25.472Z",
+    updated_at: null,
+  },
+  {
     id: 384,
     name: "The Diabetic Shoppe",
     external_id: "BF-E9XU-I01N-DMY",
