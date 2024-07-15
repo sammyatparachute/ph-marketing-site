@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 384,
+    name: "The Diabetic Shoppe",
+    external_id: "BF-E9XU-I01N-DMY",
+    url: "the-diabetic-shoppe",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/927d2352-186d-4e84-a775-6b6db59fd93d/The+Diabetic+Shoppe.png?content-type=image%2Fpng",
+    description:
+      "Our mission is to provide diabetic patients with their diabetic testing supplies. We offer a variety of our diabetic products (by mail order) throughout the United States, delivered directly to your doorstep. Our product line includes diabetic footwear, custom orthotics, orthotic insoles and inserts, an assortment of braces, including knee braces and back braces.",
+    headline: "A better way to order medical equipment",
+    service_area: ["TX", "TN", "SC", "MS", "LA", "AR", "AL"],
+    go_live_date: "2024-07-03T04:00:00.000Z",
+    active: true,
+    created_at: "2024-07-15T20:40:26.777Z",
+    updated_at: null,
+  },
+  {
     id: 383,
     name: "WeCare Medical Equipment",
     external_id: "NS-4PU-D7KY-3TSX",
