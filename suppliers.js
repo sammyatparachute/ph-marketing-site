@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 389,
+    name: "Texas Medical Diagnostic, Inc.",
+    external_id: "57G-LIFP-FGR-7Y4",
+    url: "tmd",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/413149c9-31e1-4582-b17a-35cdc2ab525e/Texas+Medical+Diagnostic%2C+Inc.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["TX"],
+    go_live_date: "2024-07-18T04:00:00.000Z",
+    active: true,
+    created_at: "2024-07-16T17:38:30.985Z",
+    updated_at: null,
+  },
+  {
     id: 388,
     name: "Sleep Telemedicine Services, Inc.",
     external_id: "VS62U-SPX-YL9-0D",
