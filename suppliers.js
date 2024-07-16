@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 386,
+    name: "Affordable Medical",
+    external_id: "AU09-K183-9F-DA3",
+    url: "affmedsupplies",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/c75ce83c-e007-4143-8b38-651b02f1cd7a/Affordable+Medical.png?content-type=image%2Fpng",
+    description:
+      "Affordable Medical is focused on providing quality equipment and excellent patient advocacy and service. We specialize in nearly all areas of home medical equipment and strive to bring the latest products and services to our area. We work with many local hospitals, nursing homes, hospices and more to provide a level of continuity of care unmatched in this region.",
+    headline: "A better way to order medical equipment",
+    service_area: ["AR"],
+    go_live_date: "2024-08-11T04:00:00.000Z",
+    active: true,
+    created_at: "2024-07-16T16:36:44.909Z",
+    updated_at: null,
+  },
+  {
     id: 385,
     name: "Health and Homecare",
     external_id: "0VEQ-ZI-EHT-0ENL",
