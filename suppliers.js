@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 387,
+    name: "Sleep & Wellness Centers",
+    external_id: "I3Q-7TP7-YJC-S7V",
+    url: "sleepandwellnesscenters",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/c0e15160-c9a8-4d1a-8884-2fc316de8ded/Sleep+%26+Wellness+Centers.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["NY"],
+    go_live_date: "2024-07-28T04:00:00.000Z",
+    active: true,
+    created_at: "2024-07-16T16:58:47.227Z",
+    updated_at: null,
+  },
+  {
     id: 386,
     name: "Affordable Medical",
     external_id: "AU09-K183-9F-DA3",
