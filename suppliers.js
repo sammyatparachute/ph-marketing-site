@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 392,
+    name: "Commonwealth Home Health Care",
+    external_id: "64-FS59F-RYM0-NT",
+    url: "commonwealthhhc",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/965e8bf5-84c2-4e9a-b9ef-1a55ae0ab404/Commonwealth+Home+Health+Care.png?content-type=image%2Fpng",
+    description:
+      "Commonwealth Home Health Care (CHHC) is a local, Joint Commission accredited medical equipment company with the goal of providing the very best service and products to aid patient care at home.\n\nOur services and products cover all aspects of healthcare including Medical Equipment, Home Oxygen, Safety and Rehabilitation Products. We also provide Respiratory and Medical Equipment consultations.",
+    headline: "A better way to order medical equipment",
+    service_area: ["VA", "NC"],
+    go_live_date: "2024-07-18T04:00:00.000Z",
+    active: true,
+    created_at: "2024-07-17T15:29:11.622Z",
+    updated_at: null,
+  },
+  {
     id: 391,
     name: "Guardian Sleep",
     external_id: "EBM-4NDS-B4DI-VF",
