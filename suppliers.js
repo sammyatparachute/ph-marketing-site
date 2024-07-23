@@ -7,7 +7,7 @@ const suppliers = [
     logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/c336cb1c-85b3-42a8-8768-80e3f3cf249d/One+Step+Ahead+%26+Home+Medical+Equipment.png?content-type=image%2Fpng",
     description:
       "One Step Ahead & HME has everything you need in-home medical equipment. We carry a full line of durable medical equipment. Our customers' health and comfort is our top priority. We are here because we care. We want our customers to know that when they come to either of our locations, they will receive compassionate and friendly service with a personal touch.",
-    headline: "A better way to order medical equipment",
+    headline: "Comprehensive Home Medical Equipment",
     service_area: ["IL", "IN"],
     go_live_date: "2024-07-19T04:00:00.000Z",
     active: true,
