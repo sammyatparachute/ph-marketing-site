@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 394,
+    name: "Lee Health Medical Equipment Solutions",
+    external_id: "CVQMN-42JE-C86CG",
+    url: "leehealthmedicalequipmentsolutions",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/24fa9c53-6334-4091-95db-1ad00a98e10e/Lee+Health+Medical+Equipment+Solutions.png?content-type=image%2Fpng",
+    description:
+      "Lee Health is committed to assisting individuals in maintaining a high standard of health by providing the best quality home medical equipment and Respiratory Services with above standard professionalism, confidentiality and assistance to our customers and community. We have an extensive selection of home medical products available to make living at home independently safe and comfortable.",
+    headline: "A better way to order medical equipment",
+    service_area: ["FL"],
+    go_live_date: "2024-07-31T04:00:00.000Z",
+    active: true,
+    created_at: "2024-07-24T16:05:05.838Z",
+    updated_at: null,
+  },
+  {
     id: 393,
     name: "One Step Ahead & Home Medical Equipment",
     external_id: "QRCM8-RA-LE-LIDC",
