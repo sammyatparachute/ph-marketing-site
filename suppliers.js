@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 395,
+    name: "Choice Health Care Inc",
+    external_id: "9K9C-C85SF-KA-FA",
+    url: "choicehealthcareinc",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/fd7a7959-bdbf-49ba-8a02-bacc64e9305a/Choice+Health+Care+Inc.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["PA"],
+    go_live_date: "2024-08-04T04:00:00.000Z",
+    active: true,
+    created_at: "2024-07-24T19:24:39.209Z",
+    updated_at: null,
+  },
+  {
     id: 394,
     name: "Lee Health Medical Equipment Solutions",
     external_id: "CVQMN-42JE-C86CG",
