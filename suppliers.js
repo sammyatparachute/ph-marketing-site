@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 396,
+    name: "Girling Home Care",
+    external_id: "I0Y2-4DR9U-R8-UC",
+    url: "girlinghc",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/035fc27e-3bc5-4255-a9db-a78d191ec93d/Girling+Home+Care.png?content-type=image%2Fpng",
+    description:
+      "Girling Home Care has partnered with Parachute Health to empower you with fast and easy online referrals. Skip faxing and streamline home care referrals at no cost to you.",
+    headline: "Order Home Care Online for Fast Service",
+    service_area: ["NY"],
+    go_live_date: "2024-08-05T04:00:00.000Z",
+    active: true,
+    created_at: "2024-08-06T15:49:46.645Z",
+    updated_at: null,
+  },
+  {
     id: 395,
     name: "Choice Health Care Inc",
     external_id: "9K9C-C85SF-KA-FA",
