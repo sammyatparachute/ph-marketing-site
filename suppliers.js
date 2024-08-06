@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 397,
+    name: "Pharmacare Hawaii",
+    external_id: "XTM-YFKM-1E-5Y8R",
+    url: "pharmacarehawaii",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/5ac0b456-b2e0-4e83-a538-9e5bae768e08/Pharmacare+Hawaii.png?content-type=image%2Fpng",
+    description:
+      "Pharmacare Hawaii is a locally-owned provider of quality, professional health care services & products founded upon a 95+ year history in pharmacy. As one of Hawaii’s largest diversified providers, we proudly serve the communities on all islands. We partnered with Parachute Health to provide easy online ordering for medical equipment, including breast pumps and CGMs, to meet your patients’ needs.",
+    headline: "A better way to order medical equipment",
+    service_area: ["HI"],
+    go_live_date: "2024-08-04T04:00:00.000Z",
+    active: true,
+    created_at: "2024-08-06T16:15:38.034Z",
+    updated_at: null,
+  },
+  {
     id: 396,
     name: "Girling Home Care",
     external_id: "I0Y2-4DR9U-R8-UC",
