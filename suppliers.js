@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 399,
+    name: "Petersen Medical",
+    external_id: "42BP-2048-30H-J8",
+    url: "petersenmedical",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/d41ee05a-9bdb-4fff-8aa4-141119cb3ac0/Petersen+Medical.png?content-type=image%2Fpng",
+    description:
+      "Petersen Medical supports home medical needs along the Wasatch Front and in Saint George, Southern Idaho, Blanding, and Cortez, Colorado. We differentiate our service by giving you dedicated, local support and providing a customer experience that can’t be matched by large, out-of-state companies.",
+    headline: "A better way to order medical equipment",
+    service_area: ["UT", "CO"],
+    go_live_date: "2024-08-18T04:00:00.000Z",
+    active: true,
+    created_at: "2024-08-21T14:53:00.580Z",
+    updated_at: null,
+  },
+  {
     id: 398,
     name: "Prescription Center",
     external_id: "D96E-0A-CDYE5-IL",
