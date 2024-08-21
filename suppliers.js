@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 402,
+    name: "Neb Group of AZ",
+    external_id: "1M-VYPD5-F6-I70I",
+    url: "nebgroupofaz",
+    logo: "",
+    description: "",
+    headline: "A better way to order medical equipment",
+    service_area: ["AZ"],
+    go_live_date: "2024-08-22T04:00:00.000Z",
+    active: true,
+    created_at: "2024-08-21T15:44:12.378Z",
+    updated_at: null,
+  },
+  {
     id: 401,
     name: "Infinity Health Solutions",
     external_id: "H7YI0-2TG2J-PB1L",
