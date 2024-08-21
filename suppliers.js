@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 403,
+    name: "UnitedCare",
+    external_id: "2EI9-898-50E-18Q",
+    url: "unitedcare",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/12d7ed99-3fa9-42b8-b9d7-340222ee18bc/UnitedCare.png?content-type=image%2Fpng",
+    description: "",
+    headline: "A better way to order medical equipment",
+    service_area: ["WV"],
+    go_live_date: "2024-08-18T04:00:00.000Z",
+    active: true,
+    created_at: "2024-08-21T16:01:33.527Z",
+    updated_at: null,
+  },
+  {
     id: 402,
     name: "Neb Group of AZ",
     external_id: "1M-VYPD5-F6-I70I",
