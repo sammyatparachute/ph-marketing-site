@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 400,
+    name: "Barnes Healthcare Services",
+    external_id: "0GAZ-UP51-FXE-EB",
+    url: "barnes",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/4782a7a5-3d82-4ad1-8764-7cd17cc2e9c0/Barnes+Healthcare+Services.png?content-type=image%2Fpng",
+    description:
+      "At Barnes Healthcare Services, our mission is to empower health and elevate care. We've dedicated over a century to perfecting patient-centered care. Our multi-disciplinary team collaborates seamlessly, building strong patient relationships, reducing hospital visits, and enhancing lives. We take pride in our personalized approach that delivers successful outcomes.",
+    headline: "A better way to order medical equipment",
+    service_area: ["GA", "FL"],
+    go_live_date: "2024-08-25T04:00:00.000Z",
+    active: true,
+    created_at: "2024-08-21T15:00:28.787Z",
+    updated_at: null,
+  },
+  {
     id: 399,
     name: "Petersen Medical",
     external_id: "42BP-2048-30H-J8",
