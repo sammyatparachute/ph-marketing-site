@@ -4,7 +4,7 @@ const suppliers = [
     name: "Neb Group of AZ",
     external_id: "1M-VYPD5-F6-I70I",
     url: "nebgroupofaz",
-    logo: "",
+    logo: null,
     description: "",
     headline: "A better way to order medical equipment",
     service_area: ["AZ"],
