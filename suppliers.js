@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 401,
+    name: "Infinity Health Solutions",
+    external_id: "H7YI0-2TG2J-PB1L",
+    url: "infinity",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/a3092bc7-3687-4783-8ab7-ba61ede5da20/Infinity+Health+Solutions.png?content-type=image%2Fpng",
+    description: "",
+    headline: "A better way to order medical equipment",
+    service_area: ["TX", "MS", "LA", "FL"],
+    go_live_date: "2024-08-25T04:00:00.000Z",
+    active: true,
+    created_at: "2024-08-21T15:34:50.591Z",
+    updated_at: null,
+  },
+  {
     id: 400,
     name: "Barnes Healthcare Services",
     external_id: "0GAZ-UP51-FXE-EB",
