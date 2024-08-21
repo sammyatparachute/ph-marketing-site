@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 398,
+    name: "Prescription Center",
+    external_id: "D96E-0A-CDYE5-IL",
+    url: "prescriptioncenter",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/71356a31-8b69-42f6-9dde-304c9ed44cde/Prescription+Center.png?content-type=image%2Fpng",
+    description:
+      "Prescription Center Pharmacy is a full-service pharmacy and home care center located on Route 59, in Tallman, NY. We are a locally-owned community pharmacy dedicated to providing outstanding customer service at an affordable price. Prescription Center Pharmacy offers free and fast delivery, the most affordable prices on your prescriptions, and an enjoyable customer experience.",
+    headline: "A better way to order medical equipment",
+    service_area: ["NY"],
+    go_live_date: "2024-08-07T04:00:00.000Z",
+    active: true,
+    created_at: "2024-08-21T14:45:53.268Z",
+    updated_at: null,
+  },
+  {
     id: 397,
     name: "Pharmacare Hawaii",
     external_id: "XTM-YFKM-1E-5Y8R",
