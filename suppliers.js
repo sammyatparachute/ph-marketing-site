@@ -5,7 +5,7 @@ const suppliers = [
     external_id: "7M-CJQ6-R0N69-HJ",
     url: "orthogravity",
     logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/71f7e728-598f-492a-a094-7cb45c705eb4/Ortho+Gravity.png?content-type=image%2Fpng",
-    description: "",
+    description: null,
     headline: "A better way to order medical equipment",
     service_area: ["DE", "FL"],
     go_live_date: "2024-08-18T04:00:00.000Z",
