@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 405,
+    name: "Impakt Medical",
+    external_id: "1D-17IB8-JX6P-93",
+    url: "impaktmedical",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/1a58d281-1880-4c45-a7f9-51ca1623b12f/Impakt+Medical.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["CA"],
+    go_live_date: "2024-08-08T04:00:00.000Z",
+    active: true,
+    created_at: "2024-08-22T14:58:28.627Z",
+    updated_at: null,
+  },
+  {
     id: 404,
     name: "ORTHO GRAVITY MEDICAL LLC",
     external_id: "7M-CJQ6-R0N69-HJ",
