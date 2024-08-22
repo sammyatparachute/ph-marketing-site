@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 406,
+    name: "New Life Medical Supplies",
+    external_id: "LS-20-LT7T-03-NV",
+    url: "newlifemed",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8f2c70d1-4a74-4e27-b968-3180d6b6b1db/New+Life+Medical+Supplies.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["CA"],
+    go_live_date: "2024-08-18T04:00:00.000Z",
+    active: true,
+    created_at: "2024-08-22T17:10:21.482Z",
+    updated_at: null,
+  },
+  {
     id: 405,
     name: "Impakt Medical",
     external_id: "1D-17IB8-JX6P-93",
