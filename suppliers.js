@@ -61,7 +61,7 @@ const suppliers = [
     external_id: "1M-VYPD5-F6-I70I",
     url: "nebgroupofaz",
     logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/04ae4362-daf3-4922-bd5a-8bfebccc4f0b/Neb+Group+of+AZ.png?content-type=image%2Fpng",
-    description: "",
+    description: null,
     headline: "A better way to order medical equipment",
     service_area: ["AZ"],
     go_live_date: "2024-08-22T04:00:00.000Z",
