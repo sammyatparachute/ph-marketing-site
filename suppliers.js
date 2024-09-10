@@ -60,7 +60,7 @@ const suppliers = [
     name: "Neb Group of AZ",
     external_id: "1M-VYPD5-F6-I70I",
     url: "nebgroupofaz",
-    logo: null,
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/04ae4362-daf3-4922-bd5a-8bfebccc4f0b/Neb+Group+of+AZ.png?content-type=image%2Fpng",
     description: "",
     headline: "A better way to order medical equipment",
     service_area: ["AZ"],
