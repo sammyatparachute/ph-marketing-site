@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 411,
+    name: "Sound Health Medical Supply",
+    external_id: "STD-EY-1IL4Z-VJL",
+    url: "soundhealthmedical",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/d58e393d-e21d-4549-99ff-5834027b0d4d/Sound+Health+Medical+Supply.png?content-type=image%2Fpng",
+    description:
+      "Sound Health Medical is a customer-focused family-based company. We distribute durable medical, gloves, wheelchairs, lift chairs, protective underwear and much more. With a knowledgeable customer service center, we are sure to find what it is you are looking for.",
+    headline: "A better way to order medical equipment",
+    service_area: ["CA", "MT", "AZ", "UT", "OR", "ID", "AK", "WA"],
+    go_live_date: "2024-08-28T04:00:00.000Z",
+    active: true,
+    created_at: "2024-09-11T21:15:03.662Z",
+    updated_at: null,
+  },
+  {
     id: 410,
     name: "Kern Medical Supply",
     external_id: "G1E-5Z3H6-NP3-GL",
