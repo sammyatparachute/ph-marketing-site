@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 410,
+    name: "Kern Medical Supply",
+    external_id: "G1E-5Z3H6-NP3-GL",
+    url: "kernmedicalsupply",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/aca7f9f7-e689-4aad-a09f-661f87ba876d/Kern+Medical+Supply.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["CA"],
+    go_live_date: "2024-09-15T04:00:00.000Z",
+    active: true,
+    created_at: "2024-09-11T20:46:44.697Z",
+    updated_at: null,
+  },
+  {
     id: 409,
     name: "Round Table Healthcare",
     external_id: "FA5FT-74A3P-P3D9",
