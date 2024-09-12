@@ -4,7 +4,7 @@ const suppliers = [
     name: "LymphaCare",
     external_id: "EA-YNK0-YXF-5KAB",
     url: "lymphacare",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/d28dda3c-066f-4d14-a160-9b9aaeac5fff/LymphaCare.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/1a3731b0-0c7d-4923-8ed6-95b1e32dd048/LymphaCare.png?content-type=image%2Fpng",
     description:
       "LymphaCare is a trusted national provider in wound care and lymphedema treatment. We provide insurance benefits checks, top-brand supplies, personalized patient support and expert guidance. With free home delivery and simple ordering through Parachute Health, managing and tracking equipment is easy. LymphaCare ensures your patients get the tools and care they need to succeed.",
     headline: "A Better Lymphedema Experience",
