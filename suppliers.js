@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 416,
+    name: "Family Medical Supply-AR",
+    external_id: "I20-6DZAR-7X-N9Y",
+    url: "familymedicalsuppplyinc",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/19f1b7fc-cf69-403a-8861-43f1862f8154/Family+Medical+Supply-AR.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["AR"],
+    go_live_date: "2024-09-09T04:00:00.000Z",
+    active: true,
+    created_at: "2024-09-12T23:36:03.188Z",
+    updated_at: null,
+  },
+  {
     id: 415,
     name: "Specialty Medical Equipment",
     external_id: "1354M-2RG-53T-RV",
