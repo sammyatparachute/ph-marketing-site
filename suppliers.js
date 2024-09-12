@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 417,
+    name: "Family Medical Supply",
+    external_id: "BC6A-CX-5RCI-8CG",
+    url: "familymedsupplydc",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/6e118c7d-eff8-4293-b5a2-2d74c25c66d4/Family+Medical+Supply.png?content-type=image%2Fpng",
+    description:
+      "Our durable medical equipment and medical supplies inventory consists of a vast array of products for home and facility use, including wheelchairs, walkers, disposable supplies such as diapers, wound care supplies, braces diabetic supplies, and more.",
+    headline: "Serving in the DMV area since 2016",
+    service_area: ["MD", "DC"],
+    go_live_date: "2024-09-19T04:00:00.000Z",
+    active: true,
+    created_at: "2024-09-12T23:44:28.183Z",
+    updated_at: null,
+  },
+  {
     id: 416,
     name: "Family Medical Supply-AR",
     external_id: "I20-6DZAR-7X-N9Y",
