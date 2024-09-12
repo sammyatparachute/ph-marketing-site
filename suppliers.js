@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 414,
+    name: "DF&S",
+    external_id: "BETU-XL3V-J9A-5M",
+    url: "dfs",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/59d0a7e6-9eaa-460f-88b8-541cec6cee0b/DF%26S.png?content-type=image%2Fpng",
+    description:
+      "Since 1995, the medical community has trusted DF&S for our kind, compassionate, and personalized service- essential in managing diabetic care. We go above and beyond by contacting our customers via phone or text message before shipping CGM Supplies, ensuring timely delivery and their well-being.",
+    headline: "Your trusted partner for CGM supplies",
+    service_area: ["FL"],
+    go_live_date: "2024-09-06T04:00:00.000Z",
+    active: true,
+    created_at: "2024-09-12T22:58:33.616Z",
+    updated_at: null,
+  },
+  {
     id: 413,
     name: "LymphaCare",
     external_id: "EA-YNK0-YXF-5KAB",
