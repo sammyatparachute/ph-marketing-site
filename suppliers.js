@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 418,
+    name: "White Aid Medical Supplies",
+    external_id: "45DBX-B09J-QV-FV",
+    url: "whiteaid",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/360a88c2-e123-4222-8e8d-618d3b909723/White+Aid+Medical+Supplies.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["MD", "NY"],
+    go_live_date: "2024-09-14T04:00:00.000Z",
+    active: true,
+    created_at: "2024-09-13T13:37:36.605Z",
+    updated_at: null,
+  },
+  {
     id: 417,
     name: "Family Medical Supply",
     external_id: "BC6A-CX-5RCI-8CG",
