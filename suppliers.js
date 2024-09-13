@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 419,
+    name: "Hometown Neurodiagnostics",
+    external_id: "1ZDC-0Z-NBCPD-I5",
+    url: "hometownneurodiagnostics",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/bd380287-acd8-4382-856c-0d863de10b3c/Hometown+Neurodiagnostics.png?content-type=image%2Fpng",
+    description:
+      "Hometown provides high quality, affordable EEG testing in the comfort of a patient's home. We offer diagnostic testing that can be performed in the privacy and comfort of the patient's home also allowing the patient to go about as much as possible of their day to day activities.",
+    headline: "A better way to order medical equipment",
+    service_area: ["OK", "CO"],
+    go_live_date: "2024-09-16T04:00:00.000Z",
+    active: true,
+    created_at: "2024-09-13T14:48:43.868Z",
+    updated_at: null,
+  },
+  {
     id: 418,
     name: "White Aid Medical Supplies",
     external_id: "45DBX-B09J-QV-FV",
