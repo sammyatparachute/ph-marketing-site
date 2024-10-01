@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 420,
+    name: "Med-South",
+    external_id: "LB4D2-51-R94-G7Q",
+    url: "med-south",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/ed3675ab-27b4-4a24-839e-56834298b287/Med-South.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["AL"],
+    go_live_date: "2024-09-26T04:00:00.000Z",
+    active: true,
+    created_at: "2024-10-01T23:12:30.697Z",
+    updated_at: null,
+  },
+  {
     id: 419,
     name: "Hometown Neurodiagnostics",
     external_id: "1ZDC-0Z-NBCPD-I5",
