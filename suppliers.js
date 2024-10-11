@@ -5004,7 +5004,7 @@ const suppliers = [
     url: "edwards",
     logo: "https://images.squarespace-cdn.com/content/v1/5df13db27cfbe70b38ae20dd/1645726657180-QAMD29NUHDARAZREVMY9/5f94b015045c-ehcs.png?format=2500w",
     description:
-      "Edwards Health Care Services (EHCS) is your first-choice provider of direct-to-home, high quality medical products and diabetes supplies. For over 25 years, we have been lighting the way to better health by providing our customers an easier way to have products delivered directly to their door.",
+      "For 30+ years, we have been lighting the way to better health by providing our customers an easier way to have products delivered directly to their door. By partnering with healthcare professionals, product manufacturers, and a large network of government and private insurers, we are able to fulfill our deep commitment of personalized customer service and a simplified order process for every customer, every time!",
     headline: null,
     service_area: [
       "AL",
