@@ -7,7 +7,7 @@ const suppliers = [
     logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/68c7b209-c179-4bb4-b7f1-4b853efe3cd0/Arvada+Pharmacy+and+Medical+Supply.png?content-type=image%2Fpng",
     description:
       "Arvada Pharmacy is your top choice for DME and medical supplies. Our expert team provides personalized consultations to ensure you get the right equipment, from wheelchairs and hospital beds to speech therapy devices and wound care products. With our commitment to exceptional service, we ensure the highest quality care and convenience for your health needs.",
-    headline: "",
+    headline: "A better way to order medical equipment",
     service_area: ["CO"],
     go_live_date: "2024-10-01T04:00:00.000Z",
     active: true,
