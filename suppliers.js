@@ -1,5 +1,20 @@
 const suppliers = [
   {
+    id: 424,
+    name: "Romo Medical Equipment",
+    external_id: "0Z-FV2Y-Z8-9CMRL",
+    url: "romomedicalequipment",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/1bd8489f-9e92-4d75-ba44-94518a1eef4b/Romo+Medical+Equipment.png?content-type=image%2Fpng",
+    description:
+      "At Romo Medical Equipment, our goal is to enhance the quality of home care life. We strive to serve with value, assurance, honesty, and loyalty. We believe that dedication to these goals will naturally result in a successful long-term client relationship.",
+    headline: "A Provider of Superior DME",
+    service_area: ["TX"],
+    go_live_date: "2024-10-01T04:00:00.000Z",
+    active: true,
+    created_at: "2024-10-23T17:50:48.570Z",
+    updated_at: null,
+  },
+  {
     id: 423,
     name: "Allboro One Medsupply Inc",
     external_id: "MCZ-IXL-IKVND-1R",
