@@ -4,7 +4,7 @@ const suppliers = [
     name: "Allboro One Medsupply Inc",
     external_id: "MCZ-IXL-IKVND-1R",
     url: "allboroonemed",
-    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/c2e1d9f8-368f-45c9-9f2e-570c73c4fe5e/Allboro+One+Medsupply+Inc.png?content-type=image%2Fpng",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/0644268c-28f3-40c3-8285-e6de9b2f4c6b/Allboro+One+Medsupply+Inc.png?content-type=image%2Fpng",
     description: null,
     headline: "A better way to order medical equipment",
     service_area: ["NY"],
