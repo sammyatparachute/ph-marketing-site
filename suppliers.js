@@ -1,5 +1,19 @@
 const suppliers = [
   {
+    id: 423,
+    name: "Allboro One Medsupply Inc",
+    external_id: "MCZ-IXL-IKVND-1R",
+    url: "allboroonemed",
+    logo: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/c2e1d9f8-368f-45c9-9f2e-570c73c4fe5e/Allboro+One+Medsupply+Inc.png?content-type=image%2Fpng",
+    description: null,
+    headline: "A better way to order medical equipment",
+    service_area: ["NY"],
+    go_live_date: "2024-09-24T04:00:00.000Z",
+    active: true,
+    created_at: "2024-10-23T16:48:44.142Z",
+    updated_at: null,
+  },
+  {
     id: 422,
     name: "Arvada Pharmacy and Medical Supply",
     external_id: "PYIEG-AZ-0AFH-R1",
