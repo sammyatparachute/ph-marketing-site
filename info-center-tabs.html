@@ -86,9 +86,8 @@
     <label for="training" class="tab-label">Training</label>
     <div class="panel">
       <p>
-        The Facility Activation team at Parachute Health offers daily Training Sessions to assist with setup and training on the platform.
-Once you register for a session - you will receive a meeting invitation from one of our Team Members.
-We look forward to meeting with you!
+        Parachute Health offers weekly webinars to assist with setup and training on the platform. Select a time
+        slot below, and they will reach out with more information!
       </p>
       <p>
         <strong>Click on any of the dates below</strong> to register for an online training session. Contact
@@ -284,3 +283,16 @@ We look forward to meeting with you!
 
   </div>
 </div>
+
+<script>
+  const blackOutDates = ['May 13 2025', 'May 14 2025', 'May 15 2025', 'May 16 2025'];
+
+document.querySelectorAll('.webinar-div-2 > div').forEach(div => {
+  const dateText = div.querySelector('h4')?.textContent.trim();
+
+  if (dateText && blackOutDates.some(date => dateText.includes(date))) {
+    console.log('Hiding:', dateText);
+    div.style.display = 'none';
+  }
+});
+</script>
