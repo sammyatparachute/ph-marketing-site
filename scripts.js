@@ -22,11 +22,9 @@ fetch(
   "https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html"
 )
   .then(function (response) {
-    // The API call was successful!
     return response.text();
   })
   .then(function (html) {
-    // This is the HTML from our response as a text string
     document.getElementById("info-center-tabs").innerHTML = html;
   })
   .then(function () {
@@ -966,3 +964,19 @@ function openTypeForm40() {
     supplier_name
   );
 }
+
+const blackOutDates = [
+  "May 13 2025",
+  "May 14 2025",
+  "May 15 2025",
+  "May 16 2025",
+];
+
+document.querySelectorAll(".webinar-div-2 > div").forEach((div) => {
+  const dateText = div.querySelector("h4")?.textContent.trim();
+
+  if (dateText && blackOutDates.some((date) => dateText.includes(date))) {
+    console.log("Hiding:", dateText);
+    div.style.display = "none";
+  }
+});
