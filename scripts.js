@@ -71,7 +71,7 @@ async function loadInfoCenterTabs() {
     document.getElementById("info-center-tabs").innerHTML = html;
 
     // Wait for DOM to reflect injected HTML
-    await new Promise((resolve) => setTimeout(resolve, 100));
+    // await new Promise((resolve) => setTimeout(resolve, 100));
 
     document.getElementsByName("supplier-name").forEach((e) => {
       e.textContent = supplier_name;
