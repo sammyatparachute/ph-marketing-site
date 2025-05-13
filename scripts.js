@@ -54,15 +54,14 @@ fetch(
 
     */
 
-    const blackOutDates = [
-      "May 13 2025",
-      "May 14 2025",
-      "May 15 2025",
-      "May 16 2025",
-    ];
+const blackOutDates = [
+  "May 13 2025",
+  "May 14 2025",
+  "May 15 2025",
+  "May 16 2025",
+];
 
 async function loadInfoCenterTabs() {
-  
   try {
     const res = await fetch(
       "https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html"
@@ -91,7 +90,6 @@ async function loadInfoCenterTabs() {
 
 // Now apply blackout logic
 
-/*
 document.querySelectorAll(".webinar-div-2 > div").forEach((div) => {
   const dateText = div.querySelector("h4")?.textContent.trim();
   if (dateText && blackOutDates.some((date) => dateText.includes(date))) {
@@ -99,7 +97,6 @@ document.querySelectorAll(".webinar-div-2 > div").forEach((div) => {
     div.style.display = "none";
   }
 });
-*/
 
 loadInfoCenterTabs();
 
