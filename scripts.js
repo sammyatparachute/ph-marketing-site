@@ -90,6 +90,8 @@ async function loadInfoCenterTabs() {
 await new Promise((resolve) => setTimeout(resolve, 100));
 
 // Now apply blackout logic
+
+/*
 document.querySelectorAll(".webinar-div-2 > div").forEach((div) => {
   const dateText = div.querySelector("h4")?.textContent.trim();
   if (dateText && blackOutDates.some((date) => dateText.includes(date))) {
@@ -97,6 +99,7 @@ document.querySelectorAll(".webinar-div-2 > div").forEach((div) => {
     div.style.display = "none";
   }
 });
+*/
 
 loadInfoCenterTabs();
 
