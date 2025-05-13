@@ -87,7 +87,7 @@ async function loadInfoCenterTabs() {
   }
 }
 // Wait a bit to ensure inner divs are loaded
-await new Promise((resolve) => setTimeout(resolve, 100));
+// await new Promise((resolve) => setTimeout(resolve, 100));
 
 // Now apply blackout logic
 
