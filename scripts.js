@@ -18,6 +18,8 @@
 //const defaultDescription = `${selectedSupplier[0].name} has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice.`;
 
 // Populate the info center tabs from remote html
+
+/*
 fetch(
   "https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html"
 )
@@ -50,7 +52,37 @@ fetch(
     timeSlot7 = "3:00pm";
     timeSlot8 = "3:30pm";
 
+    */
+
+    async function loadInfoCenterTabs() {
+      try {
+        const res = await fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html");
+        const html = await res.text();
+        document.getElementById("info-center-tabs").innerHTML = html;
+    
+        // Wait for DOM to reflect injected HTML
+        await new Promise(resolve => setTimeout(resolve, 100));
+    
+        document.getElementsByName("supplier-name").forEach(e => {
+          e.textContent = supplier_name;
+        });
+    
+        document.getElementsByName("sign-up-link").forEach(e => {
+          e.outerHTML = `<a href="https://dme.parachutehealth.com/organic_sign_up?supplier_id=${supplier_id}#/create-account" style="color:#520079;font-weight:400;">signing up here</a>!`;
+        });
+    
+        await trainingTabInfo();
+      } catch (err) {
+        console.warn("Something went wrong.", err);
+      }
+    }
+    
+    loadInfoCenterTabs();
+    
+
     // Populate Calendar Options for Training Tab
+
+    /*
     function trainingTabInfo() {
       if (
         new Date(new Date().setDate(new Date().getDate() + 1))
@@ -567,15 +599,78 @@ fetch(
         }
       })();
     }
+    */
 
-    setTimeout(() => {
-      trainingTabInfo();
-    }, "3000");
-  })
-  .catch(function (err) {
-    // There was an error
-    console.warn("Something went wrong.", err);
-  });
+    async function trainingTabInfo() {
+      const timeSlots = {
+        default: ["11:00am", "11:30am", "2:00pm", "2:30pm"],
+        alt: ["12:00pm", "12:30pm", "3:00pm", "3:30pm"],
+      };
+    
+      const dateStrings = [];
+    
+      let currentDate = getNextWeekday(new Date(), 1); // start with tomorrow
+    
+      for (let i = 0; i < 10; i++) {
+        currentDate = getNextWeekday(currentDate, i === 0 ? 0 : 1); // skip Sat/Sun
+    
+        const formattedDate = formatDate(currentDate);
+        const slotType = isAltDay(currentDate) ? "alt" : "default";
+        const slots = timeSlots[slotType];
+    
+        // Set date text
+        const dateId = `${ordinal(i + 1)}Date`;
+        const slotPrefix = `${ordinal(i + 1)}DateTimeSlot`;
+        document.getElementById(dateId).textContent = formattedDate;
+    
+        // Set time slots
+        slots.forEach((slot, j) => {
+          const slotId = `${slotPrefix}${j + 1}`;
+          document.getElementById(slotId).textContent = slot;
+    
+          // Store formatted string for use elsewhere
+          window[`${slotPrefix}String${j + 1}`] = `${formattedDate} ${slot}`;
+        });
+      }
+    
+      // Inject Typeform script
+      loadTypeformScript();
+    }
+    
+    // Utilities
+    function getNextWeekday(date, daysToAdd) {
+      let d = new Date(date);
+      d.setDate(d.getDate() + daysToAdd);
+      while (["Sat", "Sun"].includes(d.toString().substring(0, 3))) {
+        d.setDate(d.getDate() + 1);
+      }
+      return d;
+    }
+    
+    function isAltDay(date) {
+      return ["Tue", "Thu"].includes(date.toString().substring(0, 3));
+    }
+    
+    function formatDate(date) {
+      return date.toString().substring(0, 15);
+    }
+    
+    function ordinal(n) {
+      const map = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"];
+      return map[n - 1];
+    }
+    
+    function loadTypeformScript() {
+      const id = "typef_orm_share";
+      if (!document.getElementById(id)) {
+        const js = document.createElement("script");
+        js.id = id;
+        js.src = "https://embed.typeform.com/embed.js";
+        const firstScript = document.getElementsByTagName("script")[0];
+        firstScript.parentNode.insertBefore(js, firstScript);
+      }
+    }
+    
 
 // Generate Typeform link
 
@@ -972,11 +1067,7 @@ const blackOutDates = [
   "May 16 2025",
 ];
 
-document.querySelectorAll(".webinar-div-2 > div").forEach((div) => {
-  const dateText = div.querySelector("h4")?.textContent.trim();
-
-  if (dateText && blackOutDates.some((date) => dateText.includes(date))) {
-    console.log("Hiding:", dateText);
-    div.style.display = "none";
-  }
+document.querySelectorAll(".webinar-div-2 > div").forEach(div => {
+  const date = div.querySelector("h4")?.textContent.trim();
+  if (blackOutDates.some(d => date.includes(d))) div.style.display = "none";
 });
