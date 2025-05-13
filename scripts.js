@@ -88,15 +88,6 @@ async function loadInfoCenterTabs() {
 // Wait a bit to ensure inner divs are loaded
 // await new Promise((resolve) => setTimeout(resolve, 100));
 
-// Now apply blackout logic
-
-document.querySelectorAll(".webinar-div-2 > div").forEach((div) => {
-  const dateText = div.querySelector("h4")?.textContent.trim();
-  if (dateText && blackOutDates.some((date) => dateText.includes(date))) {
-    console.log("Hiding:", dateText);
-    div.style.display = "none";
-  }
-});
 
 loadInfoCenterTabs();
 
@@ -1089,3 +1080,13 @@ function openTypeForm40() {
     supplier_name
   );
 }
+
+// Now apply blackout logic
+
+document.querySelectorAll(".webinar-div-2 > div").forEach((div) => {
+  const dateText = div.querySelector("h4")?.textContent.trim();
+  if (dateText && blackOutDates.some((date) => dateText.includes(date))) {
+    console.log("Hiding:", dateText);
+    div.style.display = "none";
+  }
+});
