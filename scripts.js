@@ -25,11 +25,30 @@ async function loadInfoCenterTabs() {
     updateSignupLinks();
     await trainingTabInfo();
     hideBlackoutDates();
+    bindTypeformButtons();
 
   } catch (err) {
     console.warn("Something went wrong.", err);
   }
 }
+
+function bindTypeformButtons() {
+  for (let i = 0; i < 10; i++) {
+    const ordinalName = ordinal(i + 1);
+    const slotPrefix = `${ordinalName}DateTimeSlotString`;
+
+    for (let j = 0; j < 4; j++) {
+      const buttonId = `openTypeForm${i * 4 + j + 1}`;
+      const slotVar = `${slotPrefix}${j + 1}`;
+
+      const button = document.getElementById(buttonId);
+      if (button && window[slotVar]) {
+        button.onclick = () => openTypeForm(window[slotVar]);
+      }
+    }
+  }
+}
+
 
 function updateSupplierText() {
   document.getElementsByName("supplier-name").forEach(e => {
