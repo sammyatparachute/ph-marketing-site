@@ -1,3 +1,4 @@
+// === GLOBAL CONSTANTS ===
 const blackOutDates = [
   "May 13 2025",
   "May 14 2025",
@@ -13,6 +14,7 @@ const timeSlots = {
 
 const typeformURL = "https://parachutehealthdme.typeform.com/to/hUhvu4QC";
 
+// === MAIN LOADER ===
 async function loadInfoCenterTabs() {
   try {
     const res = await fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html");
@@ -24,32 +26,15 @@ async function loadInfoCenterTabs() {
     updateSupplierText();
     updateSignupLinks();
     await trainingTabInfo();
+    registerOpenTypeFormFunctions();
     hideBlackoutDates();
-    bindTypeformButtons();
 
   } catch (err) {
     console.warn("Something went wrong.", err);
   }
 }
 
-function bindTypeformButtons() {
-  for (let i = 0; i < 10; i++) {
-    const ordinalName = ordinal(i + 1);
-    const slotPrefix = `${ordinalName}DateTimeSlotString`;
-
-    for (let j = 0; j < 4; j++) {
-      const buttonId = `openTypeForm${i * 4 + j + 1}`;
-      const slotVar = `${slotPrefix}${j + 1}`;
-
-      const button = document.getElementById(buttonId);
-      if (button && window[slotVar]) {
-        button.onclick = () => openTypeForm(window[slotVar]);
-      }
-    }
-  }
-}
-
-
+// === SUPPORTING FUNCTIONS ===
 function updateSupplierText() {
   document.getElementsByName("supplier-name").forEach(e => {
     e.textContent = supplier_name;
@@ -71,12 +56,12 @@ function hideBlackoutDates() {
   });
 }
 
-async function waitForDOMLoad() {
+function waitForDOMLoad() {
   return new Promise(resolve => setTimeout(resolve, 200));
 }
 
 async function trainingTabInfo() {
-  let currentDate = getNextWeekday(new Date(), 1); // Start tomorrow
+  let currentDate = getNextWeekday(new Date(), 1);
 
   for (let i = 0; i < 10; i++) {
     currentDate = getNextWeekday(currentDate, i === 0 ? 0 : 1);
@@ -99,6 +84,20 @@ async function trainingTabInfo() {
   }
 
   loadTypeformScript();
+}
+
+function registerOpenTypeFormFunctions() {
+  for (let i = 0; i < 10; i++) {
+    const ordinalName = ordinal(i + 1);
+    const slotPrefix = `${ordinalName}DateTimeSlotString`;
+
+    for (let j = 0; j < 4; j++) {
+      const fnName = `openTypeForm${i * 4 + j + 1}`;
+      const slotVar = `${slotPrefix}${j + 1}`;
+
+      window[fnName] = () => openTypeForm(window[slotVar]);
+    }
+  }
 }
 
 function openTypeForm(slotString) {
@@ -124,7 +123,6 @@ function loadTypeformScript() {
   }
 }
 
-// Helpers
 function getNextWeekday(date, daysToAdd) {
   const d = new Date(date);
   d.setDate(d.getDate() + daysToAdd);
@@ -147,5 +145,5 @@ function ordinal(n) {
   return map[n - 1];
 }
 
-// Start it all
+// === START SCRIPT ===
 loadInfoCenterTabs();
