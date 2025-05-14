@@ -26,7 +26,7 @@ async function loadInfoCenterTabs() {
     updateSupplierText();
     updateSignupLinks();
     await trainingTabInfo();
-    registerOpenTypeFormFunctions();
+    bindTypeformSpans();
     hideBlackoutDates();
 
   } catch (err) {
@@ -86,16 +86,19 @@ async function trainingTabInfo() {
   loadTypeformScript();
 }
 
-function registerOpenTypeFormFunctions() {
+function bindTypeformSpans() {
   for (let i = 0; i < 10; i++) {
     const ordinalName = ordinal(i + 1);
     const slotPrefix = `${ordinalName}DateTimeSlotString`;
 
     for (let j = 0; j < 4; j++) {
-      const fnName = `openTypeForm${i * 4 + j + 1}`;
+      const spanId = `${ordinalName}DateTimeSlot${j + 1}`;
       const slotVar = `${slotPrefix}${j + 1}`;
 
-      window[fnName] = () => openTypeForm(window[slotVar]);
+      const span = document.getElementById(spanId);
+      if (span && window[slotVar]) {
+        span.addEventListener("click", () => openTypeForm(window[slotVar]));
+      }
     }
   }
 }
