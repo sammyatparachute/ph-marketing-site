@@ -3,6 +3,7 @@ const blackOutDates = [
   "May 14 2025",
   "May 15 2025",
   "May 16 2025",
+  "May 26 2025",
 ];
 
 const timeSlots = {
