@@ -31,11 +31,9 @@ async function loadInfoCenterTabs() {
     const webinarSchduleDiv = doc.querySelector("#webinar-div-container"); // Change this to your target div's ID
 
     // Inject webinar schedule on demo page
-    if (webinarSchduleDiv) {
+    if (!document.getElementById("demo-schedule")) {
       document.getElementById("demo-schedule").innerHTML =
         webinarSchduleDiv.innerHTML;
-    } else {
-      console.error("Target div not found in the fetched HTML");
     }
 
     await waitForDOMLoad();
