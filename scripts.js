@@ -31,7 +31,9 @@ async function loadInfoCenterTabs() {
     const webinarSchduleDiv = doc.querySelector("#webinar-div-container"); // Change this to your target div's ID
 
     // Inject webinar schedule on demo page
-    if (!document.getElementById("demo-schedule")) {
+    const demoSchedule = document.getElementById("demo-schedule");
+
+    if (demoSchedule) {
       document.getElementById("demo-schedule").innerHTML =
         webinarSchduleDiv.innerHTML;
     }
