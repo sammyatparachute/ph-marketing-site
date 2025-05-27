@@ -17,9 +17,26 @@ const typeformURL = "https://parachutehealthdme.typeform.com/to/hUhvu4QC";
 // === MAIN LOADER ===
 async function loadInfoCenterTabs() {
   try {
-    const res = await fetch("https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html");
-    const html = await res.text();
-    document.getElementById("info-center-tabs").innerHTML = html;
+    const res = await fetch(
+      "https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html"
+    );
+    const htmlText = await res.text();
+    document.getElementById("info-center-tabs").innerHTML = htmlText;
+
+    // Parse the HTML string
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, "text/html");
+
+    // Select the specific div you want to load
+    const webinarSchduleDiv = doc.querySelector("#webinar-div-container"); // Change this to your target div's ID
+
+    // Inject webinar schedule on demo page
+    if (webinarSchduleDiv) {
+      document.getElementById("demo-schedule").innerHTML =
+        webinarSchduleDiv.innerHTML;
+    } else {
+      console.error("Target div not found in the fetched HTML");
+    }
 
     await waitForDOMLoad();
 
@@ -28,7 +45,6 @@ async function loadInfoCenterTabs() {
     await trainingTabInfo();
     bindTypeformSpans();
     hideBlackoutDates();
-
   } catch (err) {
     console.warn("Something went wrong.", err);
   }
@@ -36,28 +52,28 @@ async function loadInfoCenterTabs() {
 
 // === SUPPORTING FUNCTIONS ===
 function updateSupplierText() {
-  document.getElementsByName("supplier-name").forEach(e => {
+  document.getElementsByName("supplier-name").forEach((e) => {
     e.textContent = supplier_name;
   });
 }
 
 function updateSignupLinks() {
-  document.getElementsByName("sign-up-link").forEach(e => {
+  document.getElementsByName("sign-up-link").forEach((e) => {
     e.outerHTML = `<a href="https://dme.parachutehealth.com/organic_sign_up?supplier_id=${supplier_id}#/create-account" style="color:#520079;font-weight:400;">signing up here</a>!`;
   });
 }
 
 function hideBlackoutDates() {
-  document.querySelectorAll(".webinar-div-2 > div").forEach(div => {
+  document.querySelectorAll(".webinar-div-2 > div").forEach((div) => {
     const dateText = div.querySelector("h4")?.textContent.trim();
-    if (dateText && blackOutDates.some(date => dateText.includes(date))) {
+    if (dateText && blackOutDates.some((date) => dateText.includes(date))) {
       div.style.display = "none";
     }
   });
 }
 
 function waitForDOMLoad() {
-  return new Promise(resolve => setTimeout(resolve, 200));
+  return new Promise((resolve) => setTimeout(resolve, 200));
 }
 
 async function trainingTabInfo() {
@@ -104,10 +120,24 @@ function bindTypeformSpans() {
 }
 
 function openTypeForm(slotString) {
-  typeformPopup(typeformURL, slotString, "webinar", supplier_id, supplier_name, mobile_app);
+  typeformPopup(
+    typeformURL,
+    slotString,
+    "webinar",
+    supplier_id,
+    supplier_name,
+    mobile_app
+  );
 }
 
-function typeformPopup(typeformURL, webinarSlot, request_type, supplier_id, supplier_name, mobile_app) {
+function typeformPopup(
+  typeformURL,
+  webinarSlot,
+  request_type,
+  supplier_id,
+  supplier_name,
+  mobile_app
+) {
   const reference = typeformEmbed.makePopup(
     `${typeformURL}?webinarslot=${webinarSlot}&request_type=${request_type}&supplier_id=${supplier_id}&supplier_name=${supplier_name}&mobile_app=${mobile_app}`,
     { mode: "popup", autoClose: 5, hideHeaders: true, hideFooters: true }
@@ -144,7 +174,18 @@ function formatDate(date) {
 }
 
 function ordinal(n) {
-  const map = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"];
+  const map = [
+    "first",
+    "second",
+    "third",
+    "fourth",
+    "fifth",
+    "sixth",
+    "seventh",
+    "eighth",
+    "ninth",
+    "tenth",
+  ];
   return map[n - 1];
 }
 
