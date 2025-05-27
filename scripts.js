@@ -104,12 +104,12 @@ function bindTypeformSpans() {
 }
 
 function openTypeForm(slotString) {
-  typeformPopup(typeformURL, slotString, "webinar", supplier_id, supplier_name);
+  typeformPopup(typeformURL, slotString, "webinar", supplier_id, supplier_name, mobile_app);
 }
 
-function typeformPopup(typeformURL, webinarSlot, request_type, supplier_id, supplier_name) {
+function typeformPopup(typeformURL, webinarSlot, request_type, supplier_id, supplier_name, mobile_app) {
   const reference = typeformEmbed.makePopup(
-    `${typeformURL}?webinarslot=${webinarSlot}&request_type=${request_type}&supplier_id=${supplier_id}&supplier_name=${supplier_name}`,
+    `${typeformURL}?webinarslot=${webinarSlot}&request_type=${request_type}&supplier_id=${supplier_id}&supplier_name=${supplier_name}&mobile_app=${mobile_app}`,
     { mode: "popup", autoClose: 5, hideHeaders: true, hideFooters: true }
   );
   reference.open();
