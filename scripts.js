@@ -21,7 +21,11 @@ async function loadInfoCenterTabs() {
       "https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html"
     );
     const htmlText = await res.text();
-    document.getElementById("info-center-tabs").innerHTML = htmlText;
+    const infoCenterTabs = document.getElementById("info-center-tabs");
+
+    if (infoCenterTabs) {
+      infoCenterTabs.innerHTML = htmlText;
+    }
 
     // Parse the HTML string
     const parser = new DOMParser();
@@ -34,8 +38,7 @@ async function loadInfoCenterTabs() {
     const demoSchedule = document.getElementById("demo-schedule");
 
     if (demoSchedule) {
-      document.getElementById("demo-schedule").innerHTML =
-        webinarSchduleDiv.innerHTML;
+      demoSchedule.innerHTML = webinarSchduleDiv.innerHTML;
     }
 
     await waitForDOMLoad();
