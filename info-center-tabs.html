@@ -188,6 +188,19 @@
       <p>
         We look forward to seeing you!
       </p>
+
+      <script>
+        const iframeEl = document.getElementById("launcher");
+        const checkInterval = setInterval(() => {
+          const innerDoc = iframeEl.contentDocument || iframeEl.contentWindow.document;
+          if (!innerDoc) return;  
+          const embedDiv = innerDoc.getElementById("Embed");
+          if (mobile_app == 'true') {
+            embedDiv.setAttribute("style", "display:none");
+            clearInterval(checkInterval);
+          }
+        }, 100);
+      </script>
     </div>
 
     <input name="tabs" type="radio" id="faqs" class="input" />
@@ -283,15 +296,3 @@
 
   </div>
 </div>
-<script>
-  const iframeEl = document.getElementById("launcher");
-const checkInterval = setInterval(() => {
-  const innerDoc = iframeEl.contentDocument || iframeEl.contentWindow.document;
-  if (!innerDoc) return;  
-  const embedDiv = innerDoc.getElementById("Embed");
-  if (mobile_app == 'true') {
-    embedDiv.setAttribute("style", "display:none");
-    clearInterval(checkInterval);
-  }
-}, 100);
-</script>
