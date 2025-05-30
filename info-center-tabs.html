@@ -190,7 +190,7 @@
           if (!innerDoc) return;  
           const embedDiv = innerDoc.getElementById("Embed");
           if (mobile_app == 'true') {
-            embedDiv.setAttribute("style", "display:none");
+            iframeEl.setAttribute("style", "display:none");
             clearInterval(checkInterval);
           }
         }, 100);
