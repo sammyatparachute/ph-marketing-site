@@ -49,7 +49,7 @@ async function loadInfoCenterTabs() {
     bindTypeformSpans();
     hideBlackoutDates();
   } catch (err) {
-    console.warn("Something went wrong.", err);
+    console.log("Something went wrong.", err);
   }
 }
 
