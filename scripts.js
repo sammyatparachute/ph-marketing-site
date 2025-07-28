@@ -41,7 +41,7 @@ async function loadInfoCenterTabs() {
       demoSchedule.innerHTML = webinarSchduleDiv.innerHTML;
     }
 
-    await waitForDOMLoad();
+    await waitForElement("firstDate");
 
     updateSupplierText();
     updateSignupLinks();
@@ -75,8 +75,20 @@ function hideBlackoutDates() {
   });
 }
 
-function waitForDOMLoad() {
-  return new Promise((resolve) => setTimeout(resolve, 200));
+function waitForElement(elementId, timeout = 3000) {
+  return new Promise((resolve, reject) => {
+    const startTime = Date.now();
+    const interval = setInterval(() => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        clearInterval(interval);
+        resolve(element);
+      } else if (Date.now() - startTime > timeout) {
+        clearInterval(interval);
+        reject(new Error(`Element with id #${elementId} not found after ${timeout}ms.`));
+      }
+    }, 100); // Check for the element every 100ms
+  });
 }
 
 async function trainingTabInfo() {
