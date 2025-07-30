@@ -17,7 +17,6 @@ const typeformURL = "https://parachutehealthdme.typeform.com/to/hUhvu4QC";
 // === MAIN LOADER ===
 async function loadInfoCenterTabs() {
   const infoCenterTabs = document.getElementById("info-center-tabs");
-  const demoSchedule = document.getElementById("demo-schedule");
 
   if (!infoCenterTabs) {
     return; // Exit the function gracefully
