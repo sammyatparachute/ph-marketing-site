@@ -19,7 +19,7 @@ async function loadInfoCenterTabs() {
   const infoCenterTabs = document.getElementById("info-center-tabs");
   const demoSchedule = document.getElementById("demo-schedule");
 
-  if (!infoCenterTabs && !demoSchedule) {
+  if (!infoCenterTabs) {
     return; // Exit the function gracefully
   }
   
