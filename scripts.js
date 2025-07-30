@@ -27,7 +27,6 @@ async function loadInfoCenterTabs() {
       "https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html"
     );
     const htmlText = await res.text();
-    const infoCenterTabs = document.getElementById("info-center-tabs");
 
     if (infoCenterTabs) {
       infoCenterTabs.innerHTML = htmlText;
