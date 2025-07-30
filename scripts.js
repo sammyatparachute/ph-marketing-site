@@ -17,11 +17,14 @@ const typeformURL = "https://parachutehealthdme.typeform.com/to/hUhvu4QC";
 // === MAIN LOADER ===
 async function loadInfoCenterTabs() {
   const infoCenterTabs = document.getElementById("info-center-tabs");
+  const demoSchedule = document.getElementById("demo-schedule");
 
-  if (!infoCenterTabs) {
-    return console.log("info-center-tabs not found"); // Exit the function gracefully
+  // Guard Clause: If neither target element exists, stop the script.
+  if (!infoCenterTabs && !demoSchedule) {
+    console.log("Required elements for script not found. Exiting.");
+    return;
   }
-  
+
   try {
     const res = await fetch(
       "https://sammyatparachute.github.io/ph-marketing-site/info-center-tabs.html"
@@ -32,20 +35,19 @@ async function loadInfoCenterTabs() {
       infoCenterTabs.innerHTML = htmlText;
     }
 
-    // Parse the HTML string
+    // Parse the HTML string to extract specific parts
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlText, "text/html");
 
     // Select the specific div you want to load
-    const webinarSchduleDiv = doc.querySelector("#webinar-div-container"); // Change this to your target div's ID
+    const webinarSchduleDiv = doc.querySelector("#webinar-div-container");
 
-    // Inject webinar schedule on demo page
-    const demoSchedule = document.getElementById("demo-schedule");
-
-    if (demoSchedule) {
+    // Inject webinar schedule on demo page if the element exists
+    if (demoSchedule && webinarSchduleDiv) {
       demoSchedule.innerHTML = webinarSchduleDiv.innerHTML;
     }
 
+    // Wait for the dynamically injected content to be ready
     await waitForElement("firstDate");
 
     updateSupplierText();
@@ -210,4 +212,7 @@ function ordinal(n) {
 }
 
 // === START SCRIPT ===
-loadInfoCenterTabs();
+// Wait for the initial HTML document to be fully loaded before running the script
+document.addEventListener("DOMContentLoaded", function() {
+  loadInfoCenterTabs();
+});
