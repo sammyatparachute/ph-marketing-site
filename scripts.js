@@ -19,7 +19,7 @@ async function loadInfoCenterTabs() {
   const infoCenterTabs = document.getElementById("info-center-tabs");
 
   if (!infoCenterTabs) {
-    return; // Exit the function gracefully
+    return console.log("info-center-tabs not found"); // Exit the function gracefully
   }
   
   try {
