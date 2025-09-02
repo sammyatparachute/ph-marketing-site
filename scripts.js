@@ -14,17 +14,19 @@ const timeSlots = {
 
 const typeformURL = "https://parachutehealthdme.typeform.com/to/hUhvu4QC";
 
-// Global variables for supplier data - Initialize with defaults
-let supplier_name = "Default Supplier";
-let supplier_id = "default";
-let selectedSupplier = null;
-let supplierLogo = null;
-let supplierHeadlineText = "A better way to order medical equipment";
-let supplierDescriptionText = "This supplier has partnered with Parachute Health to provide easy online ordering";
-let is_supplier_org = false;
-let defaultHeadline = "A better way to order medical equipment";
-let defaultDescription = "This supplier has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice";
-let mobile_app = null;
+// Global variables for supplier data - Initialize with defaults (prevent redeclaration)
+if (typeof supplier_name === 'undefined') {
+  var supplier_name = "Default Supplier";
+  var supplier_id = "default";
+  var selectedSupplier = null;
+  var supplierLogo = null;
+  var supplierHeadlineText = "A better way to order medical equipment";
+  var supplierDescriptionText = "This supplier has partnered with Parachute Health to provide easy online ordering";
+  var is_supplier_org = false;
+  var defaultHeadline = "A better way to order medical equipment";
+  var defaultDescription = "This supplier has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice";
+  var mobile_app = null;
+}
 
 // === MAIN INITIALIZATION ===
 async function initializeParachuteSupplierPage() {
@@ -412,10 +414,15 @@ function ordinal(n) {
 }
 
 // === AUTO-START ===
-// Start everything when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializeParachuteSupplierPage);
-} else {
-  // DOM already ready
-  initializeParachuteSupplierPage();
+// Prevent multiple initializations
+if (typeof parachuteInitialized === 'undefined') {
+  window.parachuteInitialized = true;
+  
+  // Start everything when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeParachuteSupplierPage);
+  } else {
+    // DOM already ready
+    initializeParachuteSupplierPage();
+  }
 }
