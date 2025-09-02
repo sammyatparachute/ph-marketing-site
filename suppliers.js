@@ -30,8 +30,8 @@ async function initializeParachuteSupplierPage() {
     // Step 2: Process supplier from URL
     await processSupplierData();
     
-    // Step 3: Update basic supplier DOM elements
-    updateSupplierDOMElements();
+    // Step 3: Update basic supplier DOM elements (with retry)
+    await updateSupplierDOMElementsWithRetry();
     
     // Step 4: Load info center tabs if elements exist
     await loadInfoCenterTabs();
@@ -87,30 +87,72 @@ async function processSupplierData() {
   console.log('Supplier data processed:', supplier_name);
 }
 
-function updateSupplierDOMElements() {
+async function updateSupplierDOMElementsWithRetry() {
+  // Try multiple times in case DOM elements aren't ready yet
+  for (let attempt = 0; attempt < 5; attempt++) {
+    console.log(`DOM update attempt ${attempt + 1}`);
+    
+    const supplierDescription = document.getElementById("supplier-description");
+    const supplierHeadline = document.getElementById("supplier-headline");
+    const supplierHero = document.getElementById("supplier-hero");
+    
+    // If we found at least one element, proceed
+    if (supplierDescription || supplierHeadline || supplierHero) {
+      await updateSupplierDOMElements();
+      return;
+    }
+    
+    // Wait before retrying
+    console.log('DOM elements not found, retrying in 200ms...');
+    await new Promise(resolve => setTimeout(resolve, 200));
+  }
+  
+  console.warn('Could not find supplier DOM elements after 5 attempts');
+}
+
+async function updateSupplierDOMElements() {
   console.log('Updating supplier DOM elements...');
+  console.log('Supplier data:', { supplier_name, supplierDescriptionText, supplierHeadlineText, supplierLogo });
+  
+  // Wait a bit for DOM to be fully ready
+  await new Promise(resolve => setTimeout(resolve, 100));
   
   const supplierDescription = document.getElementById("supplier-description");
   const supplierHeadline = document.getElementById("supplier-headline");
   const supplierHero = document.getElementById("supplier-hero");
 
+  console.log('Found elements:', { 
+    supplierDescription: !!supplierDescription, 
+    supplierHeadline: !!supplierHeadline, 
+    supplierHero: !!supplierHero 
+  });
+
   if (supplierDescription) {
-    supplierDescription.textContent = supplierDescriptionText || defaultDescription;
-    console.log('Updated supplier description');
+    const textToUse = supplierDescriptionText || defaultDescription;
+    supplierDescription.textContent = textToUse;
+    console.log('Updated supplier description with:', textToUse);
+  } else {
+    console.warn('supplier-description element not found');
   }
   
   if (supplierHeadline) {
-    supplierHeadline.textContent = supplierHeadlineText || defaultHeadline;
-    console.log('Updated supplier headline');
+    const headlineToUse = supplierHeadlineText || defaultHeadline;
+    supplierHeadline.textContent = headlineToUse;
+    console.log('Updated supplier headline with:', headlineToUse);
+  } else {
+    console.warn('supplier-headline element not found');
   }
   
   if (supplierHero) {
     if (supplierLogo) {
       supplierHero.innerHTML = `<img src="${supplierLogo}" style="filter: grayscale(1) invert(1) brightness(100); width: 100%;">`;
+      console.log('Updated supplier hero with logo:', supplierLogo);
     } else {
       supplierHero.innerHTML = `<h1>${supplier_name}</h1>`;
+      console.log('Updated supplier hero with name:', supplier_name);
     }
-    console.log('Updated supplier hero');
+  } else {
+    console.warn('supplier-hero element not found');
   }
 }
 
