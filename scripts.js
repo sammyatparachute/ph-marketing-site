@@ -67,12 +67,36 @@ function loadSuppliersData() {
 }
 
 async function processSupplierData() {
-  const supplierUrl = window.location.href.substring(window.location.href.indexOf("suppliers?") + 10);
-  selectedSupplier = suppliers.find(e => e.url == supplierUrl);
+  console.log('Full URL:', window.location.href);
   
-  if (selectedSupplier === undefined && window.location.toString().indexOf("squarespace") < 1) {
-    window.location = 'https://www.parachutehealth.com/supplier-info-centers';
-    return;
+  const supplierUrl = window.location.href.substring(window.location.href.indexOf("suppliers?") + 10);
+  console.log('Extracted supplier URL:', supplierUrl);
+  console.log('Available suppliers:', suppliers.map(s => ({ name: s.name, url: s.url })));
+  
+  selectedSupplier = suppliers.find(e => e.url == supplierUrl);
+  console.log('Selected supplier:', selectedSupplier);
+  
+  if (selectedSupplier === undefined) {
+    console.warn('No supplier found for URL:', supplierUrl);
+    
+    if (window.location.toString().indexOf("squarespace") < 1) {
+      console.log('Redirecting because not on Squarespace');
+      window.location = 'https://www.parachutehealth.com/supplier-info-centers';
+      return;
+    } else {
+      console.log('On Squarespace, using default values');
+      // Set default values
+      supplier_name = "Test Supplier";
+      supplier_id = "test";
+      supplierLogo = null;
+      supplierHeadlineText = "Test Headline";
+      supplierDescriptionText = "Test Description";
+      is_supplier_org = false;
+      defaultDescription = "Test supplier has partnered with Parachute Health to provide you easy online ordering";
+      
+      console.log('Set default supplier data:', supplier_name);
+      return;
+    }
   }
   
   // Set global variables
