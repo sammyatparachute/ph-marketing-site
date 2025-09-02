@@ -14,10 +14,17 @@ const timeSlots = {
 
 const typeformURL = "https://parachutehealthdme.typeform.com/to/hUhvu4QC";
 
-// Global variables for supplier data
-let supplier_name, supplier_id, selectedSupplier, supplierLogo, supplierHeadlineText, supplierDescriptionText, is_supplier_org;
+// Global variables for supplier data - Initialize with defaults
+let supplier_name = "Default Supplier";
+let supplier_id = "default";
+let selectedSupplier = null;
+let supplierLogo = null;
+let supplierHeadlineText = "A better way to order medical equipment";
+let supplierDescriptionText = "This supplier has partnered with Parachute Health to provide easy online ordering";
+let is_supplier_org = false;
 let defaultHeadline = "A better way to order medical equipment";
-let defaultDescription, mobile_app;
+let defaultDescription = "This supplier has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice";
+let mobile_app = null;
 
 // === MAIN INITIALIZATION ===
 async function initializeParachuteSupplierPage() {
@@ -67,48 +74,66 @@ function loadSuppliersData() {
 }
 
 async function processSupplierData() {
-  console.log('Full URL:', window.location.href);
-  
-  const supplierUrl = window.location.href.substring(window.location.href.indexOf("suppliers?") + 10);
-  console.log('Extracted supplier URL:', supplierUrl);
-  console.log('Available suppliers:', suppliers.map(s => ({ name: s.name, url: s.url })));
-  
-  selectedSupplier = suppliers.find(e => e.url == supplierUrl);
-  console.log('Selected supplier:', selectedSupplier);
-  
-  if (selectedSupplier === undefined) {
-    console.warn('No supplier found for URL:', supplierUrl);
+  try {
+    console.log('Processing supplier data...');
+    console.log('Full URL:', window.location.href);
     
-    if (window.location.toString().indexOf("squarespace") < 1) {
-      console.log('Redirecting because not on Squarespace');
-      window.location = 'https://www.parachutehealth.com/supplier-info-centers';
-      return;
-    } else {
-      console.log('On Squarespace, using default values');
-      // Set default values
-      supplier_name = "Test Supplier";
-      supplier_id = "test";
-      supplierLogo = null;
-      supplierHeadlineText = "Test Headline";
-      supplierDescriptionText = "Test Description";
-      is_supplier_org = false;
-      defaultDescription = "Test supplier has partnered with Parachute Health to provide you easy online ordering";
-      
-      console.log('Set default supplier data:', supplier_name);
-      return;
+    // Check if URL contains suppliers query parameter
+    if (window.location.href.indexOf("suppliers?") === -1) {
+      console.warn('No suppliers query parameter found in URL');
+      return; // Keep default values
     }
+    
+    const supplierUrl = window.location.href.substring(window.location.href.indexOf("suppliers?") + 10);
+    console.log('Extracted supplier URL:', supplierUrl);
+    
+    if (!suppliers || suppliers.length === 0) {
+      console.error('Suppliers data not loaded or empty');
+      return; // Keep default values
+    }
+    
+    console.log('Available suppliers:', suppliers.map(s => ({ name: s.name, url: s.url })));
+    
+    selectedSupplier = suppliers.find(e => e.url === supplierUrl);
+    console.log('Selected supplier:', selectedSupplier);
+    
+    if (!selectedSupplier) {
+      console.warn('No supplier found for URL:', supplierUrl);
+      
+      // Only redirect if not on Squarespace
+      if (window.location.toString().indexOf("squarespace") === -1) {
+        console.log('Redirecting because not on Squarespace');
+        window.location = 'https://www.parachutehealth.com/supplier-info-centers';
+        return;
+      } else {
+        console.log('On Squarespace but supplier not found, using defaults');
+        return; // Keep default values
+      }
+    }
+    
+    // Update global variables with found supplier data
+    supplier_name = selectedSupplier.name || "Unknown Supplier";
+    supplier_id = selectedSupplier.external_id || "unknown";
+    supplierLogo = selectedSupplier.logo || null;
+    supplierHeadlineText = selectedSupplier.headline || defaultHeadline;
+    supplierDescriptionText = selectedSupplier.description || null;
+    is_supplier_org = selectedSupplier.is_supplier_org || false;
+    
+    // Update default description with supplier name
+    defaultDescription = `${supplier_name} has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice`;
+    
+    console.log('Supplier data processed successfully:', {
+      name: supplier_name,
+      id: supplier_id,
+      logo: supplierLogo,
+      headline: supplierHeadlineText,
+      description: supplierDescriptionText
+    });
+    
+  } catch (error) {
+    console.error('Error processing supplier data:', error);
+    // Keep default values on error
   }
-  
-  // Set global variables
-  supplier_name = selectedSupplier.name;
-  supplier_id = selectedSupplier.external_id;
-  supplierLogo = selectedSupplier.logo;
-  supplierHeadlineText = selectedSupplier.headline;
-  supplierDescriptionText = selectedSupplier.description;
-  is_supplier_org = selectedSupplier.is_supplier_org;
-  defaultDescription = `${supplier_name} has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice`;
-  
-  console.log('Supplier data processed:', supplier_name);
 }
 
 async function updateSupplierDOMElementsWithRetry() {
@@ -136,7 +161,14 @@ async function updateSupplierDOMElementsWithRetry() {
 
 async function updateSupplierDOMElements() {
   console.log('Updating supplier DOM elements...');
-  console.log('Supplier data:', { supplier_name, supplierDescriptionText, supplierHeadlineText, supplierLogo });
+  console.log('Supplier data:', { 
+    supplier_name, 
+    supplierDescriptionText, 
+    supplierHeadlineText, 
+    supplierLogo,
+    defaultDescription,
+    defaultHeadline 
+  });
   
   // Wait a bit for DOM to be fully ready
   await new Promise(resolve => setTimeout(resolve, 100));
