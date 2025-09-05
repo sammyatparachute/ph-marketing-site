@@ -35,7 +35,7 @@ var simplemaps_usmap_mapdata={
     label_color: "#d5ddec",
     label_hover_color: "#d5ddec",
     label_size: 22,
-    label_font: "europa",
+    //label_font: "europa",
     hide_labels: "no",
     hide_eastern_labels: "no",
     manual_zoom: "no",
@@ -51,10 +51,10 @@ var simplemaps_usmap_mapdata={
     
     //Popup settings
     popup_color: "white",
-    popup_opacity: 0.9,
+    popup_opacity: 1,
     popup_shadow: 1,
     popup_corners: 5,
-    popup_font: "12px/1.5 europa",
+    //popup_font: "12px/1.5 europa",
     popup_nocss: "no",
     
     //Advanced settings
@@ -455,7 +455,7 @@ var simplemaps_usmap_mapdata={
       lng: "-86.767169",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Nashville,TN"
+      description: "Nashville, TN"
     },
     "6": {
       name: "James Sullivan",
@@ -471,7 +471,7 @@ var simplemaps_usmap_mapdata={
       lng: "-96.779489",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Dallas,TX"
+      description: "Dallas, TX"
     },
     "8": {
       name: "Saskia Ottley",
@@ -479,7 +479,7 @@ var simplemaps_usmap_mapdata={
       lng: "-80.219904",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Miami,FL"
+      description: "Miami, FL"
     },
     "9": {
       name: "Ben Reeve",
@@ -511,7 +511,7 @@ var simplemaps_usmap_mapdata={
       lng: "-84.399622",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Atlanta,GA"
+      description: "Atlanta, GA"
     },
     "13": {
       name: "Brian Osorio",
