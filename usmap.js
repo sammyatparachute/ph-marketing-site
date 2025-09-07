@@ -236,8 +236,8 @@
           cy: 0,
           fill: "#fff",
           "fill-opacity": 1,
-          font: '10px "Arial"',
-          "font-family": '"Arial"',
+          font: '10px "europa"',
+          "font-family": '"europa"',
           "font-size": "10",
           "font-style": "normal",
           "font-weight": 400,
@@ -4758,7 +4758,7 @@
                 t.textpath &&
                   ((o = t.textpath.style),
                   e.font && (o.font = e.font),
-                  e["font-family"] &&
+                  e[" f-family"] &&
                     (o.fontFamily =
                       '"' +
                       e["font-family"]
@@ -7162,7 +7162,7 @@ var simplemaps_usmap_mapinfo = {
         (et = !!a.popup_maxwidth && a.popup_maxwidth),
         (es = a.popup_font
           ? a.popup_font
-          : "12px/1.5 Verdana, Arial, Helvetica, sans-serif"),
+          : "12px/1.5 europa"),
         (Y = "no" != a.zoom_out_incrementally),
         (W = a.adjacent_opacity ? a.adjacent_opacity : 0.3),
         (j = a.zoom_time ? a.zoom_time : 0.5),
@@ -7443,7 +7443,7 @@ var simplemaps_usmap_mapinfo = {
           "overflow: visible !important; clip-path: none !important; display:inline !important; opacity:1 !important; transform: none !important; visibility: visible !important; z-index: 1 !important; right: 5px !important; bottom:20px !important; z-index: 1 !important; position: absolute !important; filter: opacity(1) !important;"),
           ef.appendChild(tL),
           (tL.innerHTML = ""
-            //'<a style="overflow: visible !important; clip-path: none !important; opacity: 1 !important;  filter: opacity(1) !important; transform: none !important; display: block !important; visibility: visible !important; font: 18px Verdana, Arial, Helvetica, sans-serif !important; cursor: pointer !important; font-weight: bold !important; float: right !important; color: #000000 !important; text-decoration: none !important;" href="https://simplemaps.com" title="For evaluation use only.">Simplemaps.com Trial</a>'
+            //'<a style="overflow: visible !important; clip-path: none !important; opacity: 1 !important;  filter: opacity(1) !important; transform: none !important; display: block !important; visibility: visible !important; font: 18px europa !important; cursor: pointer !important; font-weight: bold !important; float: right !important; color: #000000 !important; text-decoration: none !important;" href="https://simplemaps.com" title="For evaluation use only.">Simplemaps.com Trial</a>'
         ),
           !el && 503 != tL.innerHTML.length && (ef.innerHTML = "");
       }
@@ -7612,7 +7612,7 @@ var simplemaps_usmap_mapinfo = {
         })(),
         (function () {
           var e = {};
-          (e.font_family = a.label_font ? a.label_font : "arial,sans-serif"),
+          (e.font_family = a.label_font ? a.label_font : "europa"),
             (e.color = a.label_color ? a.label_color : "white"),
             (e.hover_color = a.label_hover_color
               ? a.label_hover_color
@@ -9773,7 +9773,7 @@ var simplemaps_usmap_mapinfo = {
               (t.innerHTML = ""),
               t.style.setProperty(
                 "font",
-                "12px Verdana, Arial, Helvetica, sans-serif",
+                "12px europa",
                 "important"
               ),
               t.style.setProperty("cursor", "pointer", "important"),
@@ -9787,7 +9787,7 @@ var simplemaps_usmap_mapinfo = {
           var o = document.createElement("a");
           o.style.setProperty(
             "font",
-            "12px Verdana, Arial, Helvetica, sans-serif",
+            "12px europa",
             "important"
           ),
             o.style.setProperty("cursor", "pointer", "important"),
@@ -10864,3 +10864,4 @@ var simplemaps_usmap_mapinfo = {
     }),
     u.push(f);
 })("simplemaps_usmap");
+
