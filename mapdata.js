@@ -35,7 +35,7 @@ var simplemaps_usmap_mapdata={
     label_color: "#d5ddec",
     label_hover_color: "#d5ddec",
     label_size: 22,
-    //label_font: "europa",
+    label_font: "europa",
     hide_labels: "no",
     hide_eastern_labels: "no",
     manual_zoom: "no",
@@ -54,7 +54,7 @@ var simplemaps_usmap_mapdata={
     popup_opacity: 1,
     popup_shadow: 1,
     popup_corners: 5,
-    //popup_font: "12px/1.5 europa",
+    popup_font: "europa",
     popup_nocss: "no",
     
     //Advanced settings
