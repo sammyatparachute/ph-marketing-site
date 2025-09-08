@@ -426,7 +426,7 @@ var simplemaps_usmap_mapdata={
       description: "Bethany Visser"
     },
     "2": {
-      name: "Blake Townsend",
+      name: "New York, NY",
       lat: "40.763258",
       lng: "-73.980913",
       type: "image",
