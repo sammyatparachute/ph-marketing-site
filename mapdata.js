@@ -409,21 +409,21 @@ var simplemaps_usmap_mapdata={
   },
   locations: {
     "0": {
-      name: "Averi Thompson",
+      name: "Virginia Beach, VA",
       lat: "36.859618",
       lng: "-76.036212",
       opacity: "1",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Virginia Beach, VA"
+      description: "Averi Thompson"
     },
     "1": {
-      name: "Bethany Visser",
+      name: "Pensacola, FL",
       lat: "30.446540",
       lng: "-87.207598",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Pensacola, FL"
+      description: "Bethany Visser"
     },
     "2": {
       name: "Blake Townsend",
@@ -431,95 +431,95 @@ var simplemaps_usmap_mapdata={
       lng: "-73.980913",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "New York, NY"
+      description: "Blake Townsend"
     },
     "3": {
-      name: "Greg Weyl",
+      name: "Denver, CO",
       lat: "39.748820",
       lng: "-104.976302",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Denver, CO"
+      description: "Greg Weyl"
     },
     "4": {
-      name: "Jordain Buckland",
+      name: "Phoenix, AZ",
       lat: "33.502031",
       lng: "-112.087773",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Phoenix, AZ"
+      description: "Jordain Buckland"
     },
     "5": {
-      name: "John Ciaccio",
+      name: "Nashville, TN",
       lat: "36.197745",
       lng: "-86.767169",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Nashville, TN"
+      description: "John Ciaccio"
     },
     "6": {
-      name: "James Sullivan",
+      name: "Austin, TX",
       lat: "30.291861",
       lng: "-97.745345",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Austin, TX"
+      description: "James Sullivan"
     },
     "7": {
-      name: "Halee Escamilla",
+      name: "Dallas, TX",
       lat: "32.791271",
       lng: "-96.779489",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Dallas, TX"
+      description: "Halee Escamilla"
     },
     "8": {
-      name: "Saskia Ottley",
+      name: "Miami, FL",
       lat: "25.790737",
       lng: "-80.219904",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Miami, FL"
+      description: "Saskia Ottley"
     },
     "9": {
-      name: "Ben Reeve",
+      name: "Wisconsin",
       lat: "44.589382",
       lng: "-89.660095",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Wisconsin"
+      description: "Ben Reeve"
     },
     "10": {
-      name: "Hayden Hoffman",
+      name: "Ohio",
       lat: "39.896484",
       lng: "-83.013256",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Ohio"
+      description: "Hayden Hoffman"
     },
     "11": {
-      name: "Eddy Roth",
+      name: "Owings Mills, MD",
       lat: "39.419354",
       lng: "-76.791680",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Owings mills, MD"
+      description: "Eddy Roth"
     },
     "12": {
-      name: "Gary Mosely",
+      name: "Atlanta, GA",
       lat: "33.734162",
       lng: "-84.399622",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Atlanta, GA"
+      description: "Gary Mosely"
     },
     "13": {
-      name: "Brian Osorio",
+      name: "Salt Lake City, UT",
       lat: "40.747157",
       lng: "-111.885242",
       type: "image",
       image_url: "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng",
-      description: "Salt Lake City, UT"
+      description: "Brian Osorio"
     }
   },
   labels: {
