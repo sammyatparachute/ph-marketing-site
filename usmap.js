@@ -8765,7 +8765,7 @@ var simplemaps_usmap_mapinfo = {
             }
           }
           if ((t.parent_type, !u)) {
-            console.log("The following object does not exist: " + e);
+            /*console.log("The following object does not exist: " + e);*/
             return;
           }
           if (("Not Named" == t.name && u && (t.name = u.sm.id), n)) {
@@ -10865,6 +10865,7 @@ var simplemaps_usmap_mapinfo = {
     }),
     u.push(f);
 })("simplemaps_usmap");
+
 
 
 
