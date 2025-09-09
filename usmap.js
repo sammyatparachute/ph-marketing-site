@@ -9148,7 +9148,7 @@ var simplemaps_usmap_mapinfo = {
           eL.push(y),
           (t$[e] = y),
           ea || y.node.setAttribute("class", "calendar-nav-button sm_location sm_location_" + e),
-          y.node.setAttribute("onClick", "showSlide(" + (e + 1) + ")");
+          y.node.setAttribute("onClick", "showSlide(" + (Number(e) + 1) + ")");
       }),
       te))
         tv(t);
@@ -10865,6 +10865,7 @@ var simplemaps_usmap_mapinfo = {
     }),
     u.push(f);
 })("simplemaps_usmap");
+
 
 
 
