@@ -9141,6 +9141,7 @@ var simplemaps_usmap_mapinfo = {
           (y.sm.hide_name = n.hide_name),
           (y.sm.display = n.display),
           (y.sm.display_ids = !!n.display_ids && n.display_ids),
+          y.node.setAttribute("onClick", "showSlide(" + e + ")"),
           y.transform(ox(y, ez * e3)),
           ("region" == y.sm.display || "state" == y.sm.display || n.hide) &&
             y.hide(),
@@ -10864,5 +10865,6 @@ var simplemaps_usmap_mapinfo = {
     }),
     u.push(f);
 })("simplemaps_usmap");
+
 
 
