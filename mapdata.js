@@ -569,10 +569,10 @@ var simplemaps_usmap_mapdata = {
       parent_id: "CT",
     },
     HI: {
-      x: 305,
-      y: 565,
+      x: "305",
+      y: "565",
       pill: "yes",
-      parent_id: "HI",
+      parent_id: "HI"
     },
     AK: {
       x: "113",
