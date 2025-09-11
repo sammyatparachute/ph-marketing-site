@@ -72,340 +72,294 @@ var simplemaps_usmap_mapdata = {
   state_specific: {
     HI: {
       name: "Hawaii",
-      hide: "yes",
       color: "#b167d3",
-      hover_color: "#520079",
+      hover_color: "#d4aae7"
     },
     AK: {
       name: "Alaska",
-      hide: "yes",
-      hover_color: "#520079",
-      color: "#b167d3",
+      hover_color: "#d4aae7",
+      color: "#b167d3"
     },
     FL: {
       name: "Florida",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     NH: {
       name: "New Hampshire",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     VT: {
       name: "Vermont",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     ME: {
       name: "Maine",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     RI: {
       name: "Rhode Island",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     NY: {
       name: "New York",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     PA: {
       name: "Pennsylvania",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     NJ: {
       name: "New Jersey",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     DE: {
       name: "Delaware",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     MD: {
       name: "Maryland",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     VA: {
       name: "Virginia",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     WV: {
       name: "West Virginia",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     OH: {
       name: "Ohio",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     IN: {
       name: "Indiana",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     IL: {
       name: "Illinois",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     CT: {
       name: "Connecticut",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     WI: {
       name: "Wisconsin",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     NC: {
       name: "North Carolina",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     DC: {
       name: "District of Columbia",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     MA: {
       name: "Massachusetts",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     TN: {
       name: "Tennessee",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     AR: {
       name: "Arkansas",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     MO: {
       name: "Missouri",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     GA: {
       name: "Georgia",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     SC: {
       name: "South Carolina",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     KY: {
       name: "Kentucky",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     AL: {
       name: "Alabama",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     LA: {
       name: "Louisiana",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     MS: {
       name: "Mississippi",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     IA: {
       name: "Iowa",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     MN: {
       name: "Minnesota",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     OK: {
       name: "Oklahoma",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     TX: {
       name: "Texas",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     NM: {
       name: "New Mexico",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     KS: {
       name: "Kansas",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     NE: {
       name: "Nebraska",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     SD: {
       name: "South Dakota",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     ND: {
       name: "North Dakota",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     WY: {
       name: "Wyoming",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     MT: {
       name: "Montana",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     CO: {
       name: "Colorado",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     UT: {
       name: "Utah",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     AZ: {
       name: "Arizona",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     NV: {
       name: "Nevada",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     OR: {
       name: "Oregon",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     WA: {
       name: "Washington",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     CA: {
       name: "California",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     MI: {
       name: "Michigan",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     ID: {
       name: "Idaho",
       color: "#b167d3",
-      hover_color: "#520079",
-      inactive: "yes",
+      hover_color: "#d4aae7"
     },
     GU: {
       name: "Guam",
       hide: "yes",
       color: "#b167d3",
-      hover_color: "#520079",
+      hover_color: "#d4aae7",
+      inactive: "yes"
     },
     VI: {
       name: "Virgin Islands",
       hide: "yes",
       color: "#b167d3",
-      hover_color: "#520079",
+      hover_color: "#d4aae7",
+      inactive: "yes"
     },
     PR: {
       name: "Puerto Rico",
       hide: "yes",
       color: "#b167d3",
-      hover_color: "#520079",
+      hover_color: "#d4aae7",
+      inactive: "yes"
     },
     MP: {
       name: "Northern Mariana Islands",
       hide: "yes",
       color: "#b167d3",
-      hover_color: "#520079",
+      hover_color: "#d4aae7",
+      inactive: "yes"
     },
     AS: {
       name: "American Samoa",
       hide: "yes",
       color: "#b167d3",
-      hover_color: "#520079",
-    },
+      hover_color: "#d4aae7",
+      inactive: "yes"
+    }
   },
   locations: {/*
     0: {

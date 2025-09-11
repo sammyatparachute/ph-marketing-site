@@ -10542,7 +10542,7 @@ var simplemaps_usmap_mapinfo = {
                   void 0 === a.navigate_title ? "Navigate" : a.navigate_title,
                 o = void 0 === a.keyboard_omit ? "" : a.keyboard_omit;
               if (!(o.indexOf("navigat") > -1)) {
-                var r = document.createElement("select");
+                /*var r = document.createElement("select");
                 r.options.add(new Option(t, "-1")),
                   r.options.add(new Option("Back", "back")),
                   v &&
@@ -10568,7 +10568,7 @@ var simplemaps_usmap_mapinfo = {
                       setTimeout(function () {
                         r.value = "-1";
                       }, 1e3);
-                  });
+                  });*/
               }
               var n = void 0 === a.states_title ? "States" : a.states_title,
                 l = void 0 === a.regions_title ? "Regions" : a.regions_title,
@@ -10865,16 +10865,3 @@ var simplemaps_usmap_mapinfo = {
     }),
     u.push(f);
 })("simplemaps_usmap");
-
-
-
-
-
-
-
-
-
-
-
-
-
