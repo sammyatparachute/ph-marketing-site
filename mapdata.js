@@ -9,12 +9,12 @@ var simplemaps_usmap_mapdata = {
 
     //State defaults
     state_description: "", //"State Description",
-    state_color: "#88A4BC",
-    state_hover_color: "#3B729F",
+    state_color: "#b167d3",
+    state_hover_color: "#d4aae7",
     state_url: "",
     border_size: 1.5,
-    all_states_inactive: "no",
-    all_states_zoomable: "yes",
+    all_states_inactive: "yes",
+    all_states_zoomable: "no",
 
     //Location defaults
     location_description: "Add location markers using latitude and longitude!",
