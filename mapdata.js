@@ -915,6 +915,20 @@ var simplemaps_usmap_mapdata = {
   regions: {
     averi_thompson: {
       name: "Averi Thompson",
+      states: [
+        "NC",
+        "ME",
+        "RI",
+        "NH",
+        "VT",
+        "NJ",
+        "PA",
+        "WV",
+        "MT",
+        "OR",
+        "WA",
+        "AK",
+      ],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Averi Thompson",
@@ -928,6 +942,7 @@ var simplemaps_usmap_mapdata = {
     },
     blake_townsend: {
       name: "Blake Townsend",
+      states: ["NY", "MA", "CT"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Blake Townsend",
@@ -941,6 +956,7 @@ var simplemaps_usmap_mapdata = {
     },
     bethany_visser: {
       name: "Bethany Visser",
+      states: ["AL", "MS", "IA", "ND", "SD", "MO", "LA", "AR", "NV"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Bethany Visser",
@@ -954,6 +970,7 @@ var simplemaps_usmap_mapdata = {
     },
     john_ciaccio: {
       name: "John Ciaccio",
+      states: ["KY", "TN"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "John Ciaccio",
@@ -967,6 +984,7 @@ var simplemaps_usmap_mapdata = {
     },
     gary_mosley: {
       name: "Gary Mosley",
+      states: ["SC", "GA"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Gary Mosley",
@@ -980,6 +998,7 @@ var simplemaps_usmap_mapdata = {
     },
     eddy_roth: {
       name: "Eddy Roth",
+      states: ["MD", "DE", "DC", "VA"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Eddy Roth",
@@ -993,6 +1012,7 @@ var simplemaps_usmap_mapdata = {
     },
     ben_reeve: {
       name: "Ben Reeve",
+      states: ["MN", "WI", "IL"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Ben Reeve",
@@ -1006,6 +1026,7 @@ var simplemaps_usmap_mapdata = {
     },
     saskia_ottley: {
       name: "Saskia Ottley",
+      states: ["FL"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Saskia Ottley",
@@ -1019,6 +1040,7 @@ var simplemaps_usmap_mapdata = {
     },
     hayden_hoffman: {
       name: "Hayden Hoffman",
+      states: ["OH", "IN", "MI"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Hayden Hoffman",
@@ -1032,6 +1054,7 @@ var simplemaps_usmap_mapdata = {
     },
     halee_escamilla: {
       name: "Halee Escamilla",
+      states: ["OK", "TX"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Halee Escamilla",
@@ -1045,6 +1068,7 @@ var simplemaps_usmap_mapdata = {
     },
     greg_weyl: {
       name: "Greg Weyl",
+      states: ["CO", "KS", "NE"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Greg Weyl",
@@ -1058,6 +1082,7 @@ var simplemaps_usmap_mapdata = {
     },
     jordain_buckland: {
       name: "Jordain Buckland",
+      states: ["CA", "AZ", "HI"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Jordain Buckland",
@@ -1071,6 +1096,7 @@ var simplemaps_usmap_mapdata = {
     },
     brian_osorio: {
       name: "Brian Osorio",
+      states: ["WY", "ID", "UT"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "Brian Osorio",
@@ -1084,6 +1110,7 @@ var simplemaps_usmap_mapdata = {
     },
     james_sullivan: {
       name: "James Sullivan",
+      states: ["TX", "NM"],
       color: "#b167d3",
       hover_color: "#d4aae7",
       description: "James Sullivan",
