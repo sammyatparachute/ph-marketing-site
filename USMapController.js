@@ -83,10 +83,8 @@ class USMapController {
 
       .usmap-svg-container {
         position: relative;
-        background: #fafafa;
         border-radius: 0 0 8px 8px;
         overflow: hidden;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       }
 
       .usmap-svg {
@@ -605,4 +603,4 @@ if (typeof window !== "undefined") {
   window.USMapController = USMapController;
 }
 
-setMode("both");
+setMode("territories");
