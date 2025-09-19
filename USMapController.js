@@ -53,8 +53,8 @@ class USMapController {
         display: flex;
         gap: 10px;
         padding: 15px;
-        background: #f5f5f5;
         border-radius: 8px 8px 0 0;
+        display: none;
       }
 
       .usmap-control-btn {
@@ -604,3 +604,5 @@ if (typeof module !== "undefined" && module.exports) {
 if (typeof window !== "undefined") {
   window.USMapController = USMapController;
 }
+
+setMode("both");
