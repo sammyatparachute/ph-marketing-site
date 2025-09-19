@@ -273,6 +273,7 @@ class USMapController {
 
   init() {
     this.createStates();
+    this.createTerritories();
     this.bindEvents();
     this.setupResponsive();
   }
@@ -296,10 +297,42 @@ class USMapController {
       path.setAttribute("id", stateId);
       path.setAttribute("d", stateData.path);
       path.dataset.name = stateData.name;
-      //path.dataset.population = stateData.population;
-      //path.dataset.area = stateData.area;
+      path.dataset.population = stateData.population || 0;
+      path.dataset.area = stateData.area || 0;
 
       statesLayer.appendChild(path);
+    });
+  }
+
+  createTerritories() {
+    const territoriesLayer = document.getElementById("territories-layer");
+    if (!territoriesLayer) {
+      console.error("Territories layer not found");
+      return;
+    }
+
+    // Check if US_TERRITORIES_DATA exists (from territorydata.js)
+    if (typeof US_TERRITORIES_DATA === 'undefined') {
+      console.warn("US_TERRITORIES_DATA not found. Make sure territorydata.js is loaded.");
+      return;
+    }
+
+    // Create territory elements from data
+    Object.keys(US_TERRITORIES_DATA).forEach((territoryId) => {
+      const territoryData = US_TERRITORIES_DATA[territoryId];
+      const path = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path"
+      );
+
+      path.setAttribute("class", "territory");
+      path.setAttribute("id", territoryId);
+      path.setAttribute("d", territoryData.path);
+      path.dataset.name = territoryData.name;
+      path.dataset.zipcodes = territoryData.zipcodes || "";
+      path.dataset.description = territoryData.description || "";
+
+      territoriesLayer.appendChild(path);
     });
   }
 
@@ -369,7 +402,7 @@ class USMapController {
     if (element.classList.contains("state")) {
       title = element.dataset.name;
       info = `Population: ${parseInt(
-        element.dataset.population
+        element.dataset.population || 0
       ).toLocaleString()}`;
     } else if (element.classList.contains("territory")) {
       title = element.dataset.name;
@@ -422,22 +455,21 @@ class USMapController {
       title.textContent = element.dataset.name;
       description.textContent = `${element.dataset.name} is a state in the United States.`;
 
+      const population = parseInt(element.dataset.population || 0);
+      const area = parseInt(element.dataset.area || 1);
+
       stats.innerHTML = `
                         <div class="stat-item">
-                            <div class="stat-value">${parseInt(
-                              element.dataset.population
-                            ).toLocaleString()}</div>
+                            <div class="stat-value">${population.toLocaleString()}</div>
                             <div class="stat-label">Population</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-value">${parseInt(
-                              element.dataset.area
-                            ).toLocaleString()}</div>
+                            <div class="stat-value">${area.toLocaleString()}</div>
                             <div class="stat-label">Area (sq mi)</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-value">${Math.round(
-                              element.dataset.population / element.dataset.area
+                              population / area
                             )}</div>
                             <div class="stat-label">Density (per sq mi)</div>
                         </div>
@@ -446,7 +478,7 @@ class USMapController {
       title.textContent = element.dataset.name;
       description.textContent = element.dataset.description;
 
-      const zipCodes = element.dataset.zipcodes.split(",");
+      const zipCodes = element.dataset.zipcodes ? element.dataset.zipcodes.split(",") : [];
       stats.innerHTML = `
                         <div class="stat-item">
                             <div class="stat-value">${zipCodes.length}</div>
@@ -457,9 +489,7 @@ class USMapController {
                             <div class="stat-label">Status</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-value">${zipCodes[0]}-${
-        zipCodes[zipCodes.length - 1]
-      }</div>
+                            <div class="stat-value">${zipCodes.length > 0 ? zipCodes[0] + '-' + zipCodes[zipCodes.length - 1] : 'N/A'}</div>
                             <div class="stat-label">Range</div>
                         </div>
                     `;
@@ -524,40 +554,6 @@ class USMapController {
     if (window.innerWidth < 768) {
       this.closeInfoPanel();
     }
-  }
-
-  // Public API methods for adding territories
-  addTerritory(id, pathData, data) {
-    const territoriesLayer = document.getElementById("territories-layer");
-    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-
-    path.setAttribute("class", "territory");
-    path.setAttribute("id", id);
-    path.setAttribute("d", pathData);
-
-    Object.keys(data).forEach((key) => {
-      path.dataset[key] = data[key];
-    });
-
-    territoriesLayer.appendChild(path);
-
-    // Bind events to new territory
-    if (this.touchDevice) {
-      path.addEventListener("touchstart", (e) => this.handleTouch(e, path));
-      path.addEventListener("touchend", (e) => this.handleClick(e, path));
-    } else {
-      path.addEventListener("mouseenter", (e) => this.handleHover(e, path));
-      path.addEventListener("mouseleave", () => this.hideHoverModal());
-      path.addEventListener("mousemove", (e) => this.updateHoverPosition(e));
-      path.addEventListener("click", (e) => this.handleClick(e, path));
-    }
-
-    return path;
-  }
-
-  updateTerritoryFromZipCodes(territoryId, zipCodes) {
-    console.log(`Updating territory ${territoryId} with zip codes:`, zipCodes);
-    // Integrate with zip code to coordinate service
   }
 
   // Static method to initialize the map
