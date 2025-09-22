@@ -2,34 +2,262 @@
 // Each territory should have: path (SVG path data), name, zipcodes, and description
 
 const US_TERRITORIES_DATA = {
-  'puerto-rico': {
-    path: 'M 850 450 L 880 450 L 880 470 L 850 470 Z', // Replace with actual SVG path data
-    name: 'Puerto Rico',
-    zipcodes: '00601,00602,00603,00604,00605,00606,00610,00611,00612',
-    description: 'Puerto Rico is a Caribbean island and unincorporated U.S. territory with a landscape of mountains, waterfalls and the El Yunque tropical rainforest.'
+  "puerto-rico": {
+    path: "M 850 450 L 880 450 L 880 470 L 850 470 Z", // Replace with actual SVG path data
+    name: "Puerto Rico",
+    zipcodes: "00601,00602,00603,00604,00605,00606,00610,00611,00612",
+    description:
+      "Puerto Rico is a Caribbean island and unincorporated U.S. territory with a landscape of mountains, waterfalls and the El Yunque tropical rainforest.",
   },
-  'us-virgin-islands': {
-    path: 'M 890 460 L 910 460 L 910 475 L 890 475 Z', // Replace with actual SVG path data
-    name: 'U.S. Virgin Islands',
-    zipcodes: '00801,00802,00803,00804,00805,00820,00821,00822,00823,00824',
-    description: 'The U.S. Virgin Islands are a group of Caribbean islands and an unincorporated U.S. territory known for white-sand beaches, reefs and green hills.'
+  "us-virgin-islands": {
+    path: "M 890 460 L 910 460 L 910 475 L 890 475 Z", // Replace with actual SVG path data
+    name: "U.S. Virgin Islands",
+    zipcodes: "00801,00802,00803,00804,00805,00820,00821,00822,00823,00824",
+    description:
+      "The U.S. Virgin Islands are a group of Caribbean islands and an unincorporated U.S. territory known for white-sand beaches, reefs and green hills.",
   },
-  'guam': {
-    path: 'M 920 470 L 940 470 L 940 485 L 920 485 Z', // Replace with actual SVG path data
-    name: 'Guam',
-    zipcodes: '96910,96911,96912,96913,96915,96916,96917,96918,96919,96921',
-    description: 'Guam is a U.S. island territory in Micronesia, in the Western Pacific, distinguished by tropical beaches, Chamorro villages and ancient latte-stone pillars.'
+  guam: {
+    path: "M 920 470 L 940 470 L 940 485 L 920 485 Z", // Replace with actual SVG path data
+    name: "Guam",
+    zipcodes: "96910,96911,96912,96913,96915,96916,96917,96918,96919,96921",
+    description:
+      "Guam is a U.S. island territory in Micronesia, in the Western Pacific, distinguished by tropical beaches, Chamorro villages and ancient latte-stone pillars.",
   },
-  'american-samoa': {
-    path: 'M 950 475 L 970 475 L 970 490 L 950 490 Z', // Replace with actual SVG path data
-    name: 'American Samoa',
-    zipcodes: '96799',
-    description: 'American Samoa is a U.S. territory covering 7 South Pacific islands and atolls known for rainforests, beaches and reefs.'
+  "american-samoa": {
+    path: "M 950 475 L 970 475 L 970 490 L 950 490 Z", // Replace with actual SVG path data
+    name: "American Samoa",
+    zipcodes: "96799",
+    description:
+      "American Samoa is a U.S. territory covering 7 South Pacific islands and atolls known for rainforests, beaches and reefs.",
   },
-  'northern-mariana-islands': {
-    path: 'M 900 440 L 920 440 L 920 455 L 900 455 Z', // Replace with actual SVG path data
-    name: 'Northern Mariana Islands',
-    zipcodes: '96950,96951,96952',
-    description: 'The Northern Mariana Islands are a U.S. commonwealth in the Pacific Ocean known for WWII sites and world-class diving spots.'
-  }
+  "northern-mariana-islands": {
+    path: "M 900 440 L 920 440 L 920 455 L 900 455 Z", // Replace with actual SVG path data
+    name: "Northern Mariana Islands",
+    zipcodes: "96950,96951,96952",
+    description:
+      "The Northern Mariana Islands are a U.S. commonwealth in the Pacific Ocean known for WWII sites and world-class diving spots.",
+  },
+  averi_thompson: {
+    name: "Averi Thompson",
+    states: [
+      "NC",
+      "ME",
+      "RI",
+      "NH",
+      "VT",
+      "NJ",
+      "PA",
+      "WV",
+      "MT",
+      "OR",
+      "WA",
+      "AK",
+    ],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Averi Thompson",
+    url: "javascript:showCalendarSlide(0)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/averi_thompson_territory.geojson",
+    assignee: "Averi Thompson",
+    assignee_email: "averi.thompson@parachutehealth.com",
+    assignee_hub_id: "1550980942",
+    slide_index: 0,
+  },
+  blake_townsend: {
+    name: "Blake Townsend",
+    states: ["NY", "MA", "CT"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Blake Townsend",
+    url: "javascript:showCalendarSlide(1)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/blake_townsend_territory.geojson",
+    assignee: "Blake Townsend",
+    assignee_email: "blake.townsend@parachutehealth.com",
+    assignee_hub_id: "1767554280",
+    slide_index: 1,
+  },
+  bethany_visser: {
+    name: "Bethany Visser",
+    states: ["AL", "MS", "IA", "ND", "SD", "MO", "LA", "AR", "NV"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Bethany Visser",
+    url: "javascript:showCalendarSlide(2)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/bethany_visser_territory.geojson",
+    assignee: "Bethany Visser",
+    assignee_email: "bethany.visser@parachutehealth.com",
+    assignee_hub_id: "260195125",
+    slide_index: 2,
+  },
+  john_ciaccio: {
+    name: "John Ciaccio",
+    states: ["KY", "TN"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "John Ciaccio",
+    url: "javascript:showCalendarSlide(3)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/john_ciaccio_territory.geojson",
+    assignee: "John Ciaccio",
+    assignee_email: "john.ciaccio@parachutehealth.com",
+    assignee_hub_id: "82600121",
+    slide_index: 3,
+  },
+  gary_mosley: {
+    name: "Gary Mosley",
+    states: ["SC", "GA"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Gary Mosley",
+    url: "javascript:showCalendarSlide(4)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/gary_mosley_territory.geojson",
+    assignee: "Gary Mosley",
+    assignee_email: "gary.mosley@parachutehealth.com",
+    assignee_hub_id: "551647021",
+    slide_index: 4,
+  },
+  eddy_roth: {
+    name: "Eddy Roth",
+    states: ["MD", "DE", "DC", "VA"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Eddy Roth",
+    url: "javascript:showCalendarSlide(5)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/eddy_roth_territory.geojson",
+    assignee: "Eddy Roth",
+    assignee_email: "eddy.roth@parachutehealth.com",
+    assignee_hub_id: "82992748",
+    slide_index: 5,
+  },
+  ben_reeve: {
+    name: "Ben Reeve",
+    states: ["MN", "WI", "IL"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Ben Reeve",
+    url: "javascript:showCalendarSlide(6)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/ben_reeve_territory.geojson",
+    assignee: "Ben Reeve",
+    assignee_email: "ben.reeve@parachutehealth.com",
+    assignee_hub_id: "82991473",
+    slide_index: 6,
+  },
+  saskia_ottley: {
+    name: "Saskia Ottley",
+    states: ["FL"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Saskia Ottley",
+    url: "javascript:showCalendarSlide(7)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/saskia_ottley_territory.geojson",
+    assignee: "Saskia Ottley",
+    assignee_email: "saskia.ottley@parachutehealth.com",
+    assignee_hub_id: "404006513",
+    slide_index: 7,
+  },
+  hayden_hoffman: {
+    name: "Hayden Hoffman",
+    states: ["OH", "IN", "MI"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Hayden Hoffman",
+    url: "javascript:showCalendarSlide(8)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/hayden_hoffman_territory.geojson",
+    assignee: "Hayden Hoffman",
+    assignee_email: "hayden.hoffman@parachutehealth.com",
+    assignee_hub_id: "82992781",
+    slide_index: 8,
+  },
+  halee_escamilla: {
+    name: "Halee Escamilla",
+    states: ["OK", "TX"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Halee Escamilla",
+    url: "javascript:showCalendarSlide(9)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/halee_escamilla_territory.geojson",
+    assignee: "Halee Escamilla",
+    assignee_email: "halee.escamilla@parachutehealth.com",
+    assignee_hub_id: "82600150",
+    slide_index: 9,
+  },
+  greg_weyl: {
+    name: "Greg Weyl",
+    states: ["CO", "KS", "NE"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Greg Weyl",
+    url: "javascript:showCalendarSlide(10)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/greg_weyl_territory.geojson",
+    assignee: "Greg Weyl",
+    assignee_email: "greg.weyl@parachutehealth.com",
+    assignee_hub_id: "79963359",
+    slide_index: 10,
+  },
+  jordain_buckland: {
+    name: "Jordain Buckland",
+    states: ["CA", "AZ", "HI"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Jordain Buckland",
+    url: "javascript:showCalendarSlide(11)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/jordain_buckland_territory.geojson",
+    assignee: "Jordain Buckland",
+    assignee_email: "jordain.buckland@parachutehealth.com",
+    assignee_hub_id: "79114374",
+    slide_index: 11,
+  },
+  brian_osorio: {
+    name: "Brian Osorio",
+    states: ["WY", "ID", "UT"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "Brian Osorio",
+    url: "javascript:showCalendarSlide(12)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/brian_osorio_territory.geojson",
+    assignee: "Brian Osorio",
+    assignee_email: "brian.osorio@parachutehealth.com",
+    assignee_hub_id: "82991503",
+    slide_index: 12,
+  },
+  james_sullivan: {
+    name: "James Sullivan",
+    states: ["TX", "NM"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "James Sullivan",
+    url: "javascript:showCalendarSlide(13)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/james_sullivan_territory.geojson",
+    assignee: "James Sullivan",
+    assignee_email: "james.sullivan@parachutehealth.com",
+    assignee_hub_id: "82600141",
+    slide_index: 13,
+  },
+  "": {
+    name: "{}",
+    states: ["GU"],
+    color: "#b167d3",
+    hover_color: "#d4aae7",
+    description: "{}",
+    url: "javascript:showCalendarSlide(14)",
+    geojson_url:
+      "https://raw.githubusercontent.com/sammyatparachute/ph-marketing-site/refs/heads/main/_territory.geojson",
+    assignee: "{}",
+    assignee_email: "{}",
+    assignee_hub_id: "{}",
+    slide_index: 14,
+  },
 };
