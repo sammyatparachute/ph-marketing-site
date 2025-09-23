@@ -154,11 +154,6 @@ window.US_TERRITORIES_DATA = {
     description: "Territory covering 1873 zip codes",
     clusters: 7,
   },
-  "": {
-    path: "",
-    name: "{}",
-    error: "No boundaries found",
-  },
 };
 console.log(
   "Territory data loaded:",
