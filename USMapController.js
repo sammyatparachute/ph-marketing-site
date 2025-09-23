@@ -1,3 +1,52 @@
+window.USMapController = class USMapController {
+  constructor() {
+    // Use empty objects as fallbacks
+    this.territories = window.US_TERRITORIES_DATA || {};
+    this.states = window.US_STATES_DATA || {};
+    this.mode = 'territories';
+    this.selectedTerritory = null;
+    
+    // Log what data we have
+    console.log('USMapController initialized with:');
+    console.log('- Territories:', Object.keys(this.territories).length);
+    console.log('- States:', Object.keys(this.states).length);
+  }
+  
+  init(containerId) {
+    // Check if we have data
+    if (Object.keys(this.territories).length === 0) {
+      console.log('WARNING: No territory data available');
+      // Still create the map but only with states
+    }
+    
+    const container = document.getElementById(containerId);
+    if (!container) {
+      console.log('ERROR: Container not found:', containerId);
+      return;
+    }
+    
+    // Create SVG element
+    this.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    this.svg.setAttribute("viewBox", "0 0 24 18");
+    this.svg.setAttribute("class", "territory-map");
+    this.svg.style.width = "100%";
+    this.svg.style.height = "100%";
+    
+    // Render what we have
+    if (Object.keys(this.states).length > 0) {
+      this.renderStates();
+    }
+    
+    if (Object.keys(this.territories).length > 0) {
+      this.renderTerritories();
+    }
+    
+    container.appendChild(this.svg);
+  }
+  
+  // ... rest of your methods
+};
+
 // Define the class in the global window scope
 window.USMapController = class USMapController {
   constructor() {
