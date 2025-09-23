@@ -1,4 +1,4 @@
-const US_STATES_DATA = {
+window.US_STATES_DATA = {
   alaska: {
     name: "Alaska",
     abbreviation: "AK",
