@@ -44,41 +44,6 @@ window.USMapController = class USMapController {
     container.appendChild(this.svg);
   }
   
-  // ... rest of your methods
-};
-
-// Define the class in the global window scope
-window.USMapController = class USMapController {
-  constructor() {
-    this.territories = window.US_TERRITORIES_DATA || {};
-    this.states = window.US_STATES_DATA || {};
-    this.mode = 'territories'; // or 'states'
-    this.selectedTerritory = null;
-  }
-  
-  init(containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) {
-      console.log('ERROR: Container not found:', containerId);
-      return;
-    }
-    
-    // Create SVG element
-    this.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    this.svg.setAttribute("viewBox", "0 0 24 18");
-    this.svg.setAttribute("class", "territory-map");
-    this.svg.style.width = "100%";
-    this.svg.style.height = "100%";
-    
-    // Add states first (as background)
-    this.renderStates();
-    
-    // Add territories on top
-    this.renderTerritories();
-    
-    container.appendChild(this.svg);
-  }
-  
   renderStates() {
     Object.entries(this.states).forEach(([stateId, state]) => {
       const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
