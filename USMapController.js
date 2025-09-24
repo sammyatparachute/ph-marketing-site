@@ -26,8 +26,8 @@
         territoryHiddenOpacity: options.territoryHiddenOpacity || 0,
         fontFamily: options.fontFamily || 'europa, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         // Script paths - can be overridden
-        stateDataPath: options.stateDataPath || '/s/statedata.js',
-        territoryDataPath: options.territoryDataPath || '/s/territorydata.js',
+        stateDataPath: options.stateDataPath || 'https://sammyatparachute.github.io/ph-marketing-site/statedata.js',
+        territoryDataPath: options.territoryDataPath || 'https://sammyatparachute.github.io/ph-marketing-site/territorydata.js',
         // Interactivity controls
         stateInteractivity: {
           hover: options.stateInteractivity?.hover !== false,
