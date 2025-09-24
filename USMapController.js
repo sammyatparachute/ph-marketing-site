@@ -1,7 +1,7 @@
 window.USMapController = class USMapController {
   constructor() {
     // Use empty objects as fallbacks
-    this.territories = window.US_TERRITORIES_DATA || {};
+    //this.territories = window.US_TERRITORIES_DATA || {};
     this.states = window.US_STATES_DATA || {};
     this.mode = 'territories';
     this.selectedTerritory = null;
