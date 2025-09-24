@@ -15,6 +15,7 @@
       this.options = {
         showTerritories: options.showTerritories !== false,
         enableTouch: options.enableTouch !== false,
+        showControls: options.showControls !== false,  // New option to show/hide controls
         defaultFill: options.defaultFill || '#b167d3',
         hoverFill: options.hoverFill || '#d4aae7',
         selectedFill: options.selectedFill || '#9745b8',
@@ -25,8 +26,8 @@
         territoryHiddenOpacity: options.territoryHiddenOpacity || 0,
         fontFamily: options.fontFamily || 'europa, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         // Script paths - can be overridden
-        stateDataPath: options.stateDataPath || 'https://sammyatparachute.github.io/ph-marketing-site/statedata.js',
-        territoryDataPath: options.territoryDataPath || 'https://sammyatparachute.github.io/ph-marketing-site/territorydata.js',
+        stateDataPath: options.stateDataPath || '/s/statedata.js',
+        territoryDataPath: options.territoryDataPath || '/s/territorydata.js',
         // Interactivity controls
         stateInteractivity: {
           hover: options.stateInteractivity?.hover !== false,
@@ -378,13 +379,17 @@
     }
 
     createHTML() {
+      const controlsHTML = this.options.showControls ? `
+        <div class="usmap-controls">
+          <button class="usmap-control-btn" id="${this.containerId}-statesBtn">States</button>
+          <button class="usmap-control-btn" id="${this.containerId}-territoriesBtn">Territories</button>
+          <button class="usmap-control-btn active" id="${this.containerId}-bothBtn">Both</button>
+        </div>
+      ` : '';
+
       this.container.innerHTML = `
         <div class="usmap-container">
-          <div class="usmap-controls">
-            <button class="usmap-control-btn" id="${this.containerId}-statesBtn">States</button>
-            <button class="usmap-control-btn" id="${this.containerId}-territoriesBtn">Territories</button>
-            <button class="usmap-control-btn active" id="${this.containerId}-bothBtn">Both</button>
-          </div>
+          ${controlsHTML}
           <div class="usmap-svg-container">
             <svg class="usmap-svg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
               <g id="${this.containerId}-states-layer"></g>
@@ -460,19 +465,21 @@
     }
 
     bindEvents() {
-      // Control buttons
-      const statesBtn = document.getElementById(`${this.containerId}-statesBtn`);
-      const territoriesBtn = document.getElementById(`${this.containerId}-territoriesBtn`);
-      const bothBtn = document.getElementById(`${this.containerId}-bothBtn`);
-      
-      if (statesBtn) {
-        statesBtn.addEventListener("click", () => this.setMode("states"));
-      }
-      if (territoriesBtn) {
-        territoriesBtn.addEventListener("click", () => this.setMode("territories"));
-      }
-      if (bothBtn) {
-        bothBtn.addEventListener("click", () => this.setMode("both"));
+      // Control buttons - only bind if controls are shown
+      if (this.options.showControls) {
+        const statesBtn = document.getElementById(`${this.containerId}-statesBtn`);
+        const territoriesBtn = document.getElementById(`${this.containerId}-territoriesBtn`);
+        const bothBtn = document.getElementById(`${this.containerId}-bothBtn`);
+        
+        if (statesBtn) {
+          statesBtn.addEventListener("click", () => this.setMode("states"));
+        }
+        if (territoriesBtn) {
+          territoriesBtn.addEventListener("click", () => this.setMode("territories"));
+        }
+        if (bothBtn) {
+          bothBtn.addEventListener("click", () => this.setMode("both"));
+        }
       }
 
       // Close button
