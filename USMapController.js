@@ -21,8 +21,8 @@ class USMapController {
       territoryOpacity: options.territoryOpacity || 0.6,
       fontFamily: options.fontFamily || 'europa, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
       // Script paths - can be overridden
-      stateDataPath: options.stateDataPath || '/s/statedata.js',
-      territoryDataPath: options.territoryDataPath || '/s/territorydata.js',
+      stateDataPath: options.stateDataPath || 'https://sammyatparachute.github.io/ph-marketing-site/statedata.js',
+      territoryDataPath: options.territoryDataPath || 'https://sammyatparachute.github.io/ph-marketing-site/territorydata.js',
       // Alternative: use CDN or absolute URLs
       // stateDataPath: options.stateDataPath || 'https://yourdomain.com/statedata.js',
       // territoryDataPath: options.territoryDataPath || 'https://yourdomain.com/territorydata.js',
