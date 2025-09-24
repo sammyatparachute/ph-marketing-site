@@ -8,6 +8,7 @@ class USMapController {
       return;
     }
 
+    // Default options with ability to override
     this.options = {
       showTerritories: options.showTerritories !== false,
       enableTouch: options.enableTouch !== false,
@@ -19,6 +20,12 @@ class USMapController {
       territoryFill: options.territoryFill || '#b167d3',
       territoryOpacity: options.territoryOpacity || 0.6,
       fontFamily: options.fontFamily || 'europa, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      // Script paths - can be overridden
+      stateDataPath: options.stateDataPath || '/s/statedata.js',
+      territoryDataPath: options.territoryDataPath || '/s/territorydata.js',
+      // Alternative: use CDN or absolute URLs
+      // stateDataPath: options.stateDataPath || 'https://yourdomain.com/statedata.js',
+      // territoryDataPath: options.territoryDataPath || 'https://yourdomain.com/territorydata.js',
       ...options,
     };
     
@@ -26,23 +33,87 @@ class USMapController {
     this.selectedElement = null;
     this.touchDevice = "ontouchstart" in window;
     
-    // Wait for data to be available
-    this.waitForData().then(() => {
+    // Load dependencies and initialize
+    this.loadDependencies().then(() => {
       this.init();
+    }).catch(error => {
+      console.error('Failed to load map dependencies:', error);
+      this.showError('Failed to load map data. Please try refreshing the page.');
     });
   }
 
-  waitForData() {
-    return new Promise((resolve) => {
-      const checkData = () => {
-        if (typeof US_STATES_DATA !== 'undefined' && typeof US_TERRITORIES_DATA !== 'undefined') {
-          resolve();
-        } else {
-          setTimeout(checkData, 100);
-        }
-      };
-      checkData();
+  loadScript(src) {
+    return new Promise((resolve, reject) => {
+      // Check if script already exists
+      const existingScript = document.querySelector(`script[src="${src}"]`);
+      if (existingScript) {
+        // If script exists, wait for data to be available
+        const checkData = () => {
+          if ((src.includes('statedata') && typeof US_STATES_DATA !== 'undefined') ||
+              (src.includes('territorydata') && typeof US_TERRITORIES_DATA !== 'undefined')) {
+            resolve();
+          } else {
+            setTimeout(checkData, 100);
+          }
+        };
+        checkData();
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+      document.head.appendChild(script);
     });
+  }
+
+  async loadDependencies() {
+    // Show loading state
+    this.showLoading();
+    
+    try {
+      // Load state data first
+      await this.loadScript(this.options.stateDataPath);
+      console.log('State data loaded successfully');
+      
+      // Load territory data second
+      await this.loadScript(this.options.territoryDataPath);
+      console.log('Territory data loaded successfully');
+      
+      // Verify data is available
+      if (typeof US_STATES_DATA === 'undefined') {
+        throw new Error('US_STATES_DATA not found after loading script');
+      }
+      if (typeof US_TERRITORIES_DATA === 'undefined') {
+        console.warn('US_TERRITORIES_DATA not found - territories will not be shown');
+      }
+    } catch (error) {
+      console.error('Error loading dependencies:', error);
+      throw error;
+    }
+  }
+
+  showLoading() {
+    if (this.container) {
+      this.container.innerHTML = `
+        <div style="text-align: center; padding: 40px; color: #999;">
+          <div style="font-size: 18px; margin-bottom: 10px;">Loading map data...</div>
+          <div style="font-size: 14px;">Please wait</div>
+        </div>
+      `;
+    }
+  }
+
+  showError(message) {
+    if (this.container) {
+      this.container.innerHTML = `
+        <div style="text-align: center; padding: 40px; color: #cc0000;">
+          <div style="font-size: 18px; margin-bottom: 10px;">Error</div>
+          <div style="font-size: 14px;">${message}</div>
+        </div>
+      `;
+    }
   }
 
   init() {
@@ -313,7 +384,7 @@ class USMapController {
 
   createStates() {
     const statesLayer = document.getElementById(`${this.containerId}-states-layer`);
-    if (!statesLayer) return;
+    if (!statesLayer || typeof US_STATES_DATA === 'undefined') return;
 
     const statesData = US_STATES_DATA;
 
@@ -599,7 +670,7 @@ class USMapController {
 
   refresh() {
     this.destroy();
-    this.waitForData().then(() => {
+    this.loadDependencies().then(() => {
       this.init();
     });
   }
@@ -609,6 +680,22 @@ class USMapController {
     return new USMapController(containerId, options);
   }
 }
+
+// Auto-initialize if data-usmap attribute is found
+document.addEventListener('DOMContentLoaded', function() {
+  const autoInitElements = document.querySelectorAll('[data-usmap]');
+  autoInitElements.forEach(element => {
+    const options = {};
+    
+    // Parse data attributes for options
+    if (element.dataset.stateDataPath) options.stateDataPath = element.dataset.stateDataPath;
+    if (element.dataset.territoryDataPath) options.territoryDataPath = element.dataset.territoryDataPath;
+    if (element.dataset.stateFill) options.stateFill = element.dataset.stateFill;
+    if (element.dataset.territoryFill) options.territoryFill = element.dataset.territoryFill;
+    
+    new USMapController(element.id, options);
+  });
+});
 
 // Export for module use
 if (typeof module !== "undefined" && module.exports) {
