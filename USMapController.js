@@ -26,9 +26,6 @@
         // Script paths - can be overridden
         stateDataPath: options.stateDataPath || '/s/statedata.js',
         territoryDataPath: options.territoryDataPath || '/s/territorydata.js',
-        // Alternative: use CDN or absolute URLs
-        // stateDataPath: options.stateDataPath || 'https://yourdomain.com/statedata.js',
-        // territoryDataPath: options.territoryDataPath || 'https://yourdomain.com/territorydata.js',
         ...options,
       };
       
@@ -144,7 +141,7 @@
         }
 
         .usmap-controls {
-          display: none;
+          display: flex;
           gap: 10px;
           padding: 15px;
           border-radius: 8px 8px 0 0;
@@ -178,6 +175,7 @@
           position: relative;
           border-radius: 0 0 8px 8px;
           overflow: hidden;
+          background: #f5f5f5;
         }
 
         .usmap-svg {
@@ -405,20 +403,6 @@
       });
     }
 
-    transformTerritoryPath(pathString) {
-      // Parse the path and transform negative coordinates
-      // Add offset to move territories to visible area
-      const offsetX = 30;
-      const offsetY = 30;
-      const scale = 15; // Scale up the territories
-      
-      return pathString.replace(/(-?\d+\.?\d*)\s+(-?\d+\.?\d*)/g, (match, x, y) => {
-        const newX = (parseFloat(x) * scale) + offsetX;
-        const newY = (parseFloat(y) * scale) + offsetY;
-        return `${newX} ${newY}`;
-      });
-    }
-
     createTerritories() {
       const territoriesLayer = document.getElementById(`${this.containerId}-territories-layer`);
       if (!territoriesLayer) return;
@@ -428,17 +412,14 @@
         return;
       }
 
-      // Create a group for territories with proper positioning
-      const territoriesGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
-      territoriesGroup.setAttribute("transform", "translate(50, 450) scale(0.8)");
-      
+      // Simply use the territories as they are - coordinates should match state system
       Object.keys(window.US_TERRITORIES_DATA).forEach((territoryId) => {
         const territoryData = window.US_TERRITORIES_DATA[territoryId];
         const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 
         path.setAttribute("class", "usmap-territory");
         path.setAttribute("id", `${this.containerId}-territory-${territoryId}`);
-        path.setAttribute("d", this.transformTerritoryPath(territoryData.path));
+        path.setAttribute("d", territoryData.path);
         path.dataset.name = territoryData.name;
         path.dataset.description = territoryData.description || "";
         path.dataset.type = 'territory';
@@ -448,10 +429,8 @@
           path.dataset.repEmail = territoryData.repInfo.email || "";
         }
 
-        territoriesGroup.appendChild(path);
+        territoriesLayer.appendChild(path);
       });
-      
-      territoriesLayer.appendChild(territoriesGroup);
     }
 
     bindEvents() {
