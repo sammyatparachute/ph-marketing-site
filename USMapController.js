@@ -14,15 +14,35 @@ class USMapController {
       defaultFill: options.defaultFill || '#b167d3',
       hoverFill: options.hoverFill || '#d4aae7',
       selectedFill: options.selectedFill || '#9745b8',
+      stateFill: options.stateFill || '#e0e0e0',
+      stateStroke: options.stateStroke || '#999',
+      territoryFill: options.territoryFill || '#b167d3',
+      territoryOpacity: options.territoryOpacity || 0.6,
       fontFamily: options.fontFamily || 'europa, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
       ...options,
     };
     
-    this.currentMode = "states";
+    this.currentMode = "both"; // Default to showing both
     this.selectedElement = null;
     this.touchDevice = "ontouchstart" in window;
     
-    this.init();
+    // Wait for data to be available
+    this.waitForData().then(() => {
+      this.init();
+    });
+  }
+
+  waitForData() {
+    return new Promise((resolve) => {
+      const checkData = () => {
+        if (typeof US_STATES_DATA !== 'undefined' && typeof US_TERRITORIES_DATA !== 'undefined') {
+          resolve();
+        } else {
+          setTimeout(checkData, 100);
+        }
+      };
+      checkData();
+    });
   }
 
   init() {
@@ -32,12 +52,12 @@ class USMapController {
     this.createTerritories();
     this.bindEvents();
     this.setupResponsive();
+    this.setMode(this.currentMode);
   }
 
   injectStyles() {
     const styleId = 'us-map-controller-styles';
     
-    // Check if styles already exist
     if (document.getElementById(styleId)) return;
     
     const styles = `
@@ -54,7 +74,6 @@ class USMapController {
         gap: 10px;
         padding: 15px;
         border-radius: 8px 8px 0 0;
-        display: none;
       }
 
       .usmap-control-btn {
@@ -85,6 +104,7 @@ class USMapController {
         position: relative;
         border-radius: 0 0 8px 8px;
         overflow: hidden;
+        background: #f5f5f5;
       }
 
       .usmap-svg {
@@ -93,24 +113,36 @@ class USMapController {
         display: block;
       }
 
-      .usmap-state,
-      .usmap-territory {
-        fill: ${this.options.defaultFill};
-        stroke: white;
-        stroke-width: 1;
+      .usmap-state {
+        fill: ${this.options.stateFill};
+        stroke: ${this.options.stateStroke};
+        stroke-width: 0.5;
         cursor: pointer;
         transition: fill 0.3s ease;
       }
 
-      .usmap-state:hover,
+      .usmap-state:hover {
+        fill: #d0d0d0;
+      }
+
+      .usmap-territory {
+        fill: ${this.options.territoryFill};
+        stroke: white;
+        stroke-width: 0.5;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        opacity: ${this.options.territoryOpacity};
+      }
+
       .usmap-territory:hover {
+        opacity: 0.8;
         fill: ${this.options.hoverFill};
       }
 
-      .usmap-state.selected,
       .usmap-territory.selected {
         fill: ${this.options.selectedFill};
         stroke-width: 2;
+        opacity: 1;
       }
 
       .usmap-hover-modal {
@@ -240,12 +272,6 @@ class USMapController {
           right: 0;
         }
       }
-
-      @media (max-width: 480px) {
-        .usmap-info-stats {
-          grid-template-columns: 1fr;
-        }
-      }
     `;
 
     const styleSheet = document.createElement('style');
@@ -258,12 +284,12 @@ class USMapController {
     this.container.innerHTML = `
       <div class="usmap-container">
         <div class="usmap-controls">
-          <button class="usmap-control-btn active" id="${this.containerId}-statesBtn">States</button>
+          <button class="usmap-control-btn" id="${this.containerId}-statesBtn">States</button>
           <button class="usmap-control-btn" id="${this.containerId}-territoriesBtn">Territories</button>
-          <button class="usmap-control-btn" id="${this.containerId}-bothBtn">Both</button>
+          <button class="usmap-control-btn active" id="${this.containerId}-bothBtn">Both</button>
         </div>
         <div class="usmap-svg-container">
-          <svg class="usmap-svg" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+          <svg class="usmap-svg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
             <g id="${this.containerId}-states-layer"></g>
             <g id="${this.containerId}-territories-layer"></g>
           </svg>
@@ -289,21 +315,34 @@ class USMapController {
     const statesLayer = document.getElementById(`${this.containerId}-states-layer`);
     if (!statesLayer) return;
 
-    // Check for external states data, otherwise use a simple placeholder
-    const statesData = typeof US_STATES_DATA !== 'undefined' ? US_STATES_DATA : this.getDefaultStatesData();
+    const statesData = US_STATES_DATA;
 
     Object.keys(statesData).forEach((stateId) => {
       const stateData = statesData[stateId];
       const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 
       path.setAttribute("class", "usmap-state");
-      path.setAttribute("id", `${this.containerId}-${stateId}`);
+      path.setAttribute("id", `${this.containerId}-state-${stateId}`);
       path.setAttribute("d", stateData.path);
       path.dataset.name = stateData.name;
-      path.dataset.population = stateData.population || 0;
-      path.dataset.area = stateData.area || 0;
+      path.dataset.abbreviation = stateData.abbreviation || '';
+      path.dataset.type = 'state';
 
       statesLayer.appendChild(path);
+    });
+  }
+
+  transformTerritoryPath(pathString) {
+    // Parse the path and transform negative coordinates
+    // Add offset to move territories to visible area
+    const offsetX = 30;
+    const offsetY = 30;
+    const scale = 15; // Scale up the territories
+    
+    return pathString.replace(/(-?\d+\.?\d*)\s+(-?\d+\.?\d*)/g, (match, x, y) => {
+      const newX = (parseFloat(x) * scale) + offsetX;
+      const newY = (parseFloat(y) * scale) + offsetY;
+      return `${newX} ${newY}`;
     });
   }
 
@@ -311,39 +350,58 @@ class USMapController {
     const territoriesLayer = document.getElementById(`${this.containerId}-territories-layer`);
     if (!territoriesLayer) return;
 
-    // Check if US_TERRITORIES_DATA exists
     if (typeof US_TERRITORIES_DATA === 'undefined') {
       console.info("US_TERRITORIES_DATA not found. Territories layer will be empty.");
       return;
     }
 
+    // Create a group for territories with proper positioning
+    const territoriesGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    territoriesGroup.setAttribute("transform", "translate(50, 450) scale(0.8)");
+    
     Object.keys(US_TERRITORIES_DATA).forEach((territoryId) => {
       const territoryData = US_TERRITORIES_DATA[territoryId];
       const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 
       path.setAttribute("class", "usmap-territory");
-      path.setAttribute("id", `${this.containerId}-${territoryId}`);
-      path.setAttribute("d", territoryData.path);
+      path.setAttribute("id", `${this.containerId}-territory-${territoryId}`);
+      path.setAttribute("d", this.transformTerritoryPath(territoryData.path));
       path.dataset.name = territoryData.name;
-      path.dataset.zipcodes = territoryData.zipcodes || "";
       path.dataset.description = territoryData.description || "";
+      path.dataset.type = 'territory';
+      
+      if (territoryData.repInfo) {
+        path.dataset.repName = territoryData.repInfo.name || "";
+        path.dataset.repEmail = territoryData.repInfo.email || "";
+      }
 
-      territoriesLayer.appendChild(path);
+      territoriesGroup.appendChild(path);
     });
+    
+    territoriesLayer.appendChild(territoriesGroup);
   }
 
   bindEvents() {
     // Control buttons
-    document.getElementById(`${this.containerId}-statesBtn`)
-      .addEventListener("click", () => this.setMode("states"));
-    document.getElementById(`${this.containerId}-territoriesBtn`)
-      .addEventListener("click", () => this.setMode("territories"));
-    document.getElementById(`${this.containerId}-bothBtn`)
-      .addEventListener("click", () => this.setMode("both"));
+    const statesBtn = document.getElementById(`${this.containerId}-statesBtn`);
+    const territoriesBtn = document.getElementById(`${this.containerId}-territoriesBtn`);
+    const bothBtn = document.getElementById(`${this.containerId}-bothBtn`);
+    
+    if (statesBtn) {
+      statesBtn.addEventListener("click", () => this.setMode("states"));
+    }
+    if (territoriesBtn) {
+      territoriesBtn.addEventListener("click", () => this.setMode("territories"));
+    }
+    if (bothBtn) {
+      bothBtn.addEventListener("click", () => this.setMode("both"));
+    }
 
     // Close button
-    document.getElementById(`${this.containerId}-closeBtn`)
-      .addEventListener("click", () => this.closeInfoPanel());
+    const closeBtn = document.getElementById(`${this.containerId}-closeBtn`);
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => this.closeInfoPanel());
+    }
 
     // Map interactions
     this.bindMapEvents();
@@ -383,13 +441,12 @@ class USMapController {
     const content = document.getElementById(`${this.containerId}-hoverContent`);
 
     let title, info;
-    if (element.classList.contains("usmap-state")) {
+    if (element.dataset.type === "state") {
       title = element.dataset.name;
-      const population = parseInt(element.dataset.population || 0);
-      info = population > 0 ? `Population: ${population.toLocaleString()}` : '';
-    } else if (element.classList.contains("usmap-territory")) {
+      info = element.dataset.abbreviation ? `(${element.dataset.abbreviation})` : '';
+    } else if (element.dataset.type === "territory") {
       title = element.dataset.name;
-      info = element.dataset.zipcodes ? `Zip codes: ${element.dataset.zipcodes}` : '';
+      info = element.dataset.repName ? `Rep: ${element.dataset.repName}` : '';
     }
 
     content.innerHTML = info ? `<strong>${title}</strong><br>${info}` : `<strong>${title}</strong>`;
@@ -407,7 +464,10 @@ class USMapController {
   }
 
   hideHoverModal() {
-    document.getElementById(`${this.containerId}-hoverModal`).classList.remove("active");
+    const modal = document.getElementById(`${this.containerId}-hoverModal`);
+    if (modal) {
+      modal.classList.remove("active");
+    }
   }
 
   handleClick(e, element) {
@@ -432,53 +492,42 @@ class USMapController {
     const description = document.getElementById(`${this.containerId}-infoDescription`);
     const stats = document.getElementById(`${this.containerId}-infoStats`);
 
-    if (element.classList.contains("usmap-state")) {
+    if (element.dataset.type === "state") {
       title.textContent = element.dataset.name;
-      description.textContent = `${element.dataset.name} is a state in the United States.`;
-
-      const population = parseInt(element.dataset.population || 0);
-      const area = parseInt(element.dataset.area || 1);
-
-      stats.innerHTML = population > 0 ? `
+      description.textContent = `${element.dataset.name} (${element.dataset.abbreviation})`;
+      
+      stats.innerHTML = `
         <div class="usmap-stat-item">
-          <div class="usmap-stat-value">${population.toLocaleString()}</div>
-          <div class="usmap-stat-label">Population</div>
+          <div class="usmap-stat-value">${element.dataset.abbreviation}</div>
+          <div class="usmap-stat-label">State Code</div>
         </div>
-        <div class="usmap-stat-item">
-          <div class="usmap-stat-value">${area.toLocaleString()}</div>
-          <div class="usmap-stat-label">Area (sq mi)</div>
-        </div>
-        <div class="usmap-stat-item">
-          <div class="usmap-stat-value">${Math.round(population / area)}</div>
-          <div class="usmap-stat-label">Density</div>
-        </div>
-      ` : `<div class="usmap-stat-item"><div class="usmap-stat-value">N/A</div><div class="usmap-stat-label">No Data</div></div>`;
-    } else if (element.classList.contains("usmap-territory")) {
+      `;
+    } else if (element.dataset.type === "territory") {
       title.textContent = element.dataset.name;
-      description.textContent = element.dataset.description || `${element.dataset.name} is a U.S. territory.`;
-
-      const zipCodes = element.dataset.zipcodes ? element.dataset.zipcodes.split(",") : [];
-      stats.innerHTML = zipCodes.length > 0 ? `
+      description.textContent = element.dataset.description || `Territory: ${element.dataset.name}`;
+      
+      const repInfo = element.dataset.repEmail ? `
         <div class="usmap-stat-item">
-          <div class="usmap-stat-value">${zipCodes.length}</div>
-          <div class="usmap-stat-label">Zip Codes</div>
+          <div class="usmap-stat-value">${element.dataset.repName}</div>
+          <div class="usmap-stat-label">Representative</div>
         </div>
         <div class="usmap-stat-item">
-          <div class="usmap-stat-value">Active</div>
-          <div class="usmap-stat-label">Status</div>
+          <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>
+          <div class="usmap-stat-label">Contact</div>
         </div>
-        <div class="usmap-stat-item">
-          <div class="usmap-stat-value">${zipCodes[0]}-${zipCodes[zipCodes.length - 1]}</div>
-          <div class="usmap-stat-label">Range</div>
-        </div>
-      ` : `<div class="usmap-stat-item"><div class="usmap-stat-value">N/A</div><div class="usmap-stat-label">No Data</div></div>`;
+      ` : '';
+      
+      stats.innerHTML = repInfo;
     }
 
     panel.classList.add("active");
   }
 
   closeInfoPanel() {
-    document.getElementById(`${this.containerId}-infoPanel`).classList.remove("active");
+    const panel = document.getElementById(`${this.containerId}-infoPanel`);
+    if (panel) {
+      panel.classList.remove("active");
+    }
     if (this.selectedElement) {
       this.selectedElement.classList.remove("selected");
       this.selectedElement = null;
@@ -500,16 +549,16 @@ class USMapController {
 
     switch (mode) {
       case "states":
-        statesLayer.style.display = "block";
-        territoriesLayer.style.display = "none";
+        if (statesLayer) statesLayer.style.display = "block";
+        if (territoriesLayer) territoriesLayer.style.display = "none";
         break;
       case "territories":
-        statesLayer.style.display = "none";
-        territoriesLayer.style.display = "block";
+        if (statesLayer) statesLayer.style.display = "none";
+        if (territoriesLayer) territoriesLayer.style.display = "block";
         break;
       case "both":
-        statesLayer.style.display = "block";
-        territoriesLayer.style.display = "block";
+        if (statesLayer) statesLayer.style.display = "block";
+        if (territoriesLayer) territoriesLayer.style.display = "block";
         break;
     }
 
@@ -520,13 +569,8 @@ class USMapController {
     const svg = this.container.querySelector('.usmap-svg');
     if (!svg) return;
 
-    if (window.innerWidth < 480) {
-      svg.setAttribute("viewBox", "0 50 1000 500");
-    } else if (window.innerWidth < 768) {
-      svg.setAttribute("viewBox", "0 25 1000 550");
-    } else {
-      svg.setAttribute("viewBox", "0 0 1000 600");
-    }
+    // Keep consistent viewBox for proper scaling
+    svg.setAttribute("viewBox", "0 0 960 600");
   }
 
   handleResize() {
@@ -536,37 +580,6 @@ class USMapController {
     if (window.innerWidth < 768) {
       this.closeInfoPanel();
     }
-  }
-
-  getDefaultStatesData() {
-    // Minimal placeholder data for demonstration
-    // Replace with actual state path data for production use
-    return {
-      'california': {
-        name: 'California',
-        path: 'M 50 200 L 120 200 L 120 350 L 50 350 Z',
-        population: 39538223,
-        area: 163696
-      },
-      'texas': {
-        name: 'Texas',
-        path: 'M 400 350 L 550 350 L 550 500 L 400 500 Z',
-        population: 29145505,
-        area: 268596
-      },
-      'newyork': {
-        name: 'New York',
-        path: 'M 800 150 L 870 150 L 870 220 L 800 220 Z',
-        population: 20201249,
-        area: 54555
-      },
-      'florida': {
-        name: 'Florida',
-        path: 'M 700 450 L 780 450 L 780 550 L 700 550 Z',
-        population: 21538187,
-        area: 65758
-      }
-    };
   }
 
   // Public API methods
@@ -581,12 +594,14 @@ class USMapController {
     
     // Reset properties
     this.selectedElement = null;
-    this.currentMode = "states";
+    this.currentMode = "both";
   }
 
   refresh() {
     this.destroy();
-    this.init();
+    this.waitForData().then(() => {
+      this.init();
+    });
   }
 
   // Static initialization method
@@ -602,5 +617,3 @@ if (typeof module !== "undefined" && module.exports) {
 if (typeof window !== "undefined") {
   window.USMapController = USMapController;
 }
-
-setMode("territories");
