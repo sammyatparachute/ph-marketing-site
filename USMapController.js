@@ -22,10 +22,24 @@
         stateStroke: options.stateStroke || '#999',
         territoryFill: options.territoryFill || '#b167d3',
         territoryOpacity: options.territoryOpacity || 0.6,
+        territoryHiddenOpacity: options.territoryHiddenOpacity || 0,
         fontFamily: options.fontFamily || 'europa, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         // Script paths - can be overridden
         stateDataPath: options.stateDataPath || '/s/statedata.js',
         territoryDataPath: options.territoryDataPath || '/s/territorydata.js',
+        // Interactivity controls
+        stateInteractivity: {
+          hover: options.stateInteractivity?.hover !== false,
+          click: options.stateInteractivity?.click !== false,
+          showTooltip: options.stateInteractivity?.showTooltip !== false,
+        },
+        territoryInteractivity: {
+          hover: options.territoryInteractivity?.hover !== false,
+          click: options.territoryInteractivity?.click !== false,
+          showTooltip: options.territoryInteractivity?.showTooltip !== false,
+          showOnStateHover: options.territoryInteractivity?.showOnStateHover || false,
+          hideInitially: options.territoryInteractivity?.hideInitially || false,
+        },
         ...options,
       };
       
@@ -141,7 +155,7 @@
         }
 
         .usmap-controls {
-          display: none;
+          display: flex;
           gap: 10px;
           padding: 15px;
           border-radius: 8px 8px 0 0;
@@ -175,6 +189,7 @@
           position: relative;
           border-radius: 0 0 8px 8px;
           overflow: hidden;
+          background: #f5f5f5;
         }
 
         .usmap-svg {
@@ -187,27 +202,39 @@
           fill: ${this.options.stateFill};
           stroke: ${this.options.stateStroke};
           stroke-width: 0.5;
-          cursor: pointer;
+          cursor: ${this.options.stateInteractivity.click ? 'pointer' : 'default'};
           transition: fill 0.3s ease;
         }
 
+        ${this.options.stateInteractivity.hover ? `
         .usmap-state:hover {
           fill: #d0d0d0;
+        }` : ''}
+
+        .usmap-state.no-interact {
+          cursor: default;
         }
 
         .usmap-territory {
           fill: ${this.options.territoryFill};
           stroke: white;
           stroke-width: 0.5;
-          cursor: pointer;
+          cursor: ${this.options.territoryInteractivity.click ? 'pointer' : 'default'};
           transition: all 0.3s ease;
+          opacity: ${this.options.territoryInteractivity.hideInitially ? 
+                     this.options.territoryHiddenOpacity : 
+                     this.options.territoryOpacity};
+        }
+
+        .usmap-territory.visible {
           opacity: ${this.options.territoryOpacity};
         }
 
+        ${this.options.territoryInteractivity.hover ? `
         .usmap-territory:hover {
           opacity: 0.8;
           fill: ${this.options.hoverFill};
-        }
+        }` : ''}
 
         .usmap-territory.selected {
           fill: ${this.options.selectedFill};
@@ -465,16 +492,89 @@
       const states = document.querySelectorAll(".usmap-state");
       const territories = document.querySelectorAll(".usmap-territory");
 
-      [...states, ...territories].forEach((element) => {
-        if (this.touchDevice) {
-          element.addEventListener("touchstart", (e) => this.handleTouch(e, element));
-          element.addEventListener("touchend", (e) => this.handleClick(e, element));
-        } else {
-          element.addEventListener("mouseenter", (e) => this.handleHover(e, element));
-          element.addEventListener("mouseleave", () => this.hideHoverModal());
-          element.addEventListener("mousemove", (e) => this.updateHoverPosition(e));
-          element.addEventListener("click", (e) => this.handleClick(e, element));
+      // Bind state events
+      states.forEach((element) => {
+        // Check if state interactivity is enabled
+        if (!this.options.stateInteractivity.hover && !this.options.stateInteractivity.click) {
+          element.classList.add('no-interact');
+          return;
         }
+
+        if (this.touchDevice) {
+          if (this.options.stateInteractivity.click) {
+            element.addEventListener("touchstart", (e) => this.handleTouch(e, element));
+            element.addEventListener("touchend", (e) => this.handleClick(e, element));
+          }
+        } else {
+          if (this.options.stateInteractivity.hover) {
+            element.addEventListener("mouseenter", (e) => this.handleStateHover(e, element));
+            element.addEventListener("mouseleave", (e) => this.handleStateLeave(e, element));
+            element.addEventListener("mousemove", (e) => this.updateHoverPosition(e));
+          }
+          if (this.options.stateInteractivity.click) {
+            element.addEventListener("click", (e) => this.handleClick(e, element));
+          }
+        }
+      });
+
+      // Bind territory events
+      territories.forEach((element) => {
+        if (!this.options.territoryInteractivity.hover && !this.options.territoryInteractivity.click) {
+          element.style.cursor = 'default';
+          return;
+        }
+
+        if (this.touchDevice) {
+          if (this.options.territoryInteractivity.click) {
+            element.addEventListener("touchstart", (e) => this.handleTouch(e, element));
+            element.addEventListener("touchend", (e) => this.handleClick(e, element));
+          }
+        } else {
+          if (this.options.territoryInteractivity.hover) {
+            element.addEventListener("mouseenter", (e) => this.handleHover(e, element));
+            element.addEventListener("mouseleave", () => this.hideHoverModal());
+            element.addEventListener("mousemove", (e) => this.updateHoverPosition(e));
+          }
+          if (this.options.territoryInteractivity.click) {
+            element.addEventListener("click", (e) => this.handleClick(e, element));
+          }
+        }
+      });
+    }
+
+    handleStateHover(e, element) {
+      // Show tooltip if enabled
+      if (this.options.stateInteractivity.showTooltip) {
+        this.showHoverModal(e, element);
+      }
+      
+      // Show territories on state hover if configured
+      if (this.options.territoryInteractivity.showOnStateHover) {
+        this.showTerritories();
+      }
+    }
+
+    handleStateLeave(e, element) {
+      this.hideHoverModal();
+      
+      // Hide territories when leaving state if configured
+      if (this.options.territoryInteractivity.showOnStateHover && 
+          this.options.territoryInteractivity.hideInitially) {
+        this.hideTerritories();
+      }
+    }
+
+    showTerritories() {
+      const territories = document.querySelectorAll(".usmap-territory");
+      territories.forEach(territory => {
+        territory.classList.add('visible');
+      });
+    }
+
+    hideTerritories() {
+      const territories = document.querySelectorAll(".usmap-territory");
+      territories.forEach(territory => {
+        territory.classList.remove('visible');
       });
     }
 
