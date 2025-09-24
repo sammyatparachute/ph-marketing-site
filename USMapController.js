@@ -141,7 +141,7 @@
         }
 
         .usmap-controls {
-          display: flex;
+          display: none;
           gap: 10px;
           padding: 15px;
           border-radius: 8px 8px 0 0;
