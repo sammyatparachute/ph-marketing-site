@@ -218,7 +218,7 @@
         .usmap-territory {
           fill: ${this.options.territoryFill};
           stroke: white;
-          stroke-width: 0.5;
+          stroke-width: 0;
           cursor: ${this.options.territoryInteractivity.click ? 'pointer' : 'default'};
           transition: all 0.3s ease;
           opacity: ${this.options.territoryInteractivity.hideInitially ? 
@@ -238,7 +238,7 @@
 
         .usmap-territory.selected {
           fill: ${this.options.selectedFill};
-          stroke-width: 2;
+          stroke-width: 0;
           opacity: 1;
         }
 
