@@ -797,5 +797,5 @@
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = USMapController;
   }
-
+console.log(`Territory ${territoryId} detected as: ${avgLat > 50 || avgLon < -130 ? 'Alaska' : avgLat < 24 ? 'Hawaii' : 'Continental US'}`);
 })(window, document);
