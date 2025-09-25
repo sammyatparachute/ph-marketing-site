@@ -760,7 +760,7 @@
         this.init();
       });
     }
-
+    
     // Static initialization method
     static init(containerId, options) {
       return new USMapController(containerId, options);
