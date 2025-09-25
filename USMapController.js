@@ -20,7 +20,7 @@
         hoverFill: options.hoverFill || '#d4aae7',
         selectedFill: options.selectedFill || '#9745b8',
         stateFill: options.stateFill || '#e0e0e0',
-        stateStroke: options.stateStroke || '#999',
+        stateStroke: options.stateStroke || '#d4aae7',
         territoryFill: options.territoryFill || '#b167d3',
         territoryOpacity: options.territoryOpacity || 0.6,
         territoryHiddenOpacity: options.territoryHiddenOpacity || 0,
@@ -218,7 +218,7 @@
         .usmap-territory {
           fill: ${this.options.territoryFill};
           stroke: white;
-          stroke-width: 0;
+          stroke-width: 0.5;
           cursor: ${this.options.territoryInteractivity.click ? 'pointer' : 'default'};
           transition: all 0.3s ease;
           opacity: ${this.options.territoryInteractivity.hideInitially ? 
