@@ -797,7 +797,4 @@
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = USMapController;
   }
-if (avgLat < 24 && avgLon < -150) {
-  console.log(`Hawaii territory ${territoryId} with ${points.length} points`);
-}
 })(window, document);
