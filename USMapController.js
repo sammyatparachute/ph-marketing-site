@@ -760,7 +760,7 @@
         this.init();
       });
     }
-    
+
     // Static initialization method
     static init(containerId, options) {
       return new USMapController(containerId, options);
@@ -797,5 +797,7 @@
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = USMapController;
   }
-console.log(`Territory ${territoryId} detected as: ${avgLat > 50 || avgLon < -130 ? 'Alaska' : avgLat < 24 ? 'Hawaii' : 'Continental US'}`);
+if (avgLat < 24 && avgLon < -150) {
+  console.log(`Hawaii territory ${territoryId} with ${points.length} points`);
+}
 })(window, document);
