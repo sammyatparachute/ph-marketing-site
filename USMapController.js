@@ -18,7 +18,7 @@
         showControls: options.showControls !== false,  // New option to show/hide controls
         defaultFill: options.defaultFill || '#b167d3',
         hoverFill: options.hoverFill || '#d4aae7',
-        selectedFill: options.selectedFill || '#9745b8',
+        selectedFill: options.selectedFill || 'rgba(255, 255, 255, .8)',
         stateFill: options.stateFill || '#e0e0e0',
         stateStroke: options.stateStroke || '#d4aae7',
         territoryFill: options.territoryFill || 'rgba(255, 255, 255, 0)',
