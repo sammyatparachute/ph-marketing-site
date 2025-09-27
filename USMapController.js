@@ -188,8 +188,7 @@
 
         .usmap-svg-container {
           position: relative;
-          border-radius: 0 0 8px 8px;
-          overflow: hidden;
+          border-radius: 0 0 8px 8px; 
         }
 
         .usmap-svg {
