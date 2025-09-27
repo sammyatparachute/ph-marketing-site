@@ -21,7 +21,7 @@
         selectedFill: options.selectedFill || '#9745b8',
         stateFill: options.stateFill || '#e0e0e0',
         stateStroke: options.stateStroke || '#d4aae7',
-        territoryFill: options.territoryFill || '#b167d3',
+        territoryFill: options.territoryFill || 'rgba(255, 255, 255, 0)',
         territoryOpacity: options.territoryOpacity || 0.6,
         territoryHiddenOpacity: options.territoryHiddenOpacity || 0,
         fontFamily: options.fontFamily || 'europa, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
