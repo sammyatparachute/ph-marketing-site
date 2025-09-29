@@ -15,7 +15,7 @@
       this.options = {
         showTerritories: options.showTerritories !== false,
         enableTouch: options.enableTouch !== false,
-        showControls: options.showControls !== false,  // New option to show/hide controls
+        showControls: options.showControls !== false,
         defaultFill: options.defaultFill || '#b167d3',
         hoverFill: options.hoverFill || '#d4aae7',
         selectedFill: options.selectedFill || 'rgba(255, 255, 255, .6)',
@@ -25,7 +25,7 @@
         territoryOpacity: options.territoryOpacity || 0.6,
         territoryHiddenOpacity: options.territoryHiddenOpacity || 0,
         fontFamily: options.fontFamily || 'europa, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-        // Script paths - can be overridden
+        // Script paths
         stateDataPath: options.stateDataPath || 'https://sammyatparachute.github.io/ph-marketing-site/statedata.js',
         territoryDataPath: options.territoryDataPath || 'https://sammyatparachute.github.io/ph-marketing-site/territorydata.js',
         // Interactivity controls
@@ -44,7 +44,7 @@
         ...options,
       };
       
-      this.currentMode = "both"; // Default to showing both
+      this.currentMode = "both";
       this.selectedElement = null;
       this.touchDevice = "ontouchstart" in window;
       
@@ -59,10 +59,8 @@
 
     loadScript(src) {
       return new Promise((resolve, reject) => {
-        // Check if script already exists
         const existingScript = document.querySelector(`script[src="${src}"]`);
         if (existingScript) {
-          // If script exists, wait for data to be available
           const checkData = () => {
             if ((src.includes('statedata') && typeof window.US_STATES_DATA !== 'undefined') ||
                 (src.includes('territorydata') && typeof window.US_TERRITORIES_DATA !== 'undefined')) {
@@ -84,19 +82,15 @@
     }
 
     async loadDependencies() {
-      // Show loading state
       this.showLoading();
       
       try {
-        // Load state data first
         await this.loadScript(this.options.stateDataPath);
         console.log('State data loaded successfully');
         
-        // Load territory data second
         await this.loadScript(this.options.territoryDataPath);
         console.log('Territory data loaded successfully');
         
-        // Verify data is available
         if (typeof window.US_STATES_DATA === 'undefined') {
           throw new Error('US_STATES_DATA not found after loading script');
         }
@@ -147,12 +141,21 @@
       if (document.getElementById(styleId)) return;
       
       const styles = `
-        .usmap-container {
-          position: relative;
+        .usmap-wrapper {
+          display: flex;
           width: 100%;
-          max-width: 1200px;
-          margin: 0 auto;
+          position: relative;
           font-family: ${this.options.fontFamily};
+        }
+
+        .usmap-container {
+          flex: 0 0 66%;
+          position: relative;
+          transition: flex 0.3s ease;
+        }
+
+        .usmap-container.expanded {
+          flex: 0 0 100%;
         }
 
         .usmap-controls {
@@ -260,27 +263,26 @@
         }
 
         .usmap-info-panel {
-          position: fixed;
-          top: 50%;
-          right: -400px;
-          transform: translateY(-50%);
-          width: 380px;
+          flex: 0 0 33%;
           background: white;
           box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-          transition: right 0.3s ease;
-          z-index: 1001;
-          border-radius: 8px 0 0 8px;
+          transform: translateX(100%);
+          transition: transform 0.3s ease;
+          overflow-y: auto;
+          position: relative;
         }
 
         .usmap-info-panel.active {
-          right: 0;
+          transform: translateX(0);
         }
 
         .usmap-info-header {
           background: ${this.options.defaultFill};
           color: white;
           padding: 20px;
-          position: relative;
+          position: sticky;
+          top: 0;
+          z-index: 10;
         }
 
         .usmap-close-btn {
@@ -350,22 +352,32 @@
         }
 
         @media (max-width: 768px) {
+          .usmap-wrapper {
+            flex-direction: column;
+          }
+          
+          .usmap-container,
+          .usmap-container.expanded {
+            flex: 0 0 100%;
+          }
+          
+          .usmap-info-panel {
+            flex: 0 0 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: translateX(100%);
+            z-index: 1002;
+          }
+          
           .usmap-controls {
             flex-direction: column;
           }
           
           .usmap-control-btn {
             width: 100%;
-          }
-          
-          .usmap-info-panel {
-            width: 100%;
-            right: -100%;
-            border-radius: 0;
-          }
-          
-          .usmap-info-panel.active {
-            right: 0;
           }
         }
       `;
@@ -386,26 +398,28 @@
       ` : '';
 
       this.container.innerHTML = `
-        <div class="usmap-container">
-          ${controlsHTML}
-          <div class="usmap-svg-container">
-            <svg class="usmap-svg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
-              <g id="${this.containerId}-states-layer"></g>
-              <g id="${this.containerId}-territories-layer"></g>
-            </svg>
-            <div class="usmap-hover-modal" id="${this.containerId}-hoverModal">
-              <div id="${this.containerId}-hoverContent"></div>
+        <div class="usmap-wrapper">
+          <div class="usmap-container" id="${this.containerId}-mapContainer">
+            ${controlsHTML}
+            <div class="usmap-svg-container">
+              <svg class="usmap-svg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+                <g id="${this.containerId}-states-layer"></g>
+                <g id="${this.containerId}-territories-layer"></g>
+              </svg>
+              <div class="usmap-hover-modal" id="${this.containerId}-hoverModal">
+                <div id="${this.containerId}-hoverContent"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="usmap-info-panel" id="${this.containerId}-infoPanel">
-          <div class="usmap-info-header">
-            <button class="usmap-close-btn" id="${this.containerId}-closeBtn">×</button>
-            <h2 class="usmap-info-title" id="${this.containerId}-infoTitle"></h2>
-          </div>
-          <div class="usmap-info-body">
-            <div class="usmap-info-description" id="${this.containerId}-infoDescription"></div>
-            <div class="usmap-info-stats" id="${this.containerId}-infoStats"></div>
+          <div class="usmap-info-panel" id="${this.containerId}-infoPanel">
+            <div class="usmap-info-header">
+              <button class="usmap-close-btn" id="${this.containerId}-closeBtn">×</button>
+              <h2 class="usmap-info-title" id="${this.containerId}-infoTitle"></h2>
+            </div>
+            <div class="usmap-info-body">
+              <div class="usmap-info-description" id="${this.containerId}-infoDescription"></div>
+              <div class="usmap-info-stats" id="${this.containerId}-infoStats"></div>
+            </div>
           </div>
         </div>
       `;
@@ -441,7 +455,6 @@
         return;
       }
 
-      // Simply use the territories as they are - coordinates should match state system
       Object.keys(window.US_TERRITORIES_DATA).forEach((territoryId) => {
         const territoryData = window.US_TERRITORIES_DATA[territoryId];
         const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -463,7 +476,7 @@
     }
 
     bindEvents() {
-      // Control buttons - only bind if controls are shown
+      // Control buttons
       if (this.options.showControls) {
         const statesBtn = document.getElementById(`${this.containerId}-statesBtn`);
         const territoriesBtn = document.getElementById(`${this.containerId}-territoriesBtn`);
@@ -499,7 +512,6 @@
 
       // Bind state events
       states.forEach((element) => {
-        // Check if state interactivity is enabled
         if (!this.options.stateInteractivity.hover && !this.options.stateInteractivity.click) {
           element.classList.add('no-interact');
           return;
@@ -548,12 +560,10 @@
     }
 
     handleStateHover(e, element) {
-      // Show tooltip if enabled
       if (this.options.stateInteractivity.showTooltip) {
         this.showHoverModal(e, element);
       }
       
-      // Show territories on state hover if configured
       if (this.options.territoryInteractivity.showOnStateHover) {
         this.showTerritories();
       }
@@ -562,7 +572,6 @@
     handleStateLeave(e, element) {
       this.hideHoverModal();
       
-      // Hide territories when leaving state if configured
       if (this.options.territoryInteractivity.showOnStateHover && 
           this.options.territoryInteractivity.hideInitially) {
         this.hideTerritories();
@@ -644,6 +653,7 @@
 
     showInfoPanel(element) {
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
+      const mapContainer = document.getElementById(`${this.containerId}-mapContainer`);
       const title = document.getElementById(`${this.containerId}-infoTitle`);
       const description = document.getElementById(`${this.containerId}-infoDescription`);
       const stats = document.getElementById(`${this.containerId}-infoStats`);
@@ -677,13 +687,23 @@
       }
 
       panel.classList.add("active");
+      if (mapContainer && window.innerWidth > 768) {
+        mapContainer.classList.remove("expanded");
+      }
     }
 
     closeInfoPanel() {
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
+      const mapContainer = document.getElementById(`${this.containerId}-mapContainer`);
+      
       if (panel) {
         panel.classList.remove("active");
       }
+      
+      if (mapContainer && window.innerWidth > 768) {
+        mapContainer.classList.add("expanded");
+      }
+      
       if (this.selectedElement) {
         this.selectedElement.classList.remove("selected");
         this.selectedElement = null;
@@ -693,7 +713,6 @@
     setMode(mode) {
       this.currentMode = mode;
 
-      // Update button states
       document.querySelectorAll(`#${this.containerId} .usmap-control-btn`)
         .forEach((btn) => btn.classList.remove("active"));
       
@@ -725,8 +744,15 @@
       const svg = this.container.querySelector('.usmap-svg');
       if (!svg) return;
 
-      // Keep consistent viewBox for proper scaling
       svg.setAttribute("viewBox", "0 0 960 600");
+      
+      // Set initial expanded state if panel isn't open
+      const mapContainer = document.getElementById(`${this.containerId}-mapContainer`);
+      const panel = document.getElementById(`${this.containerId}-infoPanel`);
+      
+      if (mapContainer && panel && !panel.classList.contains('active')) {
+        mapContainer.classList.add('expanded');
+      }
     }
 
     handleResize() {
@@ -738,17 +764,13 @@
       }
     }
 
-    // Public API methods
     destroy() {
-      // Remove event listeners
       window.removeEventListener("resize", () => this.handleResize());
       
-      // Clear container
       if (this.container) {
         this.container.innerHTML = '';
       }
       
-      // Reset properties
       this.selectedElement = null;
       this.currentMode = "both";
     }
@@ -760,22 +782,18 @@
       });
     }
 
-    // Static initialization method
     static init(containerId, options) {
       return new USMapController(containerId, options);
     }
   }
 
-  // Make available globally
   window.USMapController = USMapController;
 
-  // Auto-initialize if data-usmap attribute is found
   function autoInit() {
     const autoInitElements = document.querySelectorAll('[data-usmap]');
     autoInitElements.forEach(element => {
       const options = {};
       
-      // Parse data attributes for options
       if (element.dataset.stateDataPath) options.stateDataPath = element.dataset.stateDataPath;
       if (element.dataset.territoryDataPath) options.territoryDataPath = element.dataset.territoryDataPath;
       if (element.dataset.stateFill) options.stateFill = element.dataset.stateFill;
@@ -785,14 +803,12 @@
     });
   }
 
-  // Run auto-init when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', autoInit);
   } else {
     autoInit();
   }
 
-  // Export for module use if needed
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = USMapController;
   }
