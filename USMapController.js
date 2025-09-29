@@ -751,7 +751,7 @@
       const mapContainer = document.getElementById(`${this.containerId}-mapContainer`);
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
       
-      if (mapContainer && panel && !panel.classList.contains('active')) {#map-container
+      if (mapContainer && panel && !panel.classList.contains('active')) {
         mapContainer.classList.add('expanded');
       }
     }
