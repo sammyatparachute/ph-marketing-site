@@ -146,6 +146,7 @@
           width: 100%;
           position: relative;
           font-family: ${this.options.fontFamily};
+          justify-content: space-between;
         }
 
         .usmap-container {
@@ -750,7 +751,7 @@
       const mapContainer = document.getElementById(`${this.containerId}-mapContainer`);
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
       
-      if (mapContainer && panel && !panel.classList.contains('active')) {
+      if (mapContainer && panel && !panel.classList.contains('active')) {#map-container
         mapContainer.classList.add('expanded');
       }
     }
