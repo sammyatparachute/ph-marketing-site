@@ -16,6 +16,8 @@
         showTerritories: options.showTerritories !== false,
         enableTouch: options.enableTouch !== false,
         showControls: options.showControls !== false,
+        startExpanded: options.startExpanded || false, // New option
+        initialViewMode: options.initialViewMode || 'simplified', // New option: 'simplified' or 'detailed'
         defaultFill: options.defaultFill || '#b167d3',
         hoverFill: options.hoverFill || '#d4aae7',
         selectedFill: options.selectedFill || 'rgba(255, 255, 255, .6)',
@@ -47,6 +49,8 @@
       this.currentMode = "both";
       this.selectedElement = null;
       this.touchDevice = "ontouchstart" in window;
+      this.mapExpanded = this.options.startExpanded;
+      this.viewMode = this.options.initialViewMode;
       
       // Load dependencies and initialize
       this.loadDependencies().then(() => {
@@ -133,6 +137,8 @@
       this.bindEvents();
       this.setupResponsive();
       this.setMode(this.currentMode);
+      this.setViewMode(this.viewMode);
+      this.setMapExpanded(this.mapExpanded);
     }
 
     injectStyles() {
@@ -146,7 +152,6 @@
           width: 100%;
           position: relative;
           font-family: ${this.options.fontFamily};
-          justify-content: space-between;
         }
 
         .usmap-container {
@@ -155,8 +160,19 @@
           transition: flex 0.3s ease;
         }
 
-        .usmap-container.expanded {
+        .usmap-container.panel-expanded {
           flex: 0 0 100%;
+        }
+
+        .usmap-map-wrapper {
+          position: relative;
+          max-height: 50vh;
+          overflow: hidden;
+          transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .usmap-map-wrapper.expanded {
+          max-height: 80vh;
         }
 
         .usmap-controls {
@@ -164,6 +180,7 @@
           gap: 10px;
           padding: 15px;
           border-radius: 8px 8px 0 0;
+          align-items: center;
         }
 
         .usmap-control-btn {
@@ -190,6 +207,60 @@
           color: white;
         }
 
+        .usmap-view-controls {
+          margin-left: auto;
+          display: flex;
+          gap: 10px;
+        }
+
+        .usmap-expand-btn {
+          background: white;
+          border: 2px solid ${this.options.defaultFill};
+          border-radius: 20px;
+          padding: 8px 16px;
+          cursor: pointer;
+          font-size: 14px;
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .usmap-expand-btn:hover {
+          background: ${this.options.hoverFill};
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .usmap-expand-btn.expanded .expand-icon {
+          transform: rotate(180deg);
+        }
+
+        .expand-icon {
+          transition: transform 0.3s ease;
+          display: inline-block;
+        }
+
+        .usmap-detail-toggle {
+          background: white;
+          border: 2px solid ${this.options.defaultFill};
+          color: #333;
+          padding: 8px 16px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 14px;
+          transition: all 0.3s ease;
+        }
+
+        .usmap-detail-toggle:hover {
+          background: ${this.options.hoverFill};
+        }
+
+        .usmap-detail-toggle.detailed {
+          background: ${this.options.defaultFill};
+          color: white;
+        }
+
         .usmap-svg-container {
           position: relative;
           border-radius: 0 0 8px 8px; 
@@ -201,12 +272,28 @@
           display: block;
         }
 
+        /* Simplified view styles */
+        .usmap-map-wrapper.simplified .usmap-territory {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .usmap-map-wrapper.simplified .usmap-state {
+          stroke-width: 0.3;
+        }
+
+        /* Detailed view styles */
+        .usmap-map-wrapper.detailed .usmap-territory {
+          opacity: ${this.options.territoryOpacity};
+          pointer-events: auto;
+        }
+
         .usmap-state {
           fill: ${this.options.stateFill};
           stroke: ${this.options.stateStroke};
           stroke-width: 0.5;
           cursor: ${this.options.stateInteractivity.click ? 'pointer' : 'default'};
-          transition: fill 0.3s ease;
+          transition: fill 0.3s ease, stroke-width 0.3s ease;
         }
 
         ${this.options.stateInteractivity.hover ? `
@@ -224,9 +311,6 @@
           stroke-width: 0;
           cursor: ${this.options.territoryInteractivity.click ? 'pointer' : 'default'};
           transition: all 0.3s ease;
-          opacity: ${this.options.territoryInteractivity.hideInitially ? 
-                     this.options.territoryHiddenOpacity : 
-                     this.options.territoryOpacity};
         }
 
         .usmap-territory.visible {
@@ -358,8 +442,16 @@
           }
           
           .usmap-container,
-          .usmap-container.expanded {
+          .usmap-container.panel-expanded {
             flex: 0 0 100%;
+          }
+          
+          .usmap-map-wrapper {
+            max-height: 60vh;
+          }
+          
+          .usmap-map-wrapper.expanded {
+            max-height: 80vh;
           }
           
           .usmap-info-panel {
@@ -374,11 +466,13 @@
           }
           
           .usmap-controls {
-            flex-direction: column;
+            flex-wrap: wrap;
           }
           
-          .usmap-control-btn {
+          .usmap-view-controls {
             width: 100%;
+            margin-left: 0;
+            margin-top: 10px;
           }
         }
       `;
@@ -395,6 +489,16 @@
           <button class="usmap-control-btn" id="${this.containerId}-statesBtn">States</button>
           <button class="usmap-control-btn" id="${this.containerId}-territoriesBtn">Territories</button>
           <button class="usmap-control-btn active" id="${this.containerId}-bothBtn">Both</button>
+          
+          <div class="usmap-view-controls">
+            <button class="usmap-detail-toggle" id="${this.containerId}-detailToggle">
+              <span class="detail-text">Show Details</span>
+            </button>
+            <button class="usmap-expand-btn" id="${this.containerId}-expandBtn">
+              <span class="expand-text">Expand Map</span>
+              <span class="expand-icon">▼</span>
+            </button>
+          </div>
         </div>
       ` : '';
 
@@ -402,13 +506,15 @@
         <div class="usmap-wrapper">
           <div class="usmap-container" id="${this.containerId}-mapContainer">
             ${controlsHTML}
-            <div class="usmap-svg-container">
-              <svg class="usmap-svg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
-                <g id="${this.containerId}-states-layer"></g>
-                <g id="${this.containerId}-territories-layer"></g>
-              </svg>
-              <div class="usmap-hover-modal" id="${this.containerId}-hoverModal">
-                <div id="${this.containerId}-hoverContent"></div>
+            <div class="usmap-map-wrapper" id="${this.containerId}-mapWrapper">
+              <div class="usmap-svg-container">
+                <svg class="usmap-svg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+                  <g id="${this.containerId}-states-layer"></g>
+                  <g id="${this.containerId}-territories-layer"></g>
+                </svg>
+                <div class="usmap-hover-modal" id="${this.containerId}-hoverModal">
+                  <div id="${this.containerId}-hoverContent"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -482,6 +588,8 @@
         const statesBtn = document.getElementById(`${this.containerId}-statesBtn`);
         const territoriesBtn = document.getElementById(`${this.containerId}-territoriesBtn`);
         const bothBtn = document.getElementById(`${this.containerId}-bothBtn`);
+        const expandBtn = document.getElementById(`${this.containerId}-expandBtn`);
+        const detailToggle = document.getElementById(`${this.containerId}-detailToggle`);
         
         if (statesBtn) {
           statesBtn.addEventListener("click", () => this.setMode("states"));
@@ -491,6 +599,12 @@
         }
         if (bothBtn) {
           bothBtn.addEventListener("click", () => this.setMode("both"));
+        }
+        if (expandBtn) {
+          expandBtn.addEventListener("click", () => this.toggleMapExpansion());
+        }
+        if (detailToggle) {
+          detailToggle.addEventListener("click", () => this.toggleViewMode());
         }
       }
 
@@ -505,6 +619,72 @@
 
       // Window resize
       window.addEventListener("resize", () => this.handleResize());
+    }
+
+    toggleMapExpansion() {
+      this.mapExpanded = !this.mapExpanded;
+      this.setMapExpanded(this.mapExpanded);
+    }
+
+    setMapExpanded(expanded) {
+      const mapWrapper = document.getElementById(`${this.containerId}-mapWrapper`);
+      const expandBtn = document.getElementById(`${this.containerId}-expandBtn`);
+      
+      if (mapWrapper) {
+        if (expanded) {
+          mapWrapper.classList.add('expanded');
+        } else {
+          mapWrapper.classList.remove('expanded');
+        }
+      }
+      
+      if (expandBtn) {
+        const expandText = expandBtn.querySelector('.expand-text');
+        if (expandText) {
+          expandText.textContent = expanded ? 'Collapse Map' : 'Expand Map';
+        }
+        if (expanded) {
+          expandBtn.classList.add('expanded');
+        } else {
+          expandBtn.classList.remove('expanded');
+        }
+      }
+    }
+
+    toggleViewMode() {
+      this.viewMode = this.viewMode === 'simplified' ? 'detailed' : 'simplified';
+      this.setViewMode(this.viewMode);
+    }
+
+    setViewMode(mode) {
+      const mapWrapper = document.getElementById(`${this.containerId}-mapWrapper`);
+      const detailToggle = document.getElementById(`${this.containerId}-detailToggle`);
+      
+      if (mapWrapper) {
+        if (mode === 'detailed') {
+          mapWrapper.classList.remove('simplified');
+          mapWrapper.classList.add('detailed');
+          // Auto-expand when switching to detailed view
+          if (!this.mapExpanded) {
+            this.toggleMapExpansion();
+          }
+        } else {
+          mapWrapper.classList.remove('detailed');
+          mapWrapper.classList.add('simplified');
+        }
+      }
+      
+      if (detailToggle) {
+        const detailText = detailToggle.querySelector('.detail-text');
+        if (detailText) {
+          detailText.textContent = mode === 'detailed' ? 'Hide Details' : 'Show Details';
+        }
+        if (mode === 'detailed') {
+          detailToggle.classList.add('detailed');
+        } else {
+          detailToggle.classList.remove('detailed');
+        }
+      }
     }
 
     bindMapEvents() {
@@ -565,32 +745,33 @@
         this.showHoverModal(e, element);
       }
       
-      if (this.options.territoryInteractivity.showOnStateHover) {
-        this.showTerritories();
+      // Auto-show details when hovering if in simplified mode
+      if (this.viewMode === 'simplified') {
+        const mapWrapper = document.getElementById(`${this.containerId}-mapWrapper`);
+        if (mapWrapper) {
+          const territories = mapWrapper.querySelectorAll('.usmap-territory');
+          territories.forEach(territory => {
+            territory.style.opacity = '0.3';
+            territory.style.pointerEvents = 'auto';
+          });
+        }
       }
     }
 
     handleStateLeave(e, element) {
       this.hideHoverModal();
       
-      if (this.options.territoryInteractivity.showOnStateHover && 
-          this.options.territoryInteractivity.hideInitially) {
-        this.hideTerritories();
+      // Hide territories again when leaving state in simplified mode
+      if (this.viewMode === 'simplified') {
+        const mapWrapper = document.getElementById(`${this.containerId}-mapWrapper`);
+        if (mapWrapper) {
+          const territories = mapWrapper.querySelectorAll('.usmap-territory');
+          territories.forEach(territory => {
+            territory.style.opacity = '0';
+            territory.style.pointerEvents = 'none';
+          });
+        }
       }
-    }
-
-    showTerritories() {
-      const territories = document.querySelectorAll(".usmap-territory");
-      territories.forEach(territory => {
-        territory.classList.add('visible');
-      });
-    }
-
-    hideTerritories() {
-      const territories = document.querySelectorAll(".usmap-territory");
-      territories.forEach(territory => {
-        territory.classList.remove('visible');
-      });
     }
 
     handleTouch(e, element) {
@@ -639,6 +820,15 @@
     handleClick(e, element) {
       e.preventDefault();
       this.hideHoverModal();
+      
+      // Auto-expand and show details when clicking
+      if (!this.mapExpanded) {
+        this.toggleMapExpansion();
+      }
+      if (this.viewMode === 'simplified') {
+        this.toggleViewMode();
+      }
+      
       this.selectElement(element);
       this.showInfoPanel(element);
     }
@@ -689,7 +879,7 @@
 
       panel.classList.add("active");
       if (mapContainer && window.innerWidth > 768) {
-        mapContainer.classList.remove("expanded");
+        mapContainer.classList.remove("panel-expanded");
       }
     }
 
@@ -702,7 +892,7 @@
       }
       
       if (mapContainer && window.innerWidth > 768) {
-        mapContainer.classList.add("expanded");
+        mapContainer.classList.add("panel-expanded");
       }
       
       if (this.selectedElement) {
@@ -747,12 +937,11 @@
 
       svg.setAttribute("viewBox", "0 0 960 600");
       
-      // Set initial expanded state if panel isn't open
       const mapContainer = document.getElementById(`${this.containerId}-mapContainer`);
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
       
       if (mapContainer && panel && !panel.classList.contains('active')) {
-        mapContainer.classList.add('expanded');
+        mapContainer.classList.add('panel-expanded');
       }
     }
 
