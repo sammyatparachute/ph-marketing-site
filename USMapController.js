@@ -422,10 +422,11 @@
             </div>
           </div>
           <div class="usmap-placeholder-panel">
-            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #999; text-align: center; padding: 20px;">
+            <div style="display: flex; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 20px;">
               <div>
-                <div style="font-size: 18px; margin-bottom: 10px;">Select a state or territory</div>
-                <div style="font-size: 14px;">Click on the map to view details</div>
+                <div>
+                  <img src="https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/7b4c1341-c5b4-4eee-9c64-ca35c2bc0bea/woman-at-desk.png?content-type=image%2Fpng"/>
+                </div>
               </div>
             </div>
           </div>
