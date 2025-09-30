@@ -156,8 +156,6 @@
 
         .usmap-placeholder-panel {
           flex: 0 0 33%;
-          background: #f9f9f9;
-          border-left: 1px solid #e0e0e0;
         }
 
         .usmap-controls {
