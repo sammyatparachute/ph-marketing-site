@@ -18,7 +18,7 @@
         showControls: options.showControls !== false,
         defaultFill: options.defaultFill || '#b167d3',
         hoverFill: options.hoverFill || '#d4aae7',
-        selectedFill: options.selectedFill || 'rgba(255, 255, 255, .6)',
+        selectedFill: options.selectedFill || 'rgba(0, 0, 0, .25)',
         stateFill: options.stateFill || '#e0e0e0',
         stateStroke: options.stateStroke || '#d4aae7',
         territoryFill: options.territoryFill || 'rgba(255, 255, 255, 0)',
@@ -612,7 +612,7 @@
         info = element.dataset.abbreviation ? `(${element.dataset.abbreviation})` : '';
       } else if (element.dataset.type === "territory") {
         title = element.dataset.name;
-        info = element.dataset.repName ? `Rep: ${element.dataset.repName}` : '';
+        info = element.dataset.repEmail ? element.dataset.repEmail : '';
       }
 
       content.innerHTML = info ? `<strong>${title}</strong><br>${info}` : `<strong>${title}</strong>`;
