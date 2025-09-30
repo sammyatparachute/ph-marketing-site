@@ -449,43 +449,56 @@
       document.head.appendChild(styleSheet);
     }
 
+    // Update the HTML structure to place panel inside wrapper
     createHTML() {
       const controlsHTML = this.options.showControls
         ? `
-        <div class="usmap-controls">
-          <button class="usmap-control-btn" id="${this.containerId}-statesBtn">States</button>
-          <button class="usmap-control-btn" id="${this.containerId}-territoriesBtn">Territories</button>
-          <button class="usmap-control-btn active" id="${this.containerId}-bothBtn">Both</button>
-        </div>
-      `
+    <div class="usmap-controls">
+      <button class="usmap-control-btn" id="${this.containerId}-statesBtn">States</button>
+      <button class="usmap-control-btn" id="${this.containerId}-territoriesBtn">Territories</button>
+      <button class="usmap-control-btn active" id="${this.containerId}-bothBtn">Both</button>
+      
+      <div class="usmap-view-controls">
+        <button class="usmap-detail-toggle" id="${this.containerId}-detailToggle">
+          <span class="detail-text">Show Details</span>
+        </button>
+        <button class="usmap-expand-btn" id="${this.containerId}-expandBtn">
+          <span class="expand-text">Expand Map</span>
+          <span class="expand-icon">▼</span>
+        </button>
+      </div>
+    </div>
+  `
         : "";
 
       this.container.innerHTML = `
-        <div class="usmap-wrapper">
-          <div class="usmap-container" id="${this.containerId}-mapContainer">
-            ${controlsHTML}
-            <div class="usmap-svg-container">
-              <svg class="usmap-svg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
-                <g id="${this.containerId}-states-layer"></g>
-                <g id="${this.containerId}-territories-layer"></g>
-              </svg>
-              <div class="usmap-hover-modal" id="${this.containerId}-hoverModal">
-                <div id="${this.containerId}-hoverContent"></div>
-              </div>
-            </div>
-          </div>
-          <div class="usmap-info-panel" id="${this.containerId}-infoPanel">
-            <div class="usmap-info-header">
-              <button class="usmap-close-btn" id="${this.containerId}-closeBtn">×</button>
-              <h2 class="usmap-info-title" id="${this.containerId}-infoTitle"></h2>
-            </div>
-            <div class="usmap-info-body">
-              <div class="usmap-info-description" id="${this.containerId}-infoDescription"></div>
-              <div class="usmap-info-stats" id="${this.containerId}-infoStats"></div>
+    <div class="usmap-wrapper">
+      <div class="usmap-info-panel" id="${this.containerId}-infoPanel">
+        <div class="usmap-info-header">
+          <button class="usmap-close-btn" id="${this.containerId}-closeBtn">×</button>
+          <h2 class="usmap-info-title" id="${this.containerId}-infoTitle"></h2>
+        </div>
+        <div class="usmap-info-body">
+          <div class="usmap-info-description" id="${this.containerId}-infoDescription"></div>
+          <div class="usmap-info-stats" id="${this.containerId}-infoStats"></div>
+        </div>
+      </div>
+      <div class="usmap-container" id="${this.containerId}-mapContainer">
+        ${controlsHTML}
+        <div class="usmap-map-wrapper" id="${this.containerId}-mapWrapper">
+          <div class="usmap-svg-container">
+            <svg class="usmap-svg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+              <g id="${this.containerId}-states-layer"></g>
+              <g id="${this.containerId}-territories-layer"></g>
+            </svg>
+            <div class="usmap-hover-modal" id="${this.containerId}-hoverModal">
+              <div id="${this.containerId}-hoverContent"></div>
             </div>
           </div>
         </div>
-      `;
+      </div>
+    </div>
+  `;
     }
 
     createStates() {
@@ -770,6 +783,7 @@
       this.selectedElement = element;
     }
 
+    s; // Update the showInfoPanel method
     showInfoPanel(element) {
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
       const mapContainer = document.getElementById(
@@ -786,11 +800,11 @@
         description.textContent = `${element.dataset.name} (${element.dataset.abbreviation})`;
 
         stats.innerHTML = `
-          <div class="usmap-stat-item">
-            <div class="usmap-stat-value">${element.dataset.abbreviation}</div>
-            <div class="usmap-stat-label">State Code</div>
-          </div>
-        `;
+      <div class="usmap-stat-item">
+        <div class="usmap-stat-value">${element.dataset.abbreviation}</div>
+        <div class="usmap-stat-label">State Code</div>
+      </div>
+    `;
       } else if (element.dataset.type === "territory") {
         title.textContent = element.dataset.name;
         description.textContent =
@@ -798,15 +812,15 @@
 
         const repInfo = element.dataset.repEmail
           ? `
-          <div class="usmap-stat-item">
-            <div class="usmap-stat-value">${element.dataset.repName}</div>
-            <div class="usmap-stat-label">Representative</div>
-          </div>
-          <div class="usmap-stat-item">
-            <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>
-            <div class="usmap-stat-label">Contact</div>
-          </div>
-        `
+      <div class="usmap-stat-item">
+        <div class="usmap-stat-value">${element.dataset.repName}</div>
+        <div class="usmap-stat-label">Representative</div>
+      </div>
+      <div class="usmap-stat-item">
+        <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>
+        <div class="usmap-stat-label">Contact</div>
+      </div>
+    `
           : "";
 
         stats.innerHTML = repInfo;
@@ -814,10 +828,11 @@
 
       panel.classList.add("active");
       if (mapContainer && window.innerWidth > 768) {
-        mapContainer.classList.remove("expanded");
+        mapContainer.classList.add("panel-active");
       }
     }
 
+    // Update the closeInfoPanel method
     closeInfoPanel() {
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
       const mapContainer = document.getElementById(
@@ -828,8 +843,8 @@
         panel.classList.remove("active");
       }
 
-      if (mapContainer && window.innerWidth > 768) {
-        mapContainer.classList.add("expanded");
+      if (mapContainer) {
+        mapContainer.classList.remove("panel-active");
       }
 
       if (this.selectedElement) {
