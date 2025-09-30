@@ -18,11 +18,11 @@
         showControls: options.showControls !== false,
         defaultFill: options.defaultFill || '#b167d3',
         hoverFill: options.hoverFill || '#d4aae7',
-        selectedFill: options.selectedFill || 'rgba(255, 255, 255, .25)',
+        selectedFill: options.selectedFill || 'rgba(255, 255, 255, .6)',
         stateFill: options.stateFill || '#e0e0e0',
         stateStroke: options.stateStroke || '#d4aae7',
-        territoryFill: options.territoryFill || 'rgba(255, 255, 255, .1)',
-        territoryOpacity: options.territoryOpacity || 0.25,
+        territoryFill: options.territoryFill || 'rgba(255, 255, 255, 0)',
+        territoryOpacity: options.territoryOpacity || 0.6,
         territoryHiddenOpacity: options.territoryHiddenOpacity || 0,
         fontFamily: options.fontFamily || 'europa, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         // Script paths
@@ -152,11 +152,12 @@
         .usmap-container {
           flex: 0 0 66%;
           position: relative;
-          transition: flex 0.3s ease;
         }
 
-        .usmap-container.expanded {
-          flex: 0 0 100%;
+        .usmap-placeholder-panel {
+          flex: 0 0 33%;
+          background: #f9f9f9;
+          border-left: 1px solid #e0e0e0;
         }
 
         .usmap-controls {
@@ -267,10 +268,15 @@
           flex: 0 0 33%;
           background: white;
           box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+          position: fixed;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 33%;
           transform: translateX(100%);
           transition: transform 0.3s ease;
           overflow-y: auto;
-          position: relative;
+          z-index: 1001;
         }
 
         .usmap-info-panel.active {
@@ -357,13 +363,16 @@
             flex-direction: column;
           }
           
-          .usmap-container,
-          .usmap-container.expanded {
+          .usmap-container {
             flex: 0 0 100%;
+          }
+
+          .usmap-placeholder-panel {
+            display: none;
           }
           
           .usmap-info-panel {
-            flex: 0 0 100%;
+            width: 100%;
             position: fixed;
             top: 0;
             left: 0;
@@ -409,6 +418,14 @@
               </svg>
               <div class="usmap-hover-modal" id="${this.containerId}-hoverModal">
                 <div id="${this.containerId}-hoverContent"></div>
+              </div>
+            </div>
+          </div>
+          <div class="usmap-placeholder-panel">
+            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #999; text-align: center; padding: 20px;">
+              <div>
+                <div style="font-size: 18px; margin-bottom: 10px;">Select a state or territory</div>
+                <div style="font-size: 14px;">Click on the map to view details</div>
               </div>
             </div>
           </div>
@@ -612,7 +629,7 @@
         info = element.dataset.abbreviation ? `(${element.dataset.abbreviation})` : '';
       } else if (element.dataset.type === "territory") {
         title = element.dataset.name;
-        info = element.dataset.repEmail ? element.dataset.repEmail : '';
+        info = element.dataset.repName ? `Rep: ${element.dataset.repName}` : '';
       }
 
       content.innerHTML = info ? `<strong>${title}</strong><br>${info}` : `<strong>${title}</strong>`;
@@ -654,7 +671,6 @@
 
     showInfoPanel(element) {
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
-      const mapContainer = document.getElementById(`${this.containerId}-mapContainer`);
       const title = document.getElementById(`${this.containerId}-infoTitle`);
       const description = document.getElementById(`${this.containerId}-infoDescription`);
       const stats = document.getElementById(`${this.containerId}-infoStats`);
@@ -688,21 +704,13 @@
       }
 
       panel.classList.add("active");
-      if (mapContainer && window.innerWidth > 768) {
-        mapContainer.classList.remove("expanded");
-      }
     }
 
     closeInfoPanel() {
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
-      const mapContainer = document.getElementById(`${this.containerId}-mapContainer`);
       
       if (panel) {
         panel.classList.remove("active");
-      }
-      
-      if (mapContainer && window.innerWidth > 768) {
-        mapContainer.classList.add("expanded");
       }
       
       if (this.selectedElement) {
@@ -746,14 +754,6 @@
       if (!svg) return;
 
       svg.setAttribute("viewBox", "0 0 960 600");
-      
-      // Set initial expanded state if panel isn't open
-      const mapContainer = document.getElementById(`${this.containerId}-mapContainer`);
-      const panel = document.getElementById(`${this.containerId}-infoPanel`);
-      
-      if (mapContainer && panel && !panel.classList.contains('active')) {
-        mapContainer.classList.add('expanded');
-      }
     }
 
     handleResize() {
