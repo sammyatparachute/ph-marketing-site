@@ -204,14 +204,20 @@
           fill: ${this.options.stateFill};
           stroke: ${this.options.stateStroke};
           stroke-width: 0.5;
-          cursor: ${this.options.stateInteractivity.click ? 'pointer' : 'default'};
+          cursor: ${
+            this.options.stateInteractivity.click ? "pointer" : "default"
+          };
           transition: fill 0.3s ease;
         }
 
-        ${this.options.stateInteractivity.hover ? `
+        ${
+          this.options.stateInteractivity.hover
+            ? `
         .usmap-state:hover {
           fill: #d0d0d0;
-        }` : ''}
+        }`
+            : ""
+        }
 
         .usmap-state.no-interact {
           cursor: default;
@@ -221,22 +227,30 @@
           fill: ${this.options.territoryFill};
           stroke: white;
           stroke-width: 0;
-          cursor: ${this.options.territoryInteractivity.click ? 'pointer' : 'default'};
+          cursor: ${
+            this.options.territoryInteractivity.click ? "pointer" : "default"
+          };
           transition: all 0.3s ease;
-          opacity: ${this.options.territoryInteractivity.hideInitially ? 
-                     this.options.territoryHiddenOpacity : 
-                     this.options.territoryOpacity};
+          opacity: ${
+            this.options.territoryInteractivity.hideInitially
+              ? this.options.territoryHiddenOpacity
+              : this.options.territoryOpacity
+          };
         }
 
         .usmap-territory.visible {
           opacity: ${this.options.territoryOpacity};
         }
 
-        ${this.options.territoryInteractivity.hover ? `
+        ${
+          this.options.territoryInteractivity.hover
+            ? `
         .usmap-territory:hover {
           opacity: 0.8;
           fill: ${this.options.hoverFill};
-        }` : ''}
+        }`
+            : ""
+        }
 
         .usmap-territory.selected {
           fill: ${this.options.selectedFill};
@@ -265,16 +279,18 @@
         .usmap-info-panel {
           flex: 0 0 33%;
           background: white;
-          box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+          box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
           position: fixed;
           right: 0;
-          top: 0;
-          bottom: 0;
-          width: 33%;
+          top: 15vh;
+          bottom: 10vh;
+          width: 40%;
           transform: translateX(100%);
           transition: transform 0.3s ease;
           overflow-y: auto;
           z-index: 1001;
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
         }
 
         .usmap-info-panel.active {
@@ -628,7 +644,7 @@
         info = element.dataset.abbreviation ? `(${element.dataset.abbreviation})` : '';
       } else if (element.dataset.type === "territory") {
         title = element.dataset.name;
-        info = element.dataset.repName ? `Rep: ${element.dataset.repName}` : '';
+        info = element.dataset.repEmail ? element.dataset.repEmail : '';
       }
 
       content.innerHTML = info ? `<strong>${title}</strong><br>${info}` : `<strong>${title}</strong>`;

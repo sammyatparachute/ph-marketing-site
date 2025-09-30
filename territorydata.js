@@ -4,6 +4,22 @@ window.US_TERRITORIES_DATA = {
     countyCount: 568,
     name: "Averi Thompson",
     description: "Managed by Averi Thompson",
+    state_list: [
+      "AK",
+      "ME",
+      "MT",
+      "NC",
+      "ND",
+      "NH",
+      "NJ",
+      "OR",
+      "PA",
+      "RI",
+      "SD",
+      "VT",
+      "WA",
+      "WV",
+    ],
     repInfo: {
       name: "Averi Thompson",
       email: "averi.thompson@parachutehealth.com",
@@ -15,6 +31,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 360,
     name: "Ben Reeve",
     description: "Managed by Ben Reeve",
+    state_list: ["IA", "IL", "MN", "WI", null],
     repInfo: {
       name: "Ben Reeve",
       email: "ben.reeve@parachutehealth.com",
@@ -26,6 +43,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 288,
     name: "Bethany Visser",
     description: "Managed by Bethany Visser",
+    state_list: ["AL", "AR", "LA", "MS"],
     repInfo: {
       name: "Bethany Visser",
       email: "bethany.visser@parachutehealth.com",
@@ -37,6 +55,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 85,
     name: "Blake Townsend",
     description: "Managed by Blake Townsend",
+    state_list: ["CT", "MA", "NY", null],
     repInfo: {
       name: "Blake Townsend",
       email: "blake.townsend@parachutehealth.com",
@@ -48,6 +67,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 96,
     name: "Brian Osorio",
     description: "Managed by Brian Osorio",
+    state_list: ["ID", "UT", "WY"],
     repInfo: {
       name: "Brian Osorio",
       email: "brian.osorio@parachutehealth.com",
@@ -59,6 +79,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 158,
     name: "Eddy Roth",
     description: "Managed by Eddy Roth",
+    state_list: ["DC", "DE", "MD", "VA"],
     repInfo: {
       name: "Eddy Roth",
       email: "eddy.roth@parachutehealth.com",
@@ -70,6 +91,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 205,
     name: "Gary Mosley",
     description: "Managed by Gary Mosley",
+    state_list: ["GA", "SC"],
     repInfo: {
       name: "Gary Mosley",
       email: "gary.mosley@parachutehealth.com",
@@ -81,6 +103,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 378,
     name: "Greg Weyl",
     description: "Managed by Greg Weyl",
+    state_list: ["CO", "KS", "MO", "NE"],
     repInfo: {
       name: "Greg Weyl",
       email: "greg.weyl@parachutehealth.com",
@@ -92,6 +115,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 180,
     name: "Halee Escamilla",
     description: "Managed by Halee Escamilla",
+    state_list: ["OK", "TX"],
     repInfo: {
       name: "Halee Escamilla",
       email: "halee.escamilla@parachutehealth.com",
@@ -103,6 +127,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 265,
     name: "Hayden Hoffman",
     description: "Managed by Hayden Hoffman",
+    state_list: ["IN", "MI", "OH"],
     repInfo: {
       name: "Hayden Hoffman",
       email: "hayden.hoffman@parachutehealth.com",
@@ -114,6 +139,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 201,
     name: "James Sullivan",
     description: "Managed by James Sullivan",
+    state_list: ["NM", "TX", null],
     repInfo: {
       name: "James Sullivan",
       email: "james.sullivan@parachutehealth.com",
@@ -125,6 +151,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 215,
     name: "John Ciaccio",
     description: "Managed by John Ciaccio",
+    state_list: ["KY", "TN"],
     repInfo: {
       name: "John Ciaccio",
       email: "john.ciaccio@parachutehealth.com",
@@ -136,6 +163,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 95,
     name: "Jordain Buckland",
     description: "Managed by Jordain Buckland",
+    state_list: ["AZ", "CA", "HI", "NV"],
     repInfo: {
       name: "Jordain Buckland",
       email: "jordain.buckland@parachutehealth.com",
@@ -147,6 +175,7 @@ window.US_TERRITORIES_DATA = {
     countyCount: 67,
     name: "Saskia Ottley",
     description: "Managed by Saskia Ottley",
+    state_list: ["FL"],
     repInfo: {
       name: "Saskia Ottley",
       email: "saskia.ottley@parachutehealth.com",
