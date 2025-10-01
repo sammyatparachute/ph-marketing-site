@@ -291,6 +291,8 @@
           z-index: 1001;
           border-top-left-radius: 6px;
           border-bottom-left-radius: 6px;
+          border: 1px solid #520079;
+          border-right: 0px;
         }
 
         .usmap-info-panel.active {
@@ -298,7 +300,7 @@
         }
 
         .usmap-info-header {
-          background: ${this.options.defaultFill};
+          background: linear-gradient(0deg, rgba(249, 245, 240, 1) 0%, rgba(202, 174, 235, 1) 100%);
           color: white;
           padding: 20px;
           position: sticky;
