@@ -357,6 +357,14 @@
           padding-right: 30px;
         }
 
+        .usmap-info-title-description {
+          color: #666;
+          font-size: 12px;
+          font-weight: 300;
+          margin: 0;
+          padding-right: 30px;
+        }
+
         .usmap-info-body {
           padding: 20px;
         }
@@ -471,6 +479,7 @@
             <div class="usmap-info-header">
               <button class="usmap-close-btn" id="${this.containerId}-closeBtn">×</button>
               <h2 class="usmap-info-title" id="${this.containerId}-infoTitle"></h2>
+              <p class="usmap-info-title-description" id="${this.containerId}-infoTitleDescription"></p>
             </div>
             <div class="usmap-info-body">
               <div class="usmap-info-description" id="${this.containerId}-infoDescription"></div>
@@ -773,6 +782,7 @@
     showInfoPanel(element) {
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
       const title = document.getElementById(`${this.containerId}-infoTitle`);
+      const titleDescription = document.getElementById(`${this.containerId}-infoTitleDescription`);
       const description = document.getElementById(
         `${this.containerId}-infoDescription`
       );
@@ -789,7 +799,9 @@
       </div>
     `;
       } else if (element.dataset.type === "territory") {
-        title.innerHTML = `${element.dataset.name}<br/>${element.dataset.repEmail || ""}<br/>${element.dataset.repPhone || ""}`;
+        title.textContent = element.dataset.name;
+        titleDescription.textContent = element.dataset.repEmail;
+
         //description.textContent = element.dataset.state_list;
 
         const repSchedInfo = element.dataset.repSchedLink1
