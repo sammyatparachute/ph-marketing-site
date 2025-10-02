@@ -482,7 +482,7 @@
               <p class="usmap-info-title-description" id="${this.containerId}-infoTitleDescription"></p>
             </div>
             <div class="usmap-info-body">
-              <div class="usmap-info-description" id="${this.containerId}-infoDescription"></div>
+              <!--<div class="usmap-info-description" id="${this.containerId}-infoDescription"></div>-->
               <div class="usmap-info-stats" id="${this.containerId}-infoStats"></div>
             </div>
           </div>
