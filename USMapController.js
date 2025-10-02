@@ -712,11 +712,11 @@
       } else if (element.dataset.type === "territory") {
         title.textContent = element.dataset.name;
         //description.textContent = element.dataset.description || `Territory: ${element.dataset.name}`;
-        description.textContent = element.dataset
+        description.textContent = element.dataset.state_list
         const repInfo = element.dataset.repEmail ? `
           <div class="usmap-stat-item">
-            <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>
-            <div class="usmap-stat-label">Contact</div>
+          <div class="usmap-stat-label">Contact</div>
+            <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>            
           </div>
         ` : '';
         
