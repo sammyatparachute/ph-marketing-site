@@ -1,11 +1,11 @@
-(function(window, document) {
-  'use strict';
+(function (window, document) {
+  "use strict";
 
   class USMapController {
-    constructor(containerId = 'map-container', options = {}) {
+    constructor(containerId = "map-container", options = {}) {
       this.containerId = containerId;
       this.container = document.getElementById(containerId);
-      
+
       if (!this.container) {
         console.error(`Container with ID "${containerId}" not found`);
         return;
@@ -16,18 +16,24 @@
         showTerritories: options.showTerritories !== false,
         enableTouch: options.enableTouch !== false,
         showControls: options.showControls !== false,
-        defaultFill: options.defaultFill || '#b167d3',
-        hoverFill: options.hoverFill || '#d4aae7',
-        selectedFill: options.selectedFill || 'rgba(255, 255, 255, .25)',
-        stateFill: options.stateFill || '#e0e0e0',
-        stateStroke: options.stateStroke || '#d4aae7',
-        territoryFill: options.territoryFill || 'rgba(255, 255, 255, 0)',
+        defaultFill: options.defaultFill || "#b167d3",
+        hoverFill: options.hoverFill || "#d4aae7",
+        selectedFill: options.selectedFill || "rgba(255, 255, 255, .25)",
+        stateFill: options.stateFill || "#e0e0e0",
+        stateStroke: options.stateStroke || "#d4aae7",
+        territoryFill: options.territoryFill || "rgba(255, 255, 255, 0)",
         territoryOpacity: options.territoryOpacity || 0.6,
         territoryHiddenOpacity: options.territoryHiddenOpacity || 0,
-        fontFamily: options.fontFamily || 'europa, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+        fontFamily:
+          options.fontFamily ||
+          'europa, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         // Script paths
-        stateDataPath: options.stateDataPath || 'https://sammyatparachute.github.io/ph-marketing-site/statedata.js',
-        territoryDataPath: options.territoryDataPath || 'https://sammyatparachute.github.io/ph-marketing-site/territorydata.js',
+        stateDataPath:
+          options.stateDataPath ||
+          "https://sammyatparachute.github.io/ph-marketing-site/statedata.js",
+        territoryDataPath:
+          options.territoryDataPath ||
+          "https://sammyatparachute.github.io/ph-marketing-site/territorydata.js",
         // Interactivity controls
         stateInteractivity: {
           hover: options.stateInteractivity?.hover !== false,
@@ -38,23 +44,28 @@
           hover: options.territoryInteractivity?.hover !== false,
           click: options.territoryInteractivity?.click !== false,
           showTooltip: options.territoryInteractivity?.showTooltip !== false,
-          showOnStateHover: options.territoryInteractivity?.showOnStateHover || false,
+          showOnStateHover:
+            options.territoryInteractivity?.showOnStateHover || false,
           hideInitially: options.territoryInteractivity?.hideInitially || false,
         },
         ...options,
       };
-      
+
       this.currentMode = "both";
       this.selectedElement = null;
       this.touchDevice = "ontouchstart" in window;
-      
+
       // Load dependencies and initialize
-      this.loadDependencies().then(() => {
-        this.init();
-      }).catch(error => {
-        console.error('Failed to load map dependencies:', error);
-        this.showError('Failed to load map data. Please try refreshing the page.');
-      });
+      this.loadDependencies()
+        .then(() => {
+          this.init();
+        })
+        .catch((error) => {
+          console.error("Failed to load map dependencies:", error);
+          this.showError(
+            "Failed to load map data. Please try refreshing the page."
+          );
+        });
     }
 
     loadScript(src) {
@@ -62,8 +73,12 @@
         const existingScript = document.querySelector(`script[src="${src}"]`);
         if (existingScript) {
           const checkData = () => {
-            if ((src.includes('statedata') && typeof window.US_STATES_DATA !== 'undefined') ||
-                (src.includes('territorydata') && typeof window.US_TERRITORIES_DATA !== 'undefined')) {
+            if (
+              (src.includes("statedata") &&
+                typeof window.US_STATES_DATA !== "undefined") ||
+              (src.includes("territorydata") &&
+                typeof window.US_TERRITORIES_DATA !== "undefined")
+            ) {
               resolve();
             } else {
               setTimeout(checkData, 100);
@@ -73,32 +88,35 @@
           return;
         }
 
-        const script = document.createElement('script');
+        const script = document.createElement("script");
         script.src = src;
         script.onload = resolve;
-        script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+        script.onerror = () =>
+          reject(new Error(`Failed to load script: ${src}`));
         document.head.appendChild(script);
       });
     }
 
     async loadDependencies() {
       this.showLoading();
-      
+
       try {
         await this.loadScript(this.options.stateDataPath);
-        console.log('State data loaded successfully');
-        
+        console.log("State data loaded successfully");
+
         await this.loadScript(this.options.territoryDataPath);
-        console.log('Territory data loaded successfully');
-        
-        if (typeof window.US_STATES_DATA === 'undefined') {
-          throw new Error('US_STATES_DATA not found after loading script');
+        console.log("Territory data loaded successfully");
+
+        if (typeof window.US_STATES_DATA === "undefined") {
+          throw new Error("US_STATES_DATA not found after loading script");
         }
-        if (typeof window.US_TERRITORIES_DATA === 'undefined') {
-          console.warn('US_TERRITORIES_DATA not found - territories will not be shown');
+        if (typeof window.US_TERRITORIES_DATA === "undefined") {
+          console.warn(
+            "US_TERRITORIES_DATA not found - territories will not be shown"
+          );
         }
       } catch (error) {
-        console.error('Error loading dependencies:', error);
+        console.error("Error loading dependencies:", error);
         throw error;
       }
     }
@@ -136,10 +154,10 @@
     }
 
     injectStyles() {
-      const styleId = 'us-map-controller-styles';
-      
+      const styleId = "us-map-controller-styles";
+
       if (document.getElementById(styleId)) return;
-      
+
       const styles = `
         .usmap-wrapper {
           display: flex;
@@ -409,20 +427,22 @@
         }
       `;
 
-      const styleSheet = document.createElement('style');
+      const styleSheet = document.createElement("style");
       styleSheet.id = styleId;
       styleSheet.textContent = styles;
       document.head.appendChild(styleSheet);
     }
 
     createHTML() {
-      const controlsHTML = this.options.showControls ? `
+      const controlsHTML = this.options.showControls
+        ? `
         <div class="usmap-controls">
           <button class="usmap-control-btn" id="${this.containerId}-statesBtn">States</button>
           <button class="usmap-control-btn" id="${this.containerId}-territoriesBtn">Territories</button>
           <button class="usmap-control-btn active" id="${this.containerId}-bothBtn">Both</button>
         </div>
-      ` : '';
+      `
+        : "";
 
       this.container.innerHTML = `
         <div class="usmap-wrapper">
@@ -462,38 +482,50 @@
     }
 
     createStates() {
-      const statesLayer = document.getElementById(`${this.containerId}-states-layer`);
-      if (!statesLayer || typeof window.US_STATES_DATA === 'undefined') return;
+      const statesLayer = document.getElementById(
+        `${this.containerId}-states-layer`
+      );
+      if (!statesLayer || typeof window.US_STATES_DATA === "undefined") return;
 
       const statesData = window.US_STATES_DATA;
 
       Object.keys(statesData).forEach((stateId) => {
         const stateData = statesData[stateId];
-        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        const path = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "path"
+        );
 
         path.setAttribute("class", "usmap-state");
         path.setAttribute("id", `${this.containerId}-state-${stateId}`);
         path.setAttribute("d", stateData.path);
         path.dataset.name = stateData.name;
-        path.dataset.abbreviation = stateData.abbreviation || '';
-        path.dataset.type = 'state';
+        path.dataset.abbreviation = stateData.abbreviation || "";
+        path.dataset.type = "state";
 
         statesLayer.appendChild(path);
       });
     }
 
     createTerritories() {
-      const territoriesLayer = document.getElementById(`${this.containerId}-territories-layer`);
+      const territoriesLayer = document.getElementById(
+        `${this.containerId}-territories-layer`
+      );
       if (!territoriesLayer) return;
 
-      if (typeof window.US_TERRITORIES_DATA === 'undefined') {
-        console.info("US_TERRITORIES_DATA not found. Territories layer will be empty.");
+      if (typeof window.US_TERRITORIES_DATA === "undefined") {
+        console.info(
+          "US_TERRITORIES_DATA not found. Territories layer will be empty."
+        );
         return;
       }
 
       Object.keys(window.US_TERRITORIES_DATA).forEach((territoryId) => {
         const territoryData = window.US_TERRITORIES_DATA[territoryId];
-        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        const path = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "path"
+        );
 
         path.setAttribute("class", "usmap-territory");
         path.setAttribute("id", `${this.containerId}-territory-${territoryId}`);
@@ -503,14 +535,15 @@
         path.dataset.zip_list = territoryData.zip_list || "";
         path.dataset.county_list = territoryData.county_list || "";
         path.dataset.description = territoryData.description || "";
-        path.dataset.type = 'territory';
-        
+        path.dataset.type = "territory";
+
         if (territoryData.repInfo) {
           path.dataset.repName = territoryData.repInfo.name || "";
           path.dataset.repEmail = territoryData.repInfo.email || "";
           path.dataset.repHubId = territoryData.repInfo.hub_id || "";
           path.dataset.repPhone = territoryData.repInfo.phone || "";
-          path.dataset.repSchedLink1 = territoryData.repInfo.scheduling_link_1 || "";
+          path.dataset.repSchedLink1 =
+            territoryData.repInfo.scheduling_link_1 || "";
         }
 
         territoriesLayer.appendChild(path);
@@ -520,15 +553,21 @@
     bindEvents() {
       // Control buttons
       if (this.options.showControls) {
-        const statesBtn = document.getElementById(`${this.containerId}-statesBtn`);
-        const territoriesBtn = document.getElementById(`${this.containerId}-territoriesBtn`);
+        const statesBtn = document.getElementById(
+          `${this.containerId}-statesBtn`
+        );
+        const territoriesBtn = document.getElementById(
+          `${this.containerId}-territoriesBtn`
+        );
         const bothBtn = document.getElementById(`${this.containerId}-bothBtn`);
-        
+
         if (statesBtn) {
           statesBtn.addEventListener("click", () => this.setMode("states"));
         }
         if (territoriesBtn) {
-          territoriesBtn.addEventListener("click", () => this.setMode("territories"));
+          territoriesBtn.addEventListener("click", () =>
+            this.setMode("territories")
+          );
         }
         if (bothBtn) {
           bothBtn.addEventListener("click", () => this.setMode("both"));
@@ -554,48 +593,76 @@
 
       // Bind state events
       states.forEach((element) => {
-        if (!this.options.stateInteractivity.hover && !this.options.stateInteractivity.click) {
-          element.classList.add('no-interact');
+        if (
+          !this.options.stateInteractivity.hover &&
+          !this.options.stateInteractivity.click
+        ) {
+          element.classList.add("no-interact");
           return;
         }
 
         if (this.touchDevice) {
           if (this.options.stateInteractivity.click) {
-            element.addEventListener("touchstart", (e) => this.handleTouch(e, element));
-            element.addEventListener("touchend", (e) => this.handleClick(e, element));
+            element.addEventListener("touchstart", (e) =>
+              this.handleTouch(e, element)
+            );
+            element.addEventListener("touchend", (e) =>
+              this.handleClick(e, element)
+            );
           }
         } else {
           if (this.options.stateInteractivity.hover) {
-            element.addEventListener("mouseenter", (e) => this.handleStateHover(e, element));
-            element.addEventListener("mouseleave", (e) => this.handleStateLeave(e, element));
-            element.addEventListener("mousemove", (e) => this.updateHoverPosition(e));
+            element.addEventListener("mouseenter", (e) =>
+              this.handleStateHover(e, element)
+            );
+            element.addEventListener("mouseleave", (e) =>
+              this.handleStateLeave(e, element)
+            );
+            element.addEventListener("mousemove", (e) =>
+              this.updateHoverPosition(e)
+            );
           }
           if (this.options.stateInteractivity.click) {
-            element.addEventListener("click", (e) => this.handleClick(e, element));
+            element.addEventListener("click", (e) =>
+              this.handleClick(e, element)
+            );
           }
         }
       });
 
       // Bind territory events
       territories.forEach((element) => {
-        if (!this.options.territoryInteractivity.hover && !this.options.territoryInteractivity.click) {
-          element.style.cursor = 'default';
+        if (
+          !this.options.territoryInteractivity.hover &&
+          !this.options.territoryInteractivity.click
+        ) {
+          element.style.cursor = "default";
           return;
         }
 
         if (this.touchDevice) {
           if (this.options.territoryInteractivity.click) {
-            element.addEventListener("touchstart", (e) => this.handleTouch(e, element));
-            element.addEventListener("touchend", (e) => this.handleClick(e, element));
+            element.addEventListener("touchstart", (e) =>
+              this.handleTouch(e, element)
+            );
+            element.addEventListener("touchend", (e) =>
+              this.handleClick(e, element)
+            );
           }
         } else {
           if (this.options.territoryInteractivity.hover) {
-            element.addEventListener("mouseenter", (e) => this.handleHover(e, element));
+            element.addEventListener("mouseenter", (e) =>
+              this.handleHover(e, element)
+            );
             element.addEventListener("mouseleave", () => this.hideHoverModal());
-            element.addEventListener("mousemove", (e) => this.updateHoverPosition(e));
+            element.addEventListener("mousemove", (e) =>
+              this.updateHoverPosition(e)
+            );
           }
           if (this.options.territoryInteractivity.click) {
-            element.addEventListener("click", (e) => this.handleClick(e, element));
+            element.addEventListener("click", (e) =>
+              this.handleClick(e, element)
+            );
           }
         }
       });
@@ -605,7 +672,7 @@
       if (this.options.stateInteractivity.showTooltip) {
         this.showHoverModal(e, element);
       }
-      
+
       if (this.options.territoryInteractivity.showOnStateHover) {
         this.showTerritories();
       }
@@ -613,24 +680,26 @@
 
     handleStateLeave(e, element) {
       this.hideHoverModal();
-      
-      if (this.options.territoryInteractivity.showOnStateHover && 
-          this.options.territoryInteractivity.hideInitially) {
+
+      if (
+        this.options.territoryInteractivity.showOnStateHover &&
+        this.options.territoryInteractivity.hideInitially
+      ) {
         this.hideTerritories();
       }
     }
 
     showTerritories() {
       const territories = document.querySelectorAll(".usmap-territory");
-      territories.forEach(territory => {
-        territory.classList.add('visible');
+      territories.forEach((territory) => {
+        territory.classList.add("visible");
       });
     }
 
     hideTerritories() {
       const territories = document.querySelectorAll(".usmap-territory");
-      territories.forEach(territory => {
-        territory.classList.remove('visible');
+      territories.forEach((territory) => {
+        territory.classList.remove("visible");
       });
     }
 
@@ -645,18 +714,24 @@
 
     showHoverModal(e, element) {
       const modal = document.getElementById(`${this.containerId}-hoverModal`);
-      const content = document.getElementById(`${this.containerId}-hoverContent`);
+      const content = document.getElementById(
+        `${this.containerId}-hoverContent`
+      );
 
       let title, info;
       if (element.dataset.type === "state") {
         title = element.dataset.name;
-        info = element.dataset.abbreviation ? `(${element.dataset.abbreviation})` : '';
+        info = element.dataset.abbreviation
+          ? `(${element.dataset.abbreviation})`
+          : "";
       } else if (element.dataset.type === "territory") {
         title = element.dataset.name;
-        info = element.dataset.repEmail ? element.dataset.repEmail : '';
+        info = element.dataset.repEmail ? element.dataset.repEmail : "";
       }
 
-      content.innerHTML = info ? `<strong>${title}</strong><br>${info}` : `<strong>${title}</strong>`;
+      content.innerHTML = info
+        ? `<strong>${title}</strong><br>${info}`
+        : `<strong>${title}</strong>`;
       modal.classList.add("active");
 
       this.updateHoverPosition(e);
@@ -664,10 +739,12 @@
 
     updateHoverPosition(e) {
       const modal = document.getElementById(`${this.containerId}-hoverModal`);
-      const rect = this.container.querySelector('.usmap-svg-container').getBoundingClientRect();
+      const rect = this.container
+        .querySelector(".usmap-svg-container")
+        .getBoundingClientRect();
 
-      modal.style.left = (e.clientX - rect.left) + "px";
-      modal.style.top = (e.clientY - rect.top) + "px";
+      modal.style.left = e.clientX - rect.left + "px";
+      modal.style.top = e.clientY - rect.top + "px";
     }
 
     hideHoverModal() {
@@ -694,58 +771,58 @@
     }
 
     showInfoPanel(element) {
-  const panel = document.getElementById(`${this.containerId}-infoPanel`);
-  const title = document.getElementById(`${this.containerId}-infoTitle`);
-  const description = document.getElementById(`${this.containerId}-infoDescription`);
-  const stats = document.getElementById(`${this.containerId}-infoStats`);
+      const panel = document.getElementById(`${this.containerId}-infoPanel`);
+      const title = document.getElementById(`${this.containerId}-infoTitle`);
+      const description = document.getElementById(
+        `${this.containerId}-infoDescription`
+      );
+      const stats = document.getElementById(`${this.containerId}-infoStats`);
 
-  if (element.dataset.type === "state") {
-    title.textContent = element.dataset.name;
-    description.textContent = `${element.dataset.name} (${element.dataset.abbreviation})`;
-    
-    stats.innerHTML = `
+      if (element.dataset.type === "state") {
+        title.textContent = element.dataset.name;
+        description.textContent = `${element.dataset.name} (${element.dataset.abbreviation})`;
+
+        stats.innerHTML = `
       <div class="usmap-stat-item">
         <div class="usmap-stat-value">${element.dataset.abbreviation}</div>
         <div class="usmap-stat-label">State Code</div>
       </div>
     `;
-  } else if (element.dataset.type === "territory") {
-    title.textContent = element.dataset.name;
-    description.textContent = element.dataset.state_list;
-    
-    const repInfo = element.dataset.repEmail ? `
-      <div class="usmap-stat-item">
-        <div class="usmap-stat-label">Contact</div>
-        <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>
-        <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repPhone}</div>
+      } else if (element.dataset.type === "territory") {
+        title.textContent = element.dataset.name;
+        description.textContent = element.dataset.state_list;
+
+        const repInfo = element.dataset.repEmail
+          ? `
         <!-- Start of Meetings Embed Script -->
         <div class="meetings-iframe-container" data-src="${element.dataset.repSchedLink1}?embed=true"></div>
         <!-- End of Meetings Embed Script -->
-      </div>
-    ` : '';
-    
-    stats.innerHTML = repInfo;
-    
-    // Manually add and execute the HubSpot script AFTER setting innerHTML
-    if (element.dataset.repEmail) {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
-      script.async = true;
-      stats.appendChild(script);
-    }
-  }
+    `
+          : "";
 
-  panel.classList.add("active");
-}
+        stats.innerHTML = repInfo;
+
+        // Manually add and execute the HubSpot script AFTER setting innerHTML
+        if (element.dataset.repEmail) {
+          const script = document.createElement("script");
+          script.type = "text/javascript";
+          script.src =
+            "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
+          script.async = true;
+          stats.appendChild(script);
+        }
+      }
+
+      panel.classList.add("active");
+    }
 
     closeInfoPanel() {
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
-      
+
       if (panel) {
         panel.classList.remove("active");
       }
-      
+
       if (this.selectedElement) {
         this.selectedElement.classList.remove("selected");
         this.selectedElement = null;
@@ -755,14 +832,21 @@
     setMode(mode) {
       this.currentMode = mode;
 
-      document.querySelectorAll(`#${this.containerId} .usmap-control-btn`)
+      document
+        .querySelectorAll(`#${this.containerId} .usmap-control-btn`)
         .forEach((btn) => btn.classList.remove("active"));
-      
-      const activeBtn = document.getElementById(`${this.containerId}-${mode}Btn`);
+
+      const activeBtn = document.getElementById(
+        `${this.containerId}-${mode}Btn`
+      );
       if (activeBtn) activeBtn.classList.add("active");
 
-      const statesLayer = document.getElementById(`${this.containerId}-states-layer`);
-      const territoriesLayer = document.getElementById(`${this.containerId}-territories-layer`);
+      const statesLayer = document.getElementById(
+        `${this.containerId}-states-layer`
+      );
+      const territoriesLayer = document.getElementById(
+        `${this.containerId}-territories-layer`
+      );
 
       switch (mode) {
         case "states":
@@ -783,7 +867,7 @@
     }
 
     setupResponsive() {
-      const svg = this.container.querySelector('.usmap-svg');
+      const svg = this.container.querySelector(".usmap-svg");
       if (!svg) return;
 
       svg.setAttribute("viewBox", "0 0 960 600");
@@ -800,11 +884,11 @@
 
     destroy() {
       window.removeEventListener("resize", () => this.handleResize());
-      
+
       if (this.container) {
-        this.container.innerHTML = '';
+        this.container.innerHTML = "";
       }
-      
+
       this.selectedElement = null;
       this.currentMode = "both";
     }
@@ -824,26 +908,30 @@
   window.USMapController = USMapController;
 
   function autoInit() {
-    const autoInitElements = document.querySelectorAll('[data-usmap]');
-    autoInitElements.forEach(element => {
+    const autoInitElements = document.querySelectorAll("[data-usmap]");
+    autoInitElements.forEach((element) => {
       const options = {};
-      
-      if (element.dataset.stateDataPath) options.stateDataPath = element.dataset.stateDataPath;
-      if (element.dataset.territoryDataPath) options.territoryDataPath = element.dataset.territoryDataPath;
-      if (element.dataset.stateFill) options.stateFill = element.dataset.stateFill;
-      if (element.dataset.territoryFill) options.territoryFill = element.dataset.territoryFill;
-      
+
+      if (element.dataset.stateDataPath)
+        options.stateDataPath = element.dataset.stateDataPath;
+      if (element.dataset.territoryDataPath)
+        options.territoryDataPath = element.dataset.territoryDataPath;
+      if (element.dataset.stateFill)
+        options.stateFill = element.dataset.stateFill;
+      if (element.dataset.territoryFill)
+        options.territoryFill = element.dataset.territoryFill;
+
       new USMapController(element.id, options);
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', autoInit);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", autoInit);
   } else {
     autoInit();
   }
 
-  if (typeof module !== 'undefined' && module.exports) {
+  if (typeof module !== "undefined" && module.exports) {
     module.exports = USMapController;
   }
 })(window, document);
