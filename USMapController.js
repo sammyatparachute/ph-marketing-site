@@ -789,10 +789,10 @@
       </div>
     `;
       } else if (element.dataset.type === "territory") {
-        title.textContent = element.dataset.name;
-        description.textContent = element.dataset.state_list;
+        title.innerHTML = `${element.dataset.name}<br/>${element.dataset.repEmail || ""}<br/>${element.dataset.repPhone || ""}`;
+        //description.textContent = element.dataset.state_list;
 
-        const repInfo = element.dataset.repEmail
+        const repSchedInfo = element.dataset.repSchedLink1
           ? `
         <!-- Start of Meetings Embed Script -->
         <div class="meetings-iframe-container" data-src="${element.dataset.repSchedLink1}?embed=true"></div>
@@ -800,7 +800,7 @@
     `
           : "";
 
-        stats.innerHTML = repInfo;
+        stats.innerHTML = repSchedInfo;
 
         // Manually add and execute the HubSpot script AFTER setting innerHTML
         if (element.dataset.repEmail) {
