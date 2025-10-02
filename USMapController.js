@@ -358,11 +358,10 @@
         }
 
         .usmap-info-title-description {
-          color: #666;
-          font-size: 12px;
-          font-weight: 300;
+          color: #520079;
+          font-size: 14px;
+          font-weight: 600;
           margin: 0;
-          padding-right: 30px;
         }
 
         .usmap-info-body {
@@ -782,7 +781,9 @@
     showInfoPanel(element) {
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
       const title = document.getElementById(`${this.containerId}-infoTitle`);
-      const titleDescription = document.getElementById(`${this.containerId}-infoTitleDescription`);
+      const titleDescription = document.getElementById(
+        `${this.containerId}-infoTitleDescription`
+      );
       const description = document.getElementById(
         `${this.containerId}-infoDescription`
       );
@@ -800,7 +801,11 @@
     `;
       } else if (element.dataset.type === "territory") {
         title.textContent = element.dataset.name;
-        titleDescription.textContent = element.dataset.repEmail;
+        titleDescription.innerHTML = `${
+          element.dataset.repEmail ? element.dataset.repEmail : ""
+        }<br/>${
+          element.dataset.repPhone ? element.dataset.repPhone + "<br/>" : ""
+        }`;
 
         //description.textContent = element.dataset.state_list;
 
