@@ -314,7 +314,7 @@
           right: 20px;
           background: none;
           border: none;
-          color: white;
+          color: #520079;
           font-size: 24px;
           cursor: pointer;
           line-height: 1;
@@ -332,6 +332,7 @@
         }
 
         .usmap-info-title {
+          color: #520079;
           font-size: 24px;
           font-weight: 600;
           margin: 0;
@@ -498,12 +499,18 @@
         path.setAttribute("id", `${this.containerId}-territory-${territoryId}`);
         path.setAttribute("d", territoryData.path);
         path.dataset.name = territoryData.name;
+        path.dataset.state_list = territoryData.state_list || "";
+        path.dataset.zip_list = territoryData.zip_list || "";
+        path.dataset.county_list = territoryData.county_list || "";
         path.dataset.description = territoryData.description || "";
         path.dataset.type = 'territory';
         
         if (territoryData.repInfo) {
           path.dataset.repName = territoryData.repInfo.name || "";
           path.dataset.repEmail = territoryData.repInfo.email || "";
+          path.dataset.repHubId = territoryData.repInfo.hub_id || "";
+          path.dataset.repPhone = territoryData.repInfo.phone || "";
+          path.dataset.repSchedLink1 = territoryData.repInfo.scheduling_link_1 || "";
         }
 
         territoriesLayer.appendChild(path);
@@ -704,13 +711,9 @@
         `;
       } else if (element.dataset.type === "territory") {
         title.textContent = element.dataset.name;
-        description.textContent = element.dataset.description || `Territory: ${element.dataset.name}`;
-        
+        //description.textContent = element.dataset.description || `Territory: ${element.dataset.name}`;
+        description.textContent = element.dataset
         const repInfo = element.dataset.repEmail ? `
-          <div class="usmap-stat-item">
-            <div class="usmap-stat-value">${element.dataset.repName}</div>
-            <div class="usmap-stat-label">Representative</div>
-          </div>
           <div class="usmap-stat-item">
             <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>
             <div class="usmap-stat-label">Contact</div>
