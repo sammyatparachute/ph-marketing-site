@@ -718,7 +718,10 @@
           <div class="usmap-stat-label">Contact</div>
             <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>
             <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repPhone}</div>
-            <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repSchedLink1}</div>          
+            <!-- Start of Meetings Embed Script -->
+              <div class="meetings-iframe-container" data-src="${element.dataset.repSchedLink1}?embed=true"></div>
+              <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+            <!-- End of Meetings Embed Script -->
           </div>
         ` : '';
         
