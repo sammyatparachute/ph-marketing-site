@@ -694,42 +694,50 @@
     }
 
     showInfoPanel(element) {
-      const panel = document.getElementById(`${this.containerId}-infoPanel`);
-      const title = document.getElementById(`${this.containerId}-infoTitle`);
-      const description = document.getElementById(`${this.containerId}-infoDescription`);
-      const stats = document.getElementById(`${this.containerId}-infoStats`);
+  const panel = document.getElementById(`${this.containerId}-infoPanel`);
+  const title = document.getElementById(`${this.containerId}-infoTitle`);
+  const description = document.getElementById(`${this.containerId}-infoDescription`);
+  const stats = document.getElementById(`${this.containerId}-infoStats`);
 
-      if (element.dataset.type === "state") {
-        title.textContent = element.dataset.name;
-        description.textContent = `${element.dataset.name} (${element.dataset.abbreviation})`;
-        
-        stats.innerHTML = `
-          <div class="usmap-stat-item">
-            <div class="usmap-stat-value">${element.dataset.abbreviation}</div>
-            <div class="usmap-stat-label">State Code</div>
-          </div>
-        `;
-      } else if (element.dataset.type === "territory") {
-        title.textContent = element.dataset.name;
-        //description.textContent = element.dataset.description || `Territory: ${element.dataset.name}`;
-        description.textContent = element.dataset.state_list
-        const repInfo = element.dataset.repEmail ? `
-          <div class="usmap-stat-item">
-          <div class="usmap-stat-label">Contact</div>
-            <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>
-            <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repPhone}</div>
-            <!-- Start of Meetings Embed Script -->
-              <div class="meetings-iframe-container" data-src="${element.dataset.repSchedLink1}?embed=true"></div>
-              <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
-            <!-- End of Meetings Embed Script -->
-          </div>
-        ` : '';
-        
-        stats.innerHTML = repInfo;
-      }
-
-      panel.classList.add("active");
+  if (element.dataset.type === "state") {
+    title.textContent = element.dataset.name;
+    description.textContent = `${element.dataset.name} (${element.dataset.abbreviation})`;
+    
+    stats.innerHTML = `
+      <div class="usmap-stat-item">
+        <div class="usmap-stat-value">${element.dataset.abbreviation}</div>
+        <div class="usmap-stat-label">State Code</div>
+      </div>
+    `;
+  } else if (element.dataset.type === "territory") {
+    title.textContent = element.dataset.name;
+    description.textContent = element.dataset.state_list;
+    
+    const repInfo = element.dataset.repEmail ? `
+      <div class="usmap-stat-item">
+        <div class="usmap-stat-label">Contact</div>
+        <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>
+        <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repPhone}</div>
+        <!-- Start of Meetings Embed Script -->
+        <div class="meetings-iframe-container" data-src="${element.dataset.repSchedLink1}?embed=true"></div>
+        <!-- End of Meetings Embed Script -->
+      </div>
+    ` : '';
+    
+    stats.innerHTML = repInfo;
+    
+    // Manually add and execute the HubSpot script AFTER setting innerHTML
+    if (element.dataset.repEmail) {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
+      script.async = true;
+      stats.appendChild(script);
     }
+  }
+
+  panel.classList.add("active");
+}
 
     closeInfoPanel() {
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
