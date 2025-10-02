@@ -716,7 +716,9 @@
         const repInfo = element.dataset.repEmail ? `
           <div class="usmap-stat-item">
           <div class="usmap-stat-label">Contact</div>
-            <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>            
+            <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repEmail}</div>
+            <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repPhone}</div>
+            <div class="usmap-stat-value" style="font-size: 12px; word-break: break-all;">${element.dataset.repSchedLink1}</div>          
           </div>
         ` : '';
         
