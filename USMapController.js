@@ -801,9 +801,9 @@
     `;
       } else if (element.dataset.type === "territory") {
         title.textContent = element.dataset.name;
-        titleDescription.innerHTML = `${
+        titleDescription.innerHTML = `<a href="mailto:${element.dataset.repEmail}">${
           element.dataset.repEmail ? element.dataset.repEmail : ""
-        }<br/>${
+        }</a><br/><a href="tel:+1${element.dataset.repPhone}">${
           element.dataset.repPhone ? element.dataset.repPhone + "<br/>" : ""
         }`;
 
