@@ -20843,9 +20843,9 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "Brian Osorio",
       "email": "brian.osorio@parachutehealth.com",
-      "phone": null,
+      "phone": "954-701-7238",
       "hub_id": "82991503",
-      "scheduling_link_1": null
+      "scheduling_link_1": "https://meetings.hubspot.com/brian-osorio"
     }
   },
   "Eddy Roth": {
