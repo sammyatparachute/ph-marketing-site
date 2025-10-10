@@ -1,6 +1,24 @@
 (function (window, document) {
   "use strict";
 
+  /**
+   * USMapController - Interactive US Map with States and Territories
+   * 
+   * Territory images can be defined in territorydata.js like:
+   * {
+   *   "territory1": {
+   *     "name": "Territory Name",
+   *     "path": "...",
+   *     "imageUrl": "https://example.com/image.jpg",  // Option 1: Direct image URL
+   *     "repInfo": {
+   *       "name": "Rep Name",
+   *       "imageUrl": "https://example.com/rep.jpg",  // Option 2: In repInfo
+   *       // ... other rep info
+   *     }
+   *   }
+   * }
+   */
+
   class USMapController {
     constructor(containerId = "map-container", options = {}) {
       this.containerId = containerId;
@@ -34,6 +52,21 @@
         territoryDataPath:
           options.territoryDataPath ||
           "https://sammyatparachute.github.io/ph-marketing-site/territorydata.js",
+        // Territory images configuration
+        territoryImages: {
+          enabled: options.territoryImages?.enabled || false,
+          defaultImage: options.territoryImages?.defaultImage || null, // Fallback if no image in data
+          imageSize: options.territoryImages?.imageSize || 30,
+          imageOpacity: options.territoryImages?.imageOpacity || 1,
+          hideOnHover: options.territoryImages?.hideOnHover || false,
+          customImages: options.territoryImages?.customImages || {}, // Override specific territory images
+          // Positioning offset (can be used to fine-tune image placement)
+          offsetX: options.territoryImages?.offsetX || 0,
+          offsetY: options.territoryImages?.offsetY || 0,
+          borderRadius: options.territoryImages?.borderRadius || "50%",
+          border: options.territoryImages?.border || "2px solid white",
+          shadow: options.territoryImages?.shadow || "0 2px 4px rgba(0,0,0,0.2)",
+        },
         // Interactivity controls
         stateInteractivity: {
           hover: options.stateInteractivity?.hover !== false,
@@ -276,6 +309,22 @@
           opacity: 1;
         }
 
+        .usmap-territory-image {
+          opacity: ${this.options.territoryImages.imageOpacity};
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+        }
+
+        ${
+          this.options.territoryImages.hideOnHover
+            ? `
+        .usmap-territory:hover ~ .usmap-territory-image,
+        .usmap-territory-image.hide-on-hover {
+          opacity: 0;
+        }`
+            : ""
+        }
+
         .usmap-hover-modal {
           position: absolute;
           background: rgba(0, 0, 0, 0.9);
@@ -459,6 +508,7 @@
               <svg class="usmap-svg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
                 <g id="${this.containerId}-states-layer"></g>
                 <g id="${this.containerId}-territories-layer"></g>
+                <g id="${this.containerId}-territory-images-layer"></g>
               </svg>
               <div class="usmap-hover-modal" id="${this.containerId}-hoverModal">
                 <div id="${this.containerId}-hoverContent"></div>
@@ -519,6 +569,10 @@
       const territoriesLayer = document.getElementById(
         `${this.containerId}-territories-layer`
       );
+      const imagesLayer = document.getElementById(
+        `${this.containerId}-territory-images-layer`
+      );
+      
       if (!territoriesLayer) return;
 
       if (typeof window.US_TERRITORIES_DATA === "undefined") {
@@ -555,7 +609,132 @@
         }
 
         territoriesLayer.appendChild(path);
+
+        // Create territory image if enabled
+        if (this.options.territoryImages.enabled && imagesLayer) {
+          this.createTerritoryImage(path, territoryId, territoryData, imagesLayer);
+        }
       });
+    }
+
+    createTerritoryImage(path, territoryId, territoryData, imagesLayer) {
+      // Determine which image to use - prioritize data from territorydata.js
+      let imageUrl = territoryData.imageUrl || 
+                     territoryData.repInfo?.imageUrl ||
+                     territoryData.repInfo?.image ||
+                     this.options.territoryImages.customImages[territoryId] || 
+                     this.options.territoryImages.defaultImage;
+      
+      if (!imageUrl) return;
+
+      // We need to wait for the DOM to be ready to calculate bbox
+      setTimeout(() => {
+        try {
+          // Get the bounding box of the territory path
+          const bbox = path.getBBox();
+          const centerX = bbox.x + bbox.width / 2 + this.options.territoryImages.offsetX;
+          const centerY = bbox.y + bbox.height / 2 + this.options.territoryImages.offsetY;
+
+          // Create a group for the image and its styling
+          const imageGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+          imageGroup.setAttribute("class", "usmap-territory-image-group");
+          imageGroup.setAttribute("id", `${this.containerId}-territory-image-${territoryId}`);
+
+          // Create a clipPath for circular/rounded images
+          const clipId = `${this.containerId}-clip-${territoryId}`;
+          const clipPath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
+          clipPath.setAttribute("id", clipId);
+
+          const clipShape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+          clipShape.setAttribute("cx", centerX);
+          clipShape.setAttribute("cy", centerY);
+          clipShape.setAttribute("r", this.options.territoryImages.imageSize / 2);
+          clipPath.appendChild(clipShape);
+
+          // Add clipPath to defs (create defs if it doesn't exist)
+          let defs = imagesLayer.parentElement.querySelector("defs");
+          if (!defs) {
+            defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+            imagesLayer.parentElement.insertBefore(defs, imagesLayer.parentElement.firstChild);
+          }
+          defs.appendChild(clipPath);
+
+          // Create the image element
+          const image = document.createElementNS("http://www.w3.org/2000/svg", "image");
+          image.setAttribute("class", "usmap-territory-image");
+          image.setAttribute("href", imageUrl);
+          image.setAttribute("x", centerX - this.options.territoryImages.imageSize / 2);
+          image.setAttribute("y", centerY - this.options.territoryImages.imageSize / 2);
+          image.setAttribute("width", this.options.territoryImages.imageSize);
+          image.setAttribute("height", this.options.territoryImages.imageSize);
+          image.setAttribute("clip-path", `url(#${clipId})`);
+          
+          // Add border circle if specified
+          if (this.options.territoryImages.border) {
+            const borderCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            borderCircle.setAttribute("cx", centerX);
+            borderCircle.setAttribute("cy", centerY);
+            borderCircle.setAttribute("r", this.options.territoryImages.imageSize / 2);
+            borderCircle.setAttribute("fill", "none");
+            borderCircle.setAttribute("stroke", this.options.territoryImages.border.split(" ")[2] || "white");
+            borderCircle.setAttribute("stroke-width", this.options.territoryImages.border.split(" ")[0] || "2");
+            imageGroup.appendChild(borderCircle);
+          }
+
+          // Add shadow filter if specified
+          if (this.options.territoryImages.shadow) {
+            const filterId = `${this.containerId}-shadow-${territoryId}`;
+            const filter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
+            filter.setAttribute("id", filterId);
+            
+            const feGaussianBlur = document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
+            feGaussianBlur.setAttribute("in", "SourceAlpha");
+            feGaussianBlur.setAttribute("stdDeviation", "2");
+            
+            const feOffset = document.createElementNS("http://www.w3.org/2000/svg", "feOffset");
+            feOffset.setAttribute("dx", "0");
+            feOffset.setAttribute("dy", "2");
+            feOffset.setAttribute("result", "offsetblur");
+            
+            const feComponentTransfer = document.createElementNS("http://www.w3.org/2000/svg", "feComponentTransfer");
+            const feFuncA = document.createElementNS("http://www.w3.org/2000/svg", "feFuncA");
+            feFuncA.setAttribute("type", "linear");
+            feFuncA.setAttribute("slope", "0.2");
+            feComponentTransfer.appendChild(feFuncA);
+            
+            const feMerge = document.createElementNS("http://www.w3.org/2000/svg", "feMerge");
+            const feMergeNode1 = document.createElementNS("http://www.w3.org/2000/svg", "feMergeNode");
+            const feMergeNode2 = document.createElementNS("http://www.w3.org/2000/svg", "feMergeNode");
+            feMergeNode2.setAttribute("in", "SourceGraphic");
+            feMerge.appendChild(feMergeNode1);
+            feMerge.appendChild(feMergeNode2);
+            
+            filter.appendChild(feGaussianBlur);
+            filter.appendChild(feOffset);
+            filter.appendChild(feComponentTransfer);
+            filter.appendChild(feMerge);
+            
+            defs.appendChild(filter);
+            image.setAttribute("filter", `url(#${filterId})`);
+          }
+
+          imageGroup.appendChild(image);
+          imagesLayer.appendChild(imageGroup);
+
+          // Link hover behavior if hideOnHover is enabled
+          if (this.options.territoryImages.hideOnHover) {
+            path.addEventListener("mouseenter", () => {
+              image.classList.add("hide-on-hover");
+            });
+            path.addEventListener("mouseleave", () => {
+              image.classList.remove("hide-on-hover");
+            });
+          }
+
+        } catch (error) {
+          console.error(`Error creating image for territory ${territoryId}:`, error);
+        }
+      }, 100);
     }
 
     bindEvents() {
@@ -864,19 +1043,25 @@
       const territoriesLayer = document.getElementById(
         `${this.containerId}-territories-layer`
       );
+      const imagesLayer = document.getElementById(
+        `${this.containerId}-territory-images-layer`
+      );
 
       switch (mode) {
         case "states":
           if (statesLayer) statesLayer.style.display = "block";
           if (territoriesLayer) territoriesLayer.style.display = "none";
+          if (imagesLayer) imagesLayer.style.display = "none";
           break;
         case "territories":
           if (statesLayer) statesLayer.style.display = "none";
           if (territoriesLayer) territoriesLayer.style.display = "block";
+          if (imagesLayer) imagesLayer.style.display = "block";
           break;
         case "both":
           if (statesLayer) statesLayer.style.display = "block";
           if (territoriesLayer) territoriesLayer.style.display = "block";
+          if (imagesLayer) imagesLayer.style.display = "block";
           break;
       }
 
