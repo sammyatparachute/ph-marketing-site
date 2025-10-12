@@ -605,7 +605,8 @@ class USMapController {
                      territoryData.repInfo?.imageUrl ||
                      territoryData.repInfo?.image ||
                      this.options.territoryImages.customImages[territoryId] || 
-                     this.options.territoryImages.defaultImage;
+                     this.options.territoryImages.defaultImage ||
+                     'https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng';
       
       if (!imageUrl) return;
 
