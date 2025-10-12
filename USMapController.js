@@ -1,25 +1,7 @@
 (function (window, document) {
   "use strict";
 
-  /**
-   * USMapController - Interactive US Map with States and Territories
-   * 
-   * Territory images can be defined in territorydata.js like:
-   * {
-   *   "territory1": {
-   *     "name": "Territory Name",
-   *     "path": "...",
-   *     "imageUrl": "https://example.com/image.jpg",  // Option 1: Direct image URL
-   *     "repInfo": {
-   *       "name": "Rep Name",
-   *       "imageUrl": "https://example.com/rep.jpg",  // Option 2: In repInfo
-   *       // ... other rep info
-   *     }
-   *   }
-   * }
-   */
-
-  class USMapController {
+class USMapController {
     constructor(containerId = "map-container", options = {}) {
       this.containerId = containerId;
       this.container = document.getElementById(containerId);
@@ -55,7 +37,7 @@
         // Territory images configuration
         territoryImages: {
           enabled: options.territoryImages?.enabled || false,
-          defaultImage: options.territoryImages?.defaultImage || null, // Fallback if no image in data
+          defaultImage: options.territoryImages?.defaultImage || "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng", // Fallback if no image in data
           imageSize: options.territoryImages?.imageSize || 30,
           imageOpacity: options.territoryImages?.imageOpacity || 1,
           hideOnHover: options.territoryImages?.hideOnHover || false,
