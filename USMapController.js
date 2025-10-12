@@ -1,7 +1,25 @@
 (function (window, document) {
   "use strict";
 
-class USMapController {
+  /**
+   * USMapController - Interactive US Map with States and Territories
+   * 
+   * Territory images can be defined in territorydata.js like:
+   * {
+   *   "territory1": {
+   *     "name": "Territory Name",
+   *     "path": "...",
+   *     "imageUrl": "https://example.com/image.jpg",  // Option 1: Direct image URL
+   *     "repInfo": {
+   *       "name": "Rep Name",
+   *       "imageUrl": "https://example.com/rep.jpg",  // Option 2: In repInfo
+   *       // ... other rep info
+   *     }
+   *   }
+   * }
+   */
+
+  class USMapController {
     constructor(containerId = "map-container", options = {}) {
       this.containerId = containerId;
       this.container = document.getElementById(containerId);
@@ -591,32 +609,124 @@ class USMapController {
         }
 
         territoriesLayer.appendChild(path);
-
-        // Create territory image if enabled
-        if (this.options.territoryImages.enabled && imagesLayer) {
-          this.createTerritoryImage(path, territoryId, territoryData, imagesLayer);
-        }
       });
+
+      // Create all territory images after paths are added to DOM
+      if (this.options.territoryImages.enabled && imagesLayer) {
+        console.log("Territory images enabled, waiting for paths to render...");
+        // Wait for next frame to ensure paths are rendered
+        requestAnimationFrame(() => {
+          // Additional delay to ensure SVG rendering is complete
+          setTimeout(() => {
+            let imageCount = 0;
+            let errorCount = 0;
+            Object.keys(window.US_TERRITORIES_DATA).forEach((territoryId) => {
+              try {
+                const territoryData = window.US_TERRITORIES_DATA[territoryId];
+                const path = document.getElementById(`${this.containerId}-territory-${territoryId}`);
+                if (path) {
+                  this.createTerritoryImage(path, territoryId, territoryData, imagesLayer);
+                  imageCount++;
+                } else {
+                  console.error(`Path not found for territory ${territoryId}`);
+                  errorCount++;
+                }
+              } catch (err) {
+                console.error(`Error processing territory ${territoryId}:`, err);
+                errorCount++;
+              }
+            });
+            console.log(`Initiated ${imageCount} territory images, ${errorCount} errors`);
+          }, 100);
+        });
+      }
     }
 
-    createTerritoryImage(path, territoryId, territoryData, imagesLayer) {
+    createTerritoryImage(path, territoryId, territoryData, imagesLayer, retryCount = 0) {
       // Determine which image to use - prioritize data from territorydata.js
       let imageUrl = territoryData.imageUrl || 
                      territoryData.repInfo?.imageUrl ||
                      territoryData.repInfo?.image ||
                      this.options.territoryImages.customImages[territoryId] || 
-                     this.options.territoryImages.defaultImage ||
-                     'https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng';
+                     this.options.territoryImages.defaultImage;
       
-      if (!imageUrl) return;
+      if (!imageUrl) {
+        console.log(`No image found for territory ${territoryId}`);
+        return;
+      }
 
-      // We need to wait for the DOM to be ready to calculate bbox
-      setTimeout(() => {
+      console.log(`Creating image for territory ${territoryId}: ${imageUrl} (attempt ${retryCount + 1})`);
+
+      // Limit retry attempts
+      if (retryCount > 3) {
+        console.error(`Max retries exceeded for territory ${territoryId}`);
+        return;
+      }
+
+      // Use requestAnimationFrame to ensure SVG is rendered
+      requestAnimationFrame(() => {
         try {
+          // Check if the path element exists and is attached to DOM
+          if (!path.getBBox) {
+            console.error(`Path element for ${territoryId} doesn't have getBBox method`);
+            return;
+          }
+
+          // Check if path is in the document
+          if (!document.body.contains(path)) {
+            console.warn(`Path for ${territoryId} not in DOM, retrying...`);
+            setTimeout(() => this.createTerritoryImage(path, territoryId, territoryData, imagesLayer, retryCount + 1), 500);
+            return;
+          }
+
           // Get the bounding box of the territory path
-          const bbox = path.getBBox();
+          let bbox;
+          try {
+            bbox = path.getBBox();
+          } catch (e) {
+            console.error(`Failed to get bbox for ${territoryId}:`, e);
+            return;
+          }
+          
+          // Check if bbox values are valid numbers
+          if (isNaN(bbox.x) || isNaN(bbox.y) || isNaN(bbox.width) || isNaN(bbox.height)) {
+            console.error(`Invalid bbox values for ${territoryId}:`, bbox);
+            // Try alternative method using path data
+            const pathData = path.getAttribute('d');
+            if (!pathData || pathData.trim() === '') {
+              console.error(`No path data for territory ${territoryId}`);
+              return;
+            }
+            // Retry after delay
+            setTimeout(() => this.createTerritoryImage(path, territoryId, territoryData, imagesLayer, retryCount + 1), 1000);
+            return;
+          }
+          
+          // Check if bbox has valid dimensions
+          if (bbox.width === 0 || bbox.height === 0) {
+            console.warn(`Territory ${territoryId} has zero dimensions, retrying...`);
+            // Retry after a longer delay
+            setTimeout(() => this.createTerritoryImage(path, territoryId, territoryData, imagesLayer, retryCount + 1), 500);
+            return;
+          }
+
           const centerX = bbox.x + bbox.width / 2 + this.options.territoryImages.offsetX;
           const centerY = bbox.y + bbox.height / 2 + this.options.territoryImages.offsetY;
+          
+          // Final validation of center coordinates
+          if (isNaN(centerX) || isNaN(centerY)) {
+            console.error(`Invalid center coordinates for ${territoryId}: (${centerX}, ${centerY})`);
+            return;
+          }
+
+          console.log(`Territory ${territoryId} center: ${centerX.toFixed(2)}, ${centerY.toFixed(2)}`);
+
+          // Check if existing image already created (avoid duplicates)
+          const existingImage = document.getElementById(`${this.containerId}-territory-image-${territoryId}`);
+          if (existingImage) {
+            console.log(`Image already exists for territory ${territoryId}, skipping`);
+            return;
+          }
 
           // Create a group for the image and its styling
           const imageGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -629,9 +739,9 @@ class USMapController {
           clipPath.setAttribute("id", clipId);
 
           const clipShape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-          clipShape.setAttribute("cx", centerX);
-          clipShape.setAttribute("cy", centerY);
-          clipShape.setAttribute("r", this.options.territoryImages.imageSize / 2);
+          clipShape.setAttribute("cx", centerX.toString());
+          clipShape.setAttribute("cy", centerY.toString());
+          clipShape.setAttribute("r", (this.options.territoryImages.imageSize / 2).toString());
           clipPath.appendChild(clipShape);
 
           // Add clipPath to defs (create defs if it doesn't exist)
@@ -645,22 +755,33 @@ class USMapController {
           // Create the image element
           const image = document.createElementNS("http://www.w3.org/2000/svg", "image");
           image.setAttribute("class", "usmap-territory-image");
-          image.setAttribute("href", imageUrl);
-          image.setAttribute("x", centerX - this.options.territoryImages.imageSize / 2);
-          image.setAttribute("y", centerY - this.options.territoryImages.imageSize / 2);
-          image.setAttribute("width", this.options.territoryImages.imageSize);
-          image.setAttribute("height", this.options.territoryImages.imageSize);
+          image.setAttributeNS("http://www.w3.org/1999/xlink", "href", imageUrl);
+          image.setAttribute("x", (centerX - this.options.territoryImages.imageSize / 2).toString());
+          image.setAttribute("y", (centerY - this.options.territoryImages.imageSize / 2).toString());
+          image.setAttribute("width", this.options.territoryImages.imageSize.toString());
+          image.setAttribute("height", this.options.territoryImages.imageSize.toString());
           image.setAttribute("clip-path", `url(#${clipId})`);
+          image.setAttribute("preserveAspectRatio", "xMidYMid slice");
+          
+          // Add error handling for image loading
+          image.addEventListener("error", () => {
+            console.error(`Failed to load image for territory ${territoryId}: ${imageUrl}`);
+          });
+          
+          image.addEventListener("load", () => {
+            console.log(`Successfully loaded image for territory ${territoryId}`);
+          });
           
           // Add border circle if specified
           if (this.options.territoryImages.border) {
+            const borderParts = this.options.territoryImages.border.split(" ");
             const borderCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            borderCircle.setAttribute("cx", centerX);
-            borderCircle.setAttribute("cy", centerY);
-            borderCircle.setAttribute("r", this.options.territoryImages.imageSize / 2);
+            borderCircle.setAttribute("cx", centerX.toString());
+            borderCircle.setAttribute("cy", centerY.toString());
+            borderCircle.setAttribute("r", (this.options.territoryImages.imageSize / 2).toString());
             borderCircle.setAttribute("fill", "none");
-            borderCircle.setAttribute("stroke", this.options.territoryImages.border.split(" ")[2] || "white");
-            borderCircle.setAttribute("stroke-width", this.options.territoryImages.border.split(" ")[0] || "2");
+            borderCircle.setAttribute("stroke", borderParts[2] || "white");
+            borderCircle.setAttribute("stroke-width", (borderParts[0].replace("px", "") || "2"));
             imageGroup.appendChild(borderCircle);
           }
 
@@ -717,7 +838,7 @@ class USMapController {
         } catch (error) {
           console.error(`Error creating image for territory ${territoryId}:`, error);
         }
-      }, 100);
+      });
     }
 
     bindEvents() {
