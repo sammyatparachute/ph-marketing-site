@@ -37,7 +37,7 @@ class USMapController {
         // Territory images configuration
         territoryImages: {
           enabled: options.territoryImages?.enabled || false,
-          defaultImage: options.territoryImages?.defaultImage || "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng", // Fallback if no image in data
+          defaultImage: options.territoryImages?.defaultImage || null, // Fallback if no image in data
           imageSize: options.territoryImages?.imageSize || 30,
           imageOpacity: options.territoryImages?.imageOpacity || 1,
           hideOnHover: options.territoryImages?.hideOnHover || false,
