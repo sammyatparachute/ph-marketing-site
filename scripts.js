@@ -23,9 +23,13 @@ if (typeof supplier_name === 'undefined') {
   var supplierHeadlineText = "A better way to order medical equipment";
   var supplierDescriptionText = "This supplier has partnered with Parachute Health to provide easy online ordering";
   var is_supplier_org = false;
-  var defaultHeadline = "A better way to order medical equipment";
   var defaultDescription = "This supplier has partnered with Parachute Health to provide you easy online ordering, at no cost, that gets your patients the products they need at a click's notice";
   var mobile_app = null;
+}
+
+// Ensure defaultHeadline is always defined
+if (typeof defaultHeadline === 'undefined') {
+  var defaultHeadline = "A better way to order medical equipment";
 }
 
 // === MAIN INITIALIZATION ===
