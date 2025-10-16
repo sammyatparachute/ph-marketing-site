@@ -117,7 +117,7 @@ async function processSupplierData() {
     supplier_name = selectedSupplier.name || "Unknown Supplier";
     supplier_id = selectedSupplier.external_id || "unknown";
     supplierLogo = selectedSupplier.logo || null;
-    supplierHeadlineText = selectedSupplier.headline || defaultHeadline;
+    supplierHeadlineText = (selectedSupplier.headline && selectedSupplier.headline.trim()) || defaultHeadline;
     supplierDescriptionText = selectedSupplier.description || null;
     is_supplier_org = selectedSupplier.is_supplier_org || false;
     
@@ -194,7 +194,7 @@ async function updateSupplierDOMElements() {
   }
   
   if (supplierHeadline) {
-    const headlineToUse = supplierHeadlineText || defaultHeadline;
+    const headlineToUse = (supplierHeadlineText && supplierHeadlineText.trim()) || defaultHeadline;
     supplierHeadline.textContent = headlineToUse;
     console.log('Updated supplier headline with:', headlineToUse);
   } else {
