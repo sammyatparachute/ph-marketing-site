@@ -9887,7 +9887,7 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "Ben Reeve",
       "email": "ben.reeve@parachutehealth.com",
-      "phone": "332-296-4673",
+      "phone": "(332) 296-4673",
       "hub_id": "82991473",
       "scheduling_link_1": "https://meetings.hubspot.com/ben-reeve1",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
@@ -12830,7 +12830,7 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "Bethany Visser",
       "email": "bethany.visser@parachutehealth.com",
-      "phone": "(817)715-2385",
+      "phone": "(817) 715-2385",
       "hub_id": "260195125",
       "scheduling_link_1": "https://meetings.hubspot.com/bethany-visser",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
@@ -16164,7 +16164,7 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "Blake Townsend",
       "email": "blake.townsend@parachutehealth.com",
-      "phone": "817-565-3381",
+      "phone": "(817) 565-3381",
       "hub_id": "1767554280",
       "scheduling_link_1": "https://meetings.hubspot.com/blake-townsend1",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
@@ -18825,7 +18825,7 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "Brian Osorio",
       "email": "brian.osorio@parachutehealth.com",
-      "phone": "954-701-7238",
+      "phone": "(954) 701-7238",
       "hub_id": "82991503",
       "scheduling_link_1": "https://meetings.hubspot.com/brian-osorio",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
@@ -21055,7 +21055,7 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "Eddy Roth",
       "email": "eddy.roth@parachutehealth.com",
-      "phone": "332-296-3430",
+      "phone": "(332) 296-3430",
       "hub_id": "82992748",
       "scheduling_link_1": "https://meetings.hubspot.com/eddy-roth",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
@@ -22725,7 +22725,7 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "Gary Mosley",
       "email": "gary.mosley@parachutehealth.com",
-      "phone": "678-718-8859",
+      "phone": "(678) 718-8859",
       "hub_id": "551647021",
       "scheduling_link_1": "https://meetings.hubspot.com/gary-mosley",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
@@ -26238,7 +26238,7 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "Greg Weyl",
       "email": "greg.weyl@parachutehealth.com",
-      "phone": "585-490-0338",
+      "phone": "(585) 490-0338",
       "hub_id": "79963359",
       "scheduling_link_1": "https://meetings.hubspot.com/greg-weyl",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
@@ -32000,7 +32000,7 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "Hayden Hoffman",
       "email": "hayden.hoffman@parachutehealth.com",
-      "phone": "419-503-1718",
+      "phone": "(419) 503-1718",
       "hub_id": "82992781",
       "scheduling_link_1": "https://meetings.hubspot.com/hayden-hoffman1",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
@@ -33938,7 +33938,7 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "James Sullivan",
       "email": "james.sullivan@parachutehealth.com",
-      "phone": "512-422-2171",
+      "phone": "(512) 422-2171",
       "hub_id": "82600141",
       "scheduling_link_1": "https://meetings.hubspot.com/james-sullivan2",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
@@ -35842,7 +35842,7 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "John Ciaccio",
       "email": "john.ciaccio@parachutehealth.com",
-      "phone": "585-465-8774",
+      "phone": "(585) 465-8774",
       "hub_id": "82600121",
       "scheduling_link_1": "https://meetings.hubspot.com/john-ciaccio1",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
@@ -39279,7 +39279,7 @@ window.US_TERRITORIES_DATA = {
     "repInfo": {
       "name": "Jordain Buckland",
       "email": "jordain.buckland@parachutehealth.com",
-      "phone": "319-541-9040",
+      "phone": "(319) 541-9040",
       "hub_id": "79114374",
       "scheduling_link_1": "https://meetings.hubspot.com/jordain",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
