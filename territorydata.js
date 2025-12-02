@@ -18827,7 +18827,7 @@ window.US_TERRITORIES_DATA = {
       "email": "brian.osorio@parachutehealth.com",
       "phone": "(954) 701-7238",
       "hub_id": "82991503",
-      "scheduling_link_1": "https://meetings.hubspot.com/brian-osorio",
+      "scheduling_link_1": "https://meetings.hubspot.com/brian-osorio/15-min-meeting",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
     }
   },
