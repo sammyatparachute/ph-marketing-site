@@ -35855,7 +35855,7 @@ window.US_TERRITORIES_DATA = {
       "email": "john.ciaccio@parachutehealth.com",
       "phone": "(585) 465-8774",
       "hub_id": "82600121",
-      "scheduling_link_1": "https://meetings.hubspot.com/john-ciaccio1",
+      "scheduling_link_1": "https://meetings.hubspot.com/john-ciaccio1/john-ciaccio",
       "scheduling_link_2": null,
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
     }
