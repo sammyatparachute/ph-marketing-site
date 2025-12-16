@@ -22734,7 +22734,7 @@ window.US_TERRITORIES_DATA = {
       "phone": "(678) 718-8859",
       "hub_id": "551647021",
       "scheduling_link_1": "https://meetings.hubspot.com/gary-mosley",
-      "scheduling_link_2": null,
+      "scheduling_link_2": "https://meetings.hubspot.com/gary-mosley/one-on-one",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
     }
   },
@@ -26248,7 +26248,7 @@ window.US_TERRITORIES_DATA = {
       "phone": "(585) 490-0338",
       "hub_id": "79963359",
       "scheduling_link_1": "https://meetings.hubspot.com/greg-weyl",
-      "scheduling_link_2": null,
+      "scheduling_link_2": "https://meetings.hubspot.com/greg-weyl/sales-rep-app-greg-weyl",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
     }
   },
