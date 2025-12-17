@@ -3,7 +3,7 @@
 
   /**
    * USMapController - Interactive US Map with States and Territories
-   * 
+   *
    * Territory images can be defined in territorydata.js like:
    * {
    *   "territory1": {
@@ -13,6 +13,8 @@
    *     "repInfo": {
    *       "name": "Rep Name",
    *       "imageUrl": "https://example.com/rep.jpg",  // Option 2: In repInfo
+   *       "scheduling_link_get_connected": "...",  // Connect with your Account Executive
+   *       "scheduling_link_ssr_demo_web": "...",  // Schedule a Demo
    *       // ... other rep info
    *     }
    *   }
@@ -55,12 +57,11 @@
         // Territory images configuration
         territoryImages: {
           enabled: options.territoryImages?.enabled || false,
-          defaultImage: options.territoryImages?.defaultImage || null, // Fallback if no image in data
+          defaultImage: options.territoryImages?.defaultImage || null,
           imageSize: options.territoryImages?.imageSize || 30,
           imageOpacity: options.territoryImages?.imageOpacity || 1,
           hideOnHover: options.territoryImages?.hideOnHover || false,
-          customImages: options.territoryImages?.customImages || {}, // Override specific territory images
-          // Positioning offset (can be used to fine-tune image placement)
+          customImages: options.territoryImages?.customImages || {},
           offsetX: options.territoryImages?.offsetX || 0,
           offsetY: options.territoryImages?.offsetY || 0,
           borderRadius: options.territoryImages?.borderRadius || "50%",
@@ -87,6 +88,7 @@
       this.currentMode = "both";
       this.selectedElement = null;
       this.touchDevice = "ontouchstart" in window;
+      this.schedulingMenuVisible = false;
 
       // Load dependencies and initialize
       this.loadDependencies()
@@ -242,7 +244,7 @@
 
         .usmap-svg-container {
           position: relative;
-          border-radius: 0 0 8px 8px; 
+          border-radius: 0 0 8px 8px;
         }
 
         .usmap-svg {
@@ -449,11 +451,105 @@
           text-transform: uppercase;
         }
 
+        /* Scheduling Menu Styles */
+        .usmap-scheduling-menu {
+          position: fixed;
+          right: 0;
+          top: 15vh;
+          bottom: 10vh;
+          width: 40%;
+          background: white;
+          box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+          transform: translateX(100%);
+          transition: transform 0.3s ease;
+          overflow-y: auto;
+          z-index: 1002;
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
+          border: 1px solid #520079;
+          border-right: 0px;
+        }
+
+        .usmap-scheduling-menu.active {
+          transform: translateX(0);
+        }
+
+        .usmap-scheduling-menu-header {
+          background: linear-gradient(0deg, rgba(249, 245, 240, 1) 0%, rgba(202, 174, 235, 1) 100%);
+          color: white;
+          padding: 20px;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+        }
+
+        .usmap-scheduling-menu-title {
+          color: #520079;
+          font-size: 24px;
+          font-weight: 600;
+          margin: 0;
+          padding-right: 30px;
+        }
+
+        .usmap-scheduling-menu-subtitle {
+          color: #520079;
+          font-size: 14px;
+          margin: 8px 0 0 0;
+        }
+
+        .usmap-scheduling-menu-body {
+          padding: 30px;
+        }
+
+        .usmap-scheduling-options {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .usmap-scheduling-option {
+          display: flex;
+          align-items: flex-start;
+          gap: 15px;
+          padding: 20px;
+          border: 2px solid #e0e0e0;
+          border-radius: 8px;
+          background: white;
+          cursor: pointer;
+          transition: all 0.2s;
+          text-align: left;
+        }
+
+        .usmap-scheduling-option:hover {
+          border-color: #520079;
+          background: #f9f5fc;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(82, 0, 121, 0.1);
+        }
+
+        .usmap-option-icon {
+          font-size: 32px;
+          line-height: 1;
+        }
+
+        .usmap-option-text h4 {
+          margin: 0 0 8px 0;
+          font-size: 18px;
+          color: #520079;
+        }
+
+        .usmap-option-text p {
+          margin: 0;
+          font-size: 14px;
+          color: #666;
+          line-height: 1.4;
+        }
+
         @media (max-width: 768px) {
           .usmap-wrapper {
             flex-direction: column;
           }
-          
+
           .usmap-container {
             flex: 0 0 100%;
           }
@@ -461,8 +557,9 @@
           .usmap-placeholder-panel {
             display: none;
           }
-          
-          .usmap-info-panel {
+
+          .usmap-info-panel,
+          .usmap-scheduling-menu {
             width: 100%;
             position: fixed;
             top: 0;
@@ -472,13 +569,29 @@
             transform: translateX(100%);
             z-index: 1002;
           }
-          
+
           .usmap-controls {
             flex-direction: column;
           }
-          
+
           .usmap-control-btn {
             width: 100%;
+          }
+
+          .usmap-scheduling-option {
+            padding: 15px;
+          }
+
+          .usmap-option-icon {
+            font-size: 28px;
+          }
+
+          .usmap-option-text h4 {
+            font-size: 16px;
+          }
+
+          .usmap-option-text p {
+            font-size: 13px;
           }
         }
       `;
@@ -524,6 +637,31 @@
               </div>
             </div>
           </div>
+          <div class="usmap-scheduling-menu" id="${this.containerId}-schedulingMenu">
+            <div class="usmap-scheduling-menu-header">
+              <button class="usmap-close-btn" id="${this.containerId}-schedulingMenuCloseBtn">×</button>
+              <h2 class="usmap-scheduling-menu-title">Schedule a Meeting</h2>
+              <p class="usmap-scheduling-menu-subtitle">Choose an option:</p>
+            </div>
+            <div class="usmap-scheduling-menu-body">
+              <div class="usmap-scheduling-options">
+                <button class="usmap-scheduling-option" id="${this.containerId}-option-ae">
+                  <div class="usmap-option-icon">👋</div>
+                  <div class="usmap-option-text">
+                    <h4>Connect with your Account Executive</h4>
+                    <p>Meet your dedicated Account Executive and learn how they can help</p>
+                  </div>
+                </button>
+                <button class="usmap-scheduling-option" id="${this.containerId}-option-demo">
+                  <div class="usmap-option-icon">🎯</div>
+                  <div class="usmap-option-text">
+                    <h4>Schedule a Demo</h4>
+                    <p>See the platform in action with a live demonstration</p>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
           <div class="usmap-info-panel" id="${this.containerId}-infoPanel">
             <div class="usmap-info-header">
               <button class="usmap-close-btn" id="${this.containerId}-closeBtn">×</button>
@@ -531,7 +669,6 @@
               <p class="usmap-info-title-description" id="${this.containerId}-infoTitleDescription"></p>
             </div>
             <div class="usmap-info-body">
-              <!--<div class="usmap-info-description" id="${this.containerId}-infoDescription"></div>-->
               <div class="usmap-info-stats" id="${this.containerId}-infoStats"></div>
             </div>
           </div>
@@ -572,7 +709,7 @@
       const imagesLayer = document.getElementById(
         `${this.containerId}-territory-images-layer`
       );
-      
+
       if (!territoriesLayer) return;
 
       if (typeof window.US_TERRITORIES_DATA === "undefined") {
@@ -604,8 +741,8 @@
           path.dataset.repEmail = territoryData.repInfo.email || "";
           path.dataset.repHubId = territoryData.repInfo.hub_id || "";
           path.dataset.repPhone = territoryData.repInfo.phone || "";
-          path.dataset.repSchedLink1 =
-            territoryData.repInfo.scheduling_link_get_connected || "";
+          path.dataset.repSchedLinkGetConnected = territoryData.repInfo.scheduling_link_get_connected || "";
+          path.dataset.repSchedLinkSsrDemoWeb = territoryData.repInfo.scheduling_link_ssr_demo_web || "";
         }
 
         territoriesLayer.appendChild(path);
@@ -614,9 +751,7 @@
       // Create all territory images after paths are added to DOM
       if (this.options.territoryImages.enabled && imagesLayer) {
         console.log("Territory images enabled, waiting for paths to render...");
-        // Wait for next frame to ensure paths are rendered
         requestAnimationFrame(() => {
-          // Additional delay to ensure SVG rendering is complete
           setTimeout(() => {
             let imageCount = 0;
             let errorCount = 0;
@@ -643,13 +778,12 @@
     }
 
     createTerritoryImage(path, territoryId, territoryData, imagesLayer, retryCount = 0) {
-      // Determine which image to use - prioritize data from territorydata.js
-      let imageUrl = territoryData.imageUrl || 
+      let imageUrl = territoryData.imageUrl ||
                      territoryData.repInfo?.imageUrl ||
                      territoryData.repInfo?.image ||
-                     this.options.territoryImages.customImages[territoryId] || 
+                     this.options.territoryImages.customImages[territoryId] ||
                      this.options.territoryImages.defaultImage;
-      
+
       if (!imageUrl) {
         console.log(`No image found for territory ${territoryId}`);
         return;
@@ -657,29 +791,24 @@
 
       console.log(`Creating image for territory ${territoryId}: ${imageUrl} (attempt ${retryCount + 1})`);
 
-      // Limit retry attempts
       if (retryCount > 3) {
         console.error(`Max retries exceeded for territory ${territoryId}`);
         return;
       }
 
-      // Use requestAnimationFrame to ensure SVG is rendered
       requestAnimationFrame(() => {
         try {
-          // Check if the path element exists and is attached to DOM
           if (!path.getBBox) {
             console.error(`Path element for ${territoryId} doesn't have getBBox method`);
             return;
           }
 
-          // Check if path is in the document
           if (!document.body.contains(path)) {
             console.warn(`Path for ${territoryId} not in DOM, retrying...`);
             setTimeout(() => this.createTerritoryImage(path, territoryId, territoryData, imagesLayer, retryCount + 1), 500);
             return;
           }
 
-          // Get the bounding box of the territory path
           let bbox;
           try {
             bbox = path.getBBox();
@@ -687,33 +816,27 @@
             console.error(`Failed to get bbox for ${territoryId}:`, e);
             return;
           }
-          
-          // Check if bbox values are valid numbers
+
           if (isNaN(bbox.x) || isNaN(bbox.y) || isNaN(bbox.width) || isNaN(bbox.height)) {
             console.error(`Invalid bbox values for ${territoryId}:`, bbox);
-            // Try alternative method using path data
             const pathData = path.getAttribute('d');
             if (!pathData || pathData.trim() === '') {
               console.error(`No path data for territory ${territoryId}`);
               return;
             }
-            // Retry after delay
             setTimeout(() => this.createTerritoryImage(path, territoryId, territoryData, imagesLayer, retryCount + 1), 1000);
             return;
           }
-          
-          // Check if bbox has valid dimensions
+
           if (bbox.width === 0 || bbox.height === 0) {
             console.warn(`Territory ${territoryId} has zero dimensions, retrying...`);
-            // Retry after a longer delay
             setTimeout(() => this.createTerritoryImage(path, territoryId, territoryData, imagesLayer, retryCount + 1), 500);
             return;
           }
 
           const centerX = bbox.x + bbox.width / 2 + this.options.territoryImages.offsetX;
           const centerY = bbox.y + bbox.height / 2 + this.options.territoryImages.offsetY;
-          
-          // Final validation of center coordinates
+
           if (isNaN(centerX) || isNaN(centerY)) {
             console.error(`Invalid center coordinates for ${territoryId}: (${centerX}, ${centerY})`);
             return;
@@ -721,19 +844,16 @@
 
           console.log(`Territory ${territoryId} center: ${centerX.toFixed(2)}, ${centerY.toFixed(2)}`);
 
-          // Check if existing image already created (avoid duplicates)
           const existingImage = document.getElementById(`${this.containerId}-territory-image-${territoryId}`);
           if (existingImage) {
             console.log(`Image already exists for territory ${territoryId}, skipping`);
             return;
           }
 
-          // Create a group for the image and its styling
           const imageGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
           imageGroup.setAttribute("class", "usmap-territory-image-group");
           imageGroup.setAttribute("id", `${this.containerId}-territory-image-${territoryId}`);
 
-          // Create a clipPath for circular/rounded images
           const clipId = `${this.containerId}-clip-${territoryId}`;
           const clipPath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
           clipPath.setAttribute("id", clipId);
@@ -744,7 +864,6 @@
           clipShape.setAttribute("r", (this.options.territoryImages.imageSize / 2).toString());
           clipPath.appendChild(clipShape);
 
-          // Add clipPath to defs (create defs if it doesn't exist)
           let defs = imagesLayer.parentElement.querySelector("defs");
           if (!defs) {
             defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
@@ -752,7 +871,6 @@
           }
           defs.appendChild(clipPath);
 
-          // Create the image element
           const image = document.createElementNS("http://www.w3.org/2000/svg", "image");
           image.setAttribute("class", "usmap-territory-image");
           image.setAttributeNS("http://www.w3.org/1999/xlink", "href", imageUrl);
@@ -762,17 +880,15 @@
           image.setAttribute("height", this.options.territoryImages.imageSize.toString());
           image.setAttribute("clip-path", `url(#${clipId})`);
           image.setAttribute("preserveAspectRatio", "xMidYMid slice");
-          
-          // Add error handling for image loading
+
           image.addEventListener("error", () => {
             console.error(`Failed to load image for territory ${territoryId}: ${imageUrl}`);
           });
-          
+
           image.addEventListener("load", () => {
             console.log(`Successfully loaded image for territory ${territoryId}`);
           });
-          
-          // Add border circle if specified
+
           if (this.options.territoryImages.border) {
             const borderParts = this.options.territoryImages.border.split(" ");
             const borderCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -785,39 +901,38 @@
             imageGroup.appendChild(borderCircle);
           }
 
-          // Add shadow filter if specified
           if (this.options.territoryImages.shadow) {
             const filterId = `${this.containerId}-shadow-${territoryId}`;
             const filter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
             filter.setAttribute("id", filterId);
-            
+
             const feGaussianBlur = document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
             feGaussianBlur.setAttribute("in", "SourceAlpha");
             feGaussianBlur.setAttribute("stdDeviation", "2");
-            
+
             const feOffset = document.createElementNS("http://www.w3.org/2000/svg", "feOffset");
             feOffset.setAttribute("dx", "0");
             feOffset.setAttribute("dy", "2");
             feOffset.setAttribute("result", "offsetblur");
-            
+
             const feComponentTransfer = document.createElementNS("http://www.w3.org/2000/svg", "feComponentTransfer");
             const feFuncA = document.createElementNS("http://www.w3.org/2000/svg", "feFuncA");
             feFuncA.setAttribute("type", "linear");
             feFuncA.setAttribute("slope", "0.2");
             feComponentTransfer.appendChild(feFuncA);
-            
+
             const feMerge = document.createElementNS("http://www.w3.org/2000/svg", "feMerge");
             const feMergeNode1 = document.createElementNS("http://www.w3.org/2000/svg", "feMergeNode");
             const feMergeNode2 = document.createElementNS("http://www.w3.org/2000/svg", "feMergeNode");
             feMergeNode2.setAttribute("in", "SourceGraphic");
             feMerge.appendChild(feMergeNode1);
             feMerge.appendChild(feMergeNode2);
-            
+
             filter.appendChild(feGaussianBlur);
             filter.appendChild(feOffset);
             filter.appendChild(feComponentTransfer);
             filter.appendChild(feMerge);
-            
+
             defs.appendChild(filter);
             image.setAttribute("filter", `url(#${filterId})`);
           }
@@ -825,7 +940,6 @@
           imageGroup.appendChild(image);
           imagesLayer.appendChild(imageGroup);
 
-          // Link hover behavior if hideOnHover is enabled
           if (this.options.territoryImages.hideOnHover) {
             path.addEventListener("mouseenter", () => {
               image.classList.add("hide-on-hover");
@@ -842,7 +956,6 @@
     }
 
     bindEvents() {
-      // Control buttons
       if (this.options.showControls) {
         const statesBtn = document.getElementById(
           `${this.containerId}-statesBtn`
@@ -865,16 +978,28 @@
         }
       }
 
-      // Close button
       const closeBtn = document.getElementById(`${this.containerId}-closeBtn`);
       if (closeBtn) {
         closeBtn.addEventListener("click", () => this.closeInfoPanel());
       }
 
-      // Map interactions
+      const schedulingMenuCloseBtn = document.getElementById(`${this.containerId}-schedulingMenuCloseBtn`);
+      if (schedulingMenuCloseBtn) {
+        schedulingMenuCloseBtn.addEventListener("click", () => this.closeSchedulingMenu());
+      }
+
+      const optionAE = document.getElementById(`${this.containerId}-option-ae`);
+      const optionDemo = document.getElementById(`${this.containerId}-option-demo`);
+
+      if (optionAE) {
+        optionAE.addEventListener("click", () => this.handleSchedulingOptionClick('ae'));
+      }
+      if (optionDemo) {
+        optionDemo.addEventListener("click", () => this.handleSchedulingOptionClick('demo'));
+      }
+
       this.bindMapEvents();
 
-      // Window resize
       window.addEventListener("resize", () => this.handleResize());
     }
 
@@ -882,7 +1007,6 @@
       const states = document.querySelectorAll(".usmap-state");
       const territories = document.querySelectorAll(".usmap-territory");
 
-      // Bind state events
       states.forEach((element) => {
         if (
           !this.options.stateInteractivity.hover &&
@@ -921,7 +1045,6 @@
         }
       });
 
-      // Bind territory events
       territories.forEach((element) => {
         if (
           !this.options.territoryInteractivity.hover &&
@@ -1049,7 +1172,15 @@
       e.preventDefault();
       this.hideHoverModal();
       this.selectElement(element);
-      this.showInfoPanel(element);
+
+      // Show scheduling menu for territories if both links exist
+      if (element.dataset.type === "territory" &&
+          element.dataset.repSchedLinkGetConnected &&
+          element.dataset.repSchedLinkSsrDemoWeb) {
+        this.showSchedulingMenu(element);
+      } else {
+        this.showInfoPanel(element);
+      }
     }
 
     selectElement(element) {
@@ -1061,7 +1192,48 @@
       this.selectedElement = element;
     }
 
-    showInfoPanel(element) {
+    showSchedulingMenu(element) {
+      const menu = document.getElementById(`${this.containerId}-schedulingMenu`);
+      if (menu) {
+        menu.classList.add("active");
+        this.schedulingMenuVisible = true;
+
+        // Store the element for later use when an option is selected
+        this.schedulingMenuElement = element;
+      }
+    }
+
+    closeSchedulingMenu() {
+      const menu = document.getElementById(`${this.containerId}-schedulingMenu`);
+      if (menu) {
+        menu.classList.remove("active");
+        this.schedulingMenuVisible = false;
+      }
+
+      if (this.selectedElement) {
+        this.selectedElement.classList.remove("selected");
+        this.selectedElement = null;
+      }
+
+      this.schedulingMenuElement = null;
+    }
+
+    handleSchedulingOptionClick(option) {
+      if (!this.schedulingMenuElement) return;
+
+      const element = this.schedulingMenuElement;
+
+      // Close the menu
+      this.closeSchedulingMenu();
+
+      // Re-select the element for the info panel
+      this.selectElement(element);
+
+      // Show the info panel with the selected scheduling link
+      this.showInfoPanel(element, option);
+    }
+
+    showInfoPanel(element, schedulingOption = 'ae') {
       const panel = document.getElementById(`${this.containerId}-infoPanel`);
       const title = document.getElementById(`${this.containerId}-infoTitle`);
       const titleDescription = document.getElementById(
@@ -1074,7 +1246,7 @@
 
       if (element.dataset.type === "state") {
         title.textContent = element.dataset.name;
-        description.textContent = `${element.dataset.name} (${element.dataset.abbreviation})`;
+        if (description) description.textContent = `${element.dataset.name} (${element.dataset.abbreviation})`;
 
         stats.innerHTML = `
       <div class="usmap-stat-item">
@@ -1090,12 +1262,15 @@
           element.dataset.repPhone ? element.dataset.repPhone + "<br/>" : ""
         }`;
 
-        //description.textContent = element.dataset.state_list;
+        // Choose which scheduling link to use based on the option
+        const schedLink = schedulingOption === 'demo'
+          ? element.dataset.repSchedLinkSsrDemoWeb
+          : element.dataset.repSchedLinkGetConnected;
 
-        const repSchedInfo = element.dataset.repSchedLink1
+        const repSchedInfo = schedLink
           ? `
         <!-- Start of Meetings Embed Script -->
-        <div class="meetings-iframe-container" data-src="${element.dataset.repSchedLink1}?embed=true"></div>
+        <div class="meetings-iframe-container" data-src="${schedLink}?embed=true"></div>
         <!-- End of Meetings Embed Script -->
     `
           : "";
@@ -1103,7 +1278,7 @@
         stats.innerHTML = repSchedInfo;
 
         // Manually add and execute the HubSpot script AFTER setting innerHTML
-        if (element.dataset.repEmail) {
+        if (element.dataset.repEmail && schedLink) {
           const script = document.createElement("script");
           script.type = "text/javascript";
           script.src =
@@ -1170,6 +1345,7 @@
       }
 
       this.closeInfoPanel();
+      this.closeSchedulingMenu();
     }
 
     setupResponsive() {
@@ -1185,6 +1361,7 @@
 
       if (window.innerWidth < 768) {
         this.closeInfoPanel();
+        this.closeSchedulingMenu();
       }
     }
 
