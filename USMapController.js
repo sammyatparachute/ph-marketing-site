@@ -605,7 +605,7 @@
           path.dataset.repHubId = territoryData.repInfo.hub_id || "";
           path.dataset.repPhone = territoryData.repInfo.phone || "";
           path.dataset.repSchedLink1 =
-            territoryData.repInfo.scheduling_link_1 || "";
+            territoryData.repInfo.scheduling_link_get_connected || "";
         }
 
         territoriesLayer.appendChild(path);
