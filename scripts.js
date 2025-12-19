@@ -55,6 +55,9 @@ async function initializeParachuteSupplierPage() {
     // Step 4: Load info center tabs if elements exist
     await loadInfoCenterTabs();
     
+    // Step 5: Activate training tab if URL contains ?training
+    activateTrainingTabIfNeeded();
+    
     console.log('Parachute supplier page initialization complete');
   } catch (error) {
     console.error('Parachute initialization failed:', error);
@@ -268,6 +271,59 @@ async function loadInfoCenterTabs() {
   } catch (err) {
     console.log("Info center tabs failed to load:", err);
   }
+}
+
+// === TAB ACTIVATION ===
+function activateTrainingTabIfNeeded() {
+  // Check if URL contains ?training
+  if (window.location.href.indexOf("?training") === -1) {
+    console.log('Training parameter not in URL, skipping tab activation');
+    return;
+  }
+  
+  console.log('Training parameter found in URL, activating training tab');
+  
+  // Wait for tab elements to be available
+  const checkInterval = setInterval(() => {
+    // Look for training tab link and content
+    const trainingTabLink = document.querySelector('a[data-w-tab="Training"]') || 
+                           document.querySelector('a[href="#training"]') ||
+                           document.querySelector('.w-tab-link:nth-child(2)'); // Assuming training is 2nd tab
+    
+    const trainingTabContent = document.querySelector('[data-w-tab="Training"]') ||
+                              document.getElementById('training-tab');
+    
+    if (trainingTabLink) {
+      clearInterval(checkInterval);
+      
+      // Remove active class from all tabs
+      document.querySelectorAll('.w-tab-link').forEach(tab => {
+        tab.classList.remove('w--current');
+      });
+      
+      document.querySelectorAll('.w-tab-pane').forEach(pane => {
+        pane.classList.remove('w--tab-active');
+      });
+      
+      // Add active class to training tab
+      trainingTabLink.classList.add('w--current');
+      
+      if (trainingTabContent) {
+        trainingTabContent.classList.add('w--tab-active');
+      }
+      
+      // Trigger click event in case there are listeners
+      trainingTabLink.click();
+      
+      console.log('Training tab activated successfully');
+    }
+  }, 100);
+  
+  // Stop checking after 5 seconds
+  setTimeout(() => {
+    clearInterval(checkInterval);
+    console.log('Stopped looking for training tab after timeout');
+  }, 5000);
 }
 
 // === SUPPORTING FUNCTIONS ===
