@@ -36,6 +36,7 @@
         showTerritories: options.showTerritories !== false,
         enableTouch: options.enableTouch !== false,
         showControls: options.showControls !== false,
+        showPlaceholderPanel: options.showPlaceholderPanel !== false,
         defaultFill: options.defaultFill || "#b167d3",
         hoverFill: options.hoverFill || "#d4aae7",
         selectedFill: options.selectedFill || "rgba(255, 255, 255, .25)",
@@ -615,7 +616,7 @@
 
       this.container.innerHTML = `
         <div class="usmap-wrapper">
-          <div class="usmap-container" id="${this.containerId}-mapContainer">
+          <div class="usmap-container" id="${this.containerId}-mapContainer"${this.options.showPlaceholderPanel ? "" : ' style="flex: 1"'}>
             ${controlsHTML}
             <div class="usmap-svg-container">
               <svg class="usmap-svg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
@@ -628,6 +629,7 @@
               </div>
             </div>
           </div>
+          ${this.options.showPlaceholderPanel ? `
           <div class="usmap-placeholder-panel">
             <div style="display: flex; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 20px;">
               <div>
@@ -636,7 +638,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>` : ""}
           <div class="usmap-scheduling-menu" id="${this.containerId}-schedulingMenu">
             <div class="usmap-scheduling-menu-header">
               <button class="usmap-close-btn" id="${this.containerId}-schedulingMenuCloseBtn">×</button>
