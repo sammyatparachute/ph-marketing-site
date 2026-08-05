@@ -40484,8 +40484,8 @@ window.US_TERRITORIES_DATA = {
       "name": "Sydney Swanker",
       "email": "sydney.swanker@parachutehealth.com",
       "phone": null,
-      "scheduling_link_get_connected": null,
-      "scheduling_link_ssr_demo_web": null,
+      "scheduling_link_get_connected": "https://meetings.hubspot.com/sydney-swanker",
+      "scheduling_link_ssr_demo_web": "https://meetings.hubspot.com/sydney-swanker/sales-rep-demo-web",
       "imageUrl": "https://images.squarespace-cdn.com/content/5df13db27cfbe70b38ae20dd/8d3bb82f-e9e9-4a45-811f-65af120bd25d/Logo-purple-green.png?content-type=image%2Fpng"
     }
   },
