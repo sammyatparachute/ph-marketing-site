@@ -3676,6 +3676,7 @@ window.US_TERRITORIES_DATA = {
       "38626",
       "38627",
       "38629",
+      "38630",
       "38631",
       "38632",
       "38633",
@@ -3717,7 +3718,9 @@ window.US_TERRITORIES_DATA = {
       "38685",
       "38686",
       "38701",
+      "38702",
       "38703",
+      "38704",
       "38720",
       "38721",
       "38722",
@@ -3829,6 +3832,7 @@ window.US_TERRITORIES_DATA = {
       "38941",
       "38943",
       "38944",
+      "38945",
       "38946",
       "38947",
       "38948",
@@ -3839,6 +3843,7 @@ window.US_TERRITORIES_DATA = {
       "38953",
       "38954",
       "38957",
+      "38958",
       "38959",
       "38960",
       "38961",
@@ -4191,6 +4196,7 @@ window.US_TERRITORIES_DATA = {
       "71662",
       "71663",
       "71665",
+      "71666",
       "71667",
       "71670",
       "71671",
@@ -4200,6 +4206,7 @@ window.US_TERRITORIES_DATA = {
       "71677",
       "71678",
       "71701",
+      "71711",
       "71720",
       "71721",
       "71722",
@@ -7239,7 +7246,8 @@ window.US_TERRITORIES_DATA = {
       "NV",
       "OR",
       "UT",
-      "WA"
+      "WA",
+      null
     ],
     "zip_list": [
       "59001",
@@ -7805,6 +7813,7 @@ window.US_TERRITORIES_DATA = {
       "83553",
       "83554",
       "83555",
+      "83601",
       "83602",
       "83604",
       "83605",
@@ -10213,7 +10222,8 @@ window.US_TERRITORIES_DATA = {
       "53071",
       "53073",
       "53075",
-      "53077"
+      "53077",
+      null
     ],
     "repInfo": {
       "name": "Brian Osorio",
@@ -13995,7 +14005,8 @@ window.US_TERRITORIES_DATA = {
       "NE",
       "NM",
       "SD",
-      "WY"
+      "WY",
+      null
     ],
     "zip_list": [
       "50001",
@@ -18927,6 +18938,7 @@ window.US_TERRITORIES_DATA = {
       "82058",
       "82059",
       "82060",
+      "82061",
       "82063",
       "82070",
       "82071",
@@ -19070,6 +19082,7 @@ window.US_TERRITORIES_DATA = {
       "82935",
       "82936",
       "82937",
+      "82938",
       "82939",
       "82941",
       "82942",
@@ -19520,7 +19533,8 @@ window.US_TERRITORIES_DATA = {
       "88434",
       "88435",
       "88436",
-      "88439"
+      "88439",
+      "89405"
     ],
     "county_list": [
       "05009",
@@ -20174,7 +20188,8 @@ window.US_TERRITORIES_DATA = {
       "56039",
       "56041",
       "56043",
-      "56045"
+      "56045",
+      null
     ],
     "repInfo": {
       "name": "Greg Weyl",
@@ -38560,7 +38575,8 @@ window.US_TERRITORIES_DATA = {
     "description": "Managed by Sydney Swanker",
     "state_list": [
       "AL",
-      "GA"
+      "GA",
+      null
     ],
     "zip_list": [
       "30002",
@@ -40188,6 +40204,7 @@ window.US_TERRITORIES_DATA = {
       "36855",
       "36856",
       "36858",
+      "36859",
       "36860",
       "36861",
       "36862",
@@ -40478,7 +40495,8 @@ window.US_TERRITORIES_DATA = {
       "13315",
       "13317",
       "13319",
-      "13321"
+      "13321",
+      null
     ],
     "repInfo": {
       "name": "Sydney Swanker",
