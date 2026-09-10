@@ -7,7 +7,8 @@ window.US_TERRITORIES_DATA = {
     "state_list": [
       "IN",
       "MN",
-      "WI"
+      "WI",
+      null
     ],
     "zip_list": [
       "46001",
@@ -2116,6 +2117,7 @@ window.US_TERRITORIES_DATA = {
       "55763",
       "55764",
       "55765",
+      "55766",
       "55767",
       "55768",
       "55769",
@@ -2973,7 +2975,8 @@ window.US_TERRITORIES_DATA = {
       "55135",
       "55137",
       "55139",
-      "55141"
+      "55141",
+      null
     ],
     "repInfo": {
       "name": "Ben Reeve",
@@ -3740,6 +3743,7 @@ window.US_TERRITORIES_DATA = {
       "38745",
       "38746",
       "38748",
+      "38749",
       "38751",
       "38753",
       "38754",
@@ -8320,6 +8324,7 @@ window.US_TERRITORIES_DATA = {
       "89023",
       "89024",
       "89025",
+      "89026",
       "89027",
       "89028",
       "89029",
@@ -22285,7 +22290,8 @@ window.US_TERRITORIES_DATA = {
     "description": "Managed by Hayden Hoffman",
     "state_list": [
       "MI",
-      "OH"
+      "OH",
+      null
     ],
     "zip_list": [
       "43001",
@@ -23412,6 +23418,7 @@ window.US_TERRITORIES_DATA = {
       "45415",
       "45416",
       "45417",
+      "45418",
       "45419",
       "45420",
       "45422",
@@ -24925,7 +24932,8 @@ window.US_TERRITORIES_DATA = {
       "39169",
       "39171",
       "39173",
-      "39175"
+      "39175",
+      null
     ],
     "repInfo": {
       "name": "Hayden Hoffman",
@@ -24943,7 +24951,8 @@ window.US_TERRITORIES_DATA = {
     "description": "Managed by James Sullivan",
     "state_list": [
       "LA",
-      "TX"
+      "TX",
+      null
     ],
     "zip_list": [
       "70001",
@@ -26872,6 +26881,7 @@ window.US_TERRITORIES_DATA = {
       "79789",
       "79821",
       "79830",
+      "79831",
       "79832",
       "79834",
       "79835",
@@ -27142,7 +27152,8 @@ window.US_TERRITORIES_DATA = {
       "48493",
       "48495",
       "48505",
-      "48507"
+      "48507",
+      null
     ],
     "repInfo": {
       "name": "James Sullivan",
@@ -30174,6 +30185,7 @@ window.US_TERRITORIES_DATA = {
       "85365",
       "85366",
       "85367",
+      "85371",
       "85372",
       "85373",
       "85374",
@@ -30319,6 +30331,7 @@ window.US_TERRITORIES_DATA = {
       "85901",
       "85902",
       "85911",
+      "85912",
       "85920",
       "85922",
       "85923",
@@ -31680,6 +31693,7 @@ window.US_TERRITORIES_DATA = {
       "93516",
       "93517",
       "93518",
+      "93519",
       "93522",
       "93523",
       "93524",
@@ -39431,6 +39445,7 @@ window.US_TERRITORIES_DATA = {
       "31810",
       "31811",
       "31812",
+      "31814",
       "31815",
       "31816",
       "31820",
